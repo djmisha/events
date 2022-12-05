@@ -3,21 +3,25 @@ import { useEffect, useRef, useState } from "react";
 import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
 import EventCard from "../../components/EventCard/EventCard";
+import Image from "next/image";
 
 export default function Location({ locationData }) {
-  const title = `Events in ${locationData.city}, ${locationData.state}`;
+  const { city, state, id } = locationData;
+  const title = `Events in ${city}, ${state}`;
   const [events, SetEvents] = useState([]);
+  const [loading, SetLoading] = useState(true);
   const dataFetchedRef = useRef(false);
 
   useEffect(() => {
     const getEvents = async () => {
       const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
       const URL = process.env.NEXT_PUBLIC_API_URL_EDMTRAIN;
-      const PATH = URL + locationData.id + "&client=" + KEY;
+      const PATH = URL + id + "&client=" + KEY;
       await fetch(PATH)
         .then(function (response) {
           response.json().then((res) => {
             SetEvents(res.data);
+            SetLoading(false);
           });
         })
         .catch(function (error) {
@@ -28,15 +32,23 @@ export default function Location({ locationData }) {
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
     getEvents();
-  }, []);
+  }, [id]);
 
   return (
     <Layout>
       <Head>
         <title>{title}</title>
       </Head>
-      <h1>Events Near {locationData.city || locationData.state}</h1>
+      <h1>Events Near {city || state}</h1>
       <section>
+        {loading && (
+          <Image
+            src="/images/loading.svg"
+            alt="loading"
+            width={100}
+            height={100}
+          />
+        )}
         {events &&
           events.map((event, index) => {
             return <EventCard event={event} key={index} />;

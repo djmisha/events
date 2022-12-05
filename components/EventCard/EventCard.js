@@ -1,9 +1,10 @@
 import React from "react";
 import Artists from "../Artists/Artists";
 import setDates from "../../utils/setDates";
+import Image from "next/image";
 
 export const EventCard = ({ event }) => {
-  const { id, date, artistList, name, venue, link } = event;
+  const { date, artistList, name, venue, link } = event;
   const { name: venueName, address } = venue;
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
 
@@ -11,7 +12,6 @@ export const EventCard = ({ event }) => {
     <div
       className="single-event"
       itemScope=""
-      data-id={id}
       itemType="http://schema.org/Event"
     >
       <div className="event-date" itemProp="startDate" content={daySchema}>
@@ -20,9 +20,11 @@ export const EventCard = ({ event }) => {
       </div>
       <div className="event-info">
         <div className="event-title-artist">
-          <span className="event-title" itemProp="name">
-            {name}
-          </span>
+          {name && (
+            <span className="event-title" itemProp="name">
+              {name}
+            </span>
+          )}
           <span className="event-artist" itemProp="name">
             <Artists data={artistList} />
           </span>
@@ -42,16 +44,23 @@ export const EventCard = ({ event }) => {
           itemProp="address"
           content={address}
         >
-          <a
-            rel="noreferrer"
-            href={`https://www.google.com/maps/search/${address}`}
-            target="_blank"
-          >
-            <span>
-              {address}
-              {/* <img src="assets/images/icon-link.svg" /> add this image*/}
-            </span>
-          </a>
+          {address && (
+            <a
+              rel="noreferrer"
+              href={`https://www.google.com/maps/search/${address}`}
+              target="_blank"
+            >
+              <span>
+                {address}
+                <Image
+                  src="/images/icon-link.svg"
+                  alt="Map Icon"
+                  width="15"
+                  height="15"
+                />
+              </span>
+            </a>
+          )}
         </div>
         <div className="event-link">
           <a href={link} target="_blank" rel="noreferrer">

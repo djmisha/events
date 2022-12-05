@@ -1,0 +1,30 @@
+/**
+ * @section Mixins
+ */
+
+// Media Query Mixin
+
+@mixin media($args...) {
+  @if (length($args) > 1) {
+    @if nth($args, 2) == 'max' {
+      @media only screen and (max-width: nth($args, 1)) {
+        @content;
+      }
+    } @else {
+      @media only screen and (min-width: nth($args, 1)) and (max-width: nth($args, 2)) {
+        @content;
+      }
+    }
+  } @else {
+    @if nth($args, 1) == 'ipads' {
+      @media only screen and (min-device-width: $ipad-min) and (max-device-width: $ipad-max) and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min-device-width: $ipadpro-min) and (max-device-width: $ipadpro-max) and (-webkit-min-device-pixel-ratio: 2) {
+        @content;
+      }
+    } @else {
+      @media only screen and (min-width: nth($args, 1)) {
+        @content;
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ const Artists = ({ data }) => {
   data.map((artist, index) => {
     const artistEl = (
       <div className="artist" key={index}>
-        {artist.name}{" "}
+        {artist.name}
       </div>
     );
     artists.push(artistEl);

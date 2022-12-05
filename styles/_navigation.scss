@@ -1,0 +1,299 @@
+.search-all {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  @include media($tablet) {
+    top: 57px;
+    width: 65.3vw;
+    left: auto;
+  }
+}
+
+.search {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+#form-search {
+  margin: 10px 10px;
+  display: flex;
+  position: relative;
+  color: #767679;
+  justify-content: space-between;
+  width: 100%;
+  @include media($tablet) {
+    max-width: 500px;
+    margin: 20px 10px;
+  }
+  @include media($desktop) {
+    margin: 20px 10px;
+  }
+  img {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 30px;
+    z-index: 199;
+  }
+  label {
+    position: absolute;
+    left: -999px;
+    top: -999px;
+  }
+  input {
+    font-family: $fontFamily;
+    padding: 10px 30px 10px 50px;
+    font-size: 12px;
+    line-height: 0;
+    // letter-spacing: 1px;
+    width: 100%;
+    border: 1px solid $borderGrey;
+    background: white;
+    transition: all 0.15s ease-in-out;
+    position: relative;
+    display: block;
+    color: #767679;
+    border-radius: 30px;
+    @include media($tablet) {
+      width: 300px;
+    }
+    &:hover {
+      border: 1px solid $borderGrey;
+    }
+    &:focus {
+      border: 1px solid $borderGrey;
+      background: #fff;
+    }
+  }
+  button {
+    font-family: $fontFamily;
+    margin-left: 10px;
+    width: 20%;
+    min-width: 100px;
+    background-color: white;
+    border: 1px solid $borderGrey;
+    cursor: pointer;
+    color: #000;
+    border-radius: 30px;
+    &:hover {
+      border: 1px solid $borderGrey;
+    }
+  }
+}
+
+#searchresults p {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 35px 10px 15px;
+  background: white;
+  border: 1px solid $pink;
+  border-left: 5px solid $pink;
+  color: $pink;
+  margin: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#clearSearch {
+  font-size: 12px;
+  text-align: right;
+  margin: 0 5px;
+  display: none;
+  position: relative;
+  pointer-events: pointer;
+
+  &.visible {
+    display: block;
+  }
+  span {
+    position: absolute;
+    top: 19px;
+    right: 15px;
+    font-size: 40px;
+    color: $pink;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+// Navigation Toggles
+
+.sort {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  border-top: 1px solid $borderGrey;
+  height: 80px;
+  padding-bottom: 0px;
+  background-color: white;
+  @include media($tablet) {
+    margin: 0;
+    margin-right: 10px;
+  }
+  > div {
+    cursor: pointer;
+    &.visible .sort-trigger {
+      background-color: $lightPink;
+      color: $pink;
+      &:after {
+        color: $pink;
+      }
+    }
+  }
+  .sort-trigger {
+    display: block;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1px solid transparent;
+    background-color: white;
+    color: #000;
+    width: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 78px;
+    min-width: 75px;
+
+    @include media($desktop) {
+      font-size: 14px;
+      min-width: 80px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    span {
+      display: block;
+      margin-top: 4px;
+      margin-bottom: 12px;
+      @include media($desktop) {
+        margin-bottom: 6px;
+      }
+    }
+    &:before {
+      position: relative;
+      top: 2px;
+      font-size: 14px;
+      margin-right: 6px;
+      @include media($desktop) {
+        font-size: 20px;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.sort-artists .sort-trigger {
+  img {
+    margin: 0 auto;
+    width: 30px;
+    display: block;
+  }
+}
+
+.sort-venues .sort-trigger {
+  img {
+    margin: 0 auto;
+    width: 23px;
+    display: block;
+  }
+}
+
+.sort-date .sort-trigger {
+  img {
+    margin: 0 auto;
+    width: 25px;
+    display: block;
+  }
+}
+.sort-city .sort-trigger {
+  img {
+    margin: 0 auto;
+    width: 23px;
+    display: block;
+  }
+}
+#venue-list,
+#date-list,
+#artist-list,
+#city-list {
+  overflow: scroll;
+  right: 0px;
+  background: white;
+  height: calc(100vh - 80px);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+  padding: 0px 15px 0px 15px;
+  z-index: 8;
+  border-bottom: 1px solid $borderGrey;
+  bottom: calc(-100vh - 80px);
+
+  @include media($tablet) {
+    transition: none;
+    bottom: calc(-100vh - 80px);
+  }
+
+  h2 {
+    padding-top: 25px;
+    text-align: left;
+  }
+
+  > div {
+    padding: 10px 6px;
+    font-size: 14px !important;
+    line-height: 16px;
+    font-weight: 400;
+    color: $black;
+    border-bottom: 1px solid $borderGrey;
+    @include media($tablet) {
+      font-size: 16px !important;
+      line-height: 16px;
+      padding: 10px 20px;
+    }
+    &:hover {
+      background: $lightPink;
+      text-decoration: none;
+    }
+  }
+}
+
+#venue-list.visible,
+#artist-list.visible,
+#city-list.visible,
+#date-list.visible {
+  transition: height 0.25 ease-in;
+  overflow: scroll;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 80px);
+  position: fixed;
+  opacity: 1;
+}
+
+#venue-list > div {
+  // width: 45%;
+  @include media($tablet) {
+    // width: 25%;
+  }
+}

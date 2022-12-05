@@ -1,0 +1,253 @@
+.main-wrap {
+  display: flex;
+  flex-direction: column;
+  @include media($tablet) {
+    padding: 20px;
+    flex-direction: row-reverse;
+    .upcoming-events {
+      width: 65%;
+      padding-bottom: 80px;
+    }
+    .sidebar {
+      width: 35%;
+    }
+  }
+}
+
+.sidebar {
+  padding: 0 10px;
+  @include media($tablet) {
+    padding: 0;
+  }
+}
+
+.sidebar-venues {
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  > div {
+    width: 50%;
+  }
+}
+
+.sidebar-artist {
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 120px;
+
+  > div {
+    width: 33%;
+  }
+}
+
+#eventfeed,
+#musicfeed {
+  padding: 0;
+  padding-bottom: 40px;
+  transition: all 0.25 ease-out;
+  @include media(650px) {
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+  @include media($tablet) {
+    margin-bottom: 20px;
+  }
+  @include media($desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#eventfeed.fixed-navigation {
+  margin-top: 110px;
+}
+
+.single-event {
+  position: relative;
+  transition: all 0.25 ease-out;
+  text-align: left;
+  padding: 20px 10px 20px 10px;
+  margin: 0px 0px;
+  position: relative;
+  background-color: $lightGrey;
+  transition: all 0.15s ease-in-out;
+  position: relative;
+  top: 0;
+  text-align: left;
+  margin-bottom: 10px;
+  display: flex;
+  overflow: hidden;
+  @include media($tablet) {
+    border-radius: 6px;
+    margin-bottom: 0;
+    padding: 20px 20px 20px 20px;
+  }
+  &.hidden {
+    display: none;
+  }
+  a {
+    color: #767679;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+  .event-location {
+    display: none;
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+  }
+  &.view-partial {
+    .event-link a {
+      display: none;
+    }
+    &:before {
+      content: "...";
+      color: $borderGrey;
+      font-size: 40px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  }
+  // &.view-full {
+  height: auto;
+  .event-venue {
+    padding-top: 20px;
+  }
+  .event-location {
+    display: inline-block;
+    opacity: 1;
+    transition: all 0.15s ease-in-out;
+  }
+  .event-link a {
+    display: inline-block;
+  }
+  // }
+}
+
+.event-date {
+  width: 90px;
+  height: 50px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $blue;
+  @include media($tablet) {
+  }
+}
+
+.event-info {
+  width: calc(100% - 100px);
+}
+
+.event-time {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: $blue;
+  @include media($tablet) {
+    padding-bottom: 20px;
+  }
+}
+
+.event-title {
+  font-size: 15px;
+  color: $black;
+  padding-right: 7px;
+}
+
+.event-artist {
+  word-wrap: anywhere;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  padding-bottom: 5px;
+  text-align: left;
+  position: relative;
+  > div {
+    padding-right: 7px;
+  }
+  > div:nth-of-type(even) {
+    color: $orange;
+  }
+  > div:nth-of-type(odd) {
+    color: $pink;
+  }
+  @include media($tablet) {
+    margin-right: 0px;
+    padding-bottom: 5px;
+  }
+}
+
+.artist {
+  display: inline-block;
+  text-align: left;
+}
+
+.event-image {
+  display: none;
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  @include media($tablet) {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.event-venue {
+  display: block;
+  font-size: 15px;
+  line-height: 20px;
+  color: $black;
+}
+
+.event-location {
+  @include media($tablet) {
+    display: block;
+  }
+}
+
+.event-location span {
+  padding-top: 5px;
+  display: block;
+  font-size: 12px;
+  line-height: 14px;
+  a {
+    color: #c1c1c1;
+  }
+}
+
+.event-location img {
+  position: relative;
+  top: 0px;
+  width: 10px;
+  height: 10px;
+  margin-left: 7px;
+}
+
+.event-link a {
+  font-size: 12px;
+  text-decoration: none;
+  border: 1px solid rgb(221, 221, 221);
+  margin-top: 20px;
+  display: inline-block;
+  font-weight: 400;
+  padding: 5px 15px;
+  border-radius: 6px;
+  color: rgb(180, 180, 180);
+  @include media($tablet) {
+    margin-top: 30px;
+  }
+  &:hover {
+    text-decoration: none !important;
+  }
+}

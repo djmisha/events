@@ -1,25 +1,21 @@
-const apikeys = {
-  API_KEY_EDMTRAIN: "47211b0d-26f7-424c-b81c-45613a70f865",
-  API_URL_EDMTRAIN: "https://edmtrain.com/api/events?locationIds=",
-  API_KEY_IPSTACK: "316340baee8e3995e8d261a746a2571a",
-};
+/**
+ * Fetches event from EMD Train
+ * @param {*} id - city or state #id
+ */
 
-const getEvents = async (cityID, locations) => {
-  let data = [];
-  const { API_URL_EDMTRAIN, API_KEY_EDMTRAIN } = apikeys;
-  const url = API_URL_EDMTRAIN + cityID + "&client=" + API_KEY_EDMTRAIN;
+// const getEvents = async (id) => {
+//   const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
+//   const URL = process.env.NEXT_PUBLIC_API_URL_EDMTRAIN;
+//   const PATH = URL + id + "&client=" + KEY;
+//   await fetch(PATH)
+//     .then(function (response) {
+//       response.json().then((res) => {
+//         return res.data;
+//       });
+//     })
+//     .catch(function (error) {
+//       console.error(error);
+//     });
+// };
 
-  await fetch(url)
-    .then(function (response) {
-      response.json().then((res) => {
-        data = res.data;
-        console.log(data);
-        return data;
-      });
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-};
-
-export default getEvents;
+// export default getEvents;
