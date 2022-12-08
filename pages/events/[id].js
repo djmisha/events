@@ -13,7 +13,7 @@ export default function Location({ locationData }) {
   const dataFetchedRef = useRef(false);
 
   useEffect(() => {
-    const getEvents = async () => {
+    const getEventsForLocation = async () => {
       const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
       const URL = process.env.NEXT_PUBLIC_API_URL_EDMTRAIN;
       const PATH = URL + id + "&client=" + KEY;
@@ -31,7 +31,7 @@ export default function Location({ locationData }) {
 
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
-    getEvents();
+    getEventsForLocation();
   }, [id]);
 
   return (
