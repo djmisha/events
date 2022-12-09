@@ -4,6 +4,7 @@ import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
 import EventCard from "../../components/EventCard/EventCard";
 import Image from "next/image";
+import getEventsForLocation from "../../utils/getEventsForLocation";
 
 export default function Location({ locationData }) {
   const { city, state, id } = locationData;
@@ -13,25 +14,9 @@ export default function Location({ locationData }) {
   const dataFetchedRef = useRef(false);
 
   useEffect(() => {
-    const getEventsForLocation = async () => {
-      const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
-      const URL = process.env.NEXT_PUBLIC_API_URL_EDMTRAIN;
-      const PATH = URL + id + "&client=" + KEY;
-      await fetch(PATH)
-        .then(function (response) {
-          response.json().then((res) => {
-            SetEvents(res.data);
-            SetLoading(false);
-          });
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-    };
-
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
-    getEventsForLocation();
+    getEventsForLocation(id, SetEvents, SetLoading);
   }, [id]);
 
   return (
@@ -41,6 +26,9 @@ export default function Location({ locationData }) {
       </Head>
       <h1>Events Near {city || state}</h1>
       <section>
+        {
+          // @todo refactor loader to its own component
+        }
         {loading && (
           <Image
             src="/images/loading.svg"
