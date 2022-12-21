@@ -15,21 +15,24 @@ export const UserLocationService = async () => {
   const locationData = await locationResponse.json();
 
   const { city, region_code: state } = locationData;
+  let id;
 
-  let locationID;
-
-  locations.forEach(function (item) {
-    if (city === item.city) {
-      locationID = item.id;
-      return locationID;
+  locations.forEach(function (location) {
+    if (city === location.city) {
+      id = location.id;
+      return id;
     }
-    if (!locationID && state === item.stateCode) {
-      locationID = item.id;
-      return locationID;
+    if (!id && state === location.stateCode) {
+      id = location.id;
+      return id;
     }
   });
 
-  if (!locationID) locationID = 10; // fallsback to CA
+  if (!id) id = 10; // fallsback to CA
 
-  return locationID;
+  return {
+    city,
+    state,
+    id,
+  };
 };

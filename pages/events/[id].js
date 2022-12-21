@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
 import EventCard from "../../components/EventCard/EventCard";
-import Image from "next/image";
-import getEventsForLocation from "../../utils/getEventsForLocation";
+import getEvents from "../../utils/getEvents";
+import Spinner from "../../components/Spinner/Spinner";
 
 export default function Location({ locationData }) {
   const { city, state, id } = locationData;
@@ -16,7 +16,7 @@ export default function Location({ locationData }) {
   useEffect(() => {
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
-    getEventsForLocation(id, SetEvents, SetLoading);
+    getEvents(id, SetEvents, SetLoading);
   }, [id]);
 
   return (
@@ -26,17 +26,7 @@ export default function Location({ locationData }) {
       </Head>
       <h1>Events Near {city || state}</h1>
       <section>
-        {
-          // @todo refactor loader to its own component
-        }
-        {loading && (
-          <Image
-            src="/images/loading.svg"
-            alt="loading"
-            width={100}
-            height={100}
-          />
-        )}
+        {loading && <Spinner isLoading={loading} />}
         {events &&
           events.map((event, index) => {
             return <EventCard event={event} key={index} />;

@@ -1,0 +1,29 @@
+.spinner {
+  > div {
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .loader {
+    width: 100px;
+    height: 90px;
+    position: relative;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    right: 0%;
+    img {
+      width: 100px;
+      height: 55px;
+    }
+    span {
+      display: block;
+      text-align: center;
+      color: $pink;
+    }
+  }
+}

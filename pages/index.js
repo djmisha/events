@@ -2,10 +2,11 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
 import { getLocations } from "../utils/getLocations";
-import { UserLocationService } from "../utils/getIpAddress";
-import { useEffect, useInsertionEffect, useRef, useState } from "react";
-import getEventsForLocation from "../utils/getEventsForLocation";
+import { UserLocationService } from "../utils/getUserLocationjs";
+import { useEffect, useRef, useState } from "react";
+import getEvents from "../utils/getEvents";
 import EventCard from "../components/EventCard/EventCard";
+import Spinner from "../components/Spinner/Spinner";
 
 export async function getStaticProps() {
   const locations = getLocations();
@@ -17,30 +18,34 @@ export async function getStaticProps() {
 }
 
 export default function Home({ locations }) {
-  const [locationID, SetLocationID] = useState();
+  const [userLocation, SetUserLocation] = useState();
   const [events, SetEvents] = useState([]);
   const [loading, SetLoading] = useState(true);
   const dataLocationFetchedRef = useRef(false);
 
   useEffect(() => {
-    const getLocationID = async () => {
+    const getUserLocation = async () => {
       const id = await UserLocationService();
-      SetLocationID(id);
+      SetUserLocation(id);
     };
     if (dataLocationFetchedRef.current) return;
     dataLocationFetchedRef.current = true;
-    getLocationID();
+    getUserLocation();
   }, []);
 
-  useInsertionEffect(() => {
-    if (locationID) getEventsForLocation(locationID, SetEvents, SetLoading);
-  }, [locationID]);
+  useEffect(() => {
+    if (userLocation) getEvents(userLocation.id, SetEvents, SetLoading);
+  }, [userLocation]);
 
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      {loading && <Spinner isLoading={loading} text="Finding location" />}
+      {userLocation && (
+        <h1>Events in {userLocation.city || userLocation.state}</h1>
+      )}
       <section>
         {events &&
           !loading &&
