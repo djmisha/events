@@ -5,6 +5,7 @@ import { getLocationIds, getLocationData } from "../../utils/getLocations";
 import EventCard from "../../components/EventCard/EventCard";
 import getEvents from "../../utils/getEvents";
 import Spinner from "../../components/Spinner/Spinner";
+import NavigationBar from "../../components/NavigationBar/NavigataionBar";
 
 export default function Location({ locationData }) {
   const { city, state, id } = locationData;
@@ -24,7 +25,7 @@ export default function Location({ locationData }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <h1>Events Near {city || state}</h1>
+      <h1>Music Events Near {city ? `${city}, ${state}` : state}</h1>
       <section>
         {loading && <Spinner isLoading={loading} />}
         {events &&
@@ -32,6 +33,7 @@ export default function Location({ locationData }) {
             return <EventCard event={event} key={index} />;
           })}
       </section>
+      {events && <NavigationBar data={events} />}
     </Layout>
   );
 }

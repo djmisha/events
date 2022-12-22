@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Artists from "../Artists/Artists";
 import setDates from "../../utils/setDates";
 import Image from "next/image";
@@ -7,12 +7,18 @@ export const EventCard = ({ event }) => {
   const { date, artistList, name, venue, link } = event;
   const { name: venueName, address } = venue;
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
+  const [isOpen, SetIsOpen] = useState(false);
+
+  const handleClick = () => {
+    SetIsOpen(!isOpen);
+  };
 
   return (
     <div
-      className="single-event"
+      className={`single-event ${isOpen ? "view-full" : "view-partial"} `}
       itemScope=""
       itemType="http://schema.org/Event"
+      onClick={handleClick}
     >
       <div className="event-date" itemProp="startDate" content={daySchema}>
         <div>{dayOfWeek}</div>
@@ -47,7 +53,7 @@ export const EventCard = ({ event }) => {
           {address && (
             <a
               rel="noreferrer"
-              href={`https://www.google.com/maps/search/${address}`}
+              href={`https://www.google.com/maps/search/${venueName}${address}`}
               target="_blank"
             >
               <span>

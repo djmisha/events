@@ -112,20 +112,20 @@
       top: 20px;
     }
   }
-  // &.view-full {
-  height: auto;
-  .event-venue {
-    padding-top: 20px;
+  &.view-full {
+    height: auto;
+    .event-venue {
+      padding-top: 20px;
+    }
+    .event-location {
+      display: inline-block;
+      opacity: 1;
+      transition: all 0.15s ease-in-out;
+    }
+    .event-link a {
+      display: inline-block;
+    }
   }
-  .event-location {
-    display: inline-block;
-    opacity: 1;
-    transition: all 0.15s ease-in-out;
-  }
-  .event-link a {
-    display: inline-block;
-  }
-  // }
 }
 
 .event-date {
