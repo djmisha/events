@@ -1,13 +1,11 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useState } from "react";
+import setDates from "../../utils/setDates";
+import { removeDuplicates } from "../../utils/removeDuplicates";
+import { getLocations } from "../../utils/getLocations";
+// import SearchTerm from "../../utils/searchHook";
 
-/* Remove Duplicates Helper */
-// move to diff file
-export const removeDuplicates = (array) => {
-  return array.filter((a, b) => array.indexOf(a) === b);
-};
-
-const NavItem = ({ image, text, title, navItems }) => {
+const NavItem = ({ image, text, title, navItems, handleSort, SearchTerm }) => {
   const [isOpen, SetIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -23,22 +21,44 @@ const NavItem = ({ image, text, title, navItems }) => {
         <Image width={23} height={23} src={image} alt={text} />
         <span>{text}</span>
       </div>
-      <MenuList navItems={navItems} text={text} isOpen={isOpen} title={title} />
+      <MenuList
+        navItems={navItems}
+        text={text}
+        isOpen={isOpen}
+        title={title}
+        handleSort={handleSort}
+        SearchTerm={SearchTerm}
+      />
     </div>
   );
 };
 
-const MenuList = ({ navItems, text, title, isOpen }) => {
-  const handleClick = () => {
-    // NEEDS HANDLE SORT Function
+const MenuList = ({
+  navItems,
+  text,
+  title,
+  isOpen,
+  handleSort,
+  SearchTerm,
+}) => {
+  const [term, SetTerm] = useState();
+
+  // useEffect(() => {
+  //   if (term) SearchTerm(term);
+  // }, [term]);
+
+  const handleClick = (e) => {
+    // console.log(e.target.innerText);
+    // SetTerm(e.target.innerText);
+    SearchTerm(e.target.innerText);
   };
 
   return (
     <div id={`${text}-list`} className={isOpen ? "visible" : ""}>
       <h2>{title}</h2>
-      {navItems.map((item) => {
+      {navItems.map((item, index) => {
         return (
-          <div key={item} onClick={handleClick}>
+          <div key={index + item} onClick={(e) => handleClick(e)}>
             {item}
           </div>
         );
@@ -47,9 +67,21 @@ const MenuList = ({ navItems, text, title, isOpen }) => {
   );
 };
 
-export const NavigationBar = ({ data }) => {
+export const NavigationBar = ({
+  data,
+  locationData,
+  handleSort,
+  SearchTerm,
+}) => {
   const venues = removeDuplicates(data.map((event) => event.venue.name));
-  const dates = removeDuplicates(data.map((event) => event.date));
+  const dates = removeDuplicates(
+    data.map((event) => setDates(event.date).dayMonthYear)
+  );
+
+  let locations = getLocations();
+  locations = locations.map((loc) => {
+    return loc.city || loc.state;
+  });
 
   let allArtists = [];
   data.map((event) => {
@@ -67,17 +99,23 @@ export const NavigationBar = ({ data }) => {
           text="venue"
           navItems={venues}
           title="Venues"
+          handleSort={handleSort}
+          SearchTerm={SearchTerm}
         />
         <NavItem
           image="/images/icon-dj.svg"
           text="artist"
           navItems={allArtists}
           title="DJ's and Artists"
+          handleSort={handleSort}
+          SearchTerm={SearchTerm}
         />
         <NavItem
           image="/images/icon-cal.svg"
           text="date"
           title="Upcoming Dates"
+          handleSort={handleSort}
+          SearchTerm={SearchTerm}
           navItems={dates}
         />
         {
@@ -87,7 +125,9 @@ export const NavigationBar = ({ data }) => {
           image="/images/icon-map.svg"
           text="city"
           title="Select Location"
-          navItems={venues}
+          handleSort={handleSort}
+          SearchTerm={SearchTerm}
+          navItems={locations}
         />
       </section>
     </div>

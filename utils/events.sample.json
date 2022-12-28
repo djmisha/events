@@ -1,0 +1,3762 @@
+[
+  {
+    "id":231551,
+    "link":"https://edmtrain.com/san-diego-ca/kiss-and-tell-tour-sidepiece-231551?utm_source=90&utm_medium=api",
+    "name":"Kiss And Tell Tour",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-29",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-10-04T22:04:55Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":21244,
+          "name":"SIDEPIECE",
+          "link":"https://edmtrain.com/tours/sidepiece-21244?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":237948,
+    "link":"https://edmtrain.com/san-diego-ca/anja-schneider-237948?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-29",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-18T12:51:06Z",
+    "venue":{
+        "id":3328,
+        "name":"Camino Riviera",
+        "location":"San Diego, CA",
+        "address":"2400 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.729,
+        "longitude":-117.171
+    },
+    "artistList":[
+        {
+          "id":1864,
+          "name":"Anja Schneider",
+          "link":"https://edmtrain.com/tours/anja-schneider-1864?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":232311,
+    "link":"https://edmtrain.com/san-diego-ca/omfg-nye-232311?utm_source=90&utm_medium=api",
+    "name":"OMFG! NYE",
+    "ages":null,
+    "festivalInd":true,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-30",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-10-10T15:38:51Z",
+    "venue":{
+        "id":1133,
+        "name":"Pechanga Arena San Diego",
+        "location":"San Diego, CA",
+        "address":"3500 Sports Arena Blvd, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.755,
+        "longitude":-117.212
+    },
+    "artistList":[
+        {
+          "id":492,
+          "name":"Porter Robinson",
+          "link":"https://edmtrain.com/tours/porter-robinson-492?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":20794,
+          "name":"2TD",
+          "link":"https://edmtrain.com/tours/2td-20794?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":9113,
+          "name":"ACRAZE",
+          "link":"https://edmtrain.com/tours/acraze-9113?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":1865,
+          "name":"Autograf",
+          "link":"https://edmtrain.com/tours/autograf-1865?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":2321,
+          "name":"Said The Sky",
+          "link":"https://edmtrain.com/tours/said-the-sky-2321?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":5205,
+          "name":"San Holo",
+          "link":"https://edmtrain.com/tours/san-holo-5205?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":232646,
+    "link":"https://edmtrain.com/san-diego-ca/green-velvet-232646?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-30",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-10-12T19:12:44Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":295,
+          "name":"Green Velvet",
+          "link":"https://edmtrain.com/tours/green-velvet-295?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":238563,
+    "link":"https://edmtrain.com/san-diego-ca/breathe-carolina-238563?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-30",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-24T21:12:00Z",
+    "venue":{
+        "id":1812,
+        "name":"Parq",
+        "location":"San Diego, CA",
+        "address":"615 Broadway, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.716,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":2211,
+          "name":"Breathe Carolina",
+          "link":"https://edmtrain.com/tours/breathe-carolina-2211?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":238988,
+    "link":"https://edmtrain.com/san-diego-ca/new-years-bender-layton-giordani-238988?utm_source=90&utm_medium=api",
+    "name":"New Year's Bender",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-30",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-30T18:35:47Z",
+    "venue":{
+        "id":1122,
+        "name":"Bang Bang",
+        "location":"San Diego, CA",
+        "address":"526 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.712,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":942,
+          "name":"Layton Giordani",
+          "link":"https://edmtrain.com/tours/layton-giordani-942?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":25386,
+          "name":"Kari Duran",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":240445,
+    "link":"https://edmtrain.com/san-diego-ca/fngrs-crssd-x-proper-nye-nyd-present-colyn-240445?utm_source=90&utm_medium=api",
+    "name":"FNGRS CRSSD x PROPER NYE/NYD Present",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-30",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-10T01:42:23Z",
+    "venue":{
+        "id":1508,
+        "name":"Spin Nightclub",
+        "location":"San Diego, CA",
+        "address":"2028 Hancock St, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.744,
+        "longitude":-117.188
+    },
+    "artistList":[
+        {
+          "id":32771,
+          "name":"Colyn",
+          "link":"https://edmtrain.com/tours/colyn-32771?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":228293,
+    "link":"https://edmtrain.com/san-diego-ca/beats-antique-red-giant-project-228293?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-09-14T21:29:37Z",
+    "venue":{
+        "id":2901,
+        "name":"Music Box",
+        "location":"San Diego, CA",
+        "address":"1337 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.719,
+        "longitude":-117.168
+    },
+    "artistList":[
+        {
+          "id":112,
+          "name":"Beats Antique",
+          "link":"https://edmtrain.com/tours/beats-antique-112?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":29271,
+          "name":"Red Giant Project",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":230851,
+    "link":"https://edmtrain.com/san-diego-ca/crssd-proper-nye-nyd-230851?utm_source=90&utm_medium=api",
+    "name":"CRSSD Proper NYE/NYD",
+    "ages":null,
+    "festivalInd":true,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-09-29T20:42:43Z",
+    "venue":{
+        "id":2656,
+        "name":"Petco Park",
+        "location":"San Diego, CA",
+        "address":"100 Park Blvd, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.707,
+        "longitude":-117.156
+    },
+    "artistList":[
+        {
+          "id":357,
+          "name":"Kaskade",
+          "link":"https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":924,
+          "name":"Lane 8",
+          "link":"https://edmtrain.com/tours/lane-8-924?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":8140,
+          "name":"Fisher",
+          "link":"https://edmtrain.com/tours/fisher-8140?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":7214,
+          "name":"Cristoph",
+          "link":"https://edmtrain.com/tours/cristoph-7214?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":13417,
+          "name":"John Summit",
+          "link":"https://edmtrain.com/tours/john-summit-13417?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":6408,
+          "name":"Dombresky",
+          "link":"https://edmtrain.com/tours/dombresky-6408?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":232312,
+    "link":"https://edmtrain.com/san-diego-ca/omfg-nye-232312?utm_source=90&utm_medium=api",
+    "name":"OMFG! NYE",
+    "ages":null,
+    "festivalInd":true,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-10-10T15:38:51Z",
+    "venue":{
+        "id":1133,
+        "name":"Pechanga Arena San Diego",
+        "location":"San Diego, CA",
+        "address":"3500 Sports Arena Blvd, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.755,
+        "longitude":-117.212
+    },
+    "artistList":[
+        {
+          "id":2584,
+          "name":"Gryffin",
+          "link":"https://edmtrain.com/tours/gryffin-2584?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":17235,
+          "name":"ISOxo",
+          "link":"https://edmtrain.com/tours/isoxo-17235?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":4025,
+          "name":"JSTJR",
+          "link":"https://edmtrain.com/tours/jstjr-4025?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":36859,
+          "name":"Mayko",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":7258,
+          "name":"Nurko",
+          "link":"https://edmtrain.com/tours/nurko-7258?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":509,
+          "name":"RL Grime",
+          "link":"https://edmtrain.com/tours/rl-grime-509?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":7578,
+          "name":"Ship Wrek",
+          "link":"https://edmtrain.com/tours/ship-wrek-7578?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":13673,
+          "name":"TSU NAMI",
+          "link":"https://edmtrain.com/tours/tsu-nami-13673?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":232856,
+    "link":"https://edmtrain.com/san-diego-ca/zedd-232856?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-10-14T01:26:09Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":637,
+          "name":"Zedd",
+          "link":"https://edmtrain.com/tours/zedd-637?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":233004,
+    "link":"https://edmtrain.com/san-diego-ca/shrek-rave-233004?utm_source=90&utm_medium=api",
+    "name":"Shrek Rave",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-10-15T00:42:12Z",
+    "venue":{
+        "id":1111,
+        "name":"House of Blues San Diego",
+        "location":"San Diego, CA",
+        "address":"1055 Fifth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.716,
+        "longitude":-117.16
+    },
+    "artistList":[
+        
+    ]
+  },
+  {
+    "id":235292,
+    "link":"https://edmtrain.com/san-diego-ca/bob-moses-235292?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-02T23:36:34Z",
+    "venue":{
+        "id":11478,
+        "name":"Bloom Nightclub San Diego",
+        "location":"San Diego, CA",
+        "address":"919 Fourth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.715,
+        "longitude":-117.161
+    },
+    "artistList":[
+        {
+          "id":2657,
+          "name":"Bob Moses",
+          "link":"https://edmtrain.com/tours/bob-moses-2657?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":235875,
+    "link":"https://edmtrain.com/san-diego-ca/justin-credible-235875?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-06T06:15:04Z",
+    "venue":{
+        "id":1812,
+        "name":"Parq",
+        "location":"San Diego, CA",
+        "address":"615 Broadway, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.716,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":3392,
+          "name":"Justin Credible",
+          "link":"https://edmtrain.com/tours/justin-credible-3392?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":237182,
+    "link":"https://edmtrain.com/san-diego-ca/derrick-carter-tube-and-berger-237182?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-15T10:47:39Z",
+    "venue":{
+        "id":6135,
+        "name":"Coasterra",
+        "location":"San Diego, CA",
+        "address":"880 Harbor Island Dr, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.724,
+        "longitude":-117.189
+    },
+    "artistList":[
+        {
+          "id":2154,
+          "name":"Derrick Carter",
+          "link":"https://edmtrain.com/tours/derrick-carter-2154?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":2753,
+          "name":"Tube & Berger",
+          "link":"https://edmtrain.com/tours/tube-and-berger-2753?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":238294,
+    "link":"https://edmtrain.com/san-diego-ca/insomniac-presents-zhu-blacklizt-set-238294?utm_source=90&utm_medium=api",
+    "name":"Insomniac Presents",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-22T01:22:19Z",
+    "venue":{
+        "id":9887,
+        "name":"Secret Location San Diego",
+        "location":"San Diego, CA",
+        "address":"San Diego, CA",
+        "state":"California",
+        "latitude":32.716,
+        "longitude":-117.161
+    },
+    "artistList":[
+        {
+          "id":19615,
+          "name":"ZHU (Blacklizt Set)",
+          "link":"https://edmtrain.com/tours/zhu-blacklizt-set-19615?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":238989,
+    "link":"https://edmtrain.com/san-diego-ca/new-years-bender-carl-craig-238989?utm_source=90&utm_medium=api",
+    "name":"New Year's Bender",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-30T18:36:10Z",
+    "venue":{
+        "id":1122,
+        "name":"Bang Bang",
+        "location":"San Diego, CA",
+        "address":"526 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.712,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":744,
+          "name":"Carl Craig",
+          "link":"https://edmtrain.com/tours/carl-craig-744?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":2016,
+          "name":"Harvard Bass",
+          "link":"https://edmtrain.com/tours/harvard-bass-2016?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239106,
+    "link":"https://edmtrain.com/san-diego-ca/sd-warehouse-experience-feat-metrika-239106?utm_source=90&utm_medium=api",
+    "name":"SD Warehouse Experience feat:",
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-05T05:54:17Z",
+    "venue":{
+        "id":11075,
+        "name":"San Diego Warehouse",
+        "location":"San Diego, CA",
+        "address":"San Diego, CA, USA",
+        "state":"California",
+        "latitude":32.716,
+        "longitude":-117.161
+    },
+    "artistList":[
+        {
+          "id":3854,
+          "name":"Métrika",
+          "link":"https://edmtrain.com/tours/metrika-3854?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":45705,
+          "name":"Balcazar",
+          "link":"https://edmtrain.com/tours/balcazar-45705?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":40746,
+          "name":"Nyto",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":45706,
+          "name":"armanino",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":45707,
+          "name":"MAIKM",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":240446,
+    "link":"https://edmtrain.com/san-diego-ca/fngrs-crssd-x-proper-nye-nyd-present-hot-since-82-240446?utm_source=90&utm_medium=api",
+    "name":"FNGRS CRSSD x PROPER NYE/NYD Present",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-10T01:43:10Z",
+    "venue":{
+        "id":1508,
+        "name":"Spin Nightclub",
+        "location":"San Diego, CA",
+        "address":"2028 Hancock St, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.744,
+        "longitude":-117.188
+    },
+    "artistList":[
+        {
+          "id":318,
+          "name":"Hot Since 82",
+          "link":"https://edmtrain.com/tours/hot-since-82-318?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":5132,
+          "name":"Will Clarke",
+          "link":"https://edmtrain.com/tours/will-clarke-5132?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":23158,
+          "name":"Maxinne",
+          "link":"https://edmtrain.com/tours/maxinne-23158?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242231,
+    "link":"https://edmtrain.com/san-diego-ca/nye-2023-indigo-valet-242231?utm_source=90&utm_medium=api",
+    "name":"NYE 2023",
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-22T17:03:55Z",
+    "venue":{
+        "id":14080,
+        "name":"Rooftop By STK",
+        "location":"San Diego, CA",
+        "address":"600 F St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.714,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":46830,
+          "name":"Indigo Valet",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":46831,
+          "name":"DJ Greed",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242320,
+    "link":"https://edmtrain.com/live-streams/dj-maj-nye-live-stream-dj-maj-242320?utm_source=90&utm_medium=api",
+    "name":"DJ MAJ NYE LIVE STREAM",
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":true,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":"2023-01-01T01:00:00Z",
+    "endTime":"2023-01-01T03:30:00Z",
+    "createdDate":"2022-12-22T22:55:06Z",
+    "venue":{
+        "id":8784,
+        "name":"Live Stream",
+        "location":"Virtual",
+        "address":null,
+        "state":null,
+        "latitude":null,
+        "longitude":null
+    },
+    "artistList":[
+        {
+          "id":46904,
+          "name":"DJ MAJ",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242622,
+    "link":"https://edmtrain.com/live-streams/avian-invasion-242622?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":true,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2022-12-31",
+    "startTime":"2023-01-01T04:00:00Z",
+    "endTime":"2023-01-01T09:00:00Z",
+    "createdDate":"2022-12-26T14:56:39Z",
+    "venue":{
+        "id":8784,
+        "name":"Live Stream",
+        "location":"Virtual",
+        "address":null,
+        "state":null,
+        "latitude":null,
+        "longitude":null
+    },
+    "artistList":[
+        {
+          "id":11063,
+          "name":"Avian Invasion",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":230852,
+    "link":"https://edmtrain.com/san-diego-ca/crssd-proper-nye-nyd-230852?utm_source=90&utm_medium=api",
+    "name":"CRSSD Proper NYE/NYD",
+    "ages":null,
+    "festivalInd":true,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-01",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-09-29T20:42:43Z",
+    "venue":{
+        "id":2656,
+        "name":"Petco Park",
+        "location":"San Diego, CA",
+        "address":"100 Park Blvd, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.707,
+        "longitude":-117.156
+    },
+    "artistList":[
+        {
+          "id":357,
+          "name":"Kaskade",
+          "link":"https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":5377,
+          "name":"Sofi Tukker",
+          "link":"https://edmtrain.com/tours/sofi-tukker-5377?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":8140,
+          "name":"Fisher",
+          "link":"https://edmtrain.com/tours/fisher-8140?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":238990,
+    "link":"https://edmtrain.com/san-diego-ca/new-years-day-sunrise-session-tomi-and-kesh-238990?utm_source=90&utm_medium=api",
+    "name":"New Year's Day Sunrise Session",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-01",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-30T18:37:30Z",
+    "venue":{
+        "id":1122,
+        "name":"Bang Bang",
+        "location":"San Diego, CA",
+        "address":"526 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.712,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":23602,
+          "name":"Tomi & Kesh",
+          "link":"https://edmtrain.com/tours/tomi-and-kesh-23602?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":25375,
+          "name":"Swingers",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":45626,
+          "name":"Momento 94",
+          "link":null,
+          "b2bInd":true
+        },
+        {
+          "id":25423,
+          "name":"Mad Waves",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":46759,
+          "name":"Yoon Takeover",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":28628,
+          "name":"Adam Rose",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":47015,
+          "name":"Hunter Foshee",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":28857,
+          "name":"Kieran Ishimaru",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":30204,
+          "name":"Travis Dagz",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239052,
+    "link":"https://edmtrain.com/san-diego-ca/love-machine-nyd-jimi-jules-239052?utm_source=90&utm_medium=api",
+    "name":"Love Machine NYD",
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-01",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-02T02:32:11Z",
+    "venue":{
+        "id":10163,
+        "name":"Open Air San Diego",
+        "location":"San Diego, CA",
+        "address":"San Diego, CA, USA",
+        "state":"California",
+        "latitude":32.716,
+        "longitude":-117.161
+    },
+    "artistList":[
+        {
+          "id":20306,
+          "name":"Jimi Jules",
+          "link":"https://edmtrain.com/tours/jimi-jules-20306?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":1992,
+          "name":"Tiefschwarz",
+          "link":"https://edmtrain.com/tours/tiefschwarz-1992?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239155,
+    "link":"https://edmtrain.com/san-diego-ca/ardalan-option4-239155?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-01",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-06T23:00:25Z",
+    "venue":{
+        "id":2046,
+        "name":"Hornblower San Diego",
+        "location":"San Diego, CA",
+        "address":"1800 N Harbor Dr, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.724,
+        "longitude":-117.173
+    },
+    "artistList":[
+        {
+          "id":1872,
+          "name":"Ardalan",
+          "link":"https://edmtrain.com/tours/ardalan-1872?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":909,
+          "name":"Option4",
+          "link":"https://edmtrain.com/tours/option4-909?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239487,
+    "link":"https://edmtrain.com/san-diego-ca/adventure-club-239487?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-01",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-07T04:28:52Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":64,
+          "name":"Adventure Club",
+          "link":"https://edmtrain.com/tours/adventure-club-64?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":240447,
+    "link":"https://edmtrain.com/san-diego-ca/fngrs-crssd-x-proper-nye-nyd-present-eli-brown-240447?utm_source=90&utm_medium=api",
+    "name":"FNGRS CRSSD x PROPER NYE/NYD Present",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-01",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-10T01:43:27Z",
+    "venue":{
+        "id":1508,
+        "name":"Spin Nightclub",
+        "location":"San Diego, CA",
+        "address":"2028 Hancock St, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.744,
+        "longitude":-117.188
+    },
+    "artistList":[
+        {
+          "id":7606,
+          "name":"Eli Brown",
+          "link":"https://edmtrain.com/tours/eli-brown-7606?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":236205,
+    "link":"https://edmtrain.com/san-diego-ca/bear-grillz-236205?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-06",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-08T21:53:14Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":1980,
+          "name":"Bear Grillz",
+          "link":"https://edmtrain.com/tours/bear-grillz-1980?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":241886,
+    "link":"https://edmtrain.com/san-diego-ca/hotfire-241886?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-07",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-20T01:26:07Z",
+    "venue":{
+        "id":11478,
+        "name":"Bloom Nightclub San Diego",
+        "location":"San Diego, CA",
+        "address":"919 Fourth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.715,
+        "longitude":-117.161
+    },
+    "artistList":[
+        {
+          "id":5687,
+          "name":"Hotfire",
+          "link":"https://edmtrain.com/tours/hotfire-5687?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":233921,
+    "link":"https://edmtrain.com/san-diego-ca/one-more-time-a-tribute-to-daft-punk-233921?utm_source=90&utm_medium=api",
+    "name":"One More Time (A Tribute To Daft Punk)",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-13",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-10-22T00:56:34Z",
+    "venue":{
+        "id":2901,
+        "name":"Music Box",
+        "location":"San Diego, CA",
+        "address":"1337 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.719,
+        "longitude":-117.168
+    },
+    "artistList":[
+        
+    ]
+  },
+  {
+    "id":237332,
+    "link":"https://edmtrain.com/san-diego-ca/trivecta-237332?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-13",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-16T17:46:56Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":10606,
+          "name":"Trivecta",
+          "link":"https://edmtrain.com/tours/trivecta-10606?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239867,
+    "link":"https://edmtrain.com/san-diego-ca/sd-union-makoto-239867?utm_source=90&utm_medium=api",
+    "name":"SD Union",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-13",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-08T00:58:50Z",
+    "venue":{
+        "id":1508,
+        "name":"Spin Nightclub",
+        "location":"San Diego, CA",
+        "address":"2028 Hancock St, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.744,
+        "longitude":-117.188
+    },
+    "artistList":[
+        {
+          "id":7935,
+          "name":"Makoto",
+          "link":"https://edmtrain.com/tours/makoto-7935?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":35639,
+          "name":"Degs",
+          "link":"https://edmtrain.com/tours/degs-35639?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":241007,
+    "link":"https://edmtrain.com/san-diego-ca/imanbek-241007?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-13",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-14T01:22:06Z",
+    "venue":{
+        "id":1812,
+        "name":"Parq",
+        "location":"San Diego, CA",
+        "address":"615 Broadway, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.716,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":25807,
+          "name":"Imanbek",
+          "link":"https://edmtrain.com/tours/imanbek-25807?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242321,
+    "link":"https://edmtrain.com/san-diego-ca/omnom-declay-242321?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-13",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-23T02:05:22Z",
+    "venue":{
+        "id":1122,
+        "name":"Bang Bang",
+        "location":"San Diego, CA",
+        "address":"526 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.712,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":8058,
+          "name":"OMNOM",
+          "link":"https://edmtrain.com/tours/omnom-8058?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":40077,
+          "name":"Declay",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":230197,
+    "link":"https://edmtrain.com/san-diego-ca/subtronics-getter-230197?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"18+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-14",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-09-27T17:40:31Z",
+    "venue":{
+        "id":1133,
+        "name":"Pechanga Arena San Diego",
+        "location":"San Diego, CA",
+        "address":"3500 Sports Arena Blvd, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.755,
+        "longitude":-117.212
+    },
+    "artistList":[
+        {
+          "id":6139,
+          "name":"Subtronics",
+          "link":"https://edmtrain.com/tours/subtronics-6139?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":1044,
+          "name":"Getter",
+          "link":"https://edmtrain.com/tours/getter-1044?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":18527,
+          "name":"Dimension",
+          "link":"https://edmtrain.com/tours/dimension-18527?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":7614,
+          "name":"UBUR",
+          "link":"https://edmtrain.com/tours/ubur-7614?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":236567,
+    "link":"https://edmtrain.com/san-diego-ca/cash-cash-236567?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-14",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-10T20:52:24Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":155,
+          "name":"Cash Cash",
+          "link":"https://edmtrain.com/tours/cash-cash-155?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239868,
+    "link":"https://edmtrain.com/san-diego-ca/eprom-239868?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-14",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-08T00:59:08Z",
+    "venue":{
+        "id":1508,
+        "name":"Spin Nightclub",
+        "location":"San Diego, CA",
+        "address":"2028 Hancock St, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.744,
+        "longitude":-117.188
+    },
+    "artistList":[
+        {
+          "id":5352,
+          "name":"Eprom",
+          "link":"https://edmtrain.com/tours/eprom-5352?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":241476,
+    "link":"https://edmtrain.com/san-diego-ca/freak-on-241476?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-14",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-16T01:18:53Z",
+    "venue":{
+        "id":11478,
+        "name":"Bloom Nightclub San Diego",
+        "location":"San Diego, CA",
+        "address":"919 Fourth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.715,
+        "longitude":-117.161
+    },
+    "artistList":[
+        {
+          "id":14267,
+          "name":"FREAK ON",
+          "link":"https://edmtrain.com/tours/freak-on-14267?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242322,
+    "link":"https://edmtrain.com/san-diego-ca/halo-varga-adam-rose-242322?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-14",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-23T02:06:14Z",
+    "venue":{
+        "id":1122,
+        "name":"Bang Bang",
+        "location":"San Diego, CA",
+        "address":"526 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.712,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":6217,
+          "name":"Halo Varga",
+          "link":"https://edmtrain.com/tours/halo-varga-6217?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":28628,
+          "name":"Adam Rose",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":232971,
+    "link":"https://edmtrain.com/san-diego-ca/robag-wruhme-232971?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-19",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-10-15T00:25:11Z",
+    "venue":{
+        "id":3328,
+        "name":"Camino Riviera",
+        "location":"San Diego, CA",
+        "address":"2400 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.729,
+        "longitude":-117.171
+    },
+    "artistList":[
+        {
+          "id":12381,
+          "name":"Robag Wruhme",
+          "link":"https://edmtrain.com/tours/robag-wruhme-12381?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":241985,
+    "link":"https://edmtrain.com/san-diego-ca/huerta-dylan-payne-241985?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-19",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-20T22:41:40Z",
+    "venue":{
+        "id":1122,
+        "name":"Bang Bang",
+        "location":"San Diego, CA",
+        "address":"526 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.712,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":14325,
+          "name":"Huerta",
+          "link":"https://edmtrain.com/tours/huerta-14325?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":43509,
+          "name":"Dylan Payne",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":241205,
+    "link":"https://edmtrain.com/san-diego-ca/piero-pirupa-241205?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-20",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-15T02:31:18Z",
+    "venue":{
+        "id":11478,
+        "name":"Bloom Nightclub San Diego",
+        "location":"San Diego, CA",
+        "address":"919 Fourth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.715,
+        "longitude":-117.161
+    },
+    "artistList":[
+        {
+          "id":917,
+          "name":"Piero Pirupa",
+          "link":"https://edmtrain.com/tours/piero-pirupa-917?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242048,
+    "link":"https://edmtrain.com/san-diego-ca/joyryde-242048?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-20",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-21T01:10:49Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":6368,
+          "name":"JOYRYDE",
+          "link":"https://edmtrain.com/tours/joyryde-6368?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242323,
+    "link":"https://edmtrain.com/san-diego-ca/gome-live-jesusdapnk-242323?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-20",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-23T02:08:31Z",
+    "venue":{
+        "id":1122,
+        "name":"Bang Bang",
+        "location":"San Diego, CA",
+        "address":"526 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.712,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":46905,
+          "name":"Gome Live",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":17180,
+          "name":"Jesusdapnk",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":235066,
+    "link":"https://edmtrain.com/san-diego-ca/shipwrecks-house-music-fest-235066?utm_source=90&utm_medium=api",
+    "name":"Shipwrecks House Music Fest",
+    "ages":"21+",
+    "festivalInd":true,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-21",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-01T02:01:13Z",
+    "venue":{
+        "id":2435,
+        "name":"Quartyard",
+        "location":"San Diego, CA",
+        "address":"1301 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.711,
+        "longitude":-117.153
+    },
+    "artistList":[
+        {
+          "id":5496,
+          "name":"Drezo",
+          "link":"https://edmtrain.com/tours/drezo-5496?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":22811,
+          "name":"Fetish",
+          "link":"https://edmtrain.com/tours/fetish-22811?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":26807,
+          "name":"Docta Botti",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":45376,
+          "name":"LRRB",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":30716,
+          "name":"Ufberg",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":20139,
+          "name":"BAKR",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":45377,
+          "name":"Edris Omar",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":37860,
+          "name":"Branthedon",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":12958,
+          "name":"Ready Or Not",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239230,
+    "link":"https://edmtrain.com/san-diego-ca/sage-armstrong-239230?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-21",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-07T01:30:07Z",
+    "venue":{
+        "id":11478,
+        "name":"Bloom Nightclub San Diego",
+        "location":"San Diego, CA",
+        "address":"919 Fourth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.715,
+        "longitude":-117.161
+    },
+    "artistList":[
+        {
+          "id":5844,
+          "name":"Sage Armstrong",
+          "link":"https://edmtrain.com/tours/sage-armstrong-5844?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239488,
+    "link":"https://edmtrain.com/san-diego-ca/phantogram-239488?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-21",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-07T04:28:53Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":1616,
+          "name":"Phantogram",
+          "link":"https://edmtrain.com/tours/phantogram-1616?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":241008,
+    "link":"https://edmtrain.com/san-diego-ca/lil-jon-241008?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-21",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-14T01:22:08Z",
+    "venue":{
+        "id":1812,
+        "name":"Parq",
+        "location":"San Diego, CA",
+        "address":"615 Broadway, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.716,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":992,
+          "name":"Lil Jon",
+          "link":"https://edmtrain.com/tours/lil-jon-992?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242324,
+    "link":"https://edmtrain.com/san-diego-ca/daniel-orpi-kale-242324?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-21",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-23T02:09:56Z",
+    "venue":{
+        "id":1122,
+        "name":"Bang Bang",
+        "location":"San Diego, CA",
+        "address":"526 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.712,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":26683,
+          "name":"Daniel Orpi",
+          "link":"https://edmtrain.com/tours/daniel-orpi-26683?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":26726,
+          "name":"Kale",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":235652,
+    "link":"https://edmtrain.com/san-diego-ca/monkey-safari-235652?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-22",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-04T09:51:24Z",
+    "venue":{
+        "id":3328,
+        "name":"Camino Riviera",
+        "location":"San Diego, CA",
+        "address":"2400 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.729,
+        "longitude":-117.171
+    },
+    "artistList":[
+        {
+          "id":2156,
+          "name":"Monkey Safari",
+          "link":"https://edmtrain.com/tours/monkey-safari-2156?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":228942,
+    "link":"https://edmtrain.com/san-diego-ca/taches-228942?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-26",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-09-18T06:46:14Z",
+    "venue":{
+        "id":3328,
+        "name":"Camino Riviera",
+        "location":"San Diego, CA",
+        "address":"2400 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.729,
+        "longitude":-117.171
+    },
+    "artistList":[
+        {
+          "id":5092,
+          "name":"TÂCHES",
+          "link":"https://edmtrain.com/tours/taches-5092?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":238299,
+    "link":"https://edmtrain.com/san-diego-ca/fngrs-crssd-presents-fatima-hajji-238299?utm_source=90&utm_medium=api",
+    "name":"FNGRS CRSSD Presents",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-27",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-22T01:26:28Z",
+    "venue":{
+        "id":1508,
+        "name":"Spin Nightclub",
+        "location":"San Diego, CA",
+        "address":"2028 Hancock St, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.744,
+        "longitude":-117.188
+    },
+    "artistList":[
+        {
+          "id":15123,
+          "name":"Fatima Hajji",
+          "link":"https://edmtrain.com/tours/fatima-hajji-15123?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":37049,
+          "name":"Trym",
+          "link":"https://edmtrain.com/tours/trym-37049?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":45338,
+          "name":"Spartaque",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239489,
+    "link":"https://edmtrain.com/san-diego-ca/james-hype-239489?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-27",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-07T04:28:55Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":21500,
+          "name":"James Hype",
+          "link":"https://edmtrain.com/tours/james-hype-21500?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242329,
+    "link":"https://edmtrain.com/san-diego-ca/chapter-2-tour-emorfik-242329?utm_source=90&utm_medium=api",
+    "name":"Chapter 2 Tour",
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-27",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-23T03:16:11Z",
+    "venue":{
+        "id":11426,
+        "name":"Break Point PB",
+        "location":"San Diego, CA",
+        "address":"945 Garnet Ave, San Diego, CA 92109, USA",
+        "state":"California",
+        "latitude":32.797,
+        "longitude":-117.253
+    },
+    "artistList":[
+        {
+          "id":19368,
+          "name":"Emorfik",
+          "link":"https://edmtrain.com/tours/emorfik-19368?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":26118,
+          "name":"GorillaT",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":36508,
+          "name":"Zerøtonin",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":46908,
+          "name":"L!zrd",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":46909,
+          "name":"Kill Phil",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":39412,
+          "name":"Dubz n Dutchz",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":36509,
+          "name":"MUMBO",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242325,
+    "link":"https://edmtrain.com/san-diego-ca/arnold-and-lane-jax-carter-242325?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-27",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-23T02:10:41Z",
+    "venue":{
+        "id":1122,
+        "name":"Bang Bang",
+        "location":"San Diego, CA",
+        "address":"526 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.712,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":17260,
+          "name":"Arnold & Lane",
+          "link":"https://edmtrain.com/tours/arnold-and-lane-17260?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":33520,
+          "name":"Jax Carter",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":46906,
+          "name":"Kieran San Jose",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242907,
+    "link":"https://edmtrain.com/san-diego-ca/bynx-242907?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-27",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-28T01:33:19Z",
+    "venue":{
+        "id":1812,
+        "name":"Parq",
+        "location":"San Diego, CA",
+        "address":"615 Broadway, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.716,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":35421,
+          "name":"BYNX",
+          "link":"https://edmtrain.com/tours/bynx-35421?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":236362,
+    "link":"https://edmtrain.com/san-diego-ca/nostalgix-236362?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-28",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-10T02:11:10Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":16916,
+          "name":"Nostalgix",
+          "link":"https://edmtrain.com/tours/nostalgix-16916?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":237963,
+    "link":"https://edmtrain.com/san-diego-ca/john-00-fleming-237963?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-28",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-18T12:54:49Z",
+    "venue":{
+        "id":1508,
+        "name":"Spin Nightclub",
+        "location":"San Diego, CA",
+        "address":"2028 Hancock St, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.744,
+        "longitude":-117.188
+    },
+    "artistList":[
+        {
+          "id":1303,
+          "name":"John 00 Fleming",
+          "link":"https://edmtrain.com/tours/john-00-fleming-1303?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":241009,
+    "link":"https://edmtrain.com/san-diego-ca/angie-vee-241009?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-28",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-14T01:22:10Z",
+    "venue":{
+        "id":1812,
+        "name":"Parq",
+        "location":"San Diego, CA",
+        "address":"615 Broadway, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.716,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":23549,
+          "name":"Angie Vee",
+          "link":"https://edmtrain.com/tours/angie-vee-23549?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242127,
+    "link":"https://edmtrain.com/san-diego-ca/truth-x-lies-242127?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-28",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-22T03:53:53Z",
+    "venue":{
+        "id":11478,
+        "name":"Bloom Nightclub San Diego",
+        "location":"San Diego, CA",
+        "address":"919 Fourth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.715,
+        "longitude":-117.161
+    },
+    "artistList":[
+        {
+          "id":7563,
+          "name":"Truth x Lies",
+          "link":"https://edmtrain.com/tours/truth-x-lies-7563?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242326,
+    "link":"https://edmtrain.com/san-diego-ca/calussa-sydka-242326?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-01-28",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-23T02:11:12Z",
+    "venue":{
+        "id":1122,
+        "name":"Bang Bang",
+        "location":"San Diego, CA",
+        "address":"526 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.712,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":24058,
+          "name":"Calussa",
+          "link":"https://edmtrain.com/tours/calussa-24058?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":46907,
+          "name":"sydka",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":241164,
+    "link":"https://edmtrain.com/san-diego-ca/rjd2-inspired-flight-241164?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-03",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-15T00:20:05Z",
+    "venue":{
+        "id":2901,
+        "name":"Music Box",
+        "location":"San Diego, CA",
+        "address":"1337 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.719,
+        "longitude":-117.168
+    },
+    "artistList":[
+        {
+          "id":508,
+          "name":"RJD2",
+          "link":"https://edmtrain.com/tours/rjd2-508?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":46241,
+          "name":"Inspired Flight",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":46558,
+          "name":"Beau Selecter",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":236167,
+    "link":"https://edmtrain.com/san-diego-ca/nils-hoffmann-236167?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-04",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-08T21:34:27Z",
+    "venue":{
+        "id":1122,
+        "name":"Bang Bang",
+        "location":"San Diego, CA",
+        "address":"526 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.712,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":43362,
+          "name":"Nils Hoffmann",
+          "link":"https://edmtrain.com/tours/nils-hoffmann-43362?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":237498,
+    "link":"https://edmtrain.com/san-diego-ca/midas-whale-tour-the-floozies-237498?utm_source=90&utm_medium=api",
+    "name":"Midas Whale Tour",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-04",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-16T21:35:29Z",
+    "venue":{
+        "id":2901,
+        "name":"Music Box",
+        "location":"San Diego, CA",
+        "address":"1337 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.719,
+        "longitude":-117.168
+    },
+    "artistList":[
+        {
+          "id":1553,
+          "name":"The Floozies",
+          "link":"https://edmtrain.com/tours/the-floozies-1553?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":6187,
+          "name":"Maddy O'Neal",
+          "link":"https://edmtrain.com/tours/maddy-oneal-6187?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":19511,
+          "name":"motifv",
+          "link":"https://edmtrain.com/tours/motifv-19511?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":238284,
+    "link":"https://edmtrain.com/san-diego-ca/nicky-romero-238284?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-04",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-22T01:10:28Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":468,
+          "name":"Nicky Romero",
+          "link":"https://edmtrain.com/tours/nicky-romero-468?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242381,
+    "link":"https://edmtrain.com/san-diego-ca/same-same-presents-megan-hamilton-242381?utm_source=90&utm_medium=api",
+    "name":"Same Same Presents",
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-04",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-23T16:14:01Z",
+    "venue":{
+        "id":2435,
+        "name":"Quartyard",
+        "location":"San Diego, CA",
+        "address":"1301 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.711,
+        "longitude":-117.153
+    },
+    "artistList":[
+        {
+          "id":6003,
+          "name":"Megan Hamilton",
+          "link":"https://edmtrain.com/tours/megan-hamilton-6003?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242708,
+    "link":"https://edmtrain.com/san-diego-ca/co-create-josh-teed-242708?utm_source=90&utm_medium=api",
+    "name":"Co-Create",
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-09",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-27T02:04:40Z",
+    "venue":{
+        "id":11934,
+        "name":"KO Underground Brewery",
+        "location":"San Diego, CA",
+        "address":"1320 Fifth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.719,
+        "longitude":-117.161
+    },
+    "artistList":[
+        {
+          "id":10879,
+          "name":"Josh Teed",
+          "link":"https://edmtrain.com/tours/josh-teed-10879?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":12707,
+          "name":"ST4RFOX",
+          "link":"https://edmtrain.com/tours/st4rfox-12707?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":47151,
+          "name":"Darklord Gob",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":12708,
+          "name":"NewGent",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":47152,
+          "name":"sage savi",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":238025,
+    "link":"https://edmtrain.com/san-diego-ca/brennen-grey-lilly-palmer-238025?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-10",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-18T22:09:39Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":7493,
+          "name":"Brennen Grey",
+          "link":"https://edmtrain.com/tours/brennen-grey-7493?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":45124,
+          "name":"Lilly Palmer",
+          "link":"https://edmtrain.com/tours/lilly-palmer-45124?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":238300,
+    "link":"https://edmtrain.com/san-diego-ca/fngrs-crssd-presents-jerro-238300?utm_source=90&utm_medium=api",
+    "name":"FNGRS CRSSD Presents",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-10",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-22T01:26:31Z",
+    "venue":{
+        "id":1508,
+        "name":"Spin Nightclub",
+        "location":"San Diego, CA",
+        "address":"2028 Hancock St, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.744,
+        "longitude":-117.188
+    },
+    "artistList":[
+        {
+          "id":27230,
+          "name":"Jerro",
+          "link":"https://edmtrain.com/tours/jerro-27230?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":41876,
+          "name":"OCULA",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":39415,
+          "name":"Simone Glad",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":240631,
+    "link":"https://edmtrain.com/san-diego-ca/black-v-neck-240631?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-11",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-12T23:18:23Z",
+    "venue":{
+        "id":11478,
+        "name":"Bloom Nightclub San Diego",
+        "location":"San Diego, CA",
+        "address":"919 Fourth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.715,
+        "longitude":-117.161
+    },
+    "artistList":[
+        {
+          "id":9918,
+          "name":"Black V Neck",
+          "link":"https://edmtrain.com/tours/black-v-neck-9918?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242077,
+    "link":"https://edmtrain.com/san-diego-ca/steve-aoki-242077?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-11",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-21T01:17:26Z",
+    "venue":{
+        "id":13823,
+        "name":"The Sound Del Mar",
+        "location":"Del Mar, CA",
+        "address":"2260 Jimmy Durante Blvd, Del Mar, CA 92014, USA",
+        "state":"California",
+        "latitude":32.973,
+        "longitude":-117.261
+    },
+    "artistList":[
+        {
+          "id":561,
+          "name":"Steve Aoki",
+          "link":"https://edmtrain.com/tours/steve-aoki-561?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":238282,
+    "link":"https://edmtrain.com/san-diego-ca/night-wonders-disco-fleetmac-wood-238282?utm_source=90&utm_medium=api",
+    "name":"Night Wonders Disco",
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-18",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-22T01:10:15Z",
+    "venue":{
+        "id":2901,
+        "name":"Music Box",
+        "location":"San Diego, CA",
+        "address":"1337 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.719,
+        "longitude":-117.168
+    },
+    "artistList":[
+        {
+          "id":11076,
+          "name":"Fleetmac Wood",
+          "link":"https://edmtrain.com/tours/fleetmac-wood-11076?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":230116,
+    "link":"https://edmtrain.com/san-diego-ca/magic-city-hippies-capyac-230116?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"18+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-24",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-09-26T21:56:10Z",
+    "venue":{
+        "id":2980,
+        "name":"Observatory North Park",
+        "location":"San Diego, CA",
+        "address":"2891 University Ave, San Diego, CA 92104, USA",
+        "state":"California",
+        "latitude":32.748,
+        "longitude":-117.131
+    },
+    "artistList":[
+        {
+          "id":15496,
+          "name":"Magic City Hippies",
+          "link":"https://edmtrain.com/tours/magic-city-hippies-15496?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":8305,
+          "name":"Capyac",
+          "link":"https://edmtrain.com/tours/capyac-8305?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":240715,
+    "link":"https://edmtrain.com/san-diego-ca/meduza-240715?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-24",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-12T23:34:15Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":15999,
+          "name":"Meduza",
+          "link":"https://edmtrain.com/tours/meduza-15999?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242859,
+    "link":"https://edmtrain.com/san-diego-ca/jim-rider-242859?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-24",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-28T01:27:53Z",
+    "venue":{
+        "id":3328,
+        "name":"Camino Riviera",
+        "location":"San Diego, CA",
+        "address":"2400 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.729,
+        "longitude":-117.171
+    },
+    "artistList":[
+        {
+          "id":35682,
+          "name":"Jim Rider",
+          "link":"https://edmtrain.com/tours/jim-rider-35682?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":237793,
+    "link":"https://edmtrain.com/san-diego-ca/brighter-future-tour-big-gigantic-237793?utm_source=90&utm_medium=api",
+    "name":"Brighter Future Tour",
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-25",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-17T14:50:44Z",
+    "venue":{
+        "id":13823,
+        "name":"The Sound Del Mar",
+        "location":"Del Mar, CA",
+        "address":"2260 Jimmy Durante Blvd, Del Mar, CA 92014, USA",
+        "state":"California",
+        "latitude":32.973,
+        "longitude":-117.261
+    },
+    "artistList":[
+        {
+          "id":116,
+          "name":"Big Gigantic",
+          "link":"https://edmtrain.com/tours/big-gigantic-116?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239493,
+    "link":"https://edmtrain.com/san-diego-ca/the-pulp-fiction-tour-emotional-oranges-239493?utm_source=90&utm_medium=api",
+    "name":"The Pulp Fiction Tour",
+    "ages":"Under 18 with adult",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-25",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-07T04:29:26Z",
+    "venue":{
+        "id":2980,
+        "name":"Observatory North Park",
+        "location":"San Diego, CA",
+        "address":"2891 University Ave, San Diego, CA 92104, USA",
+        "state":"California",
+        "latitude":32.748,
+        "longitude":-117.131
+    },
+    "artistList":[
+        {
+          "id":23990,
+          "name":"Emotional Oranges",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":241382,
+    "link":"https://edmtrain.com/san-diego-ca/simon-doty-tyler-chase-241382?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-02-25",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-15T23:52:56Z",
+    "venue":{
+        "id":1122,
+        "name":"Bang Bang",
+        "location":"San Diego, CA",
+        "address":"526 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.712,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":8417,
+          "name":"Simon Doty",
+          "link":"https://edmtrain.com/tours/simon-doty-8417?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":26727,
+          "name":"Tyler Chase",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":237206,
+    "link":"https://edmtrain.com/san-diego-ca/marauda-al-ross-237206?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"18+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-03",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-15T17:47:18Z",
+    "venue":{
+        "id":1112,
+        "name":"SOMA",
+        "location":"San Diego, CA",
+        "address":"3350 Sports Arena Blvd, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.755,
+        "longitude":-117.209
+    },
+    "artistList":[
+        {
+          "id":16954,
+          "name":"MARAUDA",
+          "link":"https://edmtrain.com/tours/marauda-16954?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":6817,
+          "name":"Al Ross",
+          "link":"https://edmtrain.com/tours/al-ross-6817?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":5603,
+          "name":"Codd Dubz",
+          "link":"https://edmtrain.com/tours/codd-dubz-5603?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":14384,
+          "name":"JEANIE",
+          "link":"https://edmtrain.com/tours/jeanie-14384?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":23571,
+          "name":"Tape B",
+          "link":"https://edmtrain.com/tours/tape-b-23571?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":16330,
+          "name":"Executioner",
+          "link":"https://edmtrain.com/tours/executioner-16330?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":242860,
+    "link":"https://edmtrain.com/san-diego-ca/henry-pope-242860?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-03",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-28T01:28:02Z",
+    "venue":{
+        "id":3328,
+        "name":"Camino Riviera",
+        "location":"San Diego, CA",
+        "address":"2400 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.729,
+        "longitude":-117.171
+    },
+    "artistList":[
+        {
+          "id":15098,
+          "name":"Henry Pope",
+          "link":"https://edmtrain.com/tours/henry-pope-15098?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":238549,
+    "link":"https://edmtrain.com/san-diego-ca/crssd-festival-238549?utm_source=90&utm_medium=api",
+    "name":"CRSSD Festival",
+    "ages":null,
+    "festivalInd":true,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-04",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-24T19:20:48Z",
+    "venue":{
+        "id":1803,
+        "name":"Waterfront Park San Diego",
+        "location":"San Diego, CA",
+        "address":"1600 Pacific Hwy, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.721,
+        "longitude":-117.172
+    },
+    "artistList":[
+        {
+          "id":1609,
+          "name":"ODESZA",
+          "link":"https://edmtrain.com/tours/odesza-1609?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":15900,
+          "name":"Polo & Pan",
+          "link":"https://edmtrain.com/tours/polo-and-pan-15900?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":1480,
+          "name":"Bedouin",
+          "link":"https://edmtrain.com/tours/bedouin-1480?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":359,
+          "name":"Kavinsky",
+          "link":"https://edmtrain.com/tours/kavinsky-359?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":3425,
+          "name":"Deborah De Luca",
+          "link":"https://edmtrain.com/tours/deborah-de-luca-3425?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":3522,
+          "name":"Maya Jane Coles",
+          "link":"https://edmtrain.com/tours/maya-jane-coles-3522?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":616,
+          "name":"Umek",
+          "link":"https://edmtrain.com/tours/umek-616?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":33347,
+          "name":"Becky Hill",
+          "link":"https://edmtrain.com/tours/becky-hill-33347?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":33013,
+          "name":"Biig Piig",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":44503,
+          "name":"Bon Entenduer",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":12028,
+          "name":"Channel Tres",
+          "link":"https://edmtrain.com/tours/channel-tres-12028?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":7185,
+          "name":"Mall Grab",
+          "link":"https://edmtrain.com/tours/mall-grab-7185?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":2769,
+          "name":"Purple Disco Machine",
+          "link":"https://edmtrain.com/tours/purple-disco-machine-2769?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":14707,
+          "name":"AMÉMÉ",
+          "link":"https://edmtrain.com/tours/ameme-14707?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":18417,
+          "name":"Anfisa Letyago",
+          "link":"https://edmtrain.com/tours/anfisa-letyago-18417?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":13694,
+          "name":"Bloody Mary",
+          "link":"https://edmtrain.com/tours/bloody-mary-13694?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":46656,
+          "name":"Luna Li",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":3144,
+          "name":"Phantoms",
+          "link":"https://edmtrain.com/tours/phantoms-3144?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":17305,
+          "name":"SWIMM",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":529,
+          "name":"Seth Troxler",
+          "link":"https://edmtrain.com/tours/seth-troxler-529?utm_source=90&utm_medium=api",
+          "b2bInd":true
+        },
+        {
+          "id":244,
+          "name":"Eats Everything",
+          "link":"https://edmtrain.com/tours/eats-everything-244?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":30243,
+          "name":"Jensen Interceptor",
+          "link":"https://edmtrain.com/tours/jensen-interceptor-30243?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":41533,
+          "name":"Miss Kittin & The Hacker",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":657,
+          "name":"Totally Enormous Extinct Dinosaurs (TEED)",
+          "link":"https://edmtrain.com/tours/totally-enormous-extinct-dinosaurs-teed-657?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":46657,
+          "name":"Yelle",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":23720,
+          "name":"Ben Sterling",
+          "link":"https://edmtrain.com/tours/ben-sterling-23720?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":7642,
+          "name":"Chaos In The CBD",
+          "link":"https://edmtrain.com/tours/chaos-in-the-cbd-7642?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":2433,
+          "name":"Jackmaster",
+          "link":"https://edmtrain.com/tours/jackmaster-2433?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":46658,
+          "name":"Turbulences (Popof x Space 92)",
+          "link":"https://edmtrain.com/tours/turbulences-popof-x-space-92-46658?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":15795,
+          "name":"Sama' Abdulhadi",
+          "link":"https://edmtrain.com/tours/sama-abdulhadi-15795?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":46659,
+          "name":"Skin On Skin",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":238550,
+    "link":"https://edmtrain.com/san-diego-ca/crssd-festival-238550?utm_source=90&utm_medium=api",
+    "name":"CRSSD Festival",
+    "ages":null,
+    "festivalInd":true,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-05",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-24T19:20:48Z",
+    "venue":{
+        "id":1803,
+        "name":"Waterfront Park San Diego",
+        "location":"San Diego, CA",
+        "address":"1600 Pacific Hwy, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.721,
+        "longitude":-117.172
+    },
+    "artistList":[
+        
+    ]
+  },
+  {
+    "id":242861,
+    "link":"https://edmtrain.com/san-diego-ca/francesca-lombardo-242861?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-05",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-28T01:28:04Z",
+    "venue":{
+        "id":3328,
+        "name":"Camino Riviera",
+        "location":"San Diego, CA",
+        "address":"2400 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.729,
+        "longitude":-117.171
+    },
+    "artistList":[
+        {
+          "id":276,
+          "name":"Francesca Lombardo",
+          "link":"https://edmtrain.com/tours/francesca-lombardo-276?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":241167,
+    "link":"https://edmtrain.com/san-diego-ca/stella-bossi-241167?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-10",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-15T00:20:25Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":45082,
+          "name":"Stella Bossi",
+          "link":"https://edmtrain.com/tours/stella-bossi-45082?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":236629,
+    "link":"https://edmtrain.com/san-diego-ca/ott-soohan-236629?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-16",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-11T01:56:10Z",
+    "venue":{
+        "id":2901,
+        "name":"Music Box",
+        "location":"San Diego, CA",
+        "address":"1337 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.719,
+        "longitude":-117.168
+    },
+    "artistList":[
+        {
+          "id":5643,
+          "name":"Ott",
+          "link":"https://edmtrain.com/tours/ott-5643?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":2659,
+          "name":"Soohan",
+          "link":"https://edmtrain.com/tours/soohan-2659?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":237732,
+    "link":"https://edmtrain.com/san-diego-ca/boogie-t-the-widdler-237732?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"18+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-16",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-17T06:20:50Z",
+    "venue":{
+        "id":1111,
+        "name":"House of Blues San Diego",
+        "location":"San Diego, CA",
+        "address":"1055 Fifth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.716,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":6994,
+          "name":"Boogie T.",
+          "link":"https://edmtrain.com/tours/boogie-t-6994?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":591,
+          "name":"The Widdler",
+          "link":"https://edmtrain.com/tours/the-widdler-591?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":7996,
+          "name":"Khiva",
+          "link":"https://edmtrain.com/tours/khiva-7996?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":1488,
+          "name":"Notixx",
+          "link":"https://edmtrain.com/tours/notixx-1488?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":22650,
+          "name":"Skellytn",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239472,
+    "link":"https://edmtrain.com/san-diego-ca/moontricks-equanimous-239472?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-17",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-07T04:25:07Z",
+    "venue":{
+        "id":2901,
+        "name":"Music Box",
+        "location":"San Diego, CA",
+        "address":"1337 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.719,
+        "longitude":-117.168
+    },
+    "artistList":[
+        {
+          "id":11163,
+          "name":"Moontricks",
+          "link":"https://edmtrain.com/tours/moontricks-11163?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":11225,
+          "name":"Equanimous",
+          "link":"https://edmtrain.com/tours/equanimous-11225?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":235067,
+    "link":"https://edmtrain.com/san-diego-ca/shipwrecks-house-music-fest-max-styler-235067?utm_source=90&utm_medium=api",
+    "name":"Shipwrecks House Music Fest",
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-18",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-01T02:01:20Z",
+    "venue":{
+        "id":2435,
+        "name":"Quartyard",
+        "location":"San Diego, CA",
+        "address":"1301 Market St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.711,
+        "longitude":-117.153
+    },
+    "artistList":[
+        {
+          "id":2283,
+          "name":"Max Styler",
+          "link":"https://edmtrain.com/tours/max-styler-2283?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239459,
+    "link":"https://edmtrain.com/san-diego-ca/super-flu-239459?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-19",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-07T04:22:52Z",
+    "venue":{
+        "id":3328,
+        "name":"Camino Riviera",
+        "location":"San Diego, CA",
+        "address":"2400 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.729,
+        "longitude":-117.171
+    },
+    "artistList":[
+        {
+          "id":4296,
+          "name":"Super Flu",
+          "link":"https://edmtrain.com/tours/super-flu-4296?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":228943,
+    "link":"https://edmtrain.com/san-diego-ca/michael-mayer-228943?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-23",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-09-18T06:46:19Z",
+    "venue":{
+        "id":3328,
+        "name":"Camino Riviera",
+        "location":"San Diego, CA",
+        "address":"2400 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.729,
+        "longitude":-117.171
+    },
+    "artistList":[
+        {
+          "id":2190,
+          "name":"Michael Mayer",
+          "link":"https://edmtrain.com/tours/michael-mayer-2190?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":236019,
+    "link":"https://edmtrain.com/san-diego-ca/rusko-236019?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-03-31",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-07T21:59:27Z",
+    "venue":{
+        "id":2302,
+        "name":"Nova SD",
+        "location":"San Diego, CA",
+        "address":"454 Sixth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.71,
+        "longitude":-117.159
+    },
+    "artistList":[
+        {
+          "id":514,
+          "name":"Rusko",
+          "link":"https://edmtrain.com/tours/rusko-514?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":240684,
+    "link":"https://edmtrain.com/san-diego-ca/full-circle-tour-dirt-monkey-240684?utm_source=90&utm_medium=api",
+    "name":"Full Circle Tour",
+    "ages":"18+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-04-01",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-12T23:27:11Z",
+    "venue":{
+        "id":1111,
+        "name":"House of Blues San Diego",
+        "location":"San Diego, CA",
+        "address":"1055 Fifth Ave, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.716,
+        "longitude":-117.16
+    },
+    "artistList":[
+        {
+          "id":2135,
+          "name":"Dirt Monkey",
+          "link":"https://edmtrain.com/tours/dirt-monkey-2135?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":2134,
+          "name":"Jantsen",
+          "link":"https://edmtrain.com/tours/jantsen-2134?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":237039,
+    "link":"https://edmtrain.com/san-diego-ca/thrones-of-blood-sullivan-king-237039?utm_source=90&utm_medium=api",
+    "name":"Thrones of Blood",
+    "ages":"18+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-04-06",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-14T19:48:18Z",
+    "venue":{
+        "id":9532,
+        "name":"SOMA (Mainstage)",
+        "location":"San Diego, CA",
+        "address":"3350 Sports Arena Blvd, San Diego, CA 92110, USA",
+        "state":"California",
+        "latitude":32.755,
+        "longitude":-117.209
+    },
+    "artistList":[
+        {
+          "id":2593,
+          "name":"Sullivan King",
+          "link":"https://edmtrain.com/tours/sullivan-king-2593?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":8491,
+          "name":"LEVEL UP",
+          "link":"https://edmtrain.com/tours/level-up-8491?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":8317,
+          "name":"Benda",
+          "link":"https://edmtrain.com/tours/benda-8317?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":18964,
+          "name":"Vastive",
+          "link":"https://edmtrain.com/tours/vastive-18964?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239460,
+    "link":"https://edmtrain.com/san-diego-ca/tube-and-berger-239460?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-04-20",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-07T04:22:54Z",
+    "venue":{
+        "id":3328,
+        "name":"Camino Riviera",
+        "location":"San Diego, CA",
+        "address":"2400 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.729,
+        "longitude":-117.171
+    },
+    "artistList":[
+        {
+          "id":2753,
+          "name":"Tube & Berger",
+          "link":"https://edmtrain.com/tours/tube-and-berger-2753?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":237950,
+    "link":"https://edmtrain.com/san-diego-ca/tim-engelhardt-237950?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":null,
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-05-21",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-11-18T12:51:08Z",
+    "venue":{
+        "id":3328,
+        "name":"Camino Riviera",
+        "location":"San Diego, CA",
+        "address":"2400 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.729,
+        "longitude":-117.171
+    },
+    "artistList":[
+        {
+          "id":8498,
+          "name":"Tim Engelhardt",
+          "link":"https://edmtrain.com/tours/tim-engelhardt-8498?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        }
+    ]
+  },
+  {
+    "id":239473,
+    "link":"https://edmtrain.com/san-diego-ca/otto-von-schirach-igorrr-239473?utm_source=90&utm_medium=api",
+    "name":null,
+    "ages":"21+",
+    "festivalInd":false,
+    "livestreamInd":false,
+    "electronicGenreInd":true,
+    "otherGenreInd":false,
+    "date":"2023-10-14",
+    "startTime":null,
+    "endTime":null,
+    "createdDate":"2022-12-07T04:25:19Z",
+    "venue":{
+        "id":2901,
+        "name":"Music Box",
+        "location":"San Diego, CA",
+        "address":"1337 India St, San Diego, CA 92101, USA",
+        "state":"California",
+        "latitude":32.719,
+        "longitude":-117.168
+    },
+    "artistList":[
+        {
+          "id":989,
+          "name":"Otto von Schirach",
+          "link":"https://edmtrain.com/tours/otto-von-schirach-989?utm_source=90&utm_medium=api",
+          "b2bInd":false
+        },
+        {
+          "id":45753,
+          "name":"Igorrr",
+          "link":null,
+          "b2bInd":false
+        },
+        {
+          "id":45754,
+          "name":"Melt-Banana",
+          "link":null,
+          "b2bInd":false
+        }
+    ]
+  }
+]

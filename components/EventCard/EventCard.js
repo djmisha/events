@@ -4,7 +4,7 @@ import setDates from "../../utils/setDates";
 import Image from "next/image";
 
 export const EventCard = ({ event }) => {
-  const { date, artistList, name, venue, link } = event;
+  const { date, artistList, name, venue, link, isVisible } = event;
   const { name: venueName, address } = venue;
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
   const [isOpen, SetIsOpen] = useState(false);
@@ -15,7 +15,9 @@ export const EventCard = ({ event }) => {
 
   return (
     <div
-      className={`single-event ${isOpen ? "view-full" : "view-partial"} `}
+      className={`single-event ${isOpen ? "view-full" : "view-partial"} ${
+        isVisible ? "visible" : "hidden"
+      } `}
       itemScope=""
       itemType="http://schema.org/Event"
       onClick={handleClick}
