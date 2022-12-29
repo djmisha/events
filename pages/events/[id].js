@@ -1,14 +1,12 @@
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
 import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
 import EventCard from "../../components/EventCard/EventCard";
 import getEvents from "../../utils/getEvents";
 import Spinner from "../../components/Spinner/Spinner";
 import NavigationBar from "../../components/NavigationBar/NavigataionBar";
-// import SearchTerm from "../../utils/searchHook";
-import SearchFilter from "../../utils/searchFilter";
+import searchFilter from "../../utils/searchFilter";
 
 export default function Location({ locationData }) {
   const { city, state, id } = locationData;
@@ -25,27 +23,12 @@ export default function Location({ locationData }) {
   }, [id]);
 
   useEffect(() => {
-    // console.log(searchTerm);
-    const searchResults = SearchFilter(searchTerm, events, SetEvents);
-    if (searchResults) {
-      events.forEach((event) => {
-        event.isVisible = false;
-        searchResults.forEach((result) => {
-          if (result.id === event.id) {
-            event.isVisible = true;
-            console.log(event.isVisible);
-          } else {
-          }
-        });
-        SetEvents(events);
-      });
+    const filteredEvents = searchFilter(searchTerm, events);
+    if (filteredEvents) {
+      SetEvents(filteredEvents);
+      SetSearchTerm("");
     }
-    console.log(searchTerm);
   }, [searchTerm, events]);
-
-  useEffect(() => {
-    console.log("eventsUpdate");
-  }, [events]);
 
   return (
     <Layout>
@@ -53,9 +36,10 @@ export default function Location({ locationData }) {
         <title>{title}</title>
       </Head>
       {/* <SearchBar /> */}
-      {/* <Counter /> */}
       <h1>Music Events Near {city ? `${city}, ${state}` : state}</h1>
-      {/* <button onClick={() => dispatch(addEvents(events))}>Test</button> */}
+      <section id="searchresults">
+        <p>Showing result for: {searchTerm}</p>
+      </section>
       <section>
         {loading && <Spinner isLoading={loading} />}
         {events &&
