@@ -12,7 +12,7 @@ const getEvents = async (id, setEvents, setLoading) => {
   // TEMPORARY FOR DEVELOPMENT ON
   await events;
 
-  processEvents(events);
+  parseData(events);
   setEvents(events);
   setLoading(false);
 
@@ -28,7 +28,7 @@ const getEvents = async (id, setEvents, setLoading) => {
   //       res.data.map((event) => {
   //         event.isVisible = true;
   //       });
-  //       processEvents(res.data)
+  //       parseData(res.data)
   //       setEvents(res.data);
   //       setLoading(false);
   //     });
@@ -38,14 +38,15 @@ const getEvents = async (id, setEvents, setLoading) => {
   //   });
 };
 
-const processEvents = (data) => {
-  const newData = data.map((item) => {
+const parseData = (data) => {
+  return data.map((item) => {
     // sets all to be visible
     item.isVisible = true;
-    // adds a foramtted dates for Search
+    // add a formatted date for Search
     item.formattedDate = setDates(item.date).dayMonthYear;
+    // add EDM Train as source
+    item.eventsource = "edmtrain.com";
   });
-  return newData;
 };
 
 export default getEvents;

@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
 import { getLocations } from "../utils/getLocations";
-import { UserLocationService } from "../utils/getUserLocationjs";
+import { UserLocationService } from "../utils/getUserLocation.js";
 import { useEffect, useRef, useState } from "react";
 import getEvents from "../utils/getEvents";
 import EventCard from "../components/EventCard/EventCard";

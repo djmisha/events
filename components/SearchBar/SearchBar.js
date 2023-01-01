@@ -1,5 +1,4 @@
 import Image from "next/image";
-import search from "./search";
 
 const SearchBar = () => {
   const handleClick = (e, value) => {

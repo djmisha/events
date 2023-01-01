@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import { removeDuplicates } from "../../utils/removeDuplicates";
+import { removeDuplicates } from "../../utils/utilities";
 import { getLocations } from "../../utils/getLocations";
 
 const NavItem = ({ image, text, title, navItems, SearchTerm, isLocation }) => {

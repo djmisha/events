@@ -16,6 +16,7 @@ const addCityAndState = (locations) => {
   locations.map((location) => {
     if (!location.city) cityAndState.push(location);
   });
+
   return cityAndState;
 };
 

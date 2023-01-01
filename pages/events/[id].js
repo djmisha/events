@@ -6,7 +6,7 @@ import EventCard from "../../components/EventCard/EventCard";
 import getEvents from "../../utils/getEvents";
 import Spinner from "../../components/Spinner/Spinner";
 import NavigationBar from "../../components/NavigationBar/NavigataionBar";
-import searchFilter from "../../utils/searchFilter";
+import { searchFilter, clearSearch } from "../../utils/searchFilter";
 
 export default function Location({ locationData }) {
   const { city, state, id } = locationData;
@@ -23,12 +23,20 @@ export default function Location({ locationData }) {
   }, [id]);
 
   useEffect(() => {
-    const filteredEvents = searchFilter(searchTerm, events);
-    if (filteredEvents) {
-      SetEvents(filteredEvents);
-      SetSearchTerm("");
+    if (searchTerm && events) {
+      const filteredEvents = searchFilter(searchTerm, events);
+      if (filteredEvents) {
+        SetEvents(filteredEvents);
+        SetSearchTerm("");
+      }
     }
   }, [searchTerm, events]);
+
+  // const handleClick = () => {
+  //   console.log(events);
+  //   const allEvents = clearSearch(events);
+  //   SetEvents(allEvents);
+  // };
 
   return (
     <Layout>
@@ -37,9 +45,11 @@ export default function Location({ locationData }) {
       </Head>
       {/* <SearchBar /> */}
       <h1>Music Events Near {city ? `${city}, ${state}` : state}</h1>
-      <section id="searchresults">
-        <p>Showing result for: {searchTerm}</p>
-      </section>
+      {/* <div onClick={() => handleClick()}>
+        <section id="searchresults">
+          <p>Showing result for: {searchTerm}</p>
+        </section>
+      </div> */}
       <section>
         {loading && <Spinner isLoading={loading} />}
         {events &&
