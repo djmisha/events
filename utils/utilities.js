@@ -14,3 +14,7 @@ export const cleanString = (string) => {
   const clean = string.replace(/&amp;/g, "").replace(/[^a-zA-Z0-9 ]/g, "");
   return clean;
 };
+
+export const makePageTitle = (city, state) => {
+  return `Music Events in ${city ? `${city}, ${state}` : state}`;
+};

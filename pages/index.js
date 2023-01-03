@@ -44,15 +44,21 @@ export default function Home({ locations }) {
       </Head>
       {loading && <Spinner isLoading={loading} text="Finding location" />}
       {userLocation && (
-        <h1>Events in {userLocation.city || userLocation.state}</h1>
+        <h1>Upcoming Events in {userLocation.city || userLocation.state}</h1>
       )}
       <section>
         {events &&
           !loading &&
           events.map((event, index) => {
-            if (index < 10) return <EventCard event={event} key={index} />;
+            if (index < 5) return <EventCard event={event} key={index} />;
           })}
       </section>
+      {events && !loading && (
+        <button>
+          See all events in {userLocation.city || userLocation.state}
+        </button>
+      )}
+      <h1>Events in Other Locations</h1>
       <section>
         {locations.map(({ id, city, state, slug }) => (
           <Link href={`/events/${slug}/`} key={id}>

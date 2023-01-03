@@ -45,7 +45,7 @@ const parseData = (data) => {
     // add a formatted date for Search
     item.formattedDate = setDates(item.date).dayMonthYear;
     // add EDM Train as source
-    item.eventsource = "edmtrain.com";
+    item.eventSource = "edmtrain.com";
   });
 };
 

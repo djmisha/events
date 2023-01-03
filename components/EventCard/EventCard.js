@@ -4,13 +4,13 @@ import setDates from "../../utils/setDates";
 import Image from "next/image";
 
 export const EventCard = ({ event }) => {
-  const { date, artistList, name, venue, link, isVisible } = event;
+  const { date, artistList, name, venue, link, isVisible, eventSource } = event;
   const { name: venueName, address } = venue;
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
-  const [isOpen, SetIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
-    SetIsOpen(!isOpen);
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -72,7 +72,7 @@ export const EventCard = ({ event }) => {
         </div>
         <div className="event-link">
           <a href={link} target="_blank" rel="noreferrer">
-            View on edmtrain.com
+            View on {eventSource}
           </a>
         </div>
       </div>

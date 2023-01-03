@@ -1,8 +1,8 @@
 import { cleanString } from "./utilities";
 
-export const searchFilter = (query, events) => {
+export const searchFilter = (searchTerm, events) => {
   let results = [];
-  const regexString = new RegExp(cleanString(query), "i"); // used to be 'gi' but was not searching date correctly
+  const regexString = new RegExp(cleanString(searchTerm), "i"); // used to be 'gi' but was not searching date correctly
 
   events.forEach(function (article) {
     const { id } = article;
@@ -38,7 +38,6 @@ const showMatchedEvents = (results, events) => {
 export const clearSearch = (events) => {
   events.forEach((event) => {
     if (!event.isVisible) event.isVisible = true;
-    console.log(event.isVisible);
   });
 
   return events;

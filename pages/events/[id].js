@@ -6,50 +6,51 @@ import EventCard from "../../components/EventCard/EventCard";
 import getEvents from "../../utils/getEvents";
 import Spinner from "../../components/Spinner/Spinner";
 import NavigationBar from "../../components/NavigationBar/NavigataionBar";
-import { searchFilter, clearSearch } from "../../utils/searchFilter";
+import { searchFilter } from "../../utils/searchFilter";
+import { makePageTitle } from "../../utils/utilities";
+import Filter from "../../components/Filter/Filter";
 
 export default function Location({ locationData }) {
+  const [events, setEvents] = useState();
+  let [filterVisible, setFilterVisible] = useState(false);
   const { city, state, id } = locationData;
-  const title = `Music Events in ${city}, ${state}`;
-  const [events, SetEvents] = useState([]);
-  const [loading, SetLoading] = useState(true);
+  const title = makePageTitle(city, state);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState();
   const dataFetchedRef = useRef(false);
-  const [searchTerm, SetSearchTerm] = useState();
+  const searchTermRef = useRef("");
 
   useEffect(() => {
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
-    getEvents(id, SetEvents, SetLoading);
+    getEvents(id, setEvents, setLoading);
   }, [id]);
 
   useEffect(() => {
     if (searchTerm && events) {
       const filteredEvents = searchFilter(searchTerm, events);
       if (filteredEvents) {
-        SetEvents(filteredEvents);
-        SetSearchTerm("");
+        setEvents(filteredEvents);
+        searchTermRef.current = searchTerm;
+        setFilterVisible(true);
+        setSearchTerm("");
       }
     }
   }, [searchTerm, events]);
-
-  // const handleClick = () => {
-  //   console.log(events);
-  //   const allEvents = clearSearch(events);
-  //   SetEvents(allEvents);
-  // };
 
   return (
     <Layout>
       <Head>
         <title>{title}</title>
       </Head>
-      {/* <SearchBar /> */}
-      <h1>Music Events Near {city ? `${city}, ${state}` : state}</h1>
-      {/* <div onClick={() => handleClick()}>
-        <section id="searchresults">
-          <p>Showing result for: {searchTerm}</p>
-        </section>
-      </div> */}
+      <h1>{makePageTitle(city, state)}</h1>
+      <Filter
+        events={events}
+        setEvents={setEvents}
+        searchTerm={searchTermRef.current}
+        filterVisible={filterVisible}
+        setFilterVisible={setFilterVisible}
+      />
       <section>
         {loading && <Spinner isLoading={loading} />}
         {events &&
@@ -61,7 +62,7 @@ export default function Location({ locationData }) {
         <NavigationBar
           data={events}
           locationData={locationData}
-          SearchTerm={SetSearchTerm}
+          SearchTerm={setSearchTerm}
         />
       )}
     </Layout>

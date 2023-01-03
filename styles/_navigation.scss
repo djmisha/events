@@ -1,16 +1,3 @@
-.search-all {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  right: 0;
-  z-index: 998;
-  @include media($tablet) {
-    top: 57px;
-    width: 65.3vw;
-    left: auto;
-  }
-}
-
 .search {
   text-align: center;
   display: flex;
@@ -84,6 +71,19 @@
   }
 }
 
+.search-all {
+  // position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  @include media($tablet) {
+    top: 57px;
+    width: 65.3vw;
+    left: auto;
+  }
+}
+
 #searchresults p {
   position: relative;
   top: 0;
@@ -105,7 +105,8 @@
   font-size: 12px;
   text-align: right;
   margin: 0 5px;
-  display: none;
+  // top: -px;
+  // display: none;
   position: relative;
   pointer-events: pointer;
 
@@ -114,9 +115,9 @@
   }
   span {
     position: absolute;
-    top: 19px;
-    right: 15px;
-    font-size: 40px;
+    top: 12px;
+    right: 12px;
+    font-size: 45px;
     color: $pink;
     z-index: 1;
     pointer-events: none;

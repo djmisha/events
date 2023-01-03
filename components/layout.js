@@ -18,11 +18,11 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main>{children}</main>
-      {!home && (
+      {/* {!home && (
         <div>
           <Link href="/">← Back to home</Link>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
