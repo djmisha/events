@@ -18,3 +18,9 @@ export const cleanString = (string) => {
 export const makePageTitle = (city, state) => {
   return `Music Events in ${city ? `${city}, ${state}` : state}`;
 };
+
+{
+  /* <title>House Music Events, Festivals, EDM Shows, Techno, Raves, Dance Clubs</title> */
+  // <meta name="description"
+  // content="Find house music events festivals dance clubs techno raves edm shows in a city near you. " />
+}

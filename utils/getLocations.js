@@ -1,7 +1,7 @@
 import locations from "./locations.json";
 
 // replace space with dash & lowercase
-const toSlug = (string) => {
+export const toSlug = (string) => {
   return string.split(" ").join("-").toLowerCase();
 };
 

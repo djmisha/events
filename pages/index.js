@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
-import { getLocations } from "../utils/getLocations";
+import { getLocations, toSlug } from "../utils/getLocations";
 import { UserLocationService } from "../utils/getUserLocation.js";
 import { useEffect, useRef, useState } from "react";
 import getEvents from "../utils/getEvents";
@@ -21,12 +21,15 @@ export default function Home({ locations }) {
   const [userLocation, SetUserLocation] = useState();
   const [events, SetEvents] = useState([]);
   const [loading, SetLoading] = useState(true);
+  const [slug, setSlug] = useState();
   const dataLocationFetchedRef = useRef(false);
 
   useEffect(() => {
     const getUserLocation = async () => {
       const id = await UserLocationService();
+      debugger;
       SetUserLocation(id);
+      setSlug(toSlug(id.city || id.state));
     };
     if (dataLocationFetchedRef.current) return;
     dataLocationFetchedRef.current = true;
@@ -54,16 +57,18 @@ export default function Home({ locations }) {
           })}
       </section>
       {events && !loading && (
-        <button>
-          See all events in {userLocation.city || userLocation.state}
+        <button className="button">
+          <Link href={`events/${slug}`}>
+            All events in {userLocation.city || userLocation.state}
+          </Link>
         </button>
       )}
-      <h1>Events in Other Locations</h1>
-      <section>
+      <h2>All Locations</h2>
+      <section className="home-locations">
         {locations.map(({ id, city, state, slug }) => (
-          <Link href={`/events/${slug}/`} key={id}>
-            <p>{city || state}</p>
-          </Link>
+          <div key={id}>
+            <Link href={`/events/${slug}/`}>{city || state}</Link>
+          </div>
         ))}
       </section>
     </Layout>

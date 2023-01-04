@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { removeDuplicates } from "../../utils/utilities";
-import { getLocations } from "../../utils/getLocations";
+import { getLocations, toSlug } from "../../utils/getLocations";
+import Link from "next/link";
 
 const NavItem = ({ image, text, title, navItems, SearchTerm, isLocation }) => {
   const [isOpen, SetIsOpen] = useState(false);
@@ -31,22 +32,46 @@ const NavItem = ({ image, text, title, navItems, SearchTerm, isLocation }) => {
   );
 };
 
-const MenuList = ({ navItems, text, title, isOpen, SearchTerm }) => {
+const MenuList = ({
+  navItems,
+  text,
+  title,
+  isOpen,
+  SearchTerm,
+  isLocation,
+}) => {
   const handleClick = (e) => {
     SearchTerm(e.target.innerText);
   };
 
   return (
-    <div id={`${text}-list`} className={isOpen ? "visible" : ""}>
-      <h2>{title}</h2>
-      {navItems.map((item, index) => {
-        return (
-          <div key={index + item} onClick={(e) => handleClick(e)}>
-            {item}
-          </div>
-        );
-      })}
-    </div>
+    <>
+      {!isLocation && (
+        <div id={`${text}-list`} className={isOpen ? "visible" : ""}>
+          <h2>{title}</h2>
+          {navItems.map((item, index) => {
+            return (
+              <div key={index + item} onClick={(e) => handleClick(e)}>
+                {item}
+              </div>
+            );
+          })}
+        </div>
+      )}
+      {isLocation && (
+        <div id={`${text}-list`} className={isOpen ? "visible" : ""}>
+          <h2>{title}</h2>
+          {navItems.map((item, index) => {
+            const slug = toSlug(item);
+            return (
+              <div key={index + item}>
+                <Link href={slug}>{item}</Link>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </>
   );
 };
 
@@ -91,14 +116,14 @@ export const NavigationBar = ({ data, locationData, SearchTerm }) => {
           SearchTerm={SearchTerm}
           navItems={dates}
         />
-        {/* <NavItem
+        <NavItem
           image="/images/icon-map.svg"
           text="city"
           title="Select Location"
           SearchTerm={SearchTerm}
           navItems={locations}
           isLocation={true}
-        /> */}
+        />
       </section>
     </div>
   );

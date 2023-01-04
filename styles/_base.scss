@@ -30,9 +30,9 @@ h1 {
 
 h2 {
   font-weight: normal;
-  margin-top: 20;
+  margin-top: 40px;
   padding-left: 10px;
-  font-size: 20px;
+  font-size: 18px;
   color: $blue;
   border-bottom: 2px solid $blue;
   @include media($tablet) {
@@ -41,10 +41,21 @@ h2 {
 }
 
 .button {
-  border: 1px solid $lightPink;
+  display: block;
+  color: white;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  border: 2px solid $blue;
   padding: 15px 10px;
-  background-color: $lightPink;
+  background-color: $blue;
   text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 img.loading {
