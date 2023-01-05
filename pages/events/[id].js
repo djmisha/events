@@ -12,8 +12,8 @@ import Filter from "../../components/Filter/Filter";
 import Sidebar from "../../components/NavigationBar/Sidebar";
 
 export default function Location({ locationData }) {
-  const [events, setEvents] = useState();
   let [filterVisible, setFilterVisible] = useState(false);
+  const [events, setEvents] = useState();
   const { city, state, id } = locationData;
   const title = makePageTitle(city, state);
   const [loading, setLoading] = useState(true);

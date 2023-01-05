@@ -22,6 +22,7 @@ export const cleanString = (string) => {
 /**
  * Functions to create event arrays of strings
  */
+
 export const makePageTitle = (city, state) => {
   return `Music Events in ${city ? `${city}, ${state}` : state}`;
 };

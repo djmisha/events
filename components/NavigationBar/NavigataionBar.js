@@ -91,7 +91,7 @@ export const NavigationBar = ({ events, setSearchTerm }) => {
   const venues = makeVenues(events);
   const dates = makeDates(events);
   const artists = makeArtists(events);
-  let locations = makeLocations();
+  const locations = makeLocations();
 
   return (
     <div className="navigations">
