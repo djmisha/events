@@ -1,17 +1,9 @@
-import { MenuList, NavItem } from "./NavigataionBar";
-import { removeDuplicates } from "../../utils/utilities";
+import { MenuList } from "./NavigataionBar";
+import { makeVenues, makeArtists } from "../../utils/utilities";
 
 const Sidebar = ({ events, setSearchTerm, isOpen = true }) => {
-  // abstract this func
-  const venues = removeDuplicates(events.map((event) => event.venue.name));
-  // abstract this func
-  let allArtists = [];
-  events.map((event) => {
-    return event.artistList.map((artist) => {
-      allArtists.push(artist.name);
-    });
-  });
-  allArtists = removeDuplicates(allArtists);
+  const venues = makeVenues(events);
+  const artists = makeArtists(events);
 
   return (
     <section className="sidebar">
@@ -26,7 +18,7 @@ const Sidebar = ({ events, setSearchTerm, isOpen = true }) => {
       <MenuList
         image="/images/icon-dj.svg"
         text="sidebar-artist"
-        navItems={allArtists}
+        navItems={artists}
         title="DJ's and Artists"
         setSearchTerm={setSearchTerm}
         isOpen={isOpen}

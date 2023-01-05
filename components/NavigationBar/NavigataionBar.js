@@ -1,7 +1,12 @@
 import { useState } from "react";
 import Image from "next/image";
-import { removeDuplicates } from "../../utils/utilities";
-import { getLocations, toSlug } from "../../utils/getLocations";
+import {
+  makeVenues,
+  makeArtists,
+  makeDates,
+  makeLocations,
+} from "../../utils/utilities";
+import { toSlug } from "../../utils/getLocations";
 import Link from "next/link";
 
 export const NavItem = ({
@@ -83,22 +88,10 @@ export const MenuList = ({
 };
 
 export const NavigationBar = ({ events, setSearchTerm }) => {
-  // abstract this func
-  const venues = removeDuplicates(events.map((event) => event.venue.name));
-  const dates = removeDuplicates(events.map((event) => event.formattedDate));
-  // abstract this func
-  let locations = getLocations();
-  locations = locations.map((loc) => {
-    return loc.city || loc.state;
-  });
-  // abstract this func
-  let allArtists = [];
-  events.map((event) => {
-    return event.artistList.map((artist) => {
-      allArtists.push(artist.name);
-    });
-  });
-  allArtists = removeDuplicates(allArtists);
+  const venues = makeVenues(events);
+  const dates = makeDates(events);
+  const artists = makeArtists(events);
+  let locations = makeLocations();
 
   return (
     <div className="navigations">
@@ -113,7 +106,7 @@ export const NavigationBar = ({ events, setSearchTerm }) => {
         <NavItem
           image="/images/icon-dj.svg"
           text="artist"
-          navItems={allArtists}
+          navItems={artists}
           title="DJ's and Artists"
           setSearchTerm={setSearchTerm}
         />
