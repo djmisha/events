@@ -4,7 +4,14 @@ import { removeDuplicates } from "../../utils/utilities";
 import { getLocations, toSlug } from "../../utils/getLocations";
 import Link from "next/link";
 
-const NavItem = ({ image, text, title, navItems, SearchTerm, isLocation }) => {
+export const NavItem = ({
+  image,
+  text,
+  title,
+  navItems,
+  setSearchTerm,
+  isLocation,
+}) => {
   const [isOpen, SetIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -25,23 +32,23 @@ const NavItem = ({ image, text, title, navItems, SearchTerm, isLocation }) => {
         text={text}
         isOpen={isOpen}
         title={title}
-        SearchTerm={SearchTerm}
+        setSearchTerm={setSearchTerm}
         isLocation={isLocation}
       />
     </div>
   );
 };
 
-const MenuList = ({
+export const MenuList = ({
   navItems,
   text,
   title,
   isOpen,
-  SearchTerm,
+  setSearchTerm,
   isLocation,
 }) => {
   const handleClick = (e) => {
-    SearchTerm(e.target.innerText);
+    setSearchTerm(e.target.innerText);
   };
 
   return (
@@ -75,17 +82,18 @@ const MenuList = ({
   );
 };
 
-export const NavigationBar = ({ data, locationData, SearchTerm }) => {
-  const venues = removeDuplicates(data.map((event) => event.venue.name));
-  const dates = removeDuplicates(data.map((event) => event.formattedDate));
-
+export const NavigationBar = ({ events, setSearchTerm }) => {
+  // abstract this func
+  const venues = removeDuplicates(events.map((event) => event.venue.name));
+  const dates = removeDuplicates(events.map((event) => event.formattedDate));
+  // abstract this func
   let locations = getLocations();
   locations = locations.map((loc) => {
     return loc.city || loc.state;
   });
-
+  // abstract this func
   let allArtists = [];
-  data.map((event) => {
+  events.map((event) => {
     return event.artistList.map((artist) => {
       allArtists.push(artist.name);
     });
@@ -100,27 +108,27 @@ export const NavigationBar = ({ data, locationData, SearchTerm }) => {
           text="venue"
           navItems={venues}
           title="Venues"
-          SearchTerm={SearchTerm}
+          setSearchTerm={setSearchTerm}
         />
         <NavItem
           image="/images/icon-dj.svg"
           text="artist"
           navItems={allArtists}
           title="DJ's and Artists"
-          SearchTerm={SearchTerm}
+          setSearchTerm={setSearchTerm}
         />
         <NavItem
           image="/images/icon-cal.svg"
           text="date"
           title="Upcoming Dates"
-          SearchTerm={SearchTerm}
+          setSearchTerm={setSearchTerm}
           navItems={dates}
         />
         <NavItem
           image="/images/icon-map.svg"
           text="city"
           title="Select Location"
-          SearchTerm={SearchTerm}
+          setSearchTerm={setSearchTerm}
           navItems={locations}
           isLocation={true}
         />

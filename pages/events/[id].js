@@ -9,6 +9,7 @@ import NavigationBar from "../../components/NavigationBar/NavigataionBar";
 import { searchFilter } from "../../utils/searchFilter";
 import { makePageTitle } from "../../utils/utilities";
 import Filter from "../../components/Filter/Filter";
+import Sidebar from "../../components/NavigationBar/Sidebar";
 
 export default function Location({ locationData }) {
   const [events, setEvents] = useState();
@@ -43,28 +44,33 @@ export default function Location({ locationData }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <h1>{makePageTitle(city, state)}</h1>
-      <Filter
-        events={events}
-        setEvents={setEvents}
-        searchTerm={searchTermRef.current}
-        filterVisible={filterVisible}
-        setFilterVisible={setFilterVisible}
-      />
-      <section>
-        {loading && <Spinner isLoading={loading} />}
-        {events &&
-          events.map((event, index) => {
-            return <EventCard event={event} key={index} />;
-          })}
-      </section>
-      {events && (
-        <NavigationBar
-          data={events}
-          locationData={locationData}
-          SearchTerm={setSearchTerm}
-        />
-      )}
+      <div className="main-wrap">
+        <section className="upcoming-events">
+          <h1>{makePageTitle(city, state)}</h1>
+          <Filter
+            events={events}
+            setEvents={setEvents}
+            searchTerm={searchTermRef.current}
+            filterVisible={filterVisible}
+            setFilterVisible={setFilterVisible}
+          />
+          {loading && <Spinner isLoading={loading} />}
+          <div id="eventfeed">
+            {events &&
+              events.map((event, index) => {
+                return <EventCard event={event} key={index} />;
+              })}
+          </div>
+        </section>
+        {events && <Sidebar events={events} setSearchTerm={setSearchTerm} />}
+        {events && (
+          <NavigationBar
+            events={events}
+            locationData={locationData}
+            setSearchTerm={setSearchTerm}
+          />
+        )}
+      </div>
     </Layout>
   );
 }

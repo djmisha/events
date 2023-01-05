@@ -21,21 +21,26 @@
   }
 }
 
-.sidebar-venues {
+#sidebar-venues-list {
   font-size: 14px;
   display: flex;
   flex-wrap: wrap;
+  h2 {
+    width: 90%;
+  }
   > div {
     width: 50%;
   }
 }
 
-.sidebar-artist {
+#sidebar-artist-list {
   font-size: 14px;
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 120px;
-
+  h2 {
+    width: 90%;
+  }
   > div {
     width: 33%;
   }
