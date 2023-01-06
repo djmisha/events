@@ -27,7 +27,6 @@ export default function Home({ locations }) {
   useEffect(() => {
     const getUserLocation = async () => {
       const id = await UserLocationService();
-      debugger;
       SetUserLocation(id);
       setSlug(toSlug(id.city || id.state));
     };

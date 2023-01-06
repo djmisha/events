@@ -8,29 +8,34 @@ import setDates from "./setDates";
  * @param {funciton} setLoading
  */
 
-// const getEvents = async (id, setEvents, setLoading) => {
-//   const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
-//   const URL = process.env.NEXT_PUBLIC_API_URL_EDMTRAIN;
-//   const PATH = URL + id + "&client=" + KEY;
-//   await fetch(PATH)
-//     .then(function (response) {
-//       response.json().then((res) => {
-//         // fix this later
-//         res.data.map((event) => {
-//           event.isVisible = true;
-//         });
-//         parseData(res.data);
-//         setEvents(res.data);
-//         setLoading(false);
-//       });
-//     })
-//     .catch(function (error) {
-//       console.error(error);
-//     });
-// };
+const getEvents = (id, setEvents, setLoading) => {
+  if (process.env.NODE_ENV === "development") {
+    return getSampleEvents(id, setEvents, setLoading);
+  } else {
+    return getEventsProd(id, setEvents, setLoading);
+  }
+};
 
-// TEMPORARY FOR DEVELOPMENT ON Local
-const getEvents = async (id, setEvents, setLoading) => {
+const getEventsProd = async (id, setEvents, setLoading) => {
+  const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
+  const URL = process.env.NEXT_PUBLIC_API_URL_EDMTRAIN;
+  const PATH = URL + id + "&client=" + KEY;
+
+  await fetch(PATH)
+    .then(function (response) {
+      response.json().then((res) => {
+        parseData(res.data);
+        setEvents(res.data);
+        setLoading(false);
+      });
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+};
+
+// does not make API Call
+const getSampleEvents = async (id, setEvents, setLoading) => {
   await events;
   parseData(events);
   setEvents(events);
