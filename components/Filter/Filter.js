@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { clearSearch } from "../../utils/searchFilter";
 
 const Filter = ({
