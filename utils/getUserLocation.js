@@ -32,7 +32,6 @@ export const UserLocationService = async () => {
   });
 
   if (!id) id = 10; // fallsback to CA
-  debugger;
 
   return {
     city,
@@ -43,7 +42,7 @@ export const UserLocationService = async () => {
 
 const responseFallback = (response, id) => {
   if (response.status != 200) {
-    id = 10;
+    id = 10; // fallsback to CA
     return;
   }
 };

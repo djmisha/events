@@ -25,6 +25,7 @@ export default function Location({ locationData }) {
     if (dataFetchedRef.current === id) return;
     dataFetchedRef.current = id;
     getEvents(id, setEvents, setLoading);
+    setFilterVisible(false);
   }, [id]);
 
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function Location({ locationData }) {
         searchTermRef.current = searchTerm;
         setFilterVisible(true);
         setSearchTerm("");
+        window.location = "#top";
       }
     }
   }, [searchTerm, events]);
@@ -44,7 +46,7 @@ export default function Location({ locationData }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className="main-wrap">
+      <div className="main-wrap" id="top">
         <section className="upcoming-events">
           <h1>{makePageTitle(city, state)}</h1>
           <Filter
