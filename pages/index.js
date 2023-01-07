@@ -46,7 +46,14 @@ export default function Home({ locations }) {
       </Head>
       {loading && <Spinner isLoading={loading} text="Finding location" />}
       {userLocation && (
-        <h1>Upcoming Events in {userLocation.city || userLocation.state}</h1>
+        <>
+          <p>
+            We think you&apos;re located near{" "}
+            <strong>{userLocation.city || userLocation.state}</strong>. If we
+            got this wrong select your city below.
+          </p>
+          <h1>Upcoming Events in {userLocation.city || userLocation.state}</h1>
+        </>
       )}
       <section>
         {events &&

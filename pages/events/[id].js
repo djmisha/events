@@ -18,12 +18,12 @@ export default function Location({ locationData }) {
   const title = makePageTitle(city, state);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState();
-  const dataFetchedRef = useRef(false);
+  const dataFetchedRef = useRef();
   const searchTermRef = useRef("");
 
   useEffect(() => {
-    if (dataFetchedRef.current) return;
-    dataFetchedRef.current = true;
+    if (dataFetchedRef.current === id) return;
+    dataFetchedRef.current = id;
     getEvents(id, setEvents, setLoading);
   }, [id]);
 
