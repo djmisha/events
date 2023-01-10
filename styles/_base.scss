@@ -70,3 +70,13 @@ img.loading {
 .isloading {
   display: none;
 }
+
+.location-notice {
+  margin-top: 0;
+  background-color: $pink;
+  color: white;
+  padding: 10px;
+  a {
+    color: white;
+  }
+}

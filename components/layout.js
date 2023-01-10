@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import Link from "next/link";
 
-export const siteTitle = "Events";
+export const siteTitle = "House Music Events & DJ Mixes";
 
 export default function Layout({ children, home }) {
   return (
@@ -11,7 +11,7 @@ export default function Layout({ children, home }) {
         <link rel="icon" href="/images/housemusic48.png" />
         <meta
           name="description"
-          content="Find house music events festivals dance clubs techno raves edm shows in a city near you."
+          content="Find house music and dance events in a city near you. Listen to DJ mixes from around the world. Let's Party!"
         />
         <meta property="og:image" content="/images/housemusic512.png" />
         <meta name="og:title" content={siteTitle} />

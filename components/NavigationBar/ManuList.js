@@ -13,6 +13,13 @@ export const MenuList = ({
     setSearchTerm(e.target.innerText);
   };
 
+  const homeSlug = (slug) => {
+    if (window.location.pathname === "/") {
+      return `/events/${slug}`;
+    }
+    return slug;
+  };
+  // @TODO - refactor dry
   return (
     <>
       {!isLocation && (
@@ -31,7 +38,7 @@ export const MenuList = ({
         <div id={`${text}-list`} className={isOpen ? "visible" : ""}>
           <h2>{title}</h2>
           {navItems.map((item, index) => {
-            const slug = toSlug(item);
+            const slug = homeSlug(toSlug(item));
             return (
               <div key={index + item}>
                 <Link href={slug}>{item}</Link>
