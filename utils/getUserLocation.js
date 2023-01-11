@@ -34,7 +34,13 @@ export const UserLocationService = async () => {
       }
     });
 
-    if (!id) id = 10; // fallsback to CA
+    // fallsback to CA
+    if (!id) return fallback;
+
+    // if stuck then return fallback
+    setTimeout(() => {
+      return fallback;
+    }, 10000);
 
     return {
       city,
@@ -66,9 +72,14 @@ const matchToLocation = () => {
 // @TODO refactor w/ try catch
 const responseFallback = (response, id) => {
   if (response.status != 200) {
-    id = 10; // fallsback to CA
-    return;
+    return fallback;
   }
+};
+
+const fallback = {
+  id: 10,
+  state: "California",
+  city: "San Diego",
 };
 
 export const storeUserLocation = (id) => {
