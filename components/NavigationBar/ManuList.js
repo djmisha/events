@@ -40,9 +40,9 @@ export const MenuList = ({
           {navItems.map((item, index) => {
             const slug = homeSlug(toSlug(item));
             return (
-              <div key={index + item}>
-                <Link href={slug}>{item}</Link>
-              </div>
+              <Link href={slug} key={index + item}>
+                {item}
+              </Link>
             );
           })}
         </div>

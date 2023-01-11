@@ -259,12 +259,15 @@
     text-align: left;
   }
 
-  > div {
+  > div,
+  a {
+    display: block;
     padding: 10px 6px;
     font-size: 14px !important;
     line-height: 16px;
     font-weight: 400;
     color: $black;
+    text-decoration: none;
     border-bottom: 1px solid $borderGrey;
     @include media($tablet) {
       font-size: 16px !important;
@@ -274,10 +277,6 @@
     &:hover {
       background: $lightPink;
       text-decoration: none;
-    }
-    a {
-      text-decoration: none;
-      color: $black;
     }
   }
 }
