@@ -1,11 +1,12 @@
 import Head from "next/head";
-import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
-import { getLocations, toSlug } from "../utils/getLocations";
-import { UserLocationService, fallback } from "../utils/getUserLocation.js";
+import { getLocations } from "../utils/getLocations";
+import {
+  UserLocationService,
+  fallbackLocation,
+} from "../utils/getUserLocation.js";
 import { useEffect, useRef, useState } from "react";
 import getEvents from "../utils/getEvents";
-import EventCard from "../components/EventCard/EventCard";
 import Spinner from "../components/Spinner/Spinner";
 import EventsModule from "../components/EventsModule/EventsModule";
 
@@ -22,14 +23,13 @@ export default function Home({ locations }) {
   const [userLocation, setUserLocation] = useState();
   const [events, SetEvents] = useState([]);
   const [loading, SetLoading] = useState(true);
-  // const [slug, setSlug] = useState();
   const dataLocationFetchedRef = useRef(false);
 
   useEffect(() => {
     const getUserLocation = async () => {
       const id = await UserLocationService();
       setUserLocation(id);
-      if (!id) setUserLocation(fallback);
+      if (!id) setUserLocation(fallbackLocation);
     };
     if (dataLocationFetchedRef.current) return;
     dataLocationFetchedRef.current = true;

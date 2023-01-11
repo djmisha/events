@@ -12,13 +12,13 @@ export const UserLocationService = async () => {
 
     const url = "https://api.ipify.org?format=json";
     const response = await fetch(url);
-    responseFallback(response, id);
+    responseFallback(response, id); // is this neeed?
     const jsonData = await response.json();
 
     const ip = jsonData.ip;
     const locationURL = `https://ipapi.co/${ip}/json/`;
     const locationResponse = await fetch(locationURL);
-    responseFallback(locationResponse, id);
+    responseFallback(locationResponse, id); // is this neeed?
     const locationData = await locationResponse.json();
 
     const { city, region_code: state } = locationData;
@@ -33,15 +33,6 @@ export const UserLocationService = async () => {
         return id;
       }
     });
-
-    // fallsback to CA
-
-    // if stuck then return fallback
-    // setTimeout(() => {
-    //   console.log("Delayed for 1 second.", fallback);
-    //   if (!id) return fallback;
-    //   // return fallback;
-    // }, 1000);
 
     return {
       city,
@@ -77,7 +68,7 @@ const responseFallback = (response, id) => {
   }
 };
 
-export const fallback = {
+export const fallbackLocation = {
   city: "San Diego",
   state: "California",
   id: 10,
