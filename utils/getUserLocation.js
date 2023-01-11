@@ -8,37 +8,41 @@ export const UserLocationService = async () => {
   if (hasUserLocation()) {
     return matchToLocation();
   } else {
-    let id;
+    try {
+      let id;
 
-    const url = "https://api.ipify.org?format=json";
-    const response = await fetch(url);
-    responseFallback(response, id); // is this neeed?
-    const jsonData = await response.json();
+      const url = "https://api.ipify.org?format=json";
+      const response = await fetch(url);
+      responseFallback(response, id); // is this neeed?
+      const jsonData = await response.json();
 
-    const ip = jsonData.ip;
-    const locationURL = `https://ipapi.co/${ip}/json/`;
-    const locationResponse = await fetch(locationURL);
-    responseFallback(locationResponse, id); // is this neeed?
-    const locationData = await locationResponse.json();
+      const ip = jsonData.ip;
+      const locationURL = `https://ipapi.co/${ip}/json/`;
+      const locationResponse = await fetch(locationURL);
+      responseFallback(locationResponse, id); // is this neeed?
+      const locationData = await locationResponse.json();
 
-    const { city, region_code: state } = locationData;
+      const { city, region_code: state } = locationData;
 
-    locations.forEach(function (location) {
-      if (city === location.city) {
-        id = location.id;
-        return id;
-      }
-      if (!id && state === location.stateCode) {
-        id = location.id;
-        return id;
-      }
-    });
+      locations.forEach(function (location) {
+        if (city === location.city) {
+          id = location.id;
+          return id;
+        }
+        if (!id && state === location.stateCode) {
+          id = location.id;
+          return id;
+        }
+      });
 
-    return {
-      city,
-      state,
-      id,
-    };
+      return {
+        city,
+        state,
+        id,
+      };
+    } catch {
+      return fallbackLocation;
+    }
   }
 };
 
