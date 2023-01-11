@@ -35,12 +35,13 @@ export const UserLocationService = async () => {
     });
 
     // fallsback to CA
-    if (!id) return fallback;
 
     // if stuck then return fallback
-    setTimeout(() => {
-      return fallback;
-    }, 10000);
+    // setTimeout(() => {
+    //   console.log("Delayed for 1 second.", fallback);
+    //   if (!id) return fallback;
+    //   // return fallback;
+    // }, 1000);
 
     return {
       city,
@@ -76,10 +77,10 @@ const responseFallback = (response, id) => {
   }
 };
 
-const fallback = {
-  id: 10,
-  state: "California",
+export const fallback = {
   city: "San Diego",
+  state: "California",
+  id: 10,
 };
 
 export const storeUserLocation = (id) => {

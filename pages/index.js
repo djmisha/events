@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
 import { getLocations, toSlug } from "../utils/getLocations";
-import { UserLocationService } from "../utils/getUserLocation.js";
+import { UserLocationService, fallback } from "../utils/getUserLocation.js";
 import { useEffect, useRef, useState } from "react";
 import getEvents from "../utils/getEvents";
 import EventCard from "../components/EventCard/EventCard";
@@ -19,7 +19,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ locations }) {
-  const [userLocation, SetUserLocation] = useState();
+  const [userLocation, setUserLocation] = useState();
   const [events, SetEvents] = useState([]);
   const [loading, SetLoading] = useState(true);
   // const [slug, setSlug] = useState();
@@ -28,8 +28,8 @@ export default function Home({ locations }) {
   useEffect(() => {
     const getUserLocation = async () => {
       const id = await UserLocationService();
-      SetUserLocation(id);
-      // setSlug(toSlug(id.city || id.state));
+      setUserLocation(id);
+      if (!id) setUserLocation(fallback);
     };
     if (dataLocationFetchedRef.current) return;
     dataLocationFetchedRef.current = true;
