@@ -24,20 +24,27 @@ export default function Home({ locations }) {
   const [events, SetEvents] = useState([]);
   const [loading, SetLoading] = useState(true);
   const dataLocationFetchedRef = useRef(false);
+  const isFallbackLocation = useRef(false);
 
   useEffect(() => {
     const getUserLocation = async () => {
       const id = await UserLocationService();
       setUserLocation(id);
-      if (!id) setUserLocation(fallbackLocation);
+      if (!id) {
+        setUserLocation(fallbackLocation);
+        isFallbackLocation.current = true;
+      }
     };
     if (dataLocationFetchedRef.current) return;
     dataLocationFetchedRef.current = true;
+    isFallbackLocation.current = false;
     getUserLocation();
   }, []);
 
   useEffect(() => {
-    if (userLocation) getEvents(userLocation.id, SetEvents, SetLoading);
+    if (userLocation) {
+      getEvents(userLocation.id, SetEvents, SetLoading);
+    }
   }, [userLocation]);
 
   return (
@@ -46,6 +53,12 @@ export default function Home({ locations }) {
         <title>{siteTitle}</title>
       </Head>
       {loading && <Spinner isLoading={loading} text="Finding location" />}
+      {isFallbackLocation.current && (
+        <p className="location-notice">
+          We could not determine your location, so we're showing events in
+          California. Update your location below.
+        </p>
+      )}
       {userLocation && <EventsModule locationData={userLocation} />}
     </Layout>
   );
