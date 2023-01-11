@@ -55,7 +55,7 @@ export default function Home({ locations }) {
       {loading && <Spinner isLoading={loading} text="Finding location" />}
       {isFallbackLocation.current && (
         <p className="location-notice">
-          We could not determine your location, so we're showing events in
+          We could not determine your location, so we&apos;re showing events in
           California. Update your location below.
         </p>
       )}
