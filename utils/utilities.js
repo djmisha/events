@@ -23,10 +23,6 @@ export const cleanString = (string) => {
  * Functions to create event arrays of strings
  */
 
-export const makePageTitle = (city, state) => {
-  return `Music Events in ${city ? `${city}, ${state}` : state}`;
-};
-
 export const makeVenues = (data) => {
   return removeDuplicates(data.map((item) => item.venue.name));
 };
@@ -56,8 +52,19 @@ export const makeLocations = () => {
   return locations;
 };
 
-{
-  /* <title>House Music Events, Festivals, EDM Shows, Techno, Raves, Dance Clubs</title> */
-  // <meta name="description"
-  // content="Find house music events festivals dance clubs techno raves edm shows in a city near you. " />
-}
+export const cityOrState = (city, state) => {
+  const string = city ? `${city}, ${state}` : `${state}, USA`;
+  return string;
+};
+
+export const makePageTitle = (city, state) => {
+  return `Music Events in ${cityOrState(city, state)}`;
+};
+
+export const makePageDescription = (city, state) => {
+  let title = `Find house music events festivals dance clubs techno raves edm shows in ${cityOrState(
+    city,
+    state
+  )}`;
+  return title;
+};

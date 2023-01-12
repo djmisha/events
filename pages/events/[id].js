@@ -1,17 +1,19 @@
 import Head from "next/head";
 import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
-import { makePageTitle } from "../../utils/utilities";
+import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModule from "../../components/EventsModule/EventsModule";
 
 export default function Location({ locationData }) {
-  const { city, state, id } = locationData;
+  const { city, state } = locationData;
   const title = makePageTitle(city, state);
+  const description = makePageDescription(city, state);
 
   return (
     <Layout>
       <Head>
         <title>{title}</title>
+        <meta name="description" content={description} />
       </Head>
       <EventsModule locationData={locationData} />
     </Layout>

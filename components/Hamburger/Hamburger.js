@@ -26,7 +26,7 @@ const Hamburger = () => {
           width={200}
           height={67}
           src="/images/logo.jpeg"
-          alt="Logo"
+          alt="sandiegohousemusic.com logo"
           className="logo"
         />
         <div className="nav-items">
