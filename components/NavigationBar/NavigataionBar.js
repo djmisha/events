@@ -5,6 +5,7 @@ import {
   makeLocations,
 } from "../../utils/utilities";
 import NavItem from "./NavItem";
+import Hamburger from "../Hamburger/Hamburger";
 
 const NavigationBar = ({ events, setSearchTerm }) => {
   const venues = makeVenues(events);
@@ -15,6 +16,7 @@ const NavigationBar = ({ events, setSearchTerm }) => {
   return (
     <div className="navigations">
       <section className="sort">
+        <Hamburger />
         <NavItem
           image="/images/icon-venue.svg"
           text="venue"

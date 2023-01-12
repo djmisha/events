@@ -170,7 +170,7 @@
     flex-direction: column;
     justify-content: center;
     height: 78px;
-    min-width: 75px;
+    min-width: 50px;
 
     @include media($desktop) {
       font-size: 14px;

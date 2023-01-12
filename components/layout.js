@@ -3,7 +3,8 @@ import styles from "./layout.module.css";
 import Link from "next/link";
 import Script from "next/script";
 
-export const siteTitle = "House Music Events & DJ Mixes";
+export const siteTitle =
+  "House Music Events, Festivals, EDM Shows, Techno, Raves, Dance Clubs";
 
 export default function Layout({ children, home }) {
   return (
