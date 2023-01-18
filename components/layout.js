@@ -11,6 +11,7 @@ export default function Layout({ children, home }) {
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/images/housemusic48.png" />
+
         <meta
           name="description"
           content="Find house music and dance events in a city near you. Listen to DJ mixes from around the world. Let's Party!"
@@ -18,6 +19,9 @@ export default function Layout({ children, home }) {
         <meta property="og:image" content="/images/housemusic512.png" />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+
+        <link rel="apple-touch-icon" href="/images/housemusic512.png"></link>
+        <meta name="theme-color" content="#317EFB" />
       </Head>
       <main>{children}</main>
       {/* {!home && (

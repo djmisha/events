@@ -1,0 +1,33 @@
+{
+  "name": "sandiegohousemusic.com",
+  "short_name": "sdhousemusic",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ce3197","theme_color": "#ce3197",
+  "description": "House music events in your city, USA.",
+  "icons": [{
+    "src": "assets/images/housemusic48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "assets/images/housemusic72.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }, {
+    "src": "assets/images/housemusic96.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }, {
+    "src": "assets/images/housemusic144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "assets/images/housemusic168.png",
+    "sizes": "168x168",
+    "type": "image/png"
+  }, {
+    "src": "assets/images/housemusic512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}

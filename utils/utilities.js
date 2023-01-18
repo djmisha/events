@@ -58,6 +58,10 @@ export const cityOrState = (city, state) => {
 };
 
 export const makePageTitle = (city, state) => {
+  return `Dance Music Events in ${cityOrState(city, state)}`;
+};
+
+export const makePageHeadline = (city, state) => {
   return `Music Events in ${cityOrState(city, state)}`;
 };
 

@@ -5,7 +5,7 @@ import getEvents from "../../utils/getEvents";
 import Spinner from "../../components/Spinner/Spinner";
 import NavigationBar from "../../components/NavigationBar/NavigataionBar";
 import { searchFilter } from "../../utils/searchFilter";
-import { makePageTitle } from "../../utils/utilities";
+import { makePageHeadline } from "../../utils/utilities";
 import Filter from "../../components/Filter/Filter";
 import Sidebar from "../../components/NavigationBar/Sidebar";
 
@@ -13,7 +13,7 @@ const EventsModule = ({ locationData }) => {
   let [filterVisible, setFilterVisible] = useState(false);
   const [events, setEvents] = useState();
   const { city, state, id } = locationData;
-  const title = makePageTitle(city, state);
+  const title = makePageHeadline(city, state);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState();
   const dataFetchedRef = useRef();
@@ -50,7 +50,7 @@ const EventsModule = ({ locationData }) => {
           filterVisible={filterVisible}
           setFilterVisible={setFilterVisible}
         />
-        {loading && <Spinner isLoading={loading} />}
+        {loading && <Spinner isLoading={loading} text="Loading events" />}
         <div id="eventfeed">
           {events &&
             events.map((event, index) => {
