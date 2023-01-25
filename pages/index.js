@@ -34,19 +34,19 @@ export default function Home({ locations }) {
   const isFallbackLocation = useRef(false);
 
   useEffect(() => {
-    /**
-     * PRIMARY METHOD TO GET USERS LOCATION
-     * uses geoLocation.
-     *
-     * Consider a hook: https://gist.github.com/whoisryosuke/e3ad7f43924dec60a12e247efe743e70
-     */
     const getGeoLocation = async () => {
+      let location;
+      // If we have a cookie, use it
       if (hasUserLocation()) {
-        const location = matchToLocation();
+        location = matchToLocation();
         setUserLocation(location);
       }
-      let location;
-
+      /**
+       * PRIMARY METHOD TO GET USERS LOCATION
+       * Brower GeoLocation
+       *
+       * Consider a hook: https://gist.github.com/whoisryosuke/e3ad7f43924dec60a12e247efe743e70
+       */
       if (navigator.geolocation) {
         location = navigator.geolocation.getCurrentPosition(
           async (position) => {
@@ -100,7 +100,7 @@ export default function Home({ locations }) {
                 location = await UserLocationService();
                 setUserLocation(location);
                 /**
-                 * FINAL FALL BACK - if the 2 other ways to get a location fail
+                 * FINAL FALLBACK - if the 2 other ways to get a location fail
                  * we set it to a fallback value
                  */
                 if (!location) {
