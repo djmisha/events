@@ -5,48 +5,54 @@ import locations from "./locations.json";
  * IP -> Location -> Match to Location ID -> set in Local Storage
  */
 export const UserLocationService = async () => {
-  if (hasUserLocation()) {
-    return matchToLocation();
-  } else {
-    try {
-      let id;
+  try {
+    let id;
 
-      const url = "https://api.ipify.org?format=json";
-      const response = await fetch(url);
-      // responseFallback(response, id); // is this neeed?
-      const jsonData = await response.json();
+    const url = "https://api.ipify.org?format=json";
+    const response = await fetch(url);
+    const jsonData = await response.json();
 
-      const ip = jsonData.ip;
-      const locationURL = `https://ipapi.co/${ip}/json/`;
-      const locationResponse = await fetch(locationURL);
-      // responseFallback(locationResponse, id); // is this neeed?
-      const locationData = await locationResponse.json();
+    const ip = jsonData.ip;
+    const locationURL = `https://ipapi.co/${ip}/json/`;
+    const locationResponse = await fetch(locationURL);
+    const locationData = await locationResponse.json();
 
-      const { city, region_code: state } = locationData;
+    const { city, region_code: state } = locationData;
 
-      locations.forEach(function (location) {
-        if (city === location.city) {
-          id = location.id;
-          return id;
-        }
-        if (!id && state === location.stateCode) {
-          id = location.id;
-          return id;
-        }
-      });
+    locations.forEach(function (location) {
+      if (city === location.city) {
+        id = location.id;
+      }
+      if (!id && state === location.stateCode) {
+        id = location.id;
+      }
+      return id;
+    });
 
-      return {
-        city,
-        state,
-        id,
-      };
-    } catch {
-      return fallbackLocation;
-    }
+    return {
+      city,
+      state,
+      id,
+    };
+  } catch (error) {
+    throw Error(error);
   }
 };
 
-const matchToLocation = () => {
+// export const matchToId = (locations, city, state) => {
+//   let id;
+//   locations.forEach(function (location) {
+//     if (city === location.city) {
+//       id = location.id;
+//     }
+//     if (!id && state === location.stateCode) {
+//       id = location.id;
+//     }
+//     return id;
+//   });
+// };
+
+export const matchToLocation = () => {
   let city;
   let state;
   const id = localStorage.getItem("locID");
@@ -65,24 +71,26 @@ const matchToLocation = () => {
   };
 };
 
-// @TODO refactor w/ try catch
-const responseFallback = (response, id) => {
+const defaultLocation = (response, id) => {
   if (response.status != 200) {
     return fallback;
   }
 };
 
+// fallback location object
 export const fallbackLocation = {
-  // city: "San Diego",
+  city: "San Diego",
   state: "California",
-  id: 10,
+  id: 81,
 };
 
+// Sets local storage with location
 export const storeUserLocation = (id) => {
   localStorage.setItem("locID", id);
 };
 
-const hasUserLocation = () => {
+// Checks local storage for location
+export const hasUserLocation = () => {
   const id = localStorage.getItem("locID");
   if (id) return true;
   return false;

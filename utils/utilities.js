@@ -72,3 +72,7 @@ export const makePageDescription = (city, state) => {
   )}`;
   return title;
 };
+
+export const urlBigData = (lat, long) => {
+  return `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=en`;
+};

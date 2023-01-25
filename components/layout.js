@@ -29,21 +29,23 @@ export default function Layout({ children, home }) {
           <Link href="/">← Back to home</Link>
         </div>
       )} */}
-      <div>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=UA-115514301-1"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+      {process.env.NODE_ENV != "development" && (
+        <div>
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=UA-115514301-1"
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){window.dataLayer.push(arguments);}
               gtag('js', new Date());
 
               gtag('config', 'UA-115514301-1');
             `}
-        </Script>
-      </div>
+          </Script>
+        </div>
+      )}
     </div>
   );
 }
