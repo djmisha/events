@@ -40,6 +40,7 @@ export default function Home({ locations }) {
       if (hasUserLocation()) {
         location = matchToLocation();
         setUserLocation(location);
+        return;
       }
       /**
        * PRIMARY METHOD TO GET USERS LOCATION
