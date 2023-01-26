@@ -8,11 +8,14 @@ import {
   matchToLocation,
   matchToId,
 } from "../utils/getUserLocation.js";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useInsertionEffect, useRef, useState } from "react";
 import getEvents from "../utils/getEvents";
 import Spinner from "../components/Spinner/Spinner";
 import EventsModule from "../components/EventsModule/EventsModule";
 import { urlBigData } from "../utils/utilities";
+import Image from "next/image";
+import Link from "next/link";
+import { decode } from "html-entities";
 
 export async function getStaticProps() {
   const locations = getLocations();
@@ -129,12 +132,69 @@ export default function Home({ locations }) {
     }
   }, [userLocation]);
 
+  const [music, setMusic] = useState();
+  const [musicLoading, setMusicLoading] = useState(true);
+
+  useInsertionEffect(() => {
+    const getMusic = async () => {
+      const rand = Math.floor(Math.random() * 20);
+      const URL = `https://music.sandiegohousemusic.com/wp-json/wp/v2/posts?category=music&page=${rand}&per_page=4`;
+
+      await fetch(URL)
+        .then(function (response) {
+          response.json().then((res) => {
+            console.log(res);
+            const music = res.map((item) => {
+              const {
+                id,
+                link,
+                jetpack_featured_media_url: image,
+                title,
+                content,
+              } = item;
+              const { rendered: headline } = title;
+
+              return (
+                <div key={id} className="single-music">
+                  <Link href={link} target="_blank" rel="noopener">
+                    <div className="single-music-image">
+                      <Image
+                        src={image}
+                        alt={headline}
+                        width={200}
+                        height={200}
+                      />
+                    </div>
+
+                    <span>{decode(headline)}</span>
+                  </Link>
+                </div>
+              );
+            });
+            setMusic(music);
+            setMusicLoading(false);
+          });
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    };
+    getMusic();
+  }, []);
+
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      {loading && <Spinner isLoading={loading} text="Finding location" />}
+      <h1>Dance Music Events & DJ Mixes</h1>
+      {musicLoading && <Spinner isLoading={musicLoading} text="Loading..." />}
+      {music && (
+        <>
+          <h2>Listen to DJ Mixes</h2>
+          <div id="musicfeed">{music}</div>
+        </>
+      )}
       {isFallbackLocation.current && (
         <p className="location-notice">
           We could not determine your location, so we&apos;re showing events in

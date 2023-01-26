@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "music.sandiegohousemusic.com",
+        // port: "8080",
+        pathname: "/wp-content/uploads/**",
+      },
+    ],
+  },
   reactStrictMode: true,
   async redirects() {
     return [

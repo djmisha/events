@@ -1,69 +1,51 @@
-// Event Feed
-
 #musicfeed {
-  padding: 0;
-  transition: all 0.25 ease-out;
-  @include media(650px) {
-    padding: 0 10px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-  }
+  padding: 0 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
   @include media($tablet) {
-    margin-bottom: 20px;
-  }
-  @include media($desktop) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 .single-music {
-  position: relative;
-  transition: all 0.25 ease-out;
-  text-align: left;
+  border-radius: 6px;
+  background-color: #eee;
   margin: 0px 0px;
   position: relative;
-  background-color: black;
   transition: all 0.15s ease-in-out;
   position: relative;
   top: 0;
   text-align: left;
   margin-bottom: 10px;
-  height: 220px;
-  overflow: hidden;
-  &:nth-of-type(even) {
-    a {
-      color: $blue;
-    }
-  }
-  &:nth-of-type(odd) {
-    a {
-      color: $green;
-    }
-  }
-  @include media($desktop) {
-    &:hover {
-      box-shadow: 0px 5px 15px #52525b;
-    }
-  }
   a {
     text-decoration: none;
+    color: $blue;
+  }
+  .single-music-image {
+    border-radius: 6px;
+    overflow: hidden;
+    height: 40vw;
+    @include media($tablet) {
+      height: 20vw;
+    }
   }
   img {
     width: 100%;
     height: auto;
-    margin-bottom: 10px;
   }
   span {
-    padding: 10px;
-    position: absolute;
-    bottom: 10px;
-    background: black;
-    z-index: 2;
+    padding: 10px 0;
     display: block;
-    margin-top: 10px;
     margin-left: 10px;
-    font-size: 18px;
-    text-transform: uppercase;
+    margin-right: 10px;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: normal;
+    @include media($desktop) {
+      padding: 15px 0;
+      font-size: 16px;
+      line-height: 18px;
+    }
   }
 }
