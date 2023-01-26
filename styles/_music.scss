@@ -10,7 +10,7 @@
 
 .single-music {
   border-radius: 6px;
-  background-color: #eee;
+  background-color: $lightGrey;
   margin: 0px 0px;
   position: relative;
   transition: all 0.15s ease-in-out;
@@ -19,6 +19,14 @@
   text-align: left;
   margin-bottom: 10px;
   padding-bottom: 20px;
+  &:before {
+    content: "...";
+    color: $borderGrey;
+    font-size: 40px;
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+  }
   a {
     text-decoration: none;
     color: $blue;
@@ -50,10 +58,15 @@
     }
   }
   .single-music-time {
+    display: block;
+    width: calc(100% - 10px);
+    border-top: 1px solid $borderGrey;
     position: absolute;
     bottom: 1px;
-    left: 10px;
+    left: 0px;
     font-size: 10px;
+    padding-left: 10px;
+    padding-top: 2px;
     color: $darkerGrey;
   }
 }

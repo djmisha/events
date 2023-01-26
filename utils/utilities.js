@@ -76,3 +76,20 @@ export const makePageDescription = (city, state) => {
 export const urlBigData = (lat, long) => {
   return `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=en`;
 };
+
+// Randomize Array
+
+export const shuffleArray = (array) => {
+  const newArray = array;
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return newArray;
+};

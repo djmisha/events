@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { decode } from "html-entities";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-dayjs.extend(relativeTime);
+import { shuffleArray } from "../../utils/utilities";
+import setDates from "../../utils/setDates";
 
 const MusicModule = ({ music }) => {
+  music = shuffleArray(music);
   music = music.map((item) => {
     const {
       id,
@@ -30,7 +30,7 @@ const MusicModule = ({ music }) => {
             />
           </div>
           <span>{decode(headline)}</span>
-          <div className="single-music-time">{dayjs(date).fromNow()}</div>
+          <div className="single-music-time">{setDates(date).fromNow}</div>
         </Link>
       </div>
     );
