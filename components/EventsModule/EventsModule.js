@@ -50,7 +50,7 @@ const EventsModule = ({ locationData }) => {
           filterVisible={filterVisible}
           setFilterVisible={setFilterVisible}
         />
-        {loading && <Spinner isLoading={loading} text="Loading events" />}
+        {loading && <Spinner isLoading={loading} text="Loading Events" />}
         <div id="eventfeed">
           {events &&
             events.map((event, index) => {

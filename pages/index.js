@@ -8,14 +8,13 @@ import {
   matchToLocation,
   matchToId,
 } from "../utils/getUserLocation.js";
-import { useEffect, useInsertionEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import getEvents from "../utils/getEvents";
+import getMusic from "../utils/getMusic";
 import Spinner from "../components/Spinner/Spinner";
 import EventsModule from "../components/EventsModule/EventsModule";
 import { urlBigData } from "../utils/utilities";
-import Image from "next/image";
-import Link from "next/link";
-import { decode } from "html-entities";
+import MusicModule from "../components/MusicModule/MusicModule";
 
 export async function getStaticProps() {
   const locations = getLocations();
@@ -132,67 +131,40 @@ export default function Home({ locations }) {
     }
   }, [userLocation]);
 
+  /**
+   * DJ Mixes
+   */
   const [music, setMusic] = useState();
   const [musicLoading, setMusicLoading] = useState(true);
+  const dataMusicFetchedRef = useRef(false);
 
-  useInsertionEffect(() => {
-    const getMusic = async () => {
-      const rand = Math.floor(Math.random() * 20);
-      const URL = `https://music.sandiegohousemusic.com/wp-json/wp/v2/posts?category=music&page=${rand}&per_page=4`;
-
-      await fetch(URL)
-        .then(function (response) {
-          response.json().then((res) => {
-            console.log(res);
-            const music = res.map((item) => {
-              const {
-                id,
-                link,
-                jetpack_featured_media_url: image,
-                title,
-                content,
-              } = item;
-              const { rendered: headline } = title;
-
-              return (
-                <div key={id} className="single-music">
-                  <Link href={link} target="_blank" rel="noopener">
-                    <div className="single-music-image">
-                      <Image
-                        src={image}
-                        alt={headline}
-                        width={200}
-                        height={200}
-                      />
-                    </div>
-
-                    <span>{decode(headline)}</span>
-                  </Link>
-                </div>
-              );
-            });
-            setMusic(music);
-            setMusicLoading(false);
-          });
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
+  useEffect(() => {
+    const fetchMusic = async () => {
+      await getMusic(setMusic, setMusicLoading);
     };
-    getMusic();
-  }, []);
+    if (dataMusicFetchedRef.current) return;
+    dataMusicFetchedRef.current = true;
+    fetchMusic();
+  }, [music]);
 
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <h1>Dance Music Events & DJ Mixes</h1>
-      {musicLoading && <Spinner isLoading={musicLoading} text="Loading..." />}
+      <div className="hero-home">
+        <h1>Dance & House Music</h1>
+        <p>Discover dance music in a city near you and around the world </p>
+      </div>
+      {musicLoading && (
+        <Spinner isLoading={musicLoading} text="Loading Music..." />
+      )}
       {music && (
         <>
           <h2>Listen to DJ Mixes</h2>
-          <div id="musicfeed">{music}</div>
+          <div id="musicfeed">
+            <MusicModule music={music} />
+          </div>
         </>
       )}
       {isFallbackLocation.current && (
