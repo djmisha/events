@@ -45,12 +45,12 @@
     height: auto;
   }
   span {
-    padding: 10px 0;
+    padding: 10px 0 15px;
     display: block;
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 14px;
+    line-height: 16px;
     font-weight: normal;
     color: $pink;
     @include media($desktop) {
