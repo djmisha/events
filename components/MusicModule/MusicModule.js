@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { shuffleArray } from "../../utils/utilities";
 import MusicSingle from "./MusicSingle";
@@ -15,7 +14,7 @@ const MusicModule = ({ music }) => {
     } = item;
     const { rendered: headline } = title;
     const { rendered: cont } = content;
-    console.log(index);
+
     if (index < 4) {
       return (
         <MusicSingle

@@ -62,14 +62,14 @@
   .single-music-time {
     display: block;
     width: calc(100% - 10px);
-    border-top: 1px solid $borderGrey;
+    border-top: 1px solid #e8e8ea;
     position: absolute;
     bottom: 1px;
     left: 0px;
     font-size: 10px;
     padding-left: 10px;
     padding-top: 2px;
-    color: $darkerGrey;
+    color: #989898;
   }
 }
 

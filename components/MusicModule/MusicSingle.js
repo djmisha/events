@@ -11,24 +11,21 @@ const MusicSingle = ({ id, image, headline, date, content }) => {
 
   const handleClick = (e) => {
     SetIsOpen(!isOpen);
-    console.log(isOpen);
   };
 
   return (
     <div id={id} className="single-music" onClick={handleClick}>
-      <div>
-        <div className="single-music-image">
-          <Image
-            src={image}
-            alt={headline}
-            width={200}
-            height={200}
-            priority={true}
-          />
-        </div>
-        <span>{title}</span>
-        <div className="single-music-time">{dateFrom}</div>
+      <div className="single-music-image">
+        <Image
+          src={image}
+          alt={headline}
+          width={200}
+          height={200}
+          priority={true}
+        />
       </div>
+      <span>{title}</span>
+      <div className="single-music-time">{dateFrom}</div>
       <Modal
         content={content}
         title={title}

@@ -14,13 +14,12 @@ const getMusic = (setMusic, setMusicLoading) => {
 };
 
 const getProdMusic = async (setMusic, setMusicLoading) => {
-  const rand = Math.floor(Math.random() * 20);
-  const URL = `https://music.sandiegohousemusic.com/wp-json/wp/v2/posts?category=music&page=${rand}&per_page=12`;
+  const rand = Math.floor(Math.random() * 18) + 1;
+  const URL = `https://music.sandiegohousemusic.com/wp-json/wp/v2/posts?categories=22&page=${rand}&per_page=12`;
 
   await fetch(URL)
     .then(function (response) {
       response.json().then((res) => {
-        console.log(res);
         setMusic(res);
         setMusicLoading(false);
       });
