@@ -70,3 +70,14 @@
     color: $darkerGrey;
   }
 }
+
+.view-more {
+  text-align: right;
+  padding-right: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  a {
+    color: $pink;
+    text-decoration: none;
+  }
+}

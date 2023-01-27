@@ -162,9 +162,7 @@ export default function Home({ locations }) {
       {music && (
         <>
           <h2>Listen to DJ Mixes</h2>
-          <div id="musicfeed">
-            <MusicModule music={music} />
-          </div>
+          <MusicModule music={music} />
         </>
       )}
       {isFallbackLocation.current && (
@@ -173,7 +171,9 @@ export default function Home({ locations }) {
           California. Update your location below.
         </p>
       )}
-      {userLocation && <EventsModule locationData={userLocation} />}
+      {userLocation && (
+        <EventsModule locationData={userLocation} isHome={true} />
+      )}
     </Layout>
   );
 }

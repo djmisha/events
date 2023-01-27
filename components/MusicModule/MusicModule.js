@@ -6,6 +6,7 @@ import setDates from "../../utils/setDates";
 
 const MusicModule = ({ music }) => {
   music = shuffleArray(music);
+
   music = music.map((item) => {
     const {
       id,
@@ -35,7 +36,16 @@ const MusicModule = ({ music }) => {
       </div>
     );
   });
-  return music;
+  return (
+    <>
+      <div id="musicfeed">{music}</div>
+      <p className="view-more">
+        <Link href="https://music.sandiegohousemusic.com">
+          See More DJ Mixes &rarr;
+        </Link>
+      </p>
+    </>
+  );
 };
 
 export default MusicModule;
