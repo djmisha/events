@@ -9,7 +9,7 @@ const getMusic = (setMusic, setMusicLoading) => {
   if (process.env.NODE_ENV === "development") {
     return getSampleMusic(setMusic, setMusicLoading);
   } else {
-    return getMusicProd(setMusic, setMusicLoading);
+    return getProdMusic(setMusic, setMusicLoading);
   }
 };
 
