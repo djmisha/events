@@ -1,0 +1,50 @@
+.modal {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  z-index: 9999;
+}
+
+.modal-open {
+  position: fixed;
+}
+
+.modal-closed {
+  display: none;
+}
+
+.modal-close {
+  display: block;
+  position: relative;
+  text-align: right;
+  left: 0px;
+  top: 10px;
+  font-size: 30px;
+}
+
+.modal-content {
+  overflow: scroll;
+  background-color: $white;
+  height: calc(100vh - 20px);
+  padding-left: 10px;
+  padding-right: 10px;
+  p {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  a {
+    word-wrap: break-word;
+  }
+  iframe {
+    position: relative;
+    width: 100vw;
+    left: -10px;
+    max-width: 800px;
+    margin-bottom: 20px;
+  }
+}

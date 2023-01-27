@@ -11,7 +11,7 @@ body {
   background: #fff;
   font-size: 16px;
   line-height: 22px;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 h1 {
@@ -29,6 +29,18 @@ h1 {
 }
 
 h2 {
+  font-weight: normal;
+  margin-top: 40px;
+  padding-left: 10px;
+  font-size: 18px;
+  color: $blue;
+  border-bottom: 2px solid $blue;
+  @include media($tablet) {
+    display: inline-block;
+  }
+}
+
+h3 {
   font-weight: normal;
   margin-top: 40px;
   padding-left: 10px;

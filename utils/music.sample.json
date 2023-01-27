@@ -1,0 +1,505 @@
+[
+  {
+      "id": 10607,
+      "date": "2023-01-06T15:37:52",
+      "date_gmt": "2023-01-06T23:37:52",
+      "guid": {
+          "rendered": "https://sandiegohousemusic.com/?p=10607"
+      },
+      "modified": "2023-01-06T15:37:52",
+      "modified_gmt": "2023-01-06T23:37:52",
+      "slug": "kamibekami-the-flash",
+      "status": "publish",
+      "type": "post",
+      "link": "https://music.sandiegohousemusic.com/kamibekami-the-flash/",
+      "title": {
+          "rendered": "Kamibekami  &#8211; The Flash"
+      },
+      "content": {
+          "rendered": "<p><iframe loading=\"lazy\" title=\"The Flash by Kamibekami\" width=\"500\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?visual=true&#038;url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F1249684243&#038;show_artwork=true&#038;maxheight=750&#038;maxwidth=500\"></iframe></p>\n<p>Kambiz Noorollahi born September 7, 1988 in Tehran Iran, better known by his stage name Kamibekami is a songwriter, musician, composer and music producer</p>\n<p><b>Tracklisting</b><br />\nThe Flash</p>\n<p><b>Follow this DJ</b><br />\n<a href=\"https://www.instagram.com/kamibekami/\" target=\"_blank\" rel=\"noopener\"> https://www.instagram.com/kamibekami/</a></p>\n<p><a href=\"https://twitter.com/kamibekami\" target=\"_blank\" rel=\"noopener\"> https://twitter.com/kamibekami</a></p>\n<p><a href=\"https://soundcloud.com/kamibekami\" target=\"_blank\" rel=\"noopener\">https://soundcloud.com/kamibekami</a></p>\n",
+          "protected": false
+      },
+      "excerpt": {
+          "rendered": "<p>Kambiz Noorollahi born September 7, 1988 in Tehran Iran, better known by his stage name Kamibekami is a songwriter, musician, [&hellip;]</p>\n",
+          "protected": false
+      },
+      "author": 1,
+      "featured_media": 10608,
+      "comment_status": "open",
+      "ping_status": "",
+      "sticky": false,
+      "template": "",
+      "format": "standard",
+      "meta": {
+          "jetpack_publicize_message": "",
+          "jetpack_is_tweetstorm": false,
+          "jetpack_publicize_feature_enabled": true,
+          "jetpack_social_post_already_shared": true,
+          "jetpack_social_options": []
+      },
+      "categories": [
+          22
+      ],
+      "tags": [
+          397,
+          445,
+          399,
+          315,
+          392,
+          348,
+          336,
+          398,
+          257,
+          223
+      ],
+      "jetpack_publicize_connections": [],
+      "acf": [],
+      "aioseo_notices": [],
+      "jetpack_featured_media_url": "https://music.sandiegohousemusic.com/wp-content/uploads/2023/01/wqertqwetqweywett.jpg",
+      "amp_enabled": true,
+      "_links": {
+          "self": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts/10607"
+              }
+          ],
+          "collection": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts"
+              }
+          ],
+          "about": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/types/post"
+              }
+          ],
+          "author": [
+              {
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/users/1"
+              }
+          ],
+          "replies": [
+              {
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/comments?post=10607"
+              }
+          ],
+          "version-history": [
+              {
+                  "count": 1,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts/10607/revisions"
+              }
+          ],
+          "predecessor-version": [
+              {
+                  "id": 10609,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts/10607/revisions/10609"
+              }
+          ],
+          "wp:featuredmedia": [
+              {
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/media/10608"
+              }
+          ],
+          "wp:attachment": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/media?parent=10607"
+              }
+          ],
+          "wp:term": [
+              {
+                  "taxonomy": "category",
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/categories?post=10607"
+              },
+              {
+                  "taxonomy": "post_tag",
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/tags?post=10607"
+              }
+          ],
+          "curies": [
+              {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+              }
+          ]
+      }
+  },
+  {
+      "id": 10615,
+      "date": "2023-01-18T17:27:41",
+      "date_gmt": "2023-01-19T01:27:41",
+      "guid": {
+          "rendered": "https://music.sandiegohousemusic.com/?p=10615"
+      },
+      "modified": "2023-01-18T17:27:41",
+      "modified_gmt": "2023-01-19T01:27:41",
+      "slug": "djminakam",
+      "status": "publish",
+      "type": "post",
+      "link": "https://music.sandiegohousemusic.com/djminakam/",
+      "title": {
+          "rendered": "DjMįnåKām"
+      },
+      "content": {
+          "rendered": "<p><iframe loading=\"lazy\" title=\"Afternoon In August by DjMįnaKām\" width=\"500\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?visual=true&#038;url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F1325238991&#038;show_artwork=true&#038;maxheight=750&#038;maxwidth=500\"></iframe></p>\n<p>Being in love with music all his life,<br />\nMina Kam, known by his stage name MįnaKām or IITymZz, is a charismatic and energetic performer that comes from an Egyptian/Italian background bred between North Africa around the Mediterranean region and the EEUU. Ever the innovator, he started creating original sounds influenced by world music, resulting in a musical mystical style that spans Urban fusion/ House/ World/ Deep as well as Uplifting tunes.</p>\n<p>In 2002 MįnaKām started his career spinning vinyl in the underground scene from the far West in the EEUU to the far east of the states stretching all way to Florida. During this time he decided the Science of Music and Sounds was his fascination and passion. While studying he never stopped performing in small events, parties, birthdays, holidays,  private bookings, and anything he could find in his way, but then he hosted and performed in self-produced mini-day festivals and mid-day events across the EEUU, and later he expanded back to the EU and started branching around Italy, Spain, Bulgaria, Romania, and the Netherlands.</p>\n<p>Having been influenced by such musical styles as World music, Original Chicago House, and West Coast Funk, MįnaKām never had a specific interest in just one genre, he began remixing, producing, and Djing some original beats and different styles inspired by the various sounds, textures, and musical styles involved in world music. At the time he began a project collaborating and producing a new brand of Urban Fusion, eventually branching out into House, Tropical, Tribal, and Uplifting.</p>\n<p>With his background in music, events, events coordination, visuals, lights, staging, and being part of the entertainment industry for the next few years, Bass Sounds of the Universe became a network that brings together the best vibes from every corner of the world, sounds full of love, bass, energy, and uplifting feelings hosted from beautiful homes to huge clubs, venues, and properties Worldwide.</p>\n<p><b>Tracklisting</b><br />\nIntro<br />\nKirk (feat. Fausto Fanizza)<br />\nSay Hello (feat. Meliha)<br />\nLong Time &#8211; Quivver<br />\nKush &#8211; Nacho Varela<br />\nSafeway Sushi &#8211; Spencer Brown<br />\nWondering &#8211; Yotto<br />\nModern Memory &#8211; Ezequiel Aries<br />\nLose Your Senses &#8211; Cubicolor</p>\n<p><b>Follow this DJ</b><br />\n<a href=\"https://www.instagram.com/spaceminds_djmiinakam/\" target=\"_blank\" rel=\"noopener\"> https://www.instagram.com/spaceminds_djmiinakam/</a></p>\n<p><a href=\"target=_blank\"> </a></p>\n<p><a href=\"https://soundcloud.com/spaceminds\" target=\"_blank\" rel=\"noopener\">https://soundcloud.com/spaceminds</a></p>\n",
+          "protected": false
+      },
+      "excerpt": {
+          "rendered": "<p>Being in love with music all his life, Mina Kam, known by his stage name MįnaKām or IITymZz, is a [&hellip;]</p>\n",
+          "protected": false
+      },
+      "author": 1,
+      "featured_media": 10616,
+      "comment_status": "open",
+      "ping_status": "",
+      "sticky": false,
+      "template": "",
+      "format": "standard",
+      "meta": {
+          "jetpack_publicize_message": "",
+          "jetpack_is_tweetstorm": false,
+          "jetpack_publicize_feature_enabled": true,
+          "jetpack_social_post_already_shared": true,
+          "jetpack_social_options": []
+      },
+      "categories": [
+          22
+      ],
+      "tags": [
+          25,
+          589,
+          348,
+          261,
+          588,
+          223,
+          586,
+          587
+      ],
+      "jetpack_publicize_connections": [],
+      "acf": [],
+      "aioseo_notices": [],
+      "jetpack_featured_media_url": "https://music.sandiegohousemusic.com/wp-content/uploads/2023/01/IMG_1327-1.jpeg",
+      "amp_enabled": true,
+      "_links": {
+          "self": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts/10615"
+              }
+          ],
+          "collection": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts"
+              }
+          ],
+          "about": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/types/post"
+              }
+          ],
+          "author": [
+              {
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/users/1"
+              }
+          ],
+          "replies": [
+              {
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/comments?post=10615"
+              }
+          ],
+          "version-history": [
+              {
+                  "count": 1,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts/10615/revisions"
+              }
+          ],
+          "predecessor-version": [
+              {
+                  "id": 10617,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts/10615/revisions/10617"
+              }
+          ],
+          "wp:featuredmedia": [
+              {
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/media/10616"
+              }
+          ],
+          "wp:attachment": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/media?parent=10615"
+              }
+          ],
+          "wp:term": [
+              {
+                  "taxonomy": "category",
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/categories?post=10615"
+              },
+              {
+                  "taxonomy": "post_tag",
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/tags?post=10615"
+              }
+          ],
+          "curies": [
+              {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+              }
+          ]
+      }
+  },
+  {
+      "id": 10599,
+      "date": "2022-12-29T13:27:08",
+      "date_gmt": "2022-12-29T21:27:08",
+      "guid": {
+          "rendered": "https://sandiegohousemusic.com/?p=10599"
+      },
+      "modified": "2022-12-29T13:27:08",
+      "modified_gmt": "2022-12-29T21:27:08",
+      "slug": "marley-controller-session-001",
+      "status": "publish",
+      "type": "post",
+      "link": "https://music.sandiegohousemusic.com/marley-controller-session-001/",
+      "title": {
+          "rendered": "MARLEY &#8211; Controller Session 001"
+      },
+      "content": {
+          "rendered": "<p><iframe loading=\"lazy\" title=\"Controller Session 001 - Carl Cox, Benji La Vida, Patrick Topping... by MARLEY\" width=\"500\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?visual=true&#038;url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F1408925716&#038;show_artwork=true&#038;maxheight=750&#038;maxwidth=500\"></iframe></p>\n<p>A short mix of techno, tech house and party classics from Scottish DJ, MARLEY, straight from a studio party.</p>\n<p><b>Tracklisting</b><br />\nJack Eye Jones &#8211; Charlie Says (Hannah Laing Remix)<br />\nDJ S.K.T &#8211; Ballers<br />\nEwan McVicar &#8211; Plain Outta Luck<br />\nDarius Syrossian &amp; George Smeddles &#8211; Back In The Dance (Extended Mix)<br />\nEwan McVicar &#8211; El Bombo (Extended)<br />\nDisfreq &#8211; All My Friends<br />\nCloonee &#8211; On Ya Marks<br />\nBen Hemsley &#8211; Please Playboy<br />\nDa Klubb Kings &#8211; Its Time 2 Get Funky (Klubb Mix)<br />\nCandi Staton &#8211; Young Hearts Run Free &#091;Benji La Vida Edit&#093;<br />\nLILY ALLEN &#8211; SMILE (TIME IN LIEU TOOL)<br />\nFeel My Needs At Night<br />\nGreen Velvet &amp; Patrick Topping &#8211; Voicemail (Original Mix)<br />\nRebuke &#8211; Along Came Polly<br />\nPatrick Topping &#8211; Forget (Original Mix)<br />\nDemuir &#8211; High. Alive. And Dirty &#091;Hot Creations&#093;<br />\nAlan Fitzpatrick &#8211; We Do What We Want<br />\nCarl Cox &amp; Reinier Zonneveld &amp; Chris Coe &#8211; Inferno (Original Mix)</p>\n<p><b>Follow this DJ</b><br />\n<a href=\"https://www.instagram.com/marley_weir/\" target=\"_blank\" rel=\"noopener\"> https://www.instagram.com/marley_weir/</a></p>\n<p><a href=\"https://twitter.com/Marley_Weir\" target=\"_blank\" rel=\"noopener\"> https://twitter.com/Marley_Weir</a></p>\n<p><a href=\"https://soundcloud.com/marle9\" target=\"_blank\" rel=\"noopener\">https://soundcloud.com/marle9</a></p>\n",
+          "protected": false
+      },
+      "excerpt": {
+          "rendered": "<p>A short mix of techno, tech house and party classics from Scottish DJ, MARLEY, straight from a studio party. Tracklisting [&hellip;]</p>\n",
+          "protected": false
+      },
+      "author": 1,
+      "featured_media": 10600,
+      "comment_status": "open",
+      "ping_status": "",
+      "sticky": false,
+      "template": "",
+      "format": "standard",
+      "meta": {
+          "jetpack_publicize_message": "",
+          "jetpack_is_tweetstorm": false,
+          "jetpack_publicize_feature_enabled": true,
+          "jetpack_social_post_already_shared": true,
+          "jetpack_social_options": []
+      },
+      "categories": [
+          22
+      ],
+      "tags": [
+          297,
+          348,
+          258,
+          257
+      ],
+      "jetpack_publicize_connections": [],
+      "acf": [],
+      "aioseo_notices": [],
+      "jetpack_featured_media_url": "https://music.sandiegohousemusic.com/wp-content/uploads/2022/12/IMG_0312-scaled.jpeg",
+      "amp_enabled": true,
+      "_links": {
+          "self": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts/10599"
+              }
+          ],
+          "collection": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts"
+              }
+          ],
+          "about": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/types/post"
+              }
+          ],
+          "author": [
+              {
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/users/1"
+              }
+          ],
+          "replies": [
+              {
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/comments?post=10599"
+              }
+          ],
+          "version-history": [
+              {
+                  "count": 1,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts/10599/revisions"
+              }
+          ],
+          "predecessor-version": [
+              {
+                  "id": 10601,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts/10599/revisions/10601"
+              }
+          ],
+          "wp:featuredmedia": [
+              {
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/media/10600"
+              }
+          ],
+          "wp:attachment": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/media?parent=10599"
+              }
+          ],
+          "wp:term": [
+              {
+                  "taxonomy": "category",
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/categories?post=10599"
+              },
+              {
+                  "taxonomy": "post_tag",
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/tags?post=10599"
+              }
+          ],
+          "curies": [
+              {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+              }
+          ]
+      }
+  },
+  {
+      "id": 10620,
+      "date": "2023-01-25T17:05:02",
+      "date_gmt": "2023-01-26T01:05:02",
+      "guid": {
+          "rendered": "https://music.sandiegohousemusic.com/?p=10620"
+      },
+      "modified": "2023-01-25T17:05:02",
+      "modified_gmt": "2023-01-26T01:05:02",
+      "slug": "dan-fottac-brazility",
+      "status": "publish",
+      "type": "post",
+      "link": "https://music.sandiegohousemusic.com/dan-fottac-brazility/",
+      "title": {
+          "rendered": "Dan Fottac &#8211; Brazility"
+      },
+      "content": {
+          "rendered": "<p><iframe loading=\"lazy\" title=\"Dan Fottac - Set by Dan Fottac\" width=\"500\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?visual=true&#038;url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F1432226239&#038;show_artwork=true&#038;maxheight=750&#038;maxwidth=500&#038;secret_token=s-cINLFBSWLAZ\"></iframe></p>\n<p>Dan Fottac is the project of Danilo Souza, an artist from Curitiba trained in DJing by the Yellow Academy. Dan is also self-taught in music production.</p>\n<p>The electronic project is relatively new &#8211; &#8220;it was born at the end of 2021, coming from psytrance and starting bass house and tech house productions, with vocals and bass&#8221; &#8211; but it&#8217;s already making noise in national dance music.</p>\n<p><b>Tracklisting</b><br />\nDark Sky &#8211; Badd (Alisha Remix)<br />\nBrisotti &#8211; Chil Bill<br />\nVolac &#8211; Bump<br />\nSugartrane &#8211; Chunky Sneakers<br />\nClassmatic &#8211; Fly Away<br />\nGotye &#8211; Somebody That I Used To Know (Sante Sansone Edit)<br />\nkinAhau &#8211; Turned Turk<br />\nMark Jones, Dames House &#8211; Bellwoods Bump<br />\nMichael Bibi &#8211; La Murga (Michael&#039;s Midnight Mix)<br />\nGabe, Eddy M &amp; MC Th &#8211; Naquele Pique<br />\nPAWSA &#8211; Something Spectacular<br />\nCaique Carvalho &#8211; El Baile<br />\nShokë &#8211; Coast to Coast<br />\nSonny Fodera &#8211; Looking 4 U<br />\nZukk &#8211; Ta Querendo<br />\nVictor Lou &#8211; House Every Weekend</p>\n<p><b>Follow this DJ</b><br />\n<a href=\"https://www.instagram.com/danfottac/\" target=\"_blank\" rel=\"noopener\"> https://www.instagram.com/danfottac/</a></p>\n<p><a href=\"target=_blank\"> </a></p>\n<p><a href=\"https://soundcloud.com/danfottac\" target=\"_blank\" rel=\"noopener\">https://soundcloud.com/danfottac</a></p>\n",
+          "protected": false
+      },
+      "excerpt": {
+          "rendered": "<p>Dan Fottac is the project of Danilo Souza, an artist from Curitiba trained in DJing by the Yellow Academy. Dan [&hellip;]</p>\n",
+          "protected": false
+      },
+      "author": 1,
+      "featured_media": 10621,
+      "comment_status": "open",
+      "ping_status": "",
+      "sticky": false,
+      "template": "",
+      "format": "standard",
+      "meta": {
+          "jetpack_publicize_message": "",
+          "jetpack_is_tweetstorm": false,
+          "jetpack_publicize_feature_enabled": true,
+          "jetpack_social_post_already_shared": true,
+          "jetpack_social_options": []
+      },
+      "categories": [
+          22
+      ],
+      "tags": [
+          258
+      ],
+      "jetpack_publicize_connections": [],
+      "acf": [],
+      "aioseo_notices": [],
+      "jetpack_featured_media_url": "https://music.sandiegohousemusic.com/wp-content/uploads/2023/01/img-scaled.jpg",
+      "amp_enabled": true,
+      "_links": {
+          "self": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts/10620"
+              }
+          ],
+          "collection": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts"
+              }
+          ],
+          "about": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/types/post"
+              }
+          ],
+          "author": [
+              {
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/users/1"
+              }
+          ],
+          "replies": [
+              {
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/comments?post=10620"
+              }
+          ],
+          "version-history": [
+              {
+                  "count": 1,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts/10620/revisions"
+              }
+          ],
+          "predecessor-version": [
+              {
+                  "id": 10622,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/posts/10620/revisions/10622"
+              }
+          ],
+          "wp:featuredmedia": [
+              {
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/media/10621"
+              }
+          ],
+          "wp:attachment": [
+              {
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/media?parent=10620"
+              }
+          ],
+          "wp:term": [
+              {
+                  "taxonomy": "category",
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/categories?post=10620"
+              },
+              {
+                  "taxonomy": "post_tag",
+                  "embeddable": true,
+                  "href": "https://music.sandiegohousemusic.com/wp-json/wp/v2/tags?post=10620"
+              }
+          ],
+          "curies": [
+              {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+              }
+          ]
+      }
+  }
+]

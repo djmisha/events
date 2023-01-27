@@ -31,7 +31,7 @@ const Hamburger = () => {
         />
         <div className="nav-items">
           <Link href="/" onClick={handleClick}>
-            Events
+            Home
           </Link>
           <Link href="https://music.sandiegohousemusic.com">Music</Link>
           <Link href="https://music.sandiegohousemusic.com/submit-your-dj-mix/">

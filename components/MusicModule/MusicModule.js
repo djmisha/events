@@ -3,10 +3,11 @@ import Link from "next/link";
 import { decode } from "html-entities";
 import { shuffleArray } from "../../utils/utilities";
 import setDates from "../../utils/setDates";
+import Modal from "../Modal/Modal";
+import MusicSingle from "./MusicSingle";
 
 const MusicModule = ({ music }) => {
   music = shuffleArray(music);
-
   music = music.map((item) => {
     const {
       id,
@@ -17,23 +18,17 @@ const MusicModule = ({ music }) => {
       content,
     } = item;
     const { rendered: headline } = title;
+    const { rendered: cont } = content;
 
     return (
-      <div key={id} className="single-music">
-        <Link href={link}>
-          <div className="single-music-image">
-            <Image
-              src={image}
-              alt={headline}
-              width={200}
-              height={200}
-              priority={true}
-            />
-          </div>
-          <span>{decode(headline)}</span>
-          <div className="single-music-time">{setDates(date).fromNow}</div>
-        </Link>
-      </div>
+      <MusicSingle
+        key={id}
+        id={id}
+        headline={headline}
+        content={cont}
+        data={date}
+        image={image}
+      />
     );
   });
   return (
@@ -41,7 +36,7 @@ const MusicModule = ({ music }) => {
       <div id="musicfeed">{music}</div>
       <p className="view-more">
         <Link href="https://music.sandiegohousemusic.com">
-          See More DJ Mixes &rarr;
+          View More DJ Mixes &rarr;
         </Link>
       </p>
     </>
