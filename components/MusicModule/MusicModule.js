@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { decode } from "html-entities";
 import { shuffleArray } from "../../utils/utilities";
-import setDates from "../../utils/setDates";
-import Modal from "../Modal/Modal";
 import MusicSingle from "./MusicSingle";
 
 const MusicModule = ({ music }) => {
   music = shuffleArray(music);
-  music = music.map((item) => {
+  music = music.map((item, index) => {
     const {
       id,
       jetpack_featured_media_url: image,
@@ -18,17 +15,19 @@ const MusicModule = ({ music }) => {
     } = item;
     const { rendered: headline } = title;
     const { rendered: cont } = content;
-
-    return (
-      <MusicSingle
-        key={id}
-        id={id}
-        headline={headline}
-        content={cont}
-        date={date}
-        image={image}
-      />
-    );
+    console.log(index);
+    if (index < 4) {
+      return (
+        <MusicSingle
+          key={id}
+          id={id}
+          headline={headline}
+          content={cont}
+          date={date}
+          image={image}
+        />
+      );
+    }
   });
   return (
     <>
