@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const MusicSingle = ({ id, image, headline, date, content }) => {
   const title = decode(headline);
-  date = setDates(date).fromNow;
+  const dateFrom = setDates(date).fromNow;
   const [isOpen, SetIsOpen] = useState(false);
 
   const handleClick = (e) => {
@@ -27,7 +27,7 @@ const MusicSingle = ({ id, image, headline, date, content }) => {
           />
         </div>
         <span>{title}</span>
-        <div className="single-music-time">{date}</div>
+        <div className="single-music-time">{dateFrom}</div>
       </div>
       <Modal
         content={content}

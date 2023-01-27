@@ -11,7 +11,6 @@ const MusicModule = ({ music }) => {
   music = music.map((item) => {
     const {
       id,
-      link,
       jetpack_featured_media_url: image,
       title,
       date,
@@ -26,7 +25,7 @@ const MusicModule = ({ music }) => {
         id={id}
         headline={headline}
         content={cont}
-        data={date}
+        date={date}
         image={image}
       />
     );

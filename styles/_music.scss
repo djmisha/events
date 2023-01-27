@@ -9,6 +9,7 @@
 }
 
 .single-music {
+  box-shadow: $boxShadow;
   border-radius: 6px;
   background-color: $lightGrey;
   margin: 0px 0px;
@@ -51,6 +52,7 @@
     font-size: 12px;
     line-height: 14px;
     font-weight: normal;
+    color: $pink;
     @include media($desktop) {
       padding: 15px 0;
       font-size: 16px;
