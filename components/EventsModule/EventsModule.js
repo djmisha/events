@@ -39,6 +39,7 @@ const EventsModule = ({ locationData }) => {
       }
     }
   }, [searchTerm, events]);
+
   return (
     <div className="main-wrap" id="top">
       <section className="upcoming-events">
@@ -60,7 +61,11 @@ const EventsModule = ({ locationData }) => {
       </section>
       {events && <Sidebar events={events} setSearchTerm={setSearchTerm} />}
       {events && (
-        <NavigationBar events={events} setSearchTerm={setSearchTerm} />
+        <NavigationBar
+          events={events}
+          setSearchTerm={setSearchTerm}
+          locationData={locationData}
+        />
       )}
     </div>
   );

@@ -10,7 +10,7 @@
 
 .single-music {
   box-shadow: $boxShadow;
-  border-radius: 6px;
+  border-radius: $borderRadius;
   background-color: $lightGrey;
   margin: 0px 0px;
   position: relative;
@@ -33,7 +33,7 @@
     color: $blue;
   }
   .single-music-image {
-    border-radius: 6px;
+    border-radius: $borderRadius;
     overflow: hidden;
     height: 40vw;
     @include media($tablet) {

@@ -156,23 +156,25 @@ export default function Home({ locations }) {
         <h1>Dance & House Music</h1>
         <p>Discover dance music in a city near you and around the world </p>
       </div>
-      {musicLoading && (
-        <Spinner isLoading={musicLoading} text="Loading Music..." />
-      )}
       {music && (
         <>
           <h2>Listen to DJ Mixes</h2>
           <MusicModule music={music} />
         </>
       )}
+      {!userLocation && (
+        <Spinner isLoading={loading} text="Loading Location..." />
+      )}
+      {/* Events Module */}
+      {userLocation && (
+        <EventsModule locationData={userLocation} isHome={true} />
+      )}
+      {/* Location fallback */}
       {isFallbackLocation.current && (
         <p className="location-notice">
           We could not determine your location, so we&apos;re showing events in
-          California. Update your location below.
+          San Diego, California. Update your location below.
         </p>
-      )}
-      {userLocation && (
-        <EventsModule locationData={userLocation} isHome={true} />
       )}
     </Layout>
   );
