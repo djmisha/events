@@ -19,7 +19,7 @@ h1 {
   color: $blue;
   font-weight: normal;
   border-bottom: 2px solid $blue;
-  @include media($tablet) {
+  @media only screen and (min-width: 768px) {
     margin-top: 20px;
     display: block;
     font-size: 30px;
@@ -33,7 +33,7 @@ h2 {
   font-size: 18px;
   color: $blue;
   border-bottom: 2px solid $blue;
-  @include media($tablet) {
+  @media only screen and (min-width: 768px) {
     display: inline-block;
   }
 }
@@ -45,14 +45,14 @@ h3 {
   font-size: 18px;
   color: $blue;
   border-bottom: 2px solid $blue;
-  @include media($tablet) {
+  @media only screen and (min-width: 768px) {
     display: inline-block;
   }
 }
 
 .button {
   display: block;
-  color: white;
+  color: $white;
   font-size: 15px;
   letter-spacing: 0.5px;
   border: 2px solid $blue;
@@ -64,7 +64,7 @@ h3 {
   max-width: 400px;
   a {
     text-decoration: none;
-    color: white;
+    color: $white;
   }
 }
 
@@ -84,10 +84,10 @@ img.loading {
 .location-notice {
   margin-top: 0;
   background-color: $pink;
-  color: white;
+  color: $white;
   padding: 10px;
   a {
-    color: white;
+    color: $white;
   }
 }
 

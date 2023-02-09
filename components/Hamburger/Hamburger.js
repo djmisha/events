@@ -5,9 +5,7 @@ import { toSlug } from "../../utils/getLocations";
 
 const Hamburger = ({ locationData }) => {
   const { city, state } = locationData;
-  // const eventsUrl = "test";
   const eventsUrl = city ? toSlug(city) : toSlug(state);
-  console.log(locationData, eventsUrl);
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -86,6 +84,18 @@ const Hamburger = ({ locationData }) => {
               alt="Menu"
             />
             <span>Facebook</span>
+          </a>
+        </div>
+        <div className="twitch-follow">
+          Listen on Twitch
+          <br />
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href="https://twitch.tv/sdhousemusic/"
+            className="twitch"
+          >
+            @sdhousemusic
           </a>
         </div>
       </div>

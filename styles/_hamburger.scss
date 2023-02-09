@@ -20,7 +20,7 @@
   width: 100vw;
   transition: all 0.25 ease-in;
   height: calc(100vh - 81px);
-  background-color: white;
+  background-color: $white;
   position: fixed;
   text-align: center;
   height: calc(100vh - 81px);
@@ -42,7 +42,7 @@
     justify-content: center;
     flex-direction: column;
     a {
-      color: black;
+      color: $black;
       padding: 20px;
       text-decoration: none;
       font-size: 30px;
@@ -55,13 +55,23 @@
     justify-content: center;
     align-items: center;
     a {
-      color: black;
+      color: $black;
       padding: 20px;
       text-decoration: none;
       font-size: 30px;
     }
     span {
       display: none;
+    }
+  }
+
+  .twitch-follow {
+    padding-top: 1rem;
+    color: $pink;
+    a {
+      color: $pink;
+      text-decoration: none;
+      font-weight: 600;
     }
   }
 }
