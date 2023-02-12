@@ -1,10 +1,14 @@
 .nav-burger {
+  top: 1rem;
+  right: 1rem;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
   margin-top: -9px;
+  z-index: 8999;
   span {
     display: block;
     font-size: 12px;
@@ -19,20 +23,19 @@
   right: 0;
   width: 100vw;
   transition: all 0.25 ease-in;
-  height: calc(100vh - 81px);
+  height: calc(100vh - 41px);
   background-color: $white;
   position: fixed;
   text-align: center;
-  height: calc(100vh - 81px);
+  height: calc(100vh - 41px);
   &.nav-open {
-    bottom: 80px;
+    top: 40px;
   }
   &.nav-closed {
-    bottom: calc(-100vh - 81px);
+    top: calc(-100vh - 41px);
   }
   img.logo {
     margin: 0 auto;
-    padding-top: 50px;
   }
   .nav-items {
     padding-top: 50px;
