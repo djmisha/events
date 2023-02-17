@@ -1,3 +1,14 @@
+// .nav-bar {
+//   height: 60px;
+//   background-color: white;
+//   border-bottom: 1px solid $borderGrey;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   z-index: 8999;
+// }
+
 .nav-burger {
   top: 1rem;
   right: 1rem;
@@ -23,19 +34,20 @@
   right: 0;
   width: 100vw;
   transition: all 0.25 ease-in;
-  height: calc(100vh - 41px);
+  height: calc(100vh);
   background-color: $white;
   position: fixed;
   text-align: center;
-  height: calc(100vh - 41px);
+  height: calc(100vh);
   &.nav-open {
-    top: 40px;
+    top: 0px;
   }
   &.nav-closed {
-    top: calc(-100vh - 41px);
+    top: calc(-100vh);
   }
   img.logo {
     margin: 0 auto;
+    padding-top: 80px;
   }
   .nav-items {
     padding-top: 50px;
