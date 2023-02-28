@@ -1,0 +1,9 @@
+.home-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}

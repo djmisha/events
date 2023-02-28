@@ -155,19 +155,35 @@ export default function Home({ locations }) {
       <div className="hero-home">
         <h1>Dance & House Music</h1>
         <p>Discover dance music in a city near you and around the world </p>
+        <div className="home-cta">
+          <div>
+            <button>
+              <a href="#music" className="secondary">
+                Listen To Music
+              </a>
+            </button>
+          </div>
+          <div>
+            <button>
+              <a href="#eventfeed" className="secondary">
+                View Events
+              </a>
+            </button>
+          </div>
+        </div>
       </div>
-      {music && (
-        <>
-          <h2>Listen to DJ Mixes</h2>
-          <MusicModule music={music} />
-        </>
-      )}
       {!userLocation && (
         <Spinner isLoading={loading} text="Loading Location..." />
       )}
       {/* Events Module */}
       {userLocation && (
         <EventsModule locationData={userLocation} isHome={true} />
+      )}
+      {music && (
+        <>
+          <h2 id="music">Listen to DJ Mixes</h2>
+          <MusicModule music={music} />
+        </>
       )}
       {/* Location fallback */}
       {isFallbackLocation.current && (

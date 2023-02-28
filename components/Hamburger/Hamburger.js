@@ -13,14 +13,16 @@ const Hamburger = ({ locationData }) => {
 
   return (
     <>
-      <div className="nav-burger" onClick={handleClick}>
-        <Image
-          width={25}
-          height={25}
-          src="/images/icon-bars-solid.svg"
-          alt="Menu"
-        />
-        <span>Menu</span>
+      <div className="nav-bar">
+        <div className="nav-burger" onClick={handleClick}>
+          <Image
+            width={25}
+            height={25}
+            src="/images/icon-bars-solid.svg"
+            alt="Menu"
+          />
+          <span>Menu</span>
+        </div>
       </div>
       <div
         className={isOpen ? "nav-overlay nav-open" : "nav-overlay nav-closed"}
