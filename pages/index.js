@@ -159,14 +159,14 @@ export default function Home({ locations }) {
           <div>
             <button>
               <a href="#music" className="secondary">
-                Listen To Music
+                Listen To Music &rarr;
               </a>
             </button>
           </div>
           <div>
             <button>
               <a href="#eventfeed" className="secondary">
-                View Events
+                View Events &rarr;
               </a>
             </button>
           </div>

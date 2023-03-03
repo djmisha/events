@@ -1,0 +1,24 @@
+.back-to-top {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 67px;
+  right: 15px;
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  font-weight: bold;
+  z-index: 0;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  &.b-visible {
+    opacity: 1;
+  }
+  &.b-hidden {
+    opacity: 0;
+  }
+}
