@@ -61,14 +61,10 @@ button {
   a {
     display: block;
     font-size: 15px;
-    // color: $pink;
     background-color: $white;
     text-align: center;
-    max-width: 400px;
     position: relative;
-    // border: 2px solid $pink;
-    padding: 15px 10px;
-    min-width: 200px;
+    padding: 10px 20px;
     text-decoration: none;
     &.primary {
       color: $pink;
@@ -92,22 +88,4 @@ img.loading {
 .hidden,
 .isloading {
   display: none;
-}
-
-.location-notice {
-  margin-top: 0;
-  background-color: $pink;
-  color: $white;
-  padding: 10px;
-  a {
-    color: $white;
-  }
-}
-
-.hero-home {
-  p {
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 14px;
-  }
 }
