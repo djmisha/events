@@ -41,6 +41,7 @@
   position: fixed;
   text-align: center;
   height: calc(100vh);
+  z-index: 1;
   &.nav-open {
     top: 0px;
   }
