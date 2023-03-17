@@ -4,16 +4,22 @@ export const searchFilter = (searchTerm, events) => {
   let results = [];
   const regexString = new RegExp(cleanString(searchTerm), "i"); // used to be 'gi' but was not searching date correctly
 
-  events.forEach(function (article) {
-    const { id } = article;
-    if (regexString.test(cleanString(article.formattedDate))) {
+  events.forEach((article) => {
+    const { id, formattedDate, venue, artistList } = article;
+    const { name } = venue;
+
+    if (regexString.test(cleanString(formattedDate))) {
       results.push(id);
     }
-    if (regexString.test(cleanString(article.venue.name))) {
+
+    if (regexString.test(cleanString(name))) {
       results.push(id);
     }
-    article.artistList.forEach(function (artist) {
-      if (regexString.test(cleanString(artist.name))) {
+
+    artistList.forEach((artist) => {
+      const { name } = artist;
+
+      if (regexString.test(cleanString(name))) {
         results.push(id);
       }
     });
