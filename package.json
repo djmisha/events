@@ -9,15 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.7",
     "@next/font": "^13.1.6",
     "@reduxjs/toolkit": "^1.9.1",
     "dayjs": "^1.11.6",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
     "html-entities": "^2.3.3",
-    "next": "13.0.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "react-redux": "^8.0.5",
     "redux": "^4.2.0",
     "sass": "^1.56.1"
