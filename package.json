@@ -20,6 +20,7 @@
     "react": "latest",
     "react-dom": "latest",
     "react-redux": "^8.0.5",
+    "react-search-autocomplete": "^8.3.2",
     "redux": "^4.2.0",
     "sass": "^1.56.1"
   },

@@ -6,7 +6,6 @@ import {
   fallbackLocation,
   hasUserLocation,
   matchToLocation,
-  matchToId,
 } from "../utils/getUserLocation.js";
 import { useEffect, useRef, useState } from "react";
 import getEvents from "../utils/getEvents";

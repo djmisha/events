@@ -65,6 +65,8 @@ const EventsModule = ({ locationData }) => {
           events={events}
           setSearchTerm={setSearchTerm}
           locationData={locationData}
+          setEvents={setEvents}
+          setFilterVisible={setFilterVisible}
         />
       )}
     </div>

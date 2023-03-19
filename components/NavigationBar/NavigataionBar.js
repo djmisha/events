@@ -7,8 +7,15 @@ import {
 import NavItem from "./NavItem";
 import Hamburger from "../Hamburger/Hamburger";
 import BackToTop from "../BackToTop/BackToTop";
+import SearchAutoComplete from "../SearchAutoComplete/SearchAutoComplete";
 
-const NavigationBar = ({ events, setSearchTerm, locationData }) => {
+const NavigationBar = ({
+  events,
+  setSearchTerm,
+  locationData,
+  setEvents,
+  setFilterVisible,
+}) => {
   const venues = makeVenues(events);
   const dates = makeDates(events);
   const artists = makeArtists(events);
@@ -16,8 +23,19 @@ const NavigationBar = ({ events, setSearchTerm, locationData }) => {
 
   return (
     <>
+      <div className="top-nav-bar">
+        {events && (
+          <SearchAutoComplete
+            data={events}
+            setSearchTerm={setSearchTerm}
+            events={events}
+            setEvents={setEvents}
+            setFilterVisible={setFilterVisible}
+          />
+        )}
+        <Hamburger locationData={locationData} />
+      </div>
       <BackToTop />
-      <Hamburger locationData={locationData} />
       <div className="navigations">
         <section className="sort">
           <NavItem
