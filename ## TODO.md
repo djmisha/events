@@ -1,5 +1,15 @@
 # Ideas
 
+## Bugs
+
+- Brave Browser location, need timeout
+
+## WordPress Music Integration
+
+- get posts from WP Graph QL
+- show on music page with pagination to start
+- WP Next JS Starter?
+
 ## DB & Persistance
 
 - account login, database persistance CRUD
@@ -16,6 +26,7 @@
 
 # Homepage & Other Pages
 
+- home: 3 boxes: music, events, submit mix, twitch
 - music page, with pagination? with tags?
 - homepage only a few events, no sorting, with button
 - Contact Us page
@@ -23,12 +34,13 @@
 
 ## Code & PWA
 
-- PWA manifest
-- put data in Redux - what data
-- ES lint
+- PWA manifest (can do once redirects are taken away)
+- put data in Redux - what data?
+- ES lint - meh lol 
 
 ## Done
 
+- [done] back to top
 - [done] Tune in on Twitch - turntable image
 - [done] navigation "Events" to your city
 - [done] google fonts next JS way
