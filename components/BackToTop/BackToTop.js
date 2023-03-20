@@ -7,8 +7,8 @@ const BackToTop = () => {
   useEffect(() => {
     const handleScroll = () => {
       const distanceFromTop = window.scrollY;
-      if (distanceFromTop > 200) setVisible(true);
-      if (distanceFromTop < 200) setVisible(false);
+      if (distanceFromTop > 1000) setVisible(true);
+      if (distanceFromTop < 1000) setVisible(false);
     };
 
     window.addEventListener("scroll", handleScroll);

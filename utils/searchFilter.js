@@ -5,14 +5,18 @@ export const searchFilter = (searchTerm, events) => {
   const regexString = new RegExp(cleanString(searchTerm), "i"); // used to be 'gi' but was not searching date correctly
 
   events.forEach((article) => {
-    const { id, formattedDate, venue, artistList } = article;
-    const { name } = venue;
+    const { id, formattedDate, venue, artistList, name } = article;
+    const { name: venueName } = venue;
 
     if (regexString.test(cleanString(formattedDate))) {
       results.push(id);
     }
 
-    if (regexString.test(cleanString(name))) {
+    if (regexString.test(cleanString(venueName))) {
+      results.push(id);
+    }
+
+    if (name && regexString.test(cleanString(name))) {
       results.push(id);
     }
 
