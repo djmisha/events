@@ -18,12 +18,25 @@
 }
 
 .modal-close {
-  display: block;
+  display: flex;
+  align-items: center;
   position: relative;
   text-align: right;
-  right: 10px;
-  top: 20px;
+  left: 0px;
+  top: 10px;
   font-size: 40px;
+  text-transform: uppercase;
+  span {
+    position: relative;
+    display: block;
+    top: 2px;
+    color: black;
+    margin-left: 0;
+  }
+  img {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .modal-content {
