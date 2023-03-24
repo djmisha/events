@@ -37,12 +37,8 @@ function SearchAutoComplete({
         <div>
           <ReactSearchAutocomplete
             items={items}
-            // onSearch={handleOnSearch}
-            // onHover={handleOnHover}
             onSelect={handleOnSelect}
-            // onFocus={handleOnFocus}
             onClear={handleOnClear}
-            autoFocus
             formatResult={formatResult}
             placeholder="Search for Artist, Venue, Event"
           />
