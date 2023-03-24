@@ -1,4 +1,4 @@
-import MenuList from "./ManuList";
+import MenuList from "./MenuList";
 import { makeVenues, makeArtists } from "../../utils/utilities";
 
 const Sidebar = ({ events, setSearchTerm, isOpen = true }) => {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import MenuList from "./ManuList";
+import MenuList from "./MenuList";
 
 const NavItem = ({
   image,
