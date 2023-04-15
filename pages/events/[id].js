@@ -2,8 +2,8 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
 import { makePageTitle, makePageDescription } from "../../utils/utilities";
-// import EventsModuleSinglePage from "../../components/EventsModule/EventsModuleSinglePage";
-import EventsModule from "../../components/EventsModule/EventsModule";
+import EventsModuleSinglePage from "../../components/EventsModule/EventsModuleSinglePage";
+// import EventsModule from "../../components/EventsModule/EventsModule";
 import { parseData } from "../../utils/getEvents";
 
 export default function Location({ locationData, events }) {
@@ -18,8 +18,8 @@ export default function Location({ locationData, events }) {
         <meta name="description" content={description} />
       </Head>
 
-      <EventsModule locationData={locationData} />
-      {/* <EventsModuleSinglePage locationData={locationData} events={events} /> */}
+      {/* <EventsModule locationData={locationData} /> */}
+      <EventsModuleSinglePage locationData={locationData} events={events} />
     </Layout>
   );
 }
@@ -52,6 +52,6 @@ export async function getStaticProps({ params }) {
       locationData,
       events,
     },
-    // revalidate: 43200,
+    revalidate: 43200,
   };
 }
