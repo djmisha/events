@@ -50,6 +50,6 @@ export async function getStaticProps({ params }) {
       locationData,
       events,
     },
-    revalidate: 43200,
+    // revalidate: 43200,
   };
 }
