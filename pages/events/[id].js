@@ -2,7 +2,8 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
 import { makePageTitle, makePageDescription } from "../../utils/utilities";
-import EventsModuleSinglePage from "../../components/EventsModule/EventsModuleSinglePage";
+// import EventsModuleSinglePage from "../../components/EventsModule/EventsModuleSinglePage";
+import EventsModule from "../../components/EventsModule/EventsModule";
 import { parseData } from "../../utils/getEvents";
 
 export default function Location({ locationData, events }) {
@@ -17,7 +18,8 @@ export default function Location({ locationData, events }) {
         <meta name="description" content={description} />
       </Head>
 
-      <EventsModuleSinglePage locationData={locationData} events={events} />
+      <EventsModule locationData={locationData} />
+      {/* <EventsModuleSinglePage locationData={locationData} events={events} /> */}
     </Layout>
   );
 }
