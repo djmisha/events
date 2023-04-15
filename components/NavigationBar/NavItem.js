@@ -9,6 +9,7 @@ const NavItem = ({
   navItems,
   setSearchTerm,
   isLocation,
+  isHome,
 }) => {
   const [isOpen, SetIsOpen] = useState(false);
 
@@ -32,6 +33,7 @@ const NavItem = ({
         title={title}
         setSearchTerm={setSearchTerm}
         isLocation={isLocation}
+        isHome={isHome}
       />
     </div>
   );

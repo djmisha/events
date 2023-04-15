@@ -8,13 +8,14 @@ export const MenuList = ({
   isOpen,
   setSearchTerm,
   isLocation,
+  isHome,
 }) => {
   const handleClick = (e) => {
     setSearchTerm(e.target.innerText);
   };
 
   const homeSlug = (slug) => {
-    if (window.location.pathname === "/") {
+    if (isHome) {
       return `/events/${slug}`;
     }
     return slug;

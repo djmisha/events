@@ -1,20 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { storeUserLocation } from "../../utils/getUserLocation";
 import EventCard from "../../components/EventCard/EventCard";
-import getEvents from "../../utils/getEvents";
-import Spinner from "../../components/Spinner/Spinner";
 import NavigationBar from "../../components/NavigationBar/NavigataionBar";
 import { searchFilter } from "../../utils/searchFilter";
 import { makePageHeadline } from "../../utils/utilities";
 import Filter from "../../components/Filter/Filter";
 import Sidebar from "../../components/NavigationBar/Sidebar";
 
-const EventsModule = ({ locationData, isHome }) => {
+const EventsModuleSinglePage = ({ locationData, events: eventsSSR }) => {
   let [filterVisible, setFilterVisible] = useState(false);
-  const [events, setEvents] = useState();
+  const [events, setEvents] = useState(eventsSSR.data);
   const { city, state, id } = locationData;
   const title = makePageHeadline(city, state);
-  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState();
   const dataFetchedRef = useRef();
   const searchTermRef = useRef("");
@@ -22,10 +19,10 @@ const EventsModule = ({ locationData, isHome }) => {
   useEffect(() => {
     if (dataFetchedRef.current === id) return;
     dataFetchedRef.current = id;
-    getEvents(id, setEvents, setLoading);
+    setEvents(eventsSSR.data);
     setFilterVisible(false);
     storeUserLocation(id);
-  }, [id]);
+  }, [id, eventsSSR]);
 
   useEffect(() => {
     if (searchTerm && events) {
@@ -51,7 +48,6 @@ const EventsModule = ({ locationData, isHome }) => {
           filterVisible={filterVisible}
           setFilterVisible={setFilterVisible}
         />
-        {loading && <Spinner isLoading={loading} text="Loading Events" />}
         <div id="eventfeed">
           {events &&
             events.map((event, index) => {
@@ -67,11 +63,10 @@ const EventsModule = ({ locationData, isHome }) => {
           locationData={locationData}
           setEvents={setEvents}
           setFilterVisible={setFilterVisible}
-          isHome={isHome}
         />
       )}
     </div>
   );
 };
 
-export default EventsModule;
+export default EventsModuleSinglePage;

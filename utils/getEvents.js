@@ -42,7 +42,7 @@ const getSampleEvents = async (id, setEvents, setLoading) => {
   setLoading(false);
 };
 
-const parseData = (data) => {
+export const parseData = (data) => {
   return data.map((item) => {
     // sets all to be visible
     item.isVisible = true;

@@ -15,6 +15,7 @@ const NavigationBar = ({
   locationData,
   setEvents,
   setFilterVisible,
+  isHome,
 }) => {
   const venues = makeVenues(events);
   const dates = makeDates(events);
@@ -66,6 +67,7 @@ const NavigationBar = ({
             setSearchTerm={setSearchTerm}
             navItems={locations}
             isLocation={true}
+            isHome={isHome}
           />
         </section>
       </div>
