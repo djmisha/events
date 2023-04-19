@@ -1,8 +1,8 @@
 .SearchAutoComplete {
   position: fixed;
   top: 0.5rem;
-  left: 10px;
-  width: calc(100vw - 80px);
+  left: 70px;
+  width: calc(100vw - 140px);
   max-width: 400px;
   z-index: 700;
 
@@ -10,5 +10,15 @@
     width: 400px;
     max-width: 400px;
     left: calc(50vw - 200px);
+  }
+
+  .search-result {
+    display: block;
+    text-align: left;
+    b {
+      font-weight: normal;
+      color: #ccc;
+      font-size: 14px;
+    }
   }
 }

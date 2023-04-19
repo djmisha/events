@@ -24,8 +24,11 @@ function SearchAutoComplete({
   const formatResult = (item) => {
     return (
       <>
-        <span style={{ display: "block", textAlign: "left" }}>
-          {item.type}: {item.name}
+        <span
+          style={{ display: "block", textAlign: "left" }}
+          className="search-result"
+        >
+          <b>{item.type}:</b> {item.name}
         </span>
       </>
     );
