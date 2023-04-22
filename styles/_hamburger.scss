@@ -11,7 +11,7 @@
 .nav-burger {
   cursor: pointer;
   top: 1.2rem;
-  right: 1rem;
+  left: 1rem;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,6 @@
   text-align: center;
   align-items: center;
   margin-top: -9px;
-  // z-index: 8999;
   span {
     display: block;
     font-size: 12px;
@@ -31,7 +30,7 @@
 .nav-close {
   cursor: pointer;
   top: 1.2rem;
-  right: 1rem;
+  left: 1rem;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -86,7 +85,7 @@
   }
 
   .social-items {
-    padding-top: 60px;
+    padding-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;

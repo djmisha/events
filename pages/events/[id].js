@@ -3,8 +3,8 @@ import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
 import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModuleSinglePage from "../../components/EventsModule/EventsModuleSinglePage";
-// import EventsModule from "../../components/EventsModule/EventsModule";
 import { parseData } from "../../utils/getEvents";
+import Login from "../../components/Account/Login";
 
 export default function Location({ locationData, events }) {
   const { city, state } = locationData;
@@ -17,9 +17,8 @@ export default function Location({ locationData, events }) {
         <title>{title}</title>
         <meta name="description" content={description} />
       </Head>
-
-      {/* <EventsModule locationData={locationData} /> */}
       <EventsModuleSinglePage locationData={locationData} events={events} />
+      <Login></Login>
     </Layout>
   );
 }
@@ -52,6 +51,6 @@ export async function getStaticProps({ params }) {
       locationData,
       events,
     },
-    revalidate: 43200,
+    revalidate: 21600,
   };
 }

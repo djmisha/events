@@ -36,13 +36,7 @@ const Hamburger = ({ locationData }) => {
           />
           <span>Close</span>
         </div>
-        <Image
-          width={200}
-          height={67}
-          src="/images/logo.jpeg"
-          alt="sandiegohousemusic.com logo"
-          className="logo"
-        />
+
         <div className="nav-items">
           <Link href="/" onClick={handleClick}>
             Home
@@ -109,6 +103,13 @@ const Hamburger = ({ locationData }) => {
             @sdhousemusic
           </a>
         </div>
+        <Image
+          width={200}
+          height={67}
+          src="/images/logo.jpeg"
+          alt="sandiegohousemusic.com logo"
+          className="logo"
+        />
       </div>
     </>
   );

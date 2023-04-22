@@ -1,0 +1,78 @@
+.nav-login {
+  cursor: pointer;
+  top: 1.2rem;
+  right: 1rem;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: -9px;
+  z-index: 601;
+  width: 30px;
+  span {
+    position: relative;
+    top: -5px;
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+
+.login-open {
+  display: block;
+}
+
+.login-closed {
+  display: none;
+}
+
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99998;
+  padding: 100px 20px;
+  background-color: white;
+}
+
+.login-close {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.form-widget {
+  max-width: 400px;
+  margin: 0 auto;
+  label {
+    display: block;
+    font-size: 12px;
+  }
+  input {
+    padding: 7px 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  button {
+    display: block;
+    font-size: 15px;
+    background-color: $white;
+    text-align: center;
+    position: relative;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: $pink;
+    margin-bottom: 10px;
+    margin-top: 20px;
+
+    min-width: 120px;
+    &.primary {
+      border: 2px solid $pink;
+    }
+  }
+}

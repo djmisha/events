@@ -21,7 +21,7 @@
 
 # Navigation
 
-- move navigation to top bar, sticky
+- 1 px border of navigation after scroll
 - navigation "Choose Location" to choose
 
 # Homepage & Other Pages
@@ -36,10 +36,11 @@
 
 - PWA manifest (can do once redirects are taken away)
 - put data in Redux - what data?
-- ES lint - meh lol 
+- ES lint - meh lol
 
 ## Done
 
+- [done] move navigation to top bar, sticky
 - [done] back to top
 - [done] Tune in on Twitch - turntable image
 - [done] navigation "Events" to your city
