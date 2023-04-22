@@ -14,9 +14,11 @@ import Spinner from "../components/Spinner/Spinner";
 import EventsModule from "../components/EventsModule/EventsModule";
 import { urlBigData } from "../utils/utilities";
 import MusicModule from "../components/MusicModule/MusicModule";
+import Login from "../components/Account/Login";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const locations = getLocations();
+
   return {
     props: {
       locations,
@@ -191,6 +193,7 @@ export default function Home({ locations }) {
           San Diego, California. Update your location below.
         </p>
       )}
+      <Login />
     </Layout>
   );
 }
