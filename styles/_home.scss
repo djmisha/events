@@ -1,18 +1,32 @@
-.home-cta {
+.hero-home {
   display: flex;
-  flex-direction: row;
-  @media only screen and (min-width: 768px) {
-    justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(80vh - 80px);
+  h1 {
+    display: inline-block;
+    text-align: center;
+    border: none;
+  }
+  p {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   button {
-    margin: 0.5rem;
+    margin-top: 3em;
   }
 }
 
-.hero-home {
-  p {
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 14px;
+.home-your-location {
+  margin-top: 6em;
+  p strong {
+    font-size: 18px;
+    font-weight: normal;
   }
+}
+
+.home-search {
+  margin-top: 5em;
 }

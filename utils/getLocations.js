@@ -71,3 +71,12 @@ export const getLocationData = (slug) => {
     ...data,
   };
 };
+
+// returns the slug of the location for the homepage link
+export const locationUrl = (data) => {
+  let slug;
+  const { city, state } = data;
+  if (city) slug = toSlug(city);
+  else slug = toSlug(state);
+  return slug;
+};

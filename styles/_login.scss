@@ -36,7 +36,7 @@
   right: 0;
   bottom: 0;
   z-index: 99998;
-  padding: 100px 20px;
+  padding: 20px 20px;
   background-color: white;
 }
 
@@ -53,33 +53,52 @@
 }
 
 .form-widget {
+  padding-top: 80px;
   max-width: 400px;
   margin: 0 auto;
+  width: 100%;
   label {
     display: block;
     font-size: 12px;
   }
   input {
-    padding: 10px 12px;
+    padding: 18px 28px;
     border: 1px solid $borderGrey;
+    border-radius: 4px;
     margin-bottom: 10px;
-    min-width: 400px;
+    width: calc(100% - 60px);
   }
   button {
     display: block;
-    font-size: 15px;
+    font-size: 18px;
     background-color: $white;
     text-align: center;
     position: relative;
-    padding: 10px 20px;
+    padding: 18px 28px;
     text-decoration: none;
-    color: $pink;
-    margin-bottom: 10px;
-    margin-top: 20px;
-
-    min-width: 120px;
+    border-radius: 12px;
     &.primary {
-      border: 2px solid $pink;
+      color: $pink;
+      border: 1px solid $pink;
     }
+    &.secondary {
+      color: $blue;
+      border: 1px solid $blue;
+    }
+
+    // display: block;
+    // font-size: 15px;
+    // background-color: $white;
+    // text-align: center;
+    // position: relative;
+    // padding: 10px 20px;
+    // text-decoration: none;
+    // color: $pink;
+    // margin-bottom: 10px;
+    // margin-top: 20px;
+    // min-width: 120px;
+    // &.primary {
+    //   border: 2px solid $pink;
+    // }
   }
 }

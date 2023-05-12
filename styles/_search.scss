@@ -22,3 +22,25 @@
     }
   }
 }
+
+.LocationAutoComplete {
+  width: calc(100vw - 40px);
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  @media only screen and (min-width: 768px) {
+    width: 400px;
+    max-width: 400px;
+    left: calc(50vw - 200px);
+  }
+
+  .search-result {
+    display: block;
+    text-align: left;
+    b {
+      font-weight: normal;
+      color: #ccc;
+      font-size: 14px;
+    }
+  }
+}

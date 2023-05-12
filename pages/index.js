@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
-import { getLocations } from "../utils/getLocations";
+import { getLocations, locationUrl } from "../utils/getLocations";
 import {
   UserLocationService,
   fallbackLocation,
@@ -11,10 +11,10 @@ import { useEffect, useRef, useState } from "react";
 import getEvents from "../utils/getEvents";
 import getMusic from "../utils/getMusic";
 import Spinner from "../components/Spinner/Spinner";
-import EventsModule from "../components/EventsModule/EventsModule";
-import { urlBigData } from "../utils/utilities";
-import MusicModule from "../components/MusicModule/MusicModule";
+import { urlBigData, cityOrState } from "../utils/utilities";
 import Login from "../components/Account/Login";
+import Hamburger from "../components/Hamburger/Hamburger";
+import LocationAutoComplete from "../components/SearchAutoComplete/LocationAutoComplete";
 
 export async function getServerSideProps() {
   const locations = getLocations();
@@ -28,8 +28,6 @@ export async function getServerSideProps() {
 
 export default function Home({ locations }) {
   const [userLocation, setUserLocation] = useState();
-  const [events, SetEvents] = useState([]);
-  const [loading, SetLoading] = useState(true);
   const dataLocationFetchedRef = useRef(false);
   const geoFetchedRef = useRef(false);
   const reverseGeoFetchedRef = useRef(false);
@@ -124,68 +122,37 @@ export default function Home({ locations }) {
     getGeoLocation();
   }, [locations]);
 
-  useEffect(() => {
-    if (userLocation) {
-      if (dataEventsFetchedRef.current) return;
-      getEvents(userLocation.id, SetEvents, SetLoading);
-      dataEventsFetchedRef.current = true;
-    }
-  }, [userLocation]);
-
-  /**
-   * DJ Mixes
-   */
-  const [music, setMusic] = useState();
-  const [musicLoading, setMusicLoading] = useState(true);
-  const dataMusicFetchedRef = useRef(false);
-
-  useEffect(() => {
-    const fetchMusic = async () => {
-      await getMusic(setMusic, setMusicLoading);
-    };
-    if (dataMusicFetchedRef.current) return;
-    dataMusicFetchedRef.current = true;
-    fetchMusic();
-  }, [music]);
-
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <Hamburger locationData={userLocation} />
       <div className="hero-home">
-        <h1>Dance & House Music</h1>
-        <p>Discover dance music in a city near you and around the world </p>
-        <div className="home-cta">
-          <div>
-            <button>
-              <a href="#music" className="secondary">
-                Listen To Music &rarr;
-              </a>
-            </button>
-          </div>
-          <div>
-            <button>
-              <a href="#eventfeed" className="secondary">
-                View Events &rarr;
-              </a>
-            </button>
-          </div>
+        <h1>Find EDM Events</h1>
+        <p>Discover dance music in a city near you </p>
+        <div className="home-search">
+          <LocationAutoComplete />
         </div>
+        {userLocation && (
+          <div className="home-your-location">
+            <p>Your location is</p>
+            <p>
+              <strong>
+                {cityOrState(userLocation.city, userLocation.state)}
+              </strong>
+            </p>
+            <button>
+              <a
+                href={`events/${locationUrl(userLocation)}`}
+                className="secondary"
+              >
+                View Events
+              </a>
+            </button>
+          </div>
+        )}
       </div>
-      {!userLocation && (
-        <Spinner isLoading={loading} text="Loading Location..." />
-      )}
-      {/* Events Module */}
-      {userLocation && (
-        <EventsModule locationData={userLocation} isHome={true} />
-      )}
-      {music && (
-        <>
-          <h2 id="music">Listen to DJ Mixes</h2>
-          <MusicModule music={music} />
-        </>
-      )}
       {/* Location fallback */}
       {isFallbackLocation.current && (
         <p className="location-notice">

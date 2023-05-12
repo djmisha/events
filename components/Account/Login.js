@@ -51,8 +51,14 @@ const Login = () => {
         </div>
       </div>
       <div className={handleOpenClass()}>
-        <div className="login-close" onClick={handleClick}>
-          Close
+        <div className="modal-close" onClick={handleClick}>
+          <Image
+            width={25}
+            height={25}
+            src="/images/icon-back.svg"
+            alt="Menu"
+          />
+          <span>Back</span>
         </div>
         {!session && (
           <Auth

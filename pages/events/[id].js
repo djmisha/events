@@ -5,6 +5,7 @@ import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModuleSinglePage from "../../components/EventsModule/EventsModuleSinglePage";
 import { parseData } from "../../utils/getEvents";
 import Login from "../../components/Account/Login";
+import Hamburger from "../../components/Hamburger/Hamburger";
 
 export default function Location({ locationData, events }) {
   const { city, state } = locationData;
@@ -17,6 +18,7 @@ export default function Location({ locationData, events }) {
         <title>{title}</title>
         <meta name="description" content={description} />
       </Head>
+      <Hamburger />
       <EventsModuleSinglePage locationData={locationData} events={events} />
       <Login></Login>
     </Layout>

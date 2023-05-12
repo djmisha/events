@@ -3,9 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { toSlug } from "../../utils/getLocations";
 
-const Hamburger = ({ locationData }) => {
-  const { city, state } = locationData;
-  const eventsUrl = city ? toSlug(city) : toSlug(state);
+const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -41,7 +39,6 @@ const Hamburger = ({ locationData }) => {
           <Link href="/" onClick={handleClick}>
             Home
           </Link>
-          <Link href={`/events/${eventsUrl}`}>Events</Link>
           <Link href="https://music.sandiegohousemusic.com">Music</Link>
           <Link href="https://music.sandiegohousemusic.com/submit-your-dj-mix/">
             Submit DJ Mix
