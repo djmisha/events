@@ -22,7 +22,6 @@ export const cleanString = (string) => {
 /**
  * Functions to create event arrays of strings
  */
-
 export const makeVenues = (data) => {
   return removeDuplicates(data.map((item) => item.venue.name));
 };
@@ -53,7 +52,7 @@ export const makeLocations = () => {
 };
 
 export const cityOrState = (city, state) => {
-  const string = city ? `${city}, ${state}` : `${state}, USA`;
+  const string = city ? `${city}, ${state}` : `${state}`;
   return string;
 };
 
@@ -77,8 +76,9 @@ export const urlBigData = (lat, long) => {
   return `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=en`;
 };
 
-// Randomize Array
-
+/**
+ * Randomize Array Utility
+ */
 export const shuffleArray = (array) => {
   const newArray = array;
   var currentIndex = array.length,

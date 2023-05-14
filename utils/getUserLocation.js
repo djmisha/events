@@ -77,13 +77,6 @@ const defaultLocation = (response, id) => {
   }
 };
 
-// fallback location object
-export const fallbackLocation = {
-  city: "San Diego",
-  state: "California",
-  id: 81,
-};
-
 // Sets local storage with location
 export const storeUserLocation = (id) => {
   localStorage.setItem("locID", id);
