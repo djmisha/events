@@ -39,19 +39,6 @@ export const UserLocationService = async () => {
   }
 };
 
-// export const matchToId = (locations, city, state) => {
-//   let id;
-//   locations.forEach(function (location) {
-//     if (city === location.city) {
-//       id = location.id;
-//     }
-//     if (!id && state === location.stateCode) {
-//       id = location.id;
-//     }
-//     return id;
-//   });
-// };
-
 export const matchToLocation = () => {
   let city;
   let state;
@@ -69,12 +56,6 @@ export const matchToLocation = () => {
     state,
     id,
   };
-};
-
-const defaultLocation = (response, id) => {
-  if (response.status != 200) {
-    return fallback;
-  }
 };
 
 // Sets local storage with location
