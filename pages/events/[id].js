@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
+import { getEventsProd } from "../../utils/getEvents";
 import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModuleSinglePage from "../../components/EventsModule/EventsModuleSinglePage";
 import { parseData } from "../../utils/getEvents";
