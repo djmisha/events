@@ -20,7 +20,7 @@ export default function Location({ locationData, events }) {
       </Head>
       <Hamburger />
       <EventsModuleSinglePage locationData={locationData} events={events} />
-      <Login></Login>
+      <Login />
     </Layout>
   );
 }
@@ -42,9 +42,11 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const locationData = getLocationData(params.id);
   const { id } = locationData;
-  const apiResponse = await fetch(
-    `https://sandiegohousemusic.com/api/events/${id}`
-  );
+  // const apiResponse = await fetch(
+  //   `https://sandiegohousemusic.com/api/events/${id}`
+  // );
+
+  const apiResponse = getEventsProd(id, null, null);
   const events = await apiResponse.json();
   parseData(events.data);
 
