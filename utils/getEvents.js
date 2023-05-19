@@ -16,7 +16,7 @@ const getEvents = (id, setEvents, setLoading) => {
   }
 };
 
-const getEventsProd = async (id, setEvents, setLoading) => {
+exoprt const getEventsProd = async (id, setEvents, setLoading) => {
   const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
   const URL = process.env.NEXT_PUBLIC_API_URL_EDMTRAIN;
   const PATH = URL + id + "&client=" + KEY;
