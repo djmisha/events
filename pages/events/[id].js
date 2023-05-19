@@ -2,8 +2,7 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
 import { makePageTitle, makePageDescription } from "../../utils/utilities";
-import EventsModuleSinglePage from "../../components/EventsModule/EventsModuleSinglePage";
-import { parseData } from "../../utils/getEvents";
+import EventsModule from "../../components/EventsModule/EventsModule";
 import Login from "../../components/Account/Login";
 import Hamburger from "../../components/Hamburger/Hamburger";
 
@@ -19,7 +18,7 @@ export default function Location({ locationData, events }) {
         <meta name="description" content={description} />
       </Head>
       <Hamburger />
-      <EventsModuleSinglePage locationData={locationData} events={events} />
+      <EventsModule locationData={locationData} />
       <Login />
     </Layout>
   );
@@ -37,23 +36,14 @@ export async function getStaticPaths() {
 /**
  * Gets data for each page based on slug
  * @param {*} param0
- * @returns locationData, events
+ * @returns locationData
  */
 export async function getStaticProps({ params }) {
   const locationData = getLocationData(params.id);
-  const { id } = locationData;
-
-  const apiResponse = await fetch(
-    `https://sandiegohousemusic.com/api/events/${id}`
-  );
-  const events = await apiResponse.json();
-  parseData(events.data);
 
   return {
     props: {
       locationData,
-      events,
     },
-    revalidate: 21600,
   };
 }

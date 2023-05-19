@@ -11,17 +11,19 @@ import setDates from "./setDates";
 const getEvents = (id, setEvents, setLoading) => {
   if (process.env.NODE_ENV === "development") {
     return getSampleEvents(id, setEvents, setLoading);
+    // return getEventsProd(id, setEvents, setLoading);
   } else {
     return getEventsProd(id, setEvents, setLoading);
   }
 };
 
 const getEventsProd = async (id, setEvents, setLoading) => {
-  const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
-  const URL = process.env.NEXT_PUBLIC_API_URL_EDMTRAIN;
-  const PATH = URL + id + "&client=" + KEY;
+  // const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
+  // const URL = process.env.NEXT_PUBLIC_API_URL_EDMTRAIN;
+  // const PATH = URL + id + "&client=" + KEY;
+  const PATH = `https://sandiegohousemusic.com/api/events/${id}`;
 
-  await fetch(PATH)
+  await fetch(PATH, { mode: "cors" })
     .then(function (response) {
       response.json().then((res) => {
         parseData(res.data);
