@@ -95,7 +95,7 @@ const Locator = ({ locations }) => {
     <>
       {userLocation && (
         <div className="home-your-location">
-          <p>Your location is</p>
+          <p>Your default location is</p>
           <p>
             <strong>
               {cityOrState(userLocation.city, userLocation.state)}
