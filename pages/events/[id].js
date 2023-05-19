@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
-import { getEventsProd } from "../../utils/getEvents";
 import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModuleSinglePage from "../../components/EventsModule/EventsModuleSinglePage";
 import { parseData } from "../../utils/getEvents";
@@ -43,11 +42,14 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const locationData = getLocationData(params.id);
   const { id } = locationData;
+  const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
+  const URL = process.env.NEXT_PUBLIC_API_URL_EDMTRAIN;
+  const PATH = URL + id + "&client=" + KEY;
+
+  const apiResponse = await fetch(PATH);
   // const apiResponse = await fetch(
   //   `https://sandiegohousemusic.com/api/events/${id}`
   // );
-
-  const apiResponse = getEventsProd(id, null, null);
   const events = await apiResponse.json();
   parseData(events.data);
 
