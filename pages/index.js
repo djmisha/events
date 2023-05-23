@@ -29,7 +29,7 @@ export default function Home({ locations }) {
         <div className="home-search">
           <LocationAutoComplete />
         </div>
-        <Locator locations={locations} />
+        {/* <Locator locations={locations} /> */}
       </div>
       <Login />
     </Layout>

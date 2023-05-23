@@ -43,7 +43,7 @@ function SearchAutoComplete({
             onSelect={handleOnSelect}
             onClear={handleOnClear}
             formatResult={formatResult}
-            placeholder="Search for Artist, Venue, Event"
+            placeholder="Search Artist, Venue, Event"
           />
         </div>
       </header>
