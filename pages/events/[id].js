@@ -6,7 +6,7 @@ import EventsModule from "../../components/EventsModule/EventsModule";
 import Login from "../../components/Account/Login";
 import Hamburger from "../../components/Hamburger/Hamburger";
 
-export default function Location({ locationData, events }) {
+export default function Location({ locationData }) {
   const { city, state } = locationData;
   const title = makePageTitle(city, state);
   const description = makePageDescription(city, state);

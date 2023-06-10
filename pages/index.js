@@ -24,12 +24,14 @@ export default function Home({ locations }) {
       </Head>
       <Hamburger />
       <div className="hero-home">
-        <h1>Find EDM Events</h1>
-        <p>Discover dance music in a city near you </p>
+        <div>
+          <h1>Find EDM Events</h1>
+          <p>Discover dance music in a city near you </p>
+        </div>
         <div className="home-search">
           <LocationAutoComplete />
         </div>
-        {/* <Locator locations={locations} /> */}
+        <Locator locations={locations} />
       </div>
       <Login />
     </Layout>

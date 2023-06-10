@@ -93,7 +93,7 @@ const Locator = ({ locations }) => {
 
   return (
     <>
-      {userLocation && (
+      {userLocation?.id && (
         <div className="home-your-location">
           <p>Your default location is</p>
           <p>

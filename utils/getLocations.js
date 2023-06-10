@@ -20,9 +20,10 @@ const addCityAndState = (locations) => {
   return cityAndState;
 };
 
+export const allLocations = addCityAndState(locations);
+
 // gets id's for each location
 export const getLocationIds = () => {
-  const allLocations = addCityAndState(locations);
   return allLocations.map((location) => {
     let id;
     if (location.city) {
@@ -40,7 +41,6 @@ export const getLocationIds = () => {
 
 // gets all locations for homepage
 export const getLocations = () => {
-  const allLocations = addCityAndState(locations);
   return allLocations.map((location) => {
     const { id, city, state } = location;
     let slug;
@@ -58,7 +58,6 @@ export const getLocations = () => {
 // Matches Slug with Location and returns data about location
 export const getLocationData = (slug) => {
   let data;
-  const allLocations = addCityAndState(locations);
   allLocations.map((location) => {
     if (location.city) {
       if (toSlug(location.city) === slug) data = location;
