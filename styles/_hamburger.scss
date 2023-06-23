@@ -57,6 +57,9 @@
   text-align: center;
   height: calc(100vh);
   z-index: 8998;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   &.nav-open {
     top: 0px;
   }
@@ -66,7 +69,6 @@
   }
   img.logo {
     margin: 0 auto;
-    padding-top: 40px;
   }
   .nav-items {
     padding-top: 50px;
@@ -84,7 +86,6 @@
   }
 
   .social-items {
-    padding-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,7 +101,6 @@
   }
 
   .twitch-follow {
-    padding-top: 1rem;
     color: $pink;
     a {
       color: $pink;

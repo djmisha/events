@@ -21,6 +21,10 @@ export default function Home({ locations }) {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        ></meta>
       </Head>
       <Hamburger />
       <div className="hero-home">
@@ -31,8 +35,8 @@ export default function Home({ locations }) {
         <div className="home-search">
           <LocationAutoComplete />
         </div>
-        <Locator locations={locations} />
       </div>
+      <Locator locations={locations} />
       <Login />
     </Layout>
   );

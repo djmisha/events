@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { toSlug } from "../../utils/getLocations";
 
 const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);

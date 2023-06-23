@@ -3,28 +3,23 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: calc(80vh - 80px);
+  height: calc(80vh - 140px);
   > div {
     text-align: center;
-    align-items: center;
   }
   h1 {
-    display: inline-block;
     text-align: center;
     border: none;
-  }
-  p {
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  button {
-    margin-top: 2em;
+    font-size: 30px;
+    @media only screen and (min-width: 768px) {
+      font-size: 35px;
+    }
   }
 }
 
 .home-your-location {
-  margin-top: 6em;
+  text-align: center;
+
   p strong {
     font-size: 18px;
     font-weight: normal;
@@ -32,5 +27,5 @@
 }
 
 .home-search {
-  margin-top: 4em;
+  margin-top: 2em;
 }
