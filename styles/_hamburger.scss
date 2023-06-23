@@ -55,7 +55,7 @@
   background-color: $white;
   position: fixed;
   text-align: center;
-  height: calc(100vh);
+  height: 100vh;
   z-index: 8998;
   display: flex;
   flex-direction: column;
@@ -69,6 +69,7 @@
   }
   img.logo {
     margin: 0 auto;
+    margin-bottom: 80px;
   }
   .nav-items {
     padding-top: 50px;

@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: calc(80vh - 140px);
+  height: calc(80vh - 180px);
   > div {
     text-align: center;
   }
@@ -19,7 +19,6 @@
 
 .home-your-location {
   text-align: center;
-
   p strong {
     font-size: 18px;
     font-weight: normal;
