@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Artists from "../Artists/Artists";
 import setDates from "../../utils/setDates";
+import { makeImageUrl } from "../../utils/utilities";
 import Image from "next/image";
 
 export const EventCard = ({ event }) => {
@@ -22,11 +23,20 @@ export const EventCard = ({ event }) => {
       itemType="http://schema.org/Event"
       onClick={handleClick}
     >
-      <div className="event-date" itemProp="startDate" content={daySchema}>
-        <div>{dayOfWeek}</div>
-        <div>{dayMonth}</div>
-      </div>
+      <div
+        className="artist-image"
+        style={{
+          backgroundImage: `url('${
+            artistList[0]?.name && makeImageUrl(artistList[0].name)
+          }')`,
+        }}
+      ></div>
       <div className="event-info">
+        <div className="event-date" itemProp="startDate" content={daySchema}>
+          <div>
+            {dayOfWeek}, {dayMonth}
+          </div>
+        </div>
         <div className="event-title-artist">
           {name && (
             <span className="event-title" itemProp="name">

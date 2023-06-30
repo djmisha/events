@@ -88,15 +88,15 @@ const Hamburger = () => {
           </a>
         </div>
         <div className="twitch-follow">
-          Listen on Twitch
-          <br />
           <a
             rel="noreferrer"
             target="_blank"
             href="https://twitch.tv/sdhousemusic/"
             className="twitch"
           >
-            @sdhousemusic
+            Listen on Twitch
+            <br />
+            <strong>@sdhousemusic</strong>
           </a>
         </div>
         <Image

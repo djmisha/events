@@ -93,3 +93,27 @@ export const shuffleArray = (array) => {
   }
   return newArray;
 };
+
+/**
+ * Creates string for image file
+ */
+
+export const makeImageUrl = (string) => {
+  const url = "https://music.sandiegohousemusic.com/artist-images/";
+  const cleanString = string
+    .split("(")
+    .join("%28")
+    .split(")")
+    .join("%29")
+    .split("'")
+    .join("&#39")
+    .split("&")
+    .join("&#38")
+    .split("/")
+    .join("&#47")
+    .split(" ")
+    .join("%20");
+
+  const imageURL = `${url}${cleanString}.jpg`;
+  return imageURL;
+};
