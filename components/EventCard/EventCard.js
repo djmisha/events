@@ -10,6 +10,22 @@ export const EventCard = ({ event }) => {
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
   const [isOpen, setIsOpen] = useState(false);
 
+  const ArtistImage = () => {
+    const url = artistList[0]?.name
+      ? makeImageUrl(artistList[0].name)
+      : makeImageUrl("no-image");
+    return (
+      <div className="artist-fallback">
+        <div
+          className="artist-image"
+          style={{
+            backgroundImage: `url('${url}')`,
+          }}
+        ></div>
+      </div>
+    );
+  };
+
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
@@ -23,14 +39,7 @@ export const EventCard = ({ event }) => {
       itemType="http://schema.org/Event"
       onClick={handleClick}
     >
-      <div
-        className="artist-image"
-        style={{
-          backgroundImage: `url('${
-            artistList[0]?.name && makeImageUrl(artistList[0].name)
-          }')`,
-        }}
-      ></div>
+      <ArtistImage />
       <div className="event-info">
         <div className="event-date" itemProp="startDate" content={daySchema}>
           <div>
