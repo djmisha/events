@@ -99,7 +99,8 @@ export const shuffleArray = (array) => {
  */
 
 export const makeImageUrl = (string) => {
-  const url = "https://music.sandiegohousemusic.com/artist-images/";
+  const url = "/images/artists/";
+  // const url = "https://music.sandiegohousemusic.com/artist-images/";
   const cleanString = string
     .split("(")
     .join("%28")
