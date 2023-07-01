@@ -108,8 +108,6 @@ export const makeImageUrl = (string) => {
     .join("%29")
     .split("'")
     .join("&#39")
-    .split("&")
-    .join("&#38")
     .split("/")
     .join("&#47")
     .split(" ")
