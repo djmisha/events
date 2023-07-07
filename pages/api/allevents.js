@@ -7,8 +7,8 @@
 
 export default async function handler(req, res) {
   const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
-  const URL = EDMURL + "&client=" + KEY;
   const EDMURL = "https://edmtrain.com/api/events?";
+  const URL = EDMURL + "&client=" + KEY;
 
   try {
     const apiResponse = await fetch(URL);
