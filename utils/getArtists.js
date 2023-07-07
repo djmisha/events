@@ -1,8 +1,7 @@
 /**
  * todo:
- - finish layout for top artists
  - remove musics css, delete file
- - update main navigation: remove music + submit mix, add top artists 
+ - update main navigation: remove music + submit mix
  */
 
 import sampleEvents from "./allevents.sample.json";

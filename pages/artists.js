@@ -45,12 +45,13 @@ export default function Home({ events }) {
         <div className="top-artists-list">
           {top &&
             top.map((item, index) => {
-              if (index < 30) {
+              if (index < 50) {
+                const { name, count } = item;
                 return (
-                  <div className="top-artists-single">
-                    <ArtistImage name={item.name} />
+                  <div className="top-artists-single" key={name}>
+                    <ArtistImage name={name} />
                     <div className="top-artists-single-name">
-                      {item.name} <span>{item.count} shows</span>
+                      {name} <span>{count} shows</span>
                     </div>
                   </div>
                 );
