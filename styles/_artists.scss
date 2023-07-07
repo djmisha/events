@@ -1,0 +1,78 @@
+.top-artists-single {
+  position: relative;
+  transition: all 0.25 ease-out;
+  text-align: left;
+  padding: 20px 10px 20px 10px;
+  margin: 0px 0px;
+  position: relative;
+  background-color: $lightGrey;
+  transition: all 0.15s ease-in-out;
+  position: relative;
+  top: 0;
+  text-align: left;
+  margin-bottom: 10px;
+  display: flex;
+  overflow: hidden;
+  @media only screen and (min-width: 768px) {
+    border-radius: $borderRadius;
+    padding: 20px 20px 20px 20px;
+  }
+
+  // @TODO - clean this up once this page is build out more
+  // &.hidden {
+  //   display: none;
+  // }
+  // a {
+  //   color: #767679;
+  //   text-decoration: none;
+  //   &:hover {
+  //     text-decoration: underline !important;
+  //   }
+  // }
+  // &.view-partial {
+  //   .event-link a {
+  //     display: none;
+  //   }
+  //   &:before {
+  //     content: "...";
+  //     color: $borderGrey;
+  //     font-size: 40px;
+  //     position: absolute;
+  //     right: 20px;
+  //     top: 20px;
+  //   }
+  // }
+  // &.view-full {
+  //   height: auto;
+  //   .event-venue {
+  //     padding-top: 20px;
+  //   }
+  //   .event-location {
+  //     display: inline-block;
+  //     opacity: 1;
+  //     transition: all 0.15s ease-in-out;
+  //   }
+  //   .event-link a {
+  //     display: inline-block;
+  //   }
+  // }
+}
+
+.top-artists-single-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  width: 100%;
+
+  span {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 6px;
+    background: $blue;
+    color: $white;
+  }
+}

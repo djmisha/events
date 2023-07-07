@@ -38,6 +38,7 @@ const Hamburger = () => {
           <Link href="/" onClick={handleClick}>
             Home
           </Link>
+          <Link href="/artists">Top Artists</Link>
           <Link href="https://music.sandiegohousemusic.com">Music</Link>
           <Link href="https://music.sandiegohousemusic.com/submit-your-dj-mix/">
             Submit DJ Mix

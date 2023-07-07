@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   try {
     const apiResponse = await fetch(URL);
     const data = await apiResponse.json();
-    res.setHeader("Cache-Control", "s-maxage=21600");
+    res.setHeader("Cache-Control", "s-maxage=604800"); // cache for one week
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ error });
