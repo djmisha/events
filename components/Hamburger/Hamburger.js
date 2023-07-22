@@ -39,10 +39,6 @@ const Hamburger = () => {
             Home
           </Link>
           <Link href="/artists">Top Artists</Link>
-          <Link href="https://music.sandiegohousemusic.com">Music</Link>
-          <Link href="https://music.sandiegohousemusic.com/submit-your-dj-mix/">
-            Submit DJ Mix
-          </Link>
         </div>
         <div className="social-items">
           <a
@@ -104,7 +100,7 @@ const Hamburger = () => {
           width={200}
           height={67}
           src="/images/logo.jpeg"
-          alt="sandiegohousemusic.com logo"
+          alt="sandiegohousemusic.com"
           className="logo"
         />
       </div>
