@@ -1,9 +1,14 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
+import Layout from "../components/layout";
 import Login from "../components/Account/Login";
 import Hamburger from "../components/Hamburger/Hamburger";
 import { getArtistsCounts } from "../utils/getArtists";
 import ArtistImage from "../components/Artists/ArtistImage";
+import { getArtistEvents } from "../utils/getArtists";
+
+import { getAritstIds } from "./../utils/getArtists";
+
+const title = "Top Touring EDM Artists";
 
 /**
  * Gets server side data for page,
@@ -30,10 +35,11 @@ export async function getStaticProps() {
 
 export default function Home({ events }) {
   const top = events;
+  // getArtistEvents();
   return (
     <Layout>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{title}</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
@@ -45,7 +51,7 @@ export default function Home({ events }) {
         <div className="top-artists-list">
           {top &&
             top.map((item, index) => {
-              if (index < 50) {
+              if (index < 200) {
                 const { name, count } = item;
                 return (
                   <div className="top-artists-single" key={name}>
@@ -59,7 +65,7 @@ export default function Home({ events }) {
             })}
         </div>
       </>
-      <Login />
+      {/* <Login /> */}
     </Layout>
   );
 }

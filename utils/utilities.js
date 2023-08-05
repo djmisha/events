@@ -114,3 +114,20 @@ export const makeImageUrl = (string) => {
 
   return imageURL;
 };
+
+export const ToSlugArtist = (string) => {
+  const cleanString = string
+    .split("'")
+    .join("")
+    .split("/")
+    .join("-")
+    .split("(")
+    .join("-")
+    .split(")")
+    .join("-")
+    .split(" ")
+    .join("-")
+    .toLowerCase();
+
+  return cleanString;
+};

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import { getLocations } from "../utils/getLocations";
-import Login from "../components/Account/Login";
+// import Login from "../components/Account/Login";
 import Hamburger from "../components/Hamburger/Hamburger";
 import LocationAutoComplete from "../components/SearchAutoComplete/LocationAutoComplete";
 import Locator from "../components/Locator/Locator";
@@ -37,7 +37,7 @@ export default function Home({ locations }) {
         </div>
       </div>
       <Locator locations={locations} />
-      <Login />
+      {/* <Login /> */}
     </Layout>
   );
 }

@@ -1,0 +1,60 @@
+import { useEffect, useRef, useState } from "react";
+import Head from "next/head";
+import Layout from "../../components/layout";
+import {
+  getAritstIds,
+  getArtistData,
+  getArtistEvents,
+} from "../../utils/getArtists";
+import { makePageTitle, makePageDescription } from "../../utils/utilities";
+import EventsModule from "../../components/EventsModule/EventsModuleArtist";
+import EventCard from "../../components/EventCard/EventCard";
+import Login from "../../components/Account/Login";
+import Hamburger from "../../components/Hamburger/Hamburger";
+
+// @todo
+// create Events Module for Artists
+
+export default function Artist({ artistData }) {
+  const { name, id } = artistData;
+
+  // const title = makePageTitle(city, state);
+  // const description = makePageDescription(city, state);
+
+  return (
+    <Layout>
+      <Head>
+        {/* <title>{title}</title> */}
+        {/* <meta name="description" content={description} /> */}
+      </Head>
+      <Hamburger />
+      {name}
+      <EventsModule artistData={artistData} />
+      {/* <Login /> */}
+    </Layout>
+  );
+}
+
+// Gets slugs for each dynamic page
+export async function getStaticPaths() {
+  const paths = getAritstIds();
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+/**
+ * Gets data for each page based on slug
+ * @param {*} param0
+ * @returns locationData
+ */
+export async function getStaticProps({ params }) {
+  const artistData = getArtistData(params.id);
+
+  return {
+    props: {
+      artistData,
+    },
+  };
+}

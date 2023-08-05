@@ -3,7 +3,7 @@ import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
 import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModule from "../../components/EventsModule/EventsModule";
-import Login from "../../components/Account/Login";
+// import Login from "../../components/Account/Login";
 import Hamburger from "../../components/Hamburger/Hamburger";
 
 export default function Location({ locationData }) {
@@ -19,7 +19,7 @@ export default function Location({ locationData }) {
       </Head>
       <Hamburger />
       <EventsModule locationData={locationData} />
-      <Login />
+      {/* <Login /> */}
     </Layout>
   );
 }
