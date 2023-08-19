@@ -5,16 +5,39 @@ export const toSlug = (string) => {
   return string.split(" ").join("-").toLowerCase();
 };
 
-// add city and state to thelocations array
+// add city and state to the locations array
 const addCityAndState = (locations) => {
+  const cities = [];
+  const states = [];
   const cityAndState = [];
   // add city
   locations.map((location) => {
-    if (location.city) cityAndState.push(location);
+    if (location.city) cities.push(location);
   });
   // add States
   locations.map((location) => {
-    if (!location.city) cityAndState.push(location);
+    if (!location.city) states.push(location);
+  });
+
+  // sort the arrays alphabetically
+  cities.sort((a, b) => {
+    if (a.city < b.city) return -1;
+    if (a.city > b.city) return 1;
+    return 0;
+  });
+
+  states.sort((a, b) => {
+    if (a.state < b.state) return -1;
+    if (a.state > b.state) return 1;
+    return 0;
+  });
+
+  // join the arrays into a single array
+  cities.map((city) => {
+    cityAndState.push(city);
+  });
+  states.map((state) => {
+    cityAndState.push(state);
   });
 
   return cityAndState;
