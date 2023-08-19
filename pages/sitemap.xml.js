@@ -1,23 +1,21 @@
-//pages/sitemap.xml.js
-const EXTERNAL_DATA_URL = "https://jsonplaceholder.typicode.com/posts";
+import { getLocations } from "../utils/getLocations";
 
-function generateSiteMap(posts) {
+const URL = "https://www.sandiegohousemusic.com";
+
+function generateSiteMap(locations) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <!--We manually set the two URLs we know already-->
+     <!--We manually set the URLs we know already-->
      <url>
-       <loc>https://jsonplaceholder.typicode.com</loc>
+       <loc>https://www.sandiegohousemusic.com</loc>
      </url>
-     <url>
-       <loc>https://jsonplaceholder.typicode.com/guide</loc>
-     </url>
-     ${posts
-       .map(({ id }) => {
+     ${locations
+       .map(({ slug }) => {
          return `
-       <url>
-           <loc>${`${EXTERNAL_DATA_URL}/${id}`}</loc>
-       </url>
-     `;
+          <url>
+              <loc>${`${URL}/events/${slug}`}</loc>
+          </url>
+        `;
        })
        .join("")}
    </urlset>
@@ -25,16 +23,15 @@ function generateSiteMap(posts) {
 }
 
 function SiteMap() {
+  // This is an empty page. Its only purpose is to generate the XML file
   // getServerSideProps will do the heavy lifting
 }
 
 export async function getServerSideProps({ res }) {
-  // We make an API call to gather the URLs for our site
-  const request = await fetch(EXTERNAL_DATA_URL);
-  const posts = await request.json();
+  const locations = getLocations();
 
-  // We generate the XML sitemap with the posts data
-  const sitemap = generateSiteMap(posts);
+  // We generate the XML sitemap with the location data
+  const sitemap = generateSiteMap(locations);
 
   res.setHeader("Content-Type", "text/xml");
   // we send the XML to the browser
