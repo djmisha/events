@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import { getLocations } from "../utils/getLocations";
-// import Login from "../components/Account/Login";
 import Hamburger from "../components/Hamburger/Hamburger";
 import LocationAutoComplete from "../components/SearchAutoComplete/LocationAutoComplete";
 import Locator from "../components/Locator/Locator";
+import CitiesStates from "../components/Homepage/CitiesStates";
 
 export async function getServerSideProps() {
   const locations = getLocations();
@@ -27,17 +27,21 @@ export default function Home({ locations }) {
         ></meta>
       </Head>
       <Hamburger />
-      <div className="hero-home">
-        <div>
-          <h1>Find EDM Events</h1>
-          <p>Discover dance music in a city near you </p>
+      <section className="one">
+        <div className="hero-home">
+          <div>
+            <h1>Find EDM Events</h1>
+            <p>Discover dance music in a city near you </p>
+          </div>
+          <div className="home-search">
+            <LocationAutoComplete />
+          </div>
         </div>
-        <div className="home-search">
-          <LocationAutoComplete />
-        </div>
-      </div>
-      <Locator locations={locations} />
-      {/* <Login /> */}
+        <Locator locations={locations} />
+      </section>
+      <section className="two">
+        <CitiesStates locations={locations} />
+      </section>
     </Layout>
   );
 }
