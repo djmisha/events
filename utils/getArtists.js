@@ -1,11 +1,6 @@
-/**
- * todo:
- - remove musics css, delete file
- - update main navigation: remove music + submit mix
- */
-
 import sampleEvents from "./allevents.sample.json";
 import { removeDuplicates, ToSlugArtist } from "./utilities";
+import { parseData } from "./getEvents";
 
 /**
  * on Dev we return a sample array vs Prod we make a fetch call
@@ -181,52 +176,29 @@ export const getArtistData = (slug) => {
   };
 };
 
-/**
- * Get Event Data for each Artist
- */
+// Determine URL to use based on env
+const setURL = (id) => {
+  let url;
 
-export const getArtistEvents = async (id, setEvents, setLoading) => {
-  const PATH = `https://www.sandiegohousemusic.com/api/artists/357`;
+  if (process.env.NODE_ENV === "development") {
+    url = `http://localhost:3000/api/artists/${id}`;
+  } else {
+    url = `https://www.sandiegohousemusic.com/api/artists/${id}`;
+  }
 
-  await fetch(PATH, { mode: "no-cors" })
-    .then(function (response) {
-      // failing here
-      // failing here
-      // failing here
-      // debugger;
-      if (response.statusCode === 200) {
-        response.json().then((res) => {
-          console.log(response);
-          // parseData(res.data);
-          setEvents(res.data);
-          setLoading(false);
-        });
-      } else {
-        throw new Error(response.statusText);
-      }
-    })
-    .then((data) => {
-      console.log(data);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
+  return url;
 };
 
-// // Help from Bard
-// const url = "https://example.com/api/data.json";
+// get events for each artist
+export const getArtistEvents = async (id, setEvents) => {
+  const url = setURL(id);
 
-// fetch(url)
-//   .then((response) => {
-//     if (response.ok) {
-//       return response.json();
-//     } else {
-//       throw new Error(response.statusText);
-//     }
-//   })
-//   .then((data) => {
-//     console.log(data);
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
+  const response = await fetch(url, { mode: "no-cors" });
+  if (response.ok) {
+    const json = await response.json();
+    parseData(json.data);
+    setEvents(json.data);
+  } else {
+    throw new Error(response.statusText);
+  }
+};

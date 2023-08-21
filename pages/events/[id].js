@@ -3,7 +3,6 @@ import Layout from "../../components/layout";
 import { getLocationIds, getLocationData } from "../../utils/getLocations";
 import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModule from "../../components/EventsModule/EventsModule";
-// import Login from "../../components/Account/Login";
 import Hamburger from "../../components/Hamburger/Hamburger";
 
 export default function Location({ locationData }) {
@@ -19,7 +18,6 @@ export default function Location({ locationData }) {
       </Head>
       <Hamburger />
       <EventsModule locationData={locationData} />
-      {/* <Login /> */}
     </Layout>
   );
 }
@@ -35,7 +33,7 @@ export async function getStaticPaths() {
 
 /**
  * Gets data for each page based on slug
- * @param {*} param0
+ * @param {*} params
  * @returns locationData
  */
 export async function getStaticProps({ params }) {

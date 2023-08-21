@@ -1,0 +1,2884 @@
+[
+  {
+    "id": 275567,
+    "link": "https://edmtrain.com/phoenix-az/kaskade-ownboss-275567?utm_source=90&utm_medium=api",
+    "name": null,
+    "ages": "21+",
+    "festivalInd": false,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-08-26",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-06-23T04:21:35Z",
+    "venue": {
+      "id": 1036,
+      "name": "Talking Stick Resort",
+      "location": "Scottsdale, AZ",
+      "address": "9800 E Indian Bend Rd, Scottsdale, AZ 85256, USA",
+      "state": "Arizona",
+      "latitude": 33.539,
+      "longitude": -111.858
+    },
+    "artistList": [
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 37147,
+        "name": "Öwnboss",
+        "link": "https://edmtrain.com/tours/ownboss-37147?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 33834,
+        "name": "Carola",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 23015,
+        "name": "Avitas",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 29472,
+        "name": "ELWER",
+        "link": null,
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 238410,
+    "link": "https://edmtrain.com/new-york-city-ny/electric-zoo-238410?utm_source=90&utm_medium=api",
+    "name": "Electric Zoo",
+    "ages": "18+",
+    "festivalInd": true,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-09-01",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2022-11-23T03:27:38Z",
+    "venue": {
+      "id": 448,
+      "name": "Randall's Island",
+      "location": "New York, NY",
+      "address": "1 Randalls Is, New York, NY 10035, USA",
+      "state": "New York",
+      "latitude": 40.793,
+      "longitude": -73.919
+    },
+    "artistList": [
+      {
+        "id": 9113,
+        "name": "ACRAZE",
+        "link": "https://edmtrain.com/tours/acraze-9113?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 64,
+        "name": "Adventure Club",
+        "link": "https://edmtrain.com/tours/adventure-club-64?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5344,
+        "name": "ATLiens",
+        "link": "https://edmtrain.com/tours/atliens-5344?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 13092,
+        "name": "Blanke",
+        "link": "https://edmtrain.com/tours/blanke-13092?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 24768,
+        "name": "The Blessed Madonna",
+        "link": "https://edmtrain.com/tours/the-blessed-madonna-24768?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6845,
+        "name": "BONNIE X CLYDE",
+        "link": "https://edmtrain.com/tours/bonnie-x-clyde-6845?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 33834,
+        "name": "Carola",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 582,
+        "name": "The Chainsmokers",
+        "link": "https://edmtrain.com/tours/the-chainsmokers-582?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7628,
+        "name": "Charles Meyer",
+        "link": "https://edmtrain.com/tours/charles-meyer-7628?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 164,
+        "name": "Chris Lake",
+        "link": "https://edmtrain.com/tours/chris-lake-164?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 8140,
+        "name": "Fisher",
+        "link": "https://edmtrain.com/tours/fisher-8140?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 24689,
+        "name": "Cloonee",
+        "link": "https://edmtrain.com/tours/cloonee-24689?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 12897,
+        "name": "Coco & Breezy",
+        "link": "https://edmtrain.com/tours/coco-and-breezy-12897?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 258,
+        "name": "Excision",
+        "link": "https://edmtrain.com/tours/excision-258?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 26038,
+        "name": "Forester",
+        "link": "https://edmtrain.com/tours/forester-26038?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1039,
+        "name": "Galantis",
+        "link": "https://edmtrain.com/tours/galantis-1039?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 33450,
+        "name": "Ghastly (GHENGAR Set)",
+        "link": "https://edmtrain.com/tours/ghastly-ghengar-set-33450?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 299,
+        "name": "GRiZ",
+        "link": "https://edmtrain.com/tours/griz-299?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 24635,
+        "name": "HoneyLuv",
+        "link": "https://edmtrain.com/tours/honeyluv-24635?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 8085,
+        "name": "J. Worra",
+        "link": "https://edmtrain.com/tours/j-worra-8085?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7501,
+        "name": "Kasbo",
+        "link": "https://edmtrain.com/tours/kasbo-7501?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 966,
+        "name": "Kx5 (Kaskade x deadmau5)",
+        "link": "https://edmtrain.com/tours/kx5-kaskade-x-deadmau5-966?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 396,
+        "name": "Madeon",
+        "link": "https://edmtrain.com/tours/madeon-396?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 42075,
+        "name": "Mau P",
+        "link": "https://edmtrain.com/tours/mau-p-42075?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 52812,
+        "name": "Midwestern Goodbye",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 14831,
+        "name": "Rebūke",
+        "link": "https://edmtrain.com/tours/rebuke-14831?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 2321,
+        "name": "Said The Sky",
+        "link": "https://edmtrain.com/tours/said-the-sky-2321?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 35133,
+        "name": "Spencer Huff",
+        "link": null,
+        "b2bInd": true
+      },
+      {
+        "id": 22731,
+        "name": "Matt Suave",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 22866,
+        "name": "Steller",
+        "link": "https://edmtrain.com/tours/steller-22866?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 20891,
+        "name": "Storyboard",
+        "link": "https://edmtrain.com/tours/storyboard-20891?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21186,
+        "name": "TELYKast",
+        "link": "https://edmtrain.com/tours/telykast-21186?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 11408,
+        "name": "VAMPA",
+        "link": "https://edmtrain.com/tours/vampa-11408?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 9810,
+        "name": "VAVO",
+        "link": "https://edmtrain.com/tours/vavo-9810?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 783,
+        "name": "Yolanda Be Cool",
+        "link": "https://edmtrain.com/tours/yolanda-be-cool-783?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 259169,
+    "link": "https://edmtrain.com/las-vegas-nv/kaskade-259169?utm_source=90&utm_medium=api",
+    "name": null,
+    "ages": null,
+    "festivalInd": false,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-09-09",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-03-23T20:09:52Z",
+    "venue": {
+      "id": 9401,
+      "name": "Ayu Dayclub",
+      "location": "Las Vegas, NV",
+      "address": "3000 S Las Vegas Blvd, Las Vegas, NV 89109, USA",
+      "state": "Nevada",
+      "latitude": 36.134,
+      "longitude": -115.168
+    },
+    "artistList": [
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 245196,
+    "link": "https://edmtrain.com/las-vegas-nv/kaskade-245196?utm_source=90&utm_medium=api",
+    "name": null,
+    "ages": null,
+    "festivalInd": false,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-09-14",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-01-12T08:42:45Z",
+    "venue": {
+      "id": 9838,
+      "name": "Zouk Nightclub",
+      "location": "Las Vegas, NV",
+      "address": "3000 S Las Vegas Blvd, Las Vegas, NV 89109, USA",
+      "state": "Nevada",
+      "latitude": 36.134,
+      "longitude": -115.168
+    },
+    "artistList": [
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 275368,
+    "link": "https://edmtrain.com/las-vegas-nv/kaskade-275368?utm_source=90&utm_medium=api",
+    "name": null,
+    "ages": null,
+    "festivalInd": false,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-09-15",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-06-22T01:54:24Z",
+    "venue": {
+      "id": 9838,
+      "name": "Zouk Nightclub",
+      "location": "Las Vegas, NV",
+      "address": "3000 S Las Vegas Blvd, Las Vegas, NV 89109, USA",
+      "state": "Nevada",
+      "latitude": 36.134,
+      "longitude": -115.168
+    },
+    "artistList": [
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 279095,
+    "link": "https://edmtrain.com/las-vegas-nv/kaskade-279095?utm_source=90&utm_medium=api",
+    "name": null,
+    "ages": null,
+    "festivalInd": false,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-09-16",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-07-14T15:51:30Z",
+    "venue": {
+      "id": 9401,
+      "name": "Ayu Dayclub",
+      "location": "Las Vegas, NV",
+      "address": "3000 S Las Vegas Blvd, Las Vegas, NV 89109, USA",
+      "state": "Nevada",
+      "latitude": 36.134,
+      "longitude": -115.168
+    },
+    "artistList": [
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 244617,
+    "link": "https://edmtrain.com/las-vegas-nv/kaskade-244617?utm_source=90&utm_medium=api",
+    "name": null,
+    "ages": null,
+    "festivalInd": false,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-09-23",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-01-11T04:08:45Z",
+    "venue": {
+      "id": 9401,
+      "name": "Ayu Dayclub",
+      "location": "Las Vegas, NV",
+      "address": "3000 S Las Vegas Blvd, Las Vegas, NV 89109, USA",
+      "state": "Nevada",
+      "latitude": 36.134,
+      "longitude": -115.168
+    },
+    "artistList": [
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 247094,
+    "link": "https://edmtrain.com/charlotte-nc/breakaway-music-festival-247094?utm_source=90&utm_medium=api",
+    "name": "Breakaway Music Festival",
+    "ages": "All Ages",
+    "festivalInd": true,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-09-29",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-01-22T11:37:04Z",
+    "venue": {
+      "id": 7967,
+      "name": "Charlotte Motor Speedway",
+      "location": "Concord, NC",
+      "address": "5555 Concord Pkwy S, Concord, NC 28027, USA",
+      "state": "North Carolina",
+      "latitude": 35.352,
+      "longitude": -80.687
+    },
+    "artistList": [
+      {
+        "id": 492,
+        "name": "Porter Robinson",
+        "link": "https://edmtrain.com/tours/porter-robinson-492?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6455,
+        "name": "Dom Dolla",
+        "link": "https://edmtrain.com/tours/dom-dolla-6455?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 9975,
+        "name": "Kaskade (Redux Set)",
+        "link": "https://edmtrain.com/tours/kaskade-redux-set-9975?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 64,
+        "name": "Adventure Club",
+        "link": "https://edmtrain.com/tours/adventure-club-64?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 122,
+        "name": "Blond:ish",
+        "link": "https://edmtrain.com/tours/blond-ish-122?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 2035,
+        "name": "Snakehips",
+        "link": "https://edmtrain.com/tours/snakehips-2035?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6845,
+        "name": "BONNIE X CLYDE",
+        "link": "https://edmtrain.com/tours/bonnie-x-clyde-6845?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 12850,
+        "name": "Kaleena Zanders",
+        "link": "https://edmtrain.com/tours/kaleena-zanders-12850?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 15315,
+        "name": "Moore Kismet",
+        "link": "https://edmtrain.com/tours/moore-kismet-15315?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7708,
+        "name": "WAVEDASH",
+        "link": "https://edmtrain.com/tours/wavedash-7708?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 30155,
+        "name": "BRI",
+        "link": "https://edmtrain.com/tours/bri-30155?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 15516,
+        "name": "Chasewater",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 17198,
+        "name": "DaBaldo",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 17051,
+        "name": "Dexter",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 45244,
+        "name": "Jack Ross",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 30542,
+        "name": "name unknown",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 16242,
+        "name": "Pinja",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 23956,
+        "name": "Satin Sage",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 28129,
+        "name": "Slaya Jade",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 26906,
+        "name": "ThrillBill",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 59844,
+        "name": "TNZNT",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 30198,
+        "name": "Willie Arnold",
+        "link": null,
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 284441,
+    "link": "https://edmtrain.com/california/redux-in-the-park-kaskade-redux-set-284441?utm_source=90&utm_medium=api",
+    "name": "Redux In The Park",
+    "ages": null,
+    "festivalInd": false,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-10-07",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-08-14T18:42:55Z",
+    "venue": {
+      "id": 5120,
+      "name": "FivePoint Amphitheatre",
+      "location": "Irvine, CA",
+      "address": "14800 Chinon, Irvine, CA 92618, USA",
+      "state": "California",
+      "latitude": 33.659,
+      "longitude": -117.727
+    },
+    "artistList": [
+      {
+        "id": 9975,
+        "name": "Kaskade (Redux Set)",
+        "link": "https://edmtrain.com/tours/kaskade-redux-set-9975?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 271828,
+    "link": "https://edmtrain.com/las-vegas-nv/kaskade-271828?utm_source=90&utm_medium=api",
+    "name": null,
+    "ages": null,
+    "festivalInd": false,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-10-14",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-06-03T05:18:52Z",
+    "venue": {
+      "id": 9838,
+      "name": "Zouk Nightclub",
+      "location": "Las Vegas, NV",
+      "address": "3000 S Las Vegas Blvd, Las Vegas, NV 89109, USA",
+      "state": "Nevada",
+      "latitude": 36.134,
+      "longitude": -115.168
+    },
+    "artistList": [
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 245930,
+    "link": "https://edmtrain.com/los-angeles-ca/escape-halloween-245930?utm_source=90&utm_medium=api",
+    "name": "Escape Halloween",
+    "ages": null,
+    "festivalInd": true,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-10-27",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-01-16T21:23:20Z",
+    "venue": {
+      "id": 1167,
+      "name": "NOS Events Center",
+      "location": "San Bernardino, CA",
+      "address": "689 S E St, San Bernardino, CA 92408, USA",
+      "state": "California",
+      "latitude": 34.088,
+      "longitude": -117.292
+    },
+    "artistList": [
+      {
+        "id": 60,
+        "name": "Above & Beyond",
+        "link": "https://edmtrain.com/tours/above-and-beyond-60?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 66,
+        "name": "Afrojack",
+        "link": "https://edmtrain.com/tours/afrojack-66?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 83,
+        "name": "Armin Van Buuren",
+        "link": "https://edmtrain.com/tours/armin-van-buuren-83?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6837,
+        "name": "ARMNHMR",
+        "link": "https://edmtrain.com/tours/armnhmr-6837?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5344,
+        "name": "ATLiens",
+        "link": "https://edmtrain.com/tours/atliens-5344?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1375,
+        "name": "Ben Nicky",
+        "link": "https://edmtrain.com/tours/ben-nicky-1375?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 4254,
+        "name": "Black Sun Empire",
+        "link": "https://edmtrain.com/tours/black-sun-empire-4254?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 61614,
+        "name": "Calyx",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 20365,
+        "name": "Canabliss",
+        "link": "https://edmtrain.com/tours/canabliss-20365?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 18514,
+        "name": "Charles D",
+        "link": "https://edmtrain.com/tours/charles-d-18514?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 12532,
+        "name": "Chelina Manuhutu",
+        "link": "https://edmtrain.com/tours/chelina-manuhutu-12532?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 3713,
+        "name": "CID",
+        "link": "https://edmtrain.com/tours/cid-3713?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 13351,
+        "name": "HUGEL",
+        "link": "https://edmtrain.com/tours/hugel-13351?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 12830,
+        "name": "WESTEND",
+        "link": "https://edmtrain.com/tours/westend-12830?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6935,
+        "name": "Code Black",
+        "link": "https://edmtrain.com/tours/code-black-6935?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6514,
+        "name": "Codeko",
+        "link": "https://edmtrain.com/tours/codeko-6514?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 14046,
+        "name": "Crystal Skies",
+        "link": "https://edmtrain.com/tours/crystal-skies-14046?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7100,
+        "name": "Darren Styles",
+        "link": "https://edmtrain.com/tours/darren-styles-7100?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21593,
+        "name": "Deathpact",
+        "link": "https://edmtrain.com/tours/deathpact-21593?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 4117,
+        "name": "DJ Isaac",
+        "link": "https://edmtrain.com/tours/dj-isaac-4117?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6521,
+        "name": "SAYMYNAME",
+        "link": "https://edmtrain.com/tours/saymyname-6521?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 228,
+        "name": "DJ Snake",
+        "link": "https://edmtrain.com/tours/dj-snake-228?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 34717,
+        "name": "DJ TopGun",
+        "link": "https://edmtrain.com/tours/dj-topgun-34717?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 20253,
+        "name": "Ed Rush",
+        "link": "https://edmtrain.com/tours/ed-rush-20253?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 3721,
+        "name": "Optical",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 8340,
+        "name": "GRAVEDGR",
+        "link": "https://edmtrain.com/tours/gravedgr-8340?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 295,
+        "name": "Green Velvet",
+        "link": "https://edmtrain.com/tours/green-velvet-295?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7989,
+        "name": "HE$H",
+        "link": "https://edmtrain.com/tours/he-h-7989?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 8064,
+        "name": "Hekler",
+        "link": "https://edmtrain.com/tours/hekler-8064?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 30860,
+        "name": "Hoang",
+        "link": "https://edmtrain.com/tours/hoang-30860?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 318,
+        "name": "Hot Since 82",
+        "link": "https://edmtrain.com/tours/hot-since-82-318?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 329,
+        "name": "Jamie Jones",
+        "link": "https://edmtrain.com/tours/jamie-jones-329?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 13409,
+        "name": "JVNA",
+        "link": "https://edmtrain.com/tours/jvna-13409?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7095,
+        "name": "K?D",
+        "link": "https://edmtrain.com/tours/k-d-7095?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 10077,
+        "name": "1788-L",
+        "link": "https://edmtrain.com/tours/1788-l-10077?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 11728,
+        "name": "Kaivon",
+        "link": "https://edmtrain.com/tours/kaivon-11728?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 61776,
+        "name": "Blackout",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 5701,
+        "name": "Culture Shock",
+        "link": "https://edmtrain.com/tours/culture-shock-5701?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 8092,
+        "name": "GEO",
+        "link": "https://edmtrain.com/tours/geo-8092?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 33861,
+        "name": "Emo Nite",
+        "link": null,
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 245931,
+    "link": "https://edmtrain.com/los-angeles-ca/escape-halloween-245931?utm_source=90&utm_medium=api",
+    "name": "Escape Halloween",
+    "ages": null,
+    "festivalInd": true,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-10-28",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-01-16T21:23:20Z",
+    "venue": {
+      "id": 1167,
+      "name": "NOS Events Center",
+      "location": "San Bernardino, CA",
+      "address": "689 S E St, San Bernardino, CA 92408, USA",
+      "state": "California",
+      "latitude": 34.088,
+      "longitude": -117.292
+    },
+    "artistList": [
+      {
+        "id": 637,
+        "name": "Zedd",
+        "link": "https://edmtrain.com/tours/zedd-637?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 60,
+        "name": "Above & Beyond",
+        "link": "https://edmtrain.com/tours/above-and-beyond-60?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 66,
+        "name": "Afrojack",
+        "link": "https://edmtrain.com/tours/afrojack-66?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 83,
+        "name": "Armin Van Buuren",
+        "link": "https://edmtrain.com/tours/armin-van-buuren-83?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6837,
+        "name": "ARMNHMR",
+        "link": "https://edmtrain.com/tours/armnhmr-6837?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5344,
+        "name": "ATLiens",
+        "link": "https://edmtrain.com/tours/atliens-5344?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 38755,
+        "name": "Ben Nicky (Xtreme Set)",
+        "link": "https://edmtrain.com/tours/ben-nicky-xtreme-set-38755?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 4254,
+        "name": "Black Sun Empire",
+        "link": "https://edmtrain.com/tours/black-sun-empire-4254?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 3171,
+        "name": "The Upbeats",
+        "link": "https://edmtrain.com/tours/the-upbeats-3171?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 60934,
+        "name": "BUNs",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 61614,
+        "name": "Calyx",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 20365,
+        "name": "Canabliss",
+        "link": "https://edmtrain.com/tours/canabliss-20365?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 18514,
+        "name": "Charles D",
+        "link": "https://edmtrain.com/tours/charles-d-18514?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 12532,
+        "name": "Chelina Manuhutu",
+        "link": "https://edmtrain.com/tours/chelina-manuhutu-12532?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 3713,
+        "name": "CID",
+        "link": "https://edmtrain.com/tours/cid-3713?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 13351,
+        "name": "HUGEL",
+        "link": "https://edmtrain.com/tours/hugel-13351?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 12830,
+        "name": "WESTEND",
+        "link": "https://edmtrain.com/tours/westend-12830?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 61615,
+        "name": "Code Black (Blackout Set)",
+        "link": "https://edmtrain.com/tours/code-black-blackout-set-61615?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6514,
+        "name": "Codeko",
+        "link": "https://edmtrain.com/tours/codeko-6514?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 14046,
+        "name": "Crystal Skies",
+        "link": "https://edmtrain.com/tours/crystal-skies-14046?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5701,
+        "name": "Culture Shock",
+        "link": "https://edmtrain.com/tours/culture-shock-5701?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21661,
+        "name": "Danny Olson",
+        "link": "https://edmtrain.com/tours/danny-olson-21661?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7100,
+        "name": "Darren Styles",
+        "link": "https://edmtrain.com/tours/darren-styles-7100?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21593,
+        "name": "Deathpact",
+        "link": "https://edmtrain.com/tours/deathpact-21593?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 4117,
+        "name": "DJ Isaac",
+        "link": "https://edmtrain.com/tours/dj-isaac-4117?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 6521,
+        "name": "SAYMYNAME",
+        "link": "https://edmtrain.com/tours/saymyname-6521?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 228,
+        "name": "DJ Snake",
+        "link": "https://edmtrain.com/tours/dj-snake-228?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 34717,
+        "name": "DJ TopGun",
+        "link": "https://edmtrain.com/tours/dj-topgun-34717?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 997,
+        "name": "Ed Rush & Optical",
+        "link": "https://edmtrain.com/tours/ed-rush-and-optical-997?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 33861,
+        "name": "Emo Nite",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 8340,
+        "name": "GRAVEDGR",
+        "link": "https://edmtrain.com/tours/gravedgr-8340?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 8092,
+        "name": "GEO",
+        "link": "https://edmtrain.com/tours/geo-8092?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 295,
+        "name": "Green Velvet",
+        "link": "https://edmtrain.com/tours/green-velvet-295?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7989,
+        "name": "HE$H",
+        "link": "https://edmtrain.com/tours/he-h-7989?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 8064,
+        "name": "Hekler",
+        "link": "https://edmtrain.com/tours/hekler-8064?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 30860,
+        "name": "Hoang",
+        "link": "https://edmtrain.com/tours/hoang-30860?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 26307,
+        "name": "MVSE",
+        "link": "https://edmtrain.com/tours/mvse-26307?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 318,
+        "name": "Hot Since 82",
+        "link": "https://edmtrain.com/tours/hot-since-82-318?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 38285,
+        "name": "Ian Asher",
+        "link": "https://edmtrain.com/tours/ian-asher-38285?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 329,
+        "name": "Jamie Jones",
+        "link": "https://edmtrain.com/tours/jamie-jones-329?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 13409,
+        "name": "JVNA",
+        "link": "https://edmtrain.com/tours/jvna-13409?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7095,
+        "name": "K?D",
+        "link": "https://edmtrain.com/tours/k-d-7095?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7095,
+        "name": "K?D",
+        "link": "https://edmtrain.com/tours/k-d-7095?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 10077,
+        "name": "1788-L",
+        "link": "https://edmtrain.com/tours/1788-l-10077?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 11728,
+        "name": "Kaivon",
+        "link": "https://edmtrain.com/tours/kaivon-11728?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 29833,
+        "name": "KAS:ST",
+        "link": "https://edmtrain.com/tours/kas-st-29833?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 25052,
+        "name": "KELTEK",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 964,
+        "name": "Lady Faith",
+        "link": "https://edmtrain.com/tours/lady-faith-964?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 777,
+        "name": "Lauren Lane",
+        "link": "https://edmtrain.com/tours/lauren-lane-777?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 45124,
+        "name": "Lilly Palmer",
+        "link": "https://edmtrain.com/tours/lilly-palmer-45124?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 51663,
+        "name": "Smoakland (Liquid Smoak Set)",
+        "link": "https://edmtrain.com/tours/smoakland-liquid-smoak-set-51663?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 33632,
+        "name": "LLLLNNNN",
+        "link": null,
+        "b2bInd": true
+      },
+      {
+        "id": 22319,
+        "name": "Water Spirit",
+        "link": "https://edmtrain.com/tours/water-spirit-22319?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 3890,
+        "name": "LNY TNZ",
+        "link": "https://edmtrain.com/tours/lny-tnz-3890?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 388,
+        "name": "Loco Dice",
+        "link": "https://edmtrain.com/tours/loco-dice-388?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21079,
+        "name": "Macky Gee",
+        "link": "https://edmtrain.com/tours/macky-gee-21079?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5541,
+        "name": "Malaa",
+        "link": "https://edmtrain.com/tours/malaa-5541?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21702,
+        "name": "Mariana Bo",
+        "link": "https://edmtrain.com/tours/mariana-bo-21702?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 8054,
+        "name": "Matroda",
+        "link": "https://edmtrain.com/tours/matroda-8054?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 8054,
+        "name": "Matroda",
+        "link": "https://edmtrain.com/tours/matroda-8054?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 42709,
+        "name": "San Pacho",
+        "link": "https://edmtrain.com/tours/san-pacho-42709?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 2283,
+        "name": "Max Styler",
+        "link": "https://edmtrain.com/tours/max-styler-2283?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 445,
+        "name": "MK",
+        "link": "https://edmtrain.com/tours/mk-445?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 24840,
+        "name": "MUERTE",
+        "link": "https://edmtrain.com/tours/muerte-24840?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 22644,
+        "name": "MUSUBI",
+        "link": "https://edmtrain.com/tours/musubi-22644?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 35517,
+        "name": "Nia Archives",
+        "link": "https://edmtrain.com/tours/nia-archives-35517?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 61622,
+        "name": "Nitepunk (DnB Set)",
+        "link": "https://edmtrain.com/tours/nitepunk-dnb-set-61622?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 2203,
+        "name": "Patrick Topping",
+        "link": "https://edmtrain.com/tours/patrick-topping-2203?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 16327,
+        "name": "Reinier Zonneveld",
+        "link": "https://edmtrain.com/tours/reinier-zonneveld-16327?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5050,
+        "name": "REZZ",
+        "link": "https://edmtrain.com/tours/rezz-5050?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 49637,
+        "name": "Robyn Balliet",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 21671,
+        "name": "Rohaan",
+        "link": "https://edmtrain.com/tours/rohaan-21671?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 10127,
+        "name": "ROSSY",
+        "link": "https://edmtrain.com/tours/rossy-10127?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21060,
+        "name": "SENZA",
+        "link": "https://edmtrain.com/tours/senza-21060?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7578,
+        "name": "Ship Wrek",
+        "link": "https://edmtrain.com/tours/ship-wrek-7578?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 17082,
+        "name": "Siren",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 22650,
+        "name": "Skellytn",
+        "link": "https://edmtrain.com/tours/skellytn-22650?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1564,
+        "name": "SLANDER",
+        "link": "https://edmtrain.com/tours/slander-1564?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 46658,
+        "name": "Turbulences (Popof x Space 92)",
+        "link": "https://edmtrain.com/tours/turbulences-popof-x-space-92-46658?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 16579,
+        "name": "SUAHN",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 7694,
+        "name": "SVDDEN DEATH",
+        "link": "https://edmtrain.com/tours/svdden-death-7694?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 23310,
+        "name": "Taylor Kade",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 830,
+        "name": "Tchami",
+        "link": "https://edmtrain.com/tours/tchami-830?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 17584,
+        "name": "Three 6 Mafia",
+        "link": "https://edmtrain.com/tours/three-6-mafia-17584?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 29975,
+        "name": "TOBEHONEST",
+        "link": "https://edmtrain.com/tours/tobehonest-29975?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 10652,
+        "name": "Wade",
+        "link": "https://edmtrain.com/tours/wade-10652?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 858,
+        "name": "Wilkinson",
+        "link": "https://edmtrain.com/tours/wilkinson-858?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5995,
+        "name": "William Black",
+        "link": "https://edmtrain.com/tours/william-black-5995?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 8474,
+        "name": "yetep",
+        "link": "https://edmtrain.com/tours/yetep-8474?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 658,
+        "name": "Zomboy",
+        "link": "https://edmtrain.com/tours/zomboy-658?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 284235,
+    "link": "https://edmtrain.com/portland-or/freaky-deaky-portland-284235?utm_source=90&utm_medium=api",
+    "name": "Freaky Deaky Portland",
+    "ages": null,
+    "festivalInd": true,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-10-28",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-08-12T00:41:49Z",
+    "venue": {
+      "id": 7385,
+      "name": "Portland Expo Center",
+      "location": "Portland, OR",
+      "address": "2060 N Marine Dr, Portland, OR 97217, USA",
+      "state": "Oregon",
+      "latitude": 45.607,
+      "longitude": -122.69
+    },
+    "artistList": [
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 3996,
+        "name": "Dr. Fresch",
+        "link": "https://edmtrain.com/tours/dr-fresch-3996?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1267,
+        "name": "Wuki",
+        "link": "https://edmtrain.com/tours/wuki-1267?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5329,
+        "name": "No Mana",
+        "link": "https://edmtrain.com/tours/no-mana-5329?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 26138,
+        "name": "Luxo",
+        "link": "https://edmtrain.com/tours/luxo-26138?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 40255,
+        "name": "Ernest Ryan",
+        "link": null,
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 271832,
+    "link": "https://edmtrain.com/las-vegas-nv/kaskade-271832?utm_source=90&utm_medium=api",
+    "name": null,
+    "ages": null,
+    "festivalInd": false,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-11-04",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-06-03T05:19:03Z",
+    "venue": {
+      "id": 9838,
+      "name": "Zouk Nightclub",
+      "location": "Las Vegas, NV",
+      "address": "3000 S Las Vegas Blvd, Las Vegas, NV 89109, USA",
+      "state": "Nevada",
+      "latitude": 36.134,
+      "longitude": -115.168
+    },
+    "artistList": [
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 237828,
+    "link": "https://edmtrain.com/orlando-fl/electric-daisy-carnival-orlando-edc-237828?utm_source=90&utm_medium=api",
+    "name": "Electric Daisy Carnival Orlando (EDC)",
+    "ages": null,
+    "festivalInd": true,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-11-10",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2022-11-17T17:57:56Z",
+    "venue": {
+      "id": 659,
+      "name": "Tinker Field",
+      "location": "Orlando, FL",
+      "address": "287 S Tampa Ave, Orlando, FL 32805, USA",
+      "state": "Florida",
+      "latitude": 28.537,
+      "longitude": -81.404
+    },
+    "artistList": [
+      {
+        "id": 68,
+        "name": "Alesso",
+        "link": "https://edmtrain.com/tours/alesso-68?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 59706,
+        "name": "Afroki (Afrojack & Steve Aoki)",
+        "link": "https://edmtrain.com/tours/afroki-afrojack-and-steve-aoki-59706?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6960,
+        "name": "Alan Walker",
+        "link": "https://edmtrain.com/tours/alan-walker-6960?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 3574,
+        "name": "Alison Wonderland",
+        "link": "https://edmtrain.com/tours/alison-wonderland-3574?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6924,
+        "name": "Alok",
+        "link": "https://edmtrain.com/tours/alok-6924?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1346,
+        "name": "Anabel Englund",
+        "link": "https://edmtrain.com/tours/anabel-englund-1346?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 18417,
+        "name": "Anfisa Letyago",
+        "link": "https://edmtrain.com/tours/anfisa-letyago-18417?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 83,
+        "name": "Armin Van Buuren",
+        "link": "https://edmtrain.com/tours/armin-van-buuren-83?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6837,
+        "name": "ARMNHMR",
+        "link": "https://edmtrain.com/tours/armnhmr-6837?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5344,
+        "name": "ATLiens",
+        "link": "https://edmtrain.com/tours/atliens-5344?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 25990,
+        "name": "Azzecca",
+        "link": "https://edmtrain.com/tours/azzecca-25990?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 30338,
+        "name": "Baby Weight",
+        "link": "https://edmtrain.com/tours/baby-weight-30338?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 97,
+        "name": "Baggi Begovic",
+        "link": "https://edmtrain.com/tours/baggi-begovic-97?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1522,
+        "name": "Barely Alive",
+        "link": "https://edmtrain.com/tours/barely-alive-1522?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1375,
+        "name": "Ben Nicky",
+        "link": "https://edmtrain.com/tours/ben-nicky-1375?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 23720,
+        "name": "Ben Sterling",
+        "link": "https://edmtrain.com/tours/ben-sterling-23720?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 8317,
+        "name": "Benda",
+        "link": "https://edmtrain.com/tours/benda-8317?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 26220,
+        "name": "Billy Gillies",
+        "link": "https://edmtrain.com/tours/billy-gillies-26220?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 15890,
+        "name": "Black Carl!",
+        "link": "https://edmtrain.com/tours/black-carl-15890?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 14950,
+        "name": "Blastoyz",
+        "link": "https://edmtrain.com/tours/blastoyz-14950?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 122,
+        "name": "Blond:ish",
+        "link": "https://edmtrain.com/tours/blond-ish-122?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 6228,
+        "name": "Dennis Cruz",
+        "link": "https://edmtrain.com/tours/dennis-cruz-6228?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6845,
+        "name": "BONNIE X CLYDE",
+        "link": "https://edmtrain.com/tours/bonnie-x-clyde-6845?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 13539,
+        "name": "Carlita",
+        "link": "https://edmtrain.com/tours/carlita-13539?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21083,
+        "name": "CELO",
+        "link": "https://edmtrain.com/tours/celo-21083?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 582,
+        "name": "The Chainsmokers",
+        "link": "https://edmtrain.com/tours/the-chainsmokers-582?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 12532,
+        "name": "Chelina Manuhutu",
+        "link": "https://edmtrain.com/tours/chelina-manuhutu-12532?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 19910,
+        "name": "Chris Stussy",
+        "link": "https://edmtrain.com/tours/chris-stussy-19910?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 3713,
+        "name": "CID",
+        "link": "https://edmtrain.com/tours/cid-3713?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6370,
+        "name": "Crankdat",
+        "link": "https://edmtrain.com/tours/crankdat-6370?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 203,
+        "name": "deadmau5",
+        "link": "https://edmtrain.com/tours/deadmau5-203?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21593,
+        "name": "Deathpact",
+        "link": "https://edmtrain.com/tours/deathpact-21593?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 207,
+        "name": "Deorro",
+        "link": "https://edmtrain.com/tours/deorro-207?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 215,
+        "name": "Dillon Francis",
+        "link": "https://edmtrain.com/tours/dillon-francis-215?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 618,
+        "name": "Valentino Khan",
+        "link": "https://edmtrain.com/tours/valentino-khan-618?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 2135,
+        "name": "Dirt Monkey",
+        "link": "https://edmtrain.com/tours/dirt-monkey-2135?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 6852,
+        "name": "SubDocta",
+        "link": "https://edmtrain.com/tours/subdocta-6852?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21183,
+        "name": "Disco Lines",
+        "link": "https://edmtrain.com/tours/disco-lines-21183?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1957,
+        "name": "DJ Icey",
+        "link": "https://edmtrain.com/tours/dj-icey-1957?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6455,
+        "name": "Dom Dolla",
+        "link": "https://edmtrain.com/tours/dom-dolla-6455?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6408,
+        "name": "Dombresky",
+        "link": "https://edmtrain.com/tours/dombresky-6408?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 244,
+        "name": "Eats Everything",
+        "link": "https://edmtrain.com/tours/eats-everything-244?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 980,
+        "name": "Edgar V",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 7606,
+        "name": "Eli Brown",
+        "link": "https://edmtrain.com/tours/eli-brown-7606?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 258,
+        "name": "Excision",
+        "link": "https://edmtrain.com/tours/excision-258?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 8140,
+        "name": "Fisher",
+        "link": "https://edmtrain.com/tours/fisher-8140?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 757,
+        "name": "Franky Rizardo",
+        "link": "https://edmtrain.com/tours/franky-rizardo-757?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 28219,
+        "name": "Franky Wah",
+        "link": "https://edmtrain.com/tours/franky-wah-28219?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 28260,
+        "name": "Korolova",
+        "link": "https://edmtrain.com/tours/korolova-28260?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 14948,
+        "name": "Fury + MC Dino",
+        "link": "https://edmtrain.com/tours/fury-mc-dino-14948?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 19633,
+        "name": "Gem & Tauri",
+        "link": "https://edmtrain.com/tours/gem-and-tauri-19633?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 291,
+        "name": "Gorgon City",
+        "link": "https://edmtrain.com/tours/gorgon-city-291?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 2584,
+        "name": "Gryffin",
+        "link": "https://edmtrain.com/tours/gryffin-2584?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 11288,
+        "name": "Hairitage",
+        "link": "https://edmtrain.com/tours/hairitage-11288?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 24635,
+        "name": "HoneyLuv",
+        "link": "https://edmtrain.com/tours/honeyluv-24635?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 13351,
+        "name": "HUGEL",
+        "link": "https://edmtrain.com/tours/hugel-13351?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21500,
+        "name": "James Hype",
+        "link": "https://edmtrain.com/tours/james-hype-21500?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 329,
+        "name": "Jamie Jones",
+        "link": "https://edmtrain.com/tours/jamie-jones-329?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 2134,
+        "name": "Jantsen",
+        "link": "https://edmtrain.com/tours/jantsen-2134?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 25440,
+        "name": "Jorza",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 6368,
+        "name": "JOYRYDE",
+        "link": "https://edmtrain.com/tours/joyryde-6368?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 3036,
+        "name": "Kayzo",
+        "link": "https://edmtrain.com/tours/kayzo-3036?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7149,
+        "name": "KREAM",
+        "link": "https://edmtrain.com/tours/kream-7149?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 8491,
+        "name": "LEVEL UP",
+        "link": "https://edmtrain.com/tours/level-up-8491?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 46071,
+        "name": "LF System",
+        "link": "https://edmtrain.com/tours/lf-system-46071?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 387,
+        "name": "Liquid Stranger",
+        "link": "https://edmtrain.com/tours/liquid-stranger-387?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 388,
+        "name": "Loco Dice",
+        "link": "https://edmtrain.com/tours/loco-dice-388?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 2274,
+        "name": "Loud Luxury",
+        "link": "https://edmtrain.com/tours/loud-luxury-2274?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1741,
+        "name": "Luccio",
+        "link": "https://edmtrain.com/tours/luccio-1741?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21997,
+        "name": "Maddix",
+        "link": "https://edmtrain.com/tours/maddix-21997?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 33637,
+        "name": "Majestic",
+        "link": "https://edmtrain.com/tours/majestic-33637?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5541,
+        "name": "Malaa",
+        "link": "https://edmtrain.com/tours/malaa-5541?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 771,
+        "name": "Wax Motif",
+        "link": "https://edmtrain.com/tours/wax-motif-771?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 13754,
+        "name": "Malóne",
+        "link": "https://edmtrain.com/tours/malone-13754?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 408,
+        "name": "Marco Carola",
+        "link": "https://edmtrain.com/tours/marco-carola-408?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 919,
+        "name": "MaRLo",
+        "link": "https://edmtrain.com/tours/marlo-919?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 2911,
+        "name": "Matt Sassari",
+        "link": "https://edmtrain.com/tours/matt-sassari-2911?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 42075,
+        "name": "Mau P",
+        "link": "https://edmtrain.com/tours/mau-p-42075?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 15999,
+        "name": "Meduza",
+        "link": "https://edmtrain.com/tours/meduza-15999?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 24738,
+        "name": "Miguelle & Tons",
+        "link": "https://edmtrain.com/tours/miguelle-and-tons-24738?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 31621,
+        "name": "Miss Monique",
+        "link": "https://edmtrain.com/tours/miss-monique-31621?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 53872,
+        "name": "Modapit",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 35517,
+        "name": "Nia Archives",
+        "link": "https://edmtrain.com/tours/nia-archives-35517?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7641,
+        "name": "Nitepunk",
+        "link": "https://edmtrain.com/tours/nitepunk-7641?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 10060,
+        "name": "Noizu",
+        "link": "https://edmtrain.com/tours/noizu-10060?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 802,
+        "name": "Paco Osuna",
+        "link": "https://edmtrain.com/tours/paco-osuna-802?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 487,
+        "name": "Paul van Dyk",
+        "link": "https://edmtrain.com/tours/paul-van-dyk-487?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 13766,
+        "name": "Pawsa",
+        "link": "https://edmtrain.com/tours/pawsa-13766?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 16914,
+        "name": "Pretty Pink",
+        "link": "https://edmtrain.com/tours/pretty-pink-16914?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 17611,
+        "name": "RachEP",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 2057,
+        "name": "Riot Ten",
+        "link": "https://edmtrain.com/tours/riot-ten-2057?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5205,
+        "name": "San Holo",
+        "link": "https://edmtrain.com/tours/san-holo-5205?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 42709,
+        "name": "San Pacho",
+        "link": "https://edmtrain.com/tours/san-pacho-42709?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 23174,
+        "name": "Sara Benyo",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 531,
+        "name": "Seven Lions",
+        "link": "https://edmtrain.com/tours/seven-lions-531?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7578,
+        "name": "Ship Wrek",
+        "link": "https://edmtrain.com/tours/ship-wrek-7578?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 23983,
+        "name": "Slugg",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 6139,
+        "name": "Subtronics",
+        "link": "https://edmtrain.com/tours/subtronics-6139?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1422,
+        "name": "Thunderpony",
+        "link": "https://edmtrain.com/tours/thunderpony-1422?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 28382,
+        "name": "Tini Gessler",
+        "link": "https://edmtrain.com/tours/tini-gessler-28382?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 604,
+        "name": "Todd Terry",
+        "link": "https://edmtrain.com/tours/todd-terry-604?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6172,
+        "name": "Virtual Riot",
+        "link": "https://edmtrain.com/tours/virtual-riot-6172?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 12830,
+        "name": "WESTEND",
+        "link": "https://edmtrain.com/tours/westend-12830?utm_source=90&utm_medium=api",
+        "b2bInd": true
+      },
+      {
+        "id": 30858,
+        "name": "Joshwa",
+        "link": "https://edmtrain.com/tours/joshwa-30858?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 858,
+        "name": "Wilkinson",
+        "link": "https://edmtrain.com/tours/wilkinson-858?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6682,
+        "name": "Yotto",
+        "link": "https://edmtrain.com/tours/yotto-6682?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 637,
+        "name": "Zedd",
+        "link": "https://edmtrain.com/tours/zedd-637?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 238828,
+    "link": "https://edmtrain.com/austin-tx/seismic-dance-event-238828?utm_source=90&utm_medium=api",
+    "name": "Seismic Dance Event",
+    "ages": null,
+    "festivalInd": true,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-11-10",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2022-11-29T01:08:15Z",
+    "venue": {
+      "id": 9461,
+      "name": "The Concourse Project",
+      "location": "Austin, TX",
+      "address": "8509 Burleson Rd, Austin, TX 78744, USA",
+      "state": "Texas",
+      "latitude": 30.18,
+      "longitude": -97.686
+    },
+    "artistList": [
+      {
+        "id": 164,
+        "name": "Chris Lake",
+        "link": "https://edmtrain.com/tours/chris-lake-164?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 203,
+        "name": "deadmau5",
+        "link": "https://edmtrain.com/tours/deadmau5-203?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 12729,
+        "name": "999999999",
+        "link": "https://edmtrain.com/tours/999999999-12729?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 18417,
+        "name": "Anfisa Letyago",
+        "link": "https://edmtrain.com/tours/anfisa-letyago-18417?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6624,
+        "name": "Anklepants",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 48043,
+        "name": "Astra Club (DJ Tennis & Carlita)",
+        "link": "https://edmtrain.com/tours/astra-club-dj-tennis-and-carlita-48043?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1175,
+        "name": "DJ Tennis",
+        "link": "https://edmtrain.com/tours/dj-tennis-1175?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 13539,
+        "name": "Carlita",
+        "link": "https://edmtrain.com/tours/carlita-13539?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 25990,
+        "name": "Azzecca",
+        "link": "https://edmtrain.com/tours/azzecca-25990?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 132,
+        "name": "Boys Noize",
+        "link": "https://edmtrain.com/tours/boys-noize-132?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 19910,
+        "name": "Chris Stussy",
+        "link": "https://edmtrain.com/tours/chris-stussy-19910?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7606,
+        "name": "Eli Brown",
+        "link": "https://edmtrain.com/tours/eli-brown-7606?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 16796,
+        "name": "Fideles",
+        "link": "https://edmtrain.com/tours/fideles-16796?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 28219,
+        "name": "Franky Wah",
+        "link": "https://edmtrain.com/tours/franky-wah-28219?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 38311,
+        "name": "Hozho",
+        "link": "https://edmtrain.com/tours/hozho-38311?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 8225,
+        "name": "Klangkuenstler",
+        "link": "https://edmtrain.com/tours/klangkuenstler-8225?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 28260,
+        "name": "Korolova",
+        "link": "https://edmtrain.com/tours/korolova-28260?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7149,
+        "name": "KREAM",
+        "link": "https://edmtrain.com/tours/kream-7149?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 388,
+        "name": "Loco Dice",
+        "link": "https://edmtrain.com/tours/loco-dice-388?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 42075,
+        "name": "Mau P",
+        "link": "https://edmtrain.com/tours/mau-p-42075?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 445,
+        "name": "MK",
+        "link": "https://edmtrain.com/tours/mk-445?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 13766,
+        "name": "Pawsa",
+        "link": "https://edmtrain.com/tours/pawsa-13766?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 21814,
+        "name": "Ranger Trucco",
+        "link": "https://edmtrain.com/tours/ranger-trucco-21814?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 37404,
+        "name": "Space 92",
+        "link": "https://edmtrain.com/tours/space-92-37404?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 25049,
+        "name": "Stephan Jolk",
+        "link": "https://edmtrain.com/tours/stephan-jolk-25049?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 47211,
+        "name": "T78",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 10796,
+        "name": "VNSSA",
+        "link": "https://edmtrain.com/tours/vnssa-10796?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 629,
+        "name": "Walker & Royce",
+        "link": "https://edmtrain.com/tours/walker-and-royce-629?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 771,
+        "name": "Wax Motif",
+        "link": "https://edmtrain.com/tours/wax-motif-771?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 60953,
+        "name": "Patrick Mason",
+        "link": "https://edmtrain.com/tours/patrick-mason-60953?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 271835,
+    "link": "https://edmtrain.com/las-vegas-nv/kaskade-271835?utm_source=90&utm_medium=api",
+    "name": null,
+    "ages": null,
+    "festivalInd": false,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-11-11",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-06-03T05:19:06Z",
+    "venue": {
+      "id": 9838,
+      "name": "Zouk Nightclub",
+      "location": "Las Vegas, NV",
+      "address": "3000 S Las Vegas Blvd, Las Vegas, NV 89109, USA",
+      "state": "Nevada",
+      "latitude": 36.134,
+      "longitude": -115.168
+    },
+    "artistList": [
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 271846,
+    "link": "https://edmtrain.com/las-vegas-nv/kaskade-271846?utm_source=90&utm_medium=api",
+    "name": null,
+    "ages": null,
+    "festivalInd": false,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-12-16",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-06-03T05:19:20Z",
+    "venue": {
+      "id": 9838,
+      "name": "Zouk Nightclub",
+      "location": "Las Vegas, NV",
+      "address": "3000 S Las Vegas Blvd, Las Vegas, NV 89109, USA",
+      "state": "Nevada",
+      "latitude": 36.134,
+      "longitude": -115.168
+    },
+    "artistList": [
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 284367,
+    "link": "https://edmtrain.com/los-angeles-ca/forever-midnight-la-284367?utm_source=90&utm_medium=api",
+    "name": "Forever Midnight LA",
+    "ages": null,
+    "festivalInd": true,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-12-30",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-08-14T03:58:47Z",
+    "venue": {
+      "id": 3156,
+      "name": "LA Convention Center (South Hall)",
+      "location": "Los Angeles, CA",
+      "address": "1201 S Figueroa St, Los Angeles, CA 90015, USA",
+      "state": "California",
+      "latitude": 34.041,
+      "longitude": -118.269
+    },
+    "artistList": [
+      {
+        "id": 4659,
+        "name": "Âme",
+        "link": "https://edmtrain.com/tours/ame-4659?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 223,
+        "name": "Dixon",
+        "link": "https://edmtrain.com/tours/dixon-223?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 17067,
+        "name": "ANOTR",
+        "link": "https://edmtrain.com/tours/anotr-17067?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7835,
+        "name": "Archie Hamilton",
+        "link": "https://edmtrain.com/tours/archie-hamilton-7835?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7214,
+        "name": "Cristoph",
+        "link": "https://edmtrain.com/tours/cristoph-7214?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 19452,
+        "name": "Chloé Caillet",
+        "link": "https://edmtrain.com/tours/chloe-caillet-19452?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 6228,
+        "name": "Dennis Cruz",
+        "link": "https://edmtrain.com/tours/dennis-cruz-6228?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1175,
+        "name": "DJ Tennis",
+        "link": "https://edmtrain.com/tours/dj-tennis-1175?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 329,
+        "name": "Jamie Jones",
+        "link": "https://edmtrain.com/tours/jamie-jones-329?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 254,
+        "name": "Eric Prydz",
+        "link": "https://edmtrain.com/tours/eric-prydz-254?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 418,
+        "name": "The Martinez Brothers",
+        "link": "https://edmtrain.com/tours/the-martinez-brothers-418?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1023,
+        "name": "Jamie xx",
+        "link": "https://edmtrain.com/tours/jamie-xx-1023?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 8172,
+        "name": "Kyle Walker",
+        "link": "https://edmtrain.com/tours/kyle-walker-8172?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 360,
+        "name": "Kaytranada",
+        "link": "https://edmtrain.com/tours/kaytranada-360?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 42075,
+        "name": "Mau P",
+        "link": "https://edmtrain.com/tours/mau-p-42075?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 551,
+        "name": "Solomun",
+        "link": "https://edmtrain.com/tours/solomun-551?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5377,
+        "name": "Sofi Tukker",
+        "link": "https://edmtrain.com/tours/sofi-tukker-5377?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 295,
+        "name": "Green Velvet",
+        "link": "https://edmtrain.com/tours/green-velvet-295?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  },
+  {
+    "id": 284436,
+    "link": "https://edmtrain.com/san-francisco-ca/fresh-start-284436?utm_source=90&utm_medium=api",
+    "name": "Fresh Start",
+    "ages": null,
+    "festivalInd": true,
+    "livestreamInd": false,
+    "electronicGenreInd": true,
+    "otherGenreInd": false,
+    "date": "2023-12-30",
+    "startTime": null,
+    "endTime": null,
+    "createdDate": "2023-08-14T17:51:00Z",
+    "venue": {
+      "id": 2695,
+      "name": "The Midway",
+      "location": "San Francisco, CA",
+      "address": "900 Marin St, San Francisco, CA 94124, USA",
+      "state": "California",
+      "latitude": 37.749,
+      "longitude": -122.386
+    },
+    "artistList": [
+      {
+        "id": 830,
+        "name": "Tchami",
+        "link": "https://edmtrain.com/tours/tchami-830?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5541,
+        "name": "Malaa",
+        "link": "https://edmtrain.com/tours/malaa-5541?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 9113,
+        "name": "ACRAZE",
+        "link": "https://edmtrain.com/tours/acraze-9113?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 10060,
+        "name": "Noizu",
+        "link": "https://edmtrain.com/tours/noizu-10060?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 3100,
+        "name": "Louis The Child",
+        "link": "https://edmtrain.com/tours/louis-the-child-3100?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 357,
+        "name": "Kaskade",
+        "link": "https://edmtrain.com/tours/kaskade-357?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 4101,
+        "name": "Chris Lorenzo",
+        "link": "https://edmtrain.com/tours/chris-lorenzo-4101?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 354,
+        "name": "Justin Martin",
+        "link": "https://edmtrain.com/tours/justin-martin-354?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 7147,
+        "name": "SG Lewis",
+        "link": "https://edmtrain.com/tours/sg-lewis-7147?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 5245,
+        "name": "Elderbrook",
+        "link": "https://edmtrain.com/tours/elderbrook-5245?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 4846,
+        "name": "Eli & Fur",
+        "link": "https://edmtrain.com/tours/eli-and-fur-4846?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 10796,
+        "name": "VNSSA",
+        "link": "https://edmtrain.com/tours/vnssa-10796?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 30403,
+        "name": "Chocolate Sushi",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 23023,
+        "name": "DEM2",
+        "link": "https://edmtrain.com/tours/dem2-23023?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 10922,
+        "name": "Blu DeTiger",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 8391,
+        "name": "Wenzday",
+        "link": "https://edmtrain.com/tours/wenzday-8391?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 1288,
+        "name": "Todd Edwards",
+        "link": "https://edmtrain.com/tours/todd-edwards-1288?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 62571,
+        "name": "Amps&nd",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 8619,
+        "name": "Emanate",
+        "link": "https://edmtrain.com/tours/emanate-8619?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      },
+      {
+        "id": 62572,
+        "name": "Aseneka",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 59095,
+        "name": "Kwohla",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 52043,
+        "name": "NEM",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 27193,
+        "name": "JLittle",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 43565,
+        "name": "Neumonic",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 26418,
+        "name": "Nightware",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 36758,
+        "name": "WUFU",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 43885,
+        "name": "Felly Fell",
+        "link": null,
+        "b2bInd": false
+      },
+      {
+        "id": 14960,
+        "name": "Township Rebellion",
+        "link": "https://edmtrain.com/tours/township-rebellion-14960?utm_source=90&utm_medium=api",
+        "b2bInd": false
+      }
+    ]
+  }
+]

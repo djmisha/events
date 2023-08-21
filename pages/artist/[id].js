@@ -6,31 +6,34 @@ import {
   getArtistData,
   getArtistEvents,
 } from "../../utils/getArtists";
-import { makePageTitle, makePageDescription } from "../../utils/utilities";
-import EventsModule from "../../components/EventsModule/EventsModuleArtist";
 import EventCard from "../../components/EventCard/EventCard";
-import Login from "../../components/Account/Login";
 import Hamburger from "../../components/Hamburger/Hamburger";
-
-// @todo
-// create Events Module for Artists
 
 export default function Artist({ artistData }) {
   const { name, id } = artistData;
+  const [events, setEvents] = useState();
+  const dataFetchedRef = useRef();
+  const title = `${name} - Upcoming Events & Artist Informaton`;
+  const description = `${name} Tour Dates, Shows, Concert Tickets & Live Streams. Learn more about ${name}`;
 
-  // const title = makePageTitle(city, state);
-  // const description = makePageDescription(city, state);
+  useEffect(() => {
+    if (dataFetchedRef.current === id) return;
+    dataFetchedRef.current = id;
+    getArtistEvents(id, setEvents);
+  }, [id]);
 
   return (
     <Layout>
       <Head>
-        {/* <title>{title}</title> */}
-        {/* <meta name="description" content={description} /> */}
+        <title>{title}</title>
+        <meta name="description" content={description} />
       </Head>
       <Hamburger />
-      {name}
-      <EventsModule artistData={artistData} />
-      {/* <Login /> */}
+      <h1>{name} Events</h1>
+      {events &&
+        events.map((event, index) => {
+          return <EventCard event={event} key={index} />;
+        })}
     </Layout>
   );
 }
@@ -46,7 +49,7 @@ export async function getStaticPaths() {
 
 /**
  * Gets data for each page based on slug
- * @param {*} param0
+ * @param {*} params
  * @returns locationData
  */
 export async function getStaticProps({ params }) {
