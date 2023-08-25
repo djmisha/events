@@ -122,11 +122,13 @@ export const ToSlugArtist = (string) => {
     .split("/")
     .join("-")
     .split("(")
-    .join("-")
+    .join("")
     .split(")")
-    .join("-")
+    .join("")
     .split(" ")
     .join("-")
+    .split("&")
+    .join("&amp;")
     .toLowerCase();
 
   return cleanString;

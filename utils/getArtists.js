@@ -31,6 +31,17 @@ const getArtistsProd = async () => {
     });
 };
 
+// Removes Duplicate items from an array
+const dedupeObjArray = (array) => {
+  const unique = array.reduce((accumulator, current) => {
+    if (!accumulator.find((item) => item.id === current.id)) {
+      accumulator.push(current);
+    }
+    return accumulator;
+  }, []);
+  return unique;
+};
+
 /**
  * Returns all unique artists in all events array
  *
@@ -45,10 +56,12 @@ export const getUniqueArtists = (array) => {
     event.artistList &&
       event.artistList.map((artist) => {
         const { id, name } = artist;
+        const slug = ToSlugArtist(name);
 
         allArtists.push({
           id,
           name,
+          slug,
         });
       });
   });
@@ -57,6 +70,9 @@ export const getUniqueArtists = (array) => {
 
   return cleanArtists;
 };
+
+// all the unique artists from static data
+export const allArtists = getUniqueArtists(sampleEvents);
 
 /**
  * This algo counts the number of times an artists appears
@@ -129,17 +145,6 @@ export const getArtistsCounts = (array) => {
 
   console.log(finalArtists);
   return finalArtists;
-};
-
-// Removes Duplicate items from an array
-const dedupeObjArray = (array) => {
-  const unique = array.reduce((accumulator, current) => {
-    if (!accumulator.find((item) => item.id === current.id)) {
-      accumulator.push(current);
-    }
-    return accumulator;
-  }, []);
-  return unique;
 };
 
 /**
