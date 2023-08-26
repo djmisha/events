@@ -13,7 +13,7 @@ export default function Layout({ children, home }) {
 
         <meta
           name="description"
-          content="Find house music and dance events in a city near you. Listen to DJ mixes from around the world. Let's Party!"
+          content="Find house music and dance events in a city near you. Let's Party!"
         />
         <meta property="og:image" content="/images/housemusic512.png" />
         <meta name="og:title" content={siteTitle} />

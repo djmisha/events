@@ -1,14 +1,20 @@
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
-import { formatLocationsforSearch } from "./LocationAutoComplete.helpers";
-import locations from "../../utils/locations.json";
+import { formatDataforSearch } from "./HomeSearchAutocomplete.helpers";
 import { toSlug } from "../../utils/getLocations";
 
-function LocationAutoComplete() {
-  const items = formatLocationsforSearch(locations);
+function HomeSearchAutocomplete() {
+  const items = formatDataforSearch();
 
   const handleOnSelect = (item) => {
-    const url = `events/${toSlug(item.name)}`;
-    window.location.assign(url);
+    const { name, type } = item;
+    if (type === "Artist") {
+      const url = `artist/${toSlug(name)}`;
+      window.location.assign(url);
+    }
+    if (type === "City" || type === "State") {
+      const url = `events/${toSlug(item.name)}`;
+      window.location.assign(url);
+    }
   };
 
   const formatResult = (item) => {
@@ -25,14 +31,14 @@ function LocationAutoComplete() {
   };
 
   return (
-    <div className="LocationAutoComplete">
-      <header className="LocationAutoComplete-header">
+    <div className="HomeSearchAutocomplete">
+      <header className="HomeSearchAutocomplete-header">
         <div>
           <ReactSearchAutocomplete
             items={items}
             onSelect={handleOnSelect}
             formatResult={formatResult}
-            placeholder="Search for City or State"
+            placeholder="Search for Artist, City or State"
           />
         </div>
       </header>
@@ -40,4 +46,4 @@ function LocationAutoComplete() {
   );
 }
 
-export default LocationAutoComplete;
+export default HomeSearchAutocomplete;

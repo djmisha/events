@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import { getLocations } from "../utils/getLocations";
 import Hamburger from "../components/Hamburger/Hamburger";
-import LocationAutoComplete from "../components/SearchAutoComplete/LocationAutoComplete";
+import HomeSearchAutocomplete from "../components/SearchAutoComplete/HomeSearchAutocomplete";
 import Locator from "../components/Locator/Locator";
 import CitiesStates from "../components/Homepage/CitiesStates";
 
@@ -34,7 +34,7 @@ export default function Home({ locations }) {
             <p>Discover dance music in a city near you </p>
           </div>
           <div className="home-search">
-            <LocationAutoComplete />
+            <HomeSearchAutocomplete />
           </div>
         </div>
         <Locator locations={locations} />

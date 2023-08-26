@@ -30,10 +30,12 @@ export default function Artist({ artistData }) {
       </Head>
       <Hamburger />
       <h1>{name} Events</h1>
-      {events &&
-        events.map((event, index) => {
-          return <EventCard event={event} key={index} />;
-        })}
+      <main id="artistfeed">
+        {events &&
+          events.map((event, index) => {
+            return <EventCard event={event} key={index} />;
+          })}
+      </main>
     </Layout>
   );
 }
