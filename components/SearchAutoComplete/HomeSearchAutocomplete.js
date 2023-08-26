@@ -1,7 +1,7 @@
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import { formatDataforSearch } from "./HomeSearchAutocomplete.helpers";
 import { toSlug } from "../../utils/getLocations";
-import { ToSlugArtist } from "../../utils/getArtists";
+import { ToSlugArtist } from "../../utils/utilities";
 
 function HomeSearchAutocomplete() {
   const items = formatDataforSearch();
