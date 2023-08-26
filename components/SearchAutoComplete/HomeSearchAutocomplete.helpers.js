@@ -24,8 +24,7 @@ const mutateData = (locations, allArtists, cleanData) => {
     });
 };
 
-const createObject = (id, location, type) => {
-  const name = location;
+const createObject = (id, name, type) => {
   return {
     id,
     name,

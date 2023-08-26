@@ -1,6 +1,7 @@
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import { formatDataforSearch } from "./HomeSearchAutocomplete.helpers";
 import { toSlug } from "../../utils/getLocations";
+import { ToSlugArtist } from "../../utils/getArtists";
 
 function HomeSearchAutocomplete() {
   const items = formatDataforSearch();
@@ -8,7 +9,7 @@ function HomeSearchAutocomplete() {
   const handleOnSelect = (item) => {
     const { name, type } = item;
     if (type === "Artist") {
-      const url = `artist/${toSlug(name)}`;
+      const url = `artist/${ToSlugArtist(name)}`;
       window.location.assign(url);
     }
     if (type === "City" || type === "State") {
