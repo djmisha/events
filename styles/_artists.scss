@@ -1,3 +1,25 @@
+.top-artists-list {
+  padding: 0;
+  padding-bottom: 40px;
+  transition: all 0.25 ease-out;
+  @media only screen and (min-width: 650px) {
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 20px;
+  }
+  @media only screen and (min-width: 1080px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  a {
+    text-decoration: none;
+    color: $black;
+  }
+}
+
 .top-artists-single {
   position: relative;
   transition: all 0.25 ease-out;
@@ -14,48 +36,10 @@
   display: flex;
   overflow: hidden;
   @media only screen and (min-width: 768px) {
+    margin-bottom: 0;
     border-radius: $borderRadius;
     padding: 20px 20px 20px 20px;
   }
-
-  // @TODO - clean this up once this page is build out more
-  // &.hidden {
-  //   display: none;
-  // }
-  // a {
-  //   color: #767679;
-  //   text-decoration: none;
-  //   &:hover {
-  //     text-decoration: underline !important;
-  //   }
-  // }
-  // &.view-partial {
-  //   .event-link a {
-  //     display: none;
-  //   }
-  //   &:before {
-  //     content: "...";
-  //     color: $borderGrey;
-  //     font-size: 40px;
-  //     position: absolute;
-  //     right: 20px;
-  //     top: 20px;
-  //   }
-  // }
-  // &.view-full {
-  //   height: auto;
-  //   .event-venue {
-  //     padding-top: 20px;
-  //   }
-  //   .event-location {
-  //     display: inline-block;
-  //     opacity: 1;
-  //     transition: all 0.15s ease-in-out;
-  //   }
-  //   .event-link a {
-  //     display: inline-block;
-  //   }
-  // }
 }
 
 .top-artists-single-name {

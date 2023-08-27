@@ -38,7 +38,7 @@ const Hamburger = () => {
           <Link href="/" onClick={handleClick}>
             Home
           </Link>
-          {/* <Link href="/artists">Top Artists</Link> */}
+          <Link href="/artists">Top Artists</Link>
         </div>
         <div className="social-items">
           <a

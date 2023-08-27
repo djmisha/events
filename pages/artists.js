@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Layout from "../components/layout";
-import Login from "../components/Account/Login";
 import Hamburger from "../components/Hamburger/Hamburger";
 import { getArtistsCounts } from "../utils/getArtists";
 import ArtistImage from "../components/Artists/ArtistImage";
 import { getArtistEvents } from "../utils/getArtists";
-
-import { getAritstIds } from "./../utils/getArtists";
+import { getAritstIds } from "../utils/getArtists";
+import Link from "next/link";
+import { ToSlugArtist } from "../utils/utilities";
 
 const title = "Top Touring EDM Artists";
 
@@ -18,8 +18,12 @@ const title = "Top Touring EDM Artists";
  * @returns all events on EDM Train
  */
 export async function getStaticProps() {
+  const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
+  const EDMURL = "https://edmtrain.com/api/events?";
+  const URL = EDMURL + "&client=" + KEY;
   const apiResponse = await fetch(
-    `https://sandiegohousemusic.com/api/allevents/`
+    URL
+    // `https://sandiegohousemusic.com/api/allevents/`
   );
 
   const json = await apiResponse.json();
@@ -34,8 +38,8 @@ export async function getStaticProps() {
 }
 
 export default function Home({ events }) {
-  const top = events;
-  // getArtistEvents();
+  const topArtists = events.slice(0, 200);
+
   return (
     <Layout>
       <Head>
@@ -49,23 +53,22 @@ export default function Home({ events }) {
       <>
         <h1>Top Touring Artists</h1>
         <div className="top-artists-list">
-          {top &&
-            top.map((item, index) => {
-              if (index < 200) {
-                const { name, count } = item;
-                return (
+          {topArtists &&
+            topArtists.map((item) => {
+              const { id, name, count } = item;
+              return (
+                <Link href={`/artist/${ToSlugArtist(name)}`} key={id}>
                   <div className="top-artists-single" key={name}>
                     <ArtistImage name={name} />
                     <div className="top-artists-single-name">
                       {name} <span>{count} shows</span>
                     </div>
                   </div>
-                );
-              }
+                </Link>
+              );
             })}
         </div>
       </>
-      {/* <Login /> */}
     </Layout>
   );
 }
