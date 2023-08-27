@@ -13,8 +13,8 @@
 - [x] finish individual artist pages
 - [x] add artsts pages to XML sitemap
 - [x] fix desktop styling for artist pages
-- [] add artist information from other api sources
-- [] bring back top artist page
+- [x] bring back top artist page
+- [] add artist information from other api sources: https://www.last.fm/api#getting-started
 
 ### Styling
 
