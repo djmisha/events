@@ -1,11 +1,9 @@
 import Head from "next/head";
 import Layout from "../components/layout";
+import Link from "next/link";
 import Hamburger from "../components/Hamburger/Hamburger";
 import { getArtistsCounts } from "../utils/getArtists";
 import ArtistImage from "../components/Artists/ArtistImage";
-import { getArtistEvents } from "../utils/getArtists";
-import { getAritstIds } from "../utils/getArtists";
-import Link from "next/link";
 import { ToSlugArtist } from "../utils/utilities";
 
 const title = "Top Touring EDM Artists";
@@ -18,12 +16,8 @@ const title = "Top Touring EDM Artists";
  * @returns all events on EDM Train
  */
 export async function getStaticProps() {
-  const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
-  const EDMURL = "https://edmtrain.com/api/events?";
-  const URL = EDMURL + "&client=" + KEY;
   const apiResponse = await fetch(
-    URL
-    // `https://sandiegohousemusic.com/api/allevents/`
+    `https://sandiegohousemusic.com/api/allevents/`
   );
 
   const json = await apiResponse.json();
@@ -37,7 +31,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ events }) {
+const Artists = ({ events }) => {
   const topArtists = events.slice(0, 200);
 
   return (
@@ -71,4 +65,6 @@ export default function Home({ events }) {
       </>
     </Layout>
   );
-}
+};
+
+export default Artists;
