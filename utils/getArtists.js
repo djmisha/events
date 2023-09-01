@@ -143,7 +143,6 @@ export const getArtistsCounts = (array) => {
   // sort by the nighest number of count
   finalArtists.sort((a, b) => b.count - a.count);
 
-  console.log(finalArtists);
   return finalArtists;
 };
 
