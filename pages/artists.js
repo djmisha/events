@@ -16,9 +16,10 @@ const title = "Top Touring EDM Artists";
  * @returns all events on EDM Train
  */
 export async function getStaticProps() {
-  const apiResponse = await fetch(
-    `https://sandiegohousemusic.com/api/allevents/`
-  );
+  const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
+  const EDMURL = "https://edmtrain.com/api/events?";
+  const URL = EDMURL + "&client=" + KEY;
+  const apiResponse = await fetch(URL);
 
   const json = await apiResponse.json();
   const events = getArtistsCounts(json.data);
@@ -27,7 +28,7 @@ export async function getStaticProps() {
     props: {
       events,
     },
-    revalidate: 432000, // 5 days
+    revalidate: 2419200, // 1month
   };
 }
 

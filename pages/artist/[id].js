@@ -31,7 +31,7 @@ export default function Artist({ artistData }) {
         <meta name="description" content={description} />
       </Head>
       <Hamburger />
-      <main className="artist">
+      <div className="artist">
         <div className="artist-header">
           <ArtistImage name={name} />
           <h1>{name}</h1>
@@ -44,7 +44,7 @@ export default function Artist({ artistData }) {
               return <EventCard event={event} key={index} />;
             })}
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }
