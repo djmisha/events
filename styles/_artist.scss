@@ -1,0 +1,26 @@
+.artist {
+  h1 {
+    border: none;
+    text-align: center;
+  }
+  .artist-header {
+    .artist-fallback,
+    .artist-image {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+.artist-bio {
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  p {
+    font-size: 0.9rem;
+  }
+}

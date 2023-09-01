@@ -6,6 +6,8 @@ import {
   getArtistData,
   getArtistEvents,
 } from "../../utils/getArtists";
+import ArtistImage from "../../components/Artists/ArtistImage";
+import ArtistBio from "../../components/Artists/ArtistBio";
 import EventCard from "../../components/EventCard/EventCard";
 import Hamburger from "../../components/Hamburger/Hamburger";
 
@@ -29,12 +31,19 @@ export default function Artist({ artistData }) {
         <meta name="description" content={description} />
       </Head>
       <Hamburger />
-      <h1>{name} Events</h1>
-      <main id="artistfeed">
-        {events &&
-          events.map((event, index) => {
-            return <EventCard event={event} key={index} />;
-          })}
+      <main className="artist">
+        <div className="artist-header">
+          <ArtistImage name={name} />
+          <h1>{name}</h1>
+        </div>
+        <ArtistBio name={name} />
+        <h2>{name} Events</h2>
+        <div id="artistfeed">
+          {events &&
+            events.map((event, index) => {
+              return <EventCard event={event} key={index} />;
+            })}
+        </div>
       </main>
     </Layout>
   );
