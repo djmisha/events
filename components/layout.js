@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "./layout.module.css";
-import Link from "next/link";
 import Script from "next/script";
 
 export const siteTitle = "Find EDM Events";
@@ -23,11 +22,6 @@ export default function Layout({ children, home }) {
         <meta name="theme-color" content="#317EFB" />
       </Head>
       <main>{children}</main>
-      {/* {!home && (
-        <div>
-          <Link href="/">← Back to home</Link>
-        </div>
-      )} */}
       {process.env.NODE_ENV != "development" && (
         <div>
           <Script

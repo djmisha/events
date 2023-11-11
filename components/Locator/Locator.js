@@ -24,7 +24,7 @@ const Locator = ({ locations }) => {
       }
       /**
        * PRIMARY METHOD TO GET USERS LOCATION
-       * Brower GeoLocation
+       * Browser GeoLocation
        *
        * Consider a hook: https://gist.github.com/whoisryosuke/e3ad7f43924dec60a12e247efe743e70
        */
