@@ -42,10 +42,10 @@ export const UserLocationService = async () => {
 export const matchToLocation = () => {
   let city;
   let state;
-  const id = localStorage.getItem("locID");
+  const id = Number(localStorage.getItem("locID"));
 
   locations.forEach((location) => {
-    if (location.id === Number(id)) {
+    if (location.id === id) {
       city = location.city;
       state = location.state;
     }

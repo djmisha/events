@@ -10,7 +10,7 @@ const title = "Top Touring EDM Artists";
 
 /**
  * Gets server side data for page,
- * revalidate every 5 days
+ * revalidates every 1 month
  *
  * @param {*} param0
  * @returns all events on EDM Train
@@ -28,7 +28,7 @@ export async function getStaticProps() {
     props: {
       events,
     },
-    revalidate: 2419200, // 1month
+    revalidate: 2419200, // 1 month
   };
 }
 
