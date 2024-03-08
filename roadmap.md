@@ -1,6 +1,13 @@
 # Roadmap
 
-## 2023 - Q4
+- better SEO on City Pages
+- Better SEO on Artist Pages
+
+## 2024
+
+### Bugs
+
+- locator.js - returns a city that does not match an available city
 
 ### Wishlist
 
@@ -8,9 +15,7 @@
 - [] get the all events data at build time, rathar than the static JSON object file
 - [] migrate the image node.js code into this repo
 
-### Bugs
-
-- locator.js - returns a city that does not match an available city
+## 2023 - Q4
 
 ## 2023 - Q3
 
