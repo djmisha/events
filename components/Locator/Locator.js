@@ -52,13 +52,7 @@ const Locator = ({ locations }) => {
                 if (!id && state === location.stateCode) {
                   id = location.id;
                 }
-                // dont need to return id here, its set above
-                // return id;
               });
-
-              // if ID is undefined, we still return this object
-              // so that means we can get a city and state BUT NO ID
-              // so it will return a city/state that is not included in our available locations
 
               const locationObject = {
                 city,
@@ -66,7 +60,6 @@ const Locator = ({ locations }) => {
                 id,
               };
 
-              // should return only if we have matched to an ID
               if (id) return locationObject;
               return false;
             };

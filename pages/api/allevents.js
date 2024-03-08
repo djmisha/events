@@ -20,3 +20,10 @@ export default async function handler(req, res) {
     console.error(error);
   }
 }
+
+// removes the 4mb limit on api responses
+export const config = {
+  api: {
+    responseLimit: false,
+  },
+};

@@ -15,10 +15,6 @@
 - [] get the all events data at build time, rathar than the static JSON object file
 - [] migrate the image node.js code into this repo
 
-## 2023 - Q4
-
-## 2023 - Q3
-
 ### Homepage
 
 - [x] add section for cities & states
@@ -32,6 +28,12 @@
 - [x] fix desktop styling for artist pages
 - [x] bring back top artist page
 - [x] add artist information from other api sources: https://www.last.fm/api#getting-started
+
+## 2023 - Q4
+
+### Homepage
+
+- [] add section for top artists
 
 ### Styling
 
@@ -47,3 +49,22 @@
 
 - [x] remove all dead css files
 - [x] remove all dead code from last cleanup
+- [] change spinner loader to skeleton loader
+- [] improve event card design
+- [] context: put locations into, instead of passing down as props
+- [] context: top artists data
+
+## 2023 - Q3
+
+### Homepage
+
+- [x] add section for cities & states
+- [x] add artists to search input
+
+### Artists Pages
+
+- [x] finish individual artist pages
+- [x] add artsts pages to XML sitemap
+- [x] fix desktop styling for artist pages
+- [x] bring back top artist page
+- [x] add artist information from other api sources: last.fm
