@@ -4,6 +4,8 @@ import {
   UserLocationService,
   hasUserLocation,
   matchToLocation,
+  getLocationId,
+  createLocationObject,
 } from "../../utils/getUserLocation.js";
 import { urlBigData, cityOrState } from "../../utils/utilities";
 
@@ -43,25 +45,12 @@ const Locator = ({ locations }) => {
               const locationResponse = await fetch(url);
               const locationData = await locationResponse.json();
               const { city, principalSubdivision: state } = locationData;
-              let id;
 
-              locations.forEach(function (location) {
-                if (city === location.city) {
-                  id = location.id;
-                }
-                if (!id && state === location.stateCode) {
-                  id = location.id;
-                }
-              });
-
-              const locationObject = {
-                city,
-                state,
-                id,
-              };
+              const id = getLocationId(locations, city, state);
+              const locationObject = createLocationObject(city, state, id);
 
               if (id) return locationObject;
-              return false;
+              return undefined;
             };
 
             let geoLocation = await getReverseGeo(latitude, longitude);
@@ -97,27 +86,33 @@ const Locator = ({ locations }) => {
 
   return (
     <>
-      {
-        // what to check for here?  just userLocation? is probs enough
-        userLocation?.id && (
-          <div className="home-your-location">
-            <p>Your default location is</p>
-            <p>
-              <strong>
-                {cityOrState(userLocation.city, userLocation.state)}
-              </strong>
-            </p>
-            <button>
-              <a
-                href={`events/${locationUrl(userLocation)}`}
-                className="secondary"
-              >
-                View Events
-              </a>
-            </button>
-          </div>
-        )
-      }
+      {userLocation && (
+        <div className="home-your-location">
+          <p>Your default location is</p>
+          <p>
+            <strong>
+              {cityOrState(userLocation.city, userLocation.state)}
+            </strong>
+          </p>
+          <button>
+            <a
+              href={`events/${locationUrl(userLocation)}`}
+              className="secondary"
+            >
+              View Events
+            </a>
+          </button>
+        </div>
+      )}
+
+      {!userLocation && (
+        <div className="home-your-location">
+          <p>Scroll down for locations</p>
+          <p>
+            <strong>&darr;</strong>
+          </p>
+        </div>
+      )}
     </>
   );
 };

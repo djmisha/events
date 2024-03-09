@@ -2,12 +2,10 @@ import locations from "./locations.json";
 
 /**
  * Services to retreive the location based on user IP
- * IP -> Location -> Match to Location ID -> set in Local Storage
+ * IP -> Location -> Match to Location ID -> return location object
  */
 export const UserLocationService = async () => {
   try {
-    let id;
-
     const url = "https://api.ipify.org?format=json";
     const response = await fetch(url);
     const jsonData = await response.json();
@@ -16,27 +14,39 @@ export const UserLocationService = async () => {
     const locationURL = `https://ipapi.co/${ip}/json/`;
     const locationResponse = await fetch(locationURL);
     const locationData = await locationResponse.json();
-
     const { city, region_code: state } = locationData;
 
-    locations.forEach(function (location) {
-      if (city === location.city) {
-        id = location.id;
-      }
-      if (!id && state === location.stateCode) {
-        id = location.id;
-      }
-      return id;
-    });
+    const id = getLocationId(locations, city, state);
+    const locationObject = createLocationObject(city, state, id);
 
-    return {
-      city,
-      state,
-      id,
-    };
+    if (id) return locationObject;
+    return undefined;
   } catch (error) {
     throw Error(error);
   }
+};
+
+export const getLocationId = (locations, city, state) => {
+  let id;
+
+  locations.forEach(function (location) {
+    if (city === location.city) {
+      id = location.id;
+    }
+    if (!id && state === location.stateCode) {
+      id = location.id;
+    }
+  });
+
+  return id;
+};
+
+export const createLocationObject = (city, state, id) => {
+  return {
+    city,
+    state,
+    id,
+  };
 };
 
 export const matchToLocation = () => {
