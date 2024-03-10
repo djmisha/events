@@ -11,6 +11,7 @@ import { urlBigData, cityOrState } from "../../utils/utilities";
 
 const Locator = ({ locations }) => {
   const [userLocation, setUserLocation] = useState();
+  const [hasCity, setHasCity] = useState(false);
   const dataLocationFetchedRef = useRef(false);
   const geoFetchedRef = useRef(false);
   const reverseGeoFetchedRef = useRef(false);
@@ -19,11 +20,11 @@ const Locator = ({ locations }) => {
     const getGeoLocation = async () => {
       let location;
       // If we have a cookie, use it
-      if (hasUserLocation()) {
-        location = matchToLocation();
-        setUserLocation(location);
-        return;
-      }
+      // if (hasUserLocation()) {
+      //   location = matchToLocation();
+      //   setUserLocation(location);
+      //   return;
+      // }
 
       /**
        * PRIMARY METHOD TO GET USERS LOCATION
@@ -46,7 +47,7 @@ const Locator = ({ locations }) => {
               const locationData = await locationResponse.json();
               const { city, principalSubdivision: state } = locationData;
 
-              const id = getLocationId(locations, city, state);
+              const id = getLocationId(locations, city, state, setHasCity);
               const locationObject = createLocationObject(city, state, id);
 
               if (id) return locationObject;
@@ -96,7 +97,7 @@ const Locator = ({ locations }) => {
           </p>
           <button>
             <a
-              href={`events/${locationUrl(userLocation)}`}
+              href={`events/${locationUrl(userLocation, hasCity)}`}
               className="secondary"
             >
               View Events

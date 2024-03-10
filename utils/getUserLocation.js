@@ -26,15 +26,17 @@ export const UserLocationService = async () => {
   }
 };
 
-export const getLocationId = (locations, city, state) => {
+export const getLocationId = (locations, city, state, setHasCity) => {
   let id;
 
   locations.forEach(function (location) {
     if (city === location.city) {
       id = location.id;
+      if (setHasCity) setHasCity(true);
     }
     if (!id && state === location.stateCode) {
       id = location.id;
+      if (setHasCity) setHasCity(false);
     }
   });
 
@@ -42,9 +44,14 @@ export const getLocationId = (locations, city, state) => {
 };
 
 export const createLocationObject = (city, state, id) => {
+  const stateCode = state;
+  locations.find((location) => {
+    if (location.id === id) return (state = location.state);
+  });
   return {
     city,
     state,
+    stateCode,
     id,
   };
 };
@@ -61,11 +68,9 @@ export const matchToLocation = () => {
     }
   });
 
-  return {
-    city,
-    state,
-    id,
-  };
+  const location = createLocationObject(city, state, id);
+
+  return location;
 };
 
 // Sets local storage with location
