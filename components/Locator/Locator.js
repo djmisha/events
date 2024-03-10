@@ -16,6 +16,9 @@ const Locator = ({ locations }) => {
   const dataLocationFetchedRef = useRef(false);
   const geoFetchedRef = useRef(false);
   const reverseGeoFetchedRef = useRef(false);
+  const setMatchesCity = (city) => {
+    if (city && matchesCity(city)) setHasCity(true);
+  };
 
   useEffect(() => {
     const getGeoLocation = async () => {
@@ -24,6 +27,7 @@ const Locator = ({ locations }) => {
       if (hasUserLocation()) {
         location = matchToLocation();
         setUserLocation(location);
+        if (location.city) setMatchesCity(location.city);
         return;
       }
 
@@ -48,9 +52,9 @@ const Locator = ({ locations }) => {
               const locationData = await locationResponse.json();
               const { city, principalSubdivision: state } = locationData;
 
-              if (matchesCity(city)) setHasCity(true);
+              setMatchesCity(city);
 
-              const id = getLocationId(locations, city, state, setHasCity);
+              const id = getLocationId(locations, city, state);
               const locationObject = createLocationObject(city, state, id);
 
               if (id) return locationObject;
@@ -74,7 +78,7 @@ const Locator = ({ locations }) => {
               const getUserLocation = async () => {
                 let location;
                 location = await UserLocationService();
-                if (matchesCity(location.city)) setHasCity(true);
+                setMatchesCity(location.city);
                 setUserLocation(location);
               };
 
