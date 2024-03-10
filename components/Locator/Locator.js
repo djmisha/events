@@ -74,7 +74,7 @@ const Locator = ({ locations }) => {
               const getUserLocation = async () => {
                 let location;
                 location = await UserLocationService();
-                if (matchesCity(city)) setHasCity(true);
+                if (matchesCity(location.city)) setHasCity(true);
                 setUserLocation(location);
               };
 
