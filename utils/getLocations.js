@@ -98,7 +98,9 @@ export const getLocationData = (slug) => {
 export const locationUrl = (data, hasCity) => {
   let slug;
   const { city, state } = data;
+
   if (hasCity) slug = toSlug(city);
   else slug = toSlug(state);
+
   return slug;
 };

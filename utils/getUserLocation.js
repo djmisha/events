@@ -4,7 +4,7 @@ import locations from "./locations.json";
  * Services to retreive the location based on user IP
  * IP -> Location -> Match to Location ID -> return location object
  */
-export const UserLocationService = async (setHasCity) => {
+export const UserLocationService = async () => {
   try {
     const url = "https://api.ipify.org?format=json";
     const response = await fetch(url);
@@ -16,7 +16,7 @@ export const UserLocationService = async (setHasCity) => {
     const locationData = await locationResponse.json();
     const { city, region_code: state } = locationData;
 
-    const id = getLocationId(locations, city, state, setHasCity);
+    const id = getLocationId(locations, city, state);
     const locationObject = createLocationObject(city, state, id);
 
     if (id) return locationObject;
@@ -26,13 +26,12 @@ export const UserLocationService = async (setHasCity) => {
   }
 };
 
-export const getLocationId = (locations, city, state, setHasCity) => {
+export const getLocationId = (locations, city, state) => {
   let id;
 
   locations.forEach(function (location) {
     if (city === location.city) {
       id = location.id;
-      if (setHasCity) setHasCity(true);
     }
     if (!id && state === location.stateCode) {
       id = location.id;
@@ -72,6 +71,16 @@ export const matchToLocation = () => {
   const location = createLocationObject(city, state, id);
 
   return location;
+};
+
+// check if city matches a city in the locations.json
+export const matchesCity = (city) => {
+  let hasCity = false;
+  locations.forEach((location) => {
+    if (location.city === city) hasCity = true;
+  });
+
+  return hasCity;
 };
 
 // Sets local storage with location

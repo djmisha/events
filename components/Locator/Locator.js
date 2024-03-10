@@ -4,6 +4,7 @@ import {
   UserLocationService,
   hasUserLocation,
   matchToLocation,
+  matchesCity,
   getLocationId,
   createLocationObject,
 } from "../../utils/getUserLocation.js";
@@ -20,11 +21,11 @@ const Locator = ({ locations }) => {
     const getGeoLocation = async () => {
       let location;
       // If we have a cookie, use it
-      // if (hasUserLocation()) {
-      //   location = matchToLocation();
-      //   setUserLocation(location);
-      //   return;
-      // }
+      if (hasUserLocation()) {
+        location = matchToLocation();
+        setUserLocation(location);
+        return;
+      }
 
       /**
        * PRIMARY METHOD TO GET USERS LOCATION
@@ -46,6 +47,8 @@ const Locator = ({ locations }) => {
               const locationResponse = await fetch(url);
               const locationData = await locationResponse.json();
               const { city, principalSubdivision: state } = locationData;
+
+              if (matchesCity(city)) setHasCity(true);
 
               const id = getLocationId(locations, city, state, setHasCity);
               const locationObject = createLocationObject(city, state, id);
@@ -70,7 +73,8 @@ const Locator = ({ locations }) => {
             if (error.PERMISSION_DENIED) {
               const getUserLocation = async () => {
                 let location;
-                location = await UserLocationService(setHasCity);
+                location = await UserLocationService();
+                if (matchesCity(city)) setHasCity(true);
                 setUserLocation(location);
               };
 
