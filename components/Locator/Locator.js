@@ -70,7 +70,7 @@ const Locator = ({ locations }) => {
             if (error.PERMISSION_DENIED) {
               const getUserLocation = async () => {
                 let location;
-                location = await UserLocationService();
+                location = await UserLocationService(setHasCity);
                 setUserLocation(location);
               };
 
