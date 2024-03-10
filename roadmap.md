@@ -2,12 +2,14 @@
 
 - better SEO on City Pages
 - Better SEO on Artist Pages
+- put Ads on artist pages?
+- refesh images
 
 ## 2024
 
-### Bugs
+- [x] locator.js - returns a city that does not match an available city
 
-- locator.js - returns a city that does not match an available city
+### Bugs
 
 ### Wishlist
 

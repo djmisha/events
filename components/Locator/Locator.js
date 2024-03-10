@@ -89,7 +89,7 @@ const Locator = ({ locations }) => {
     <>
       {userLocation && (
         <div className="home-your-location">
-          <p>Your default location is</p>
+          <p>Your location is</p>
           <p>
             <strong>
               {cityOrState(userLocation.city, userLocation.state)}
@@ -103,6 +103,12 @@ const Locator = ({ locations }) => {
               View Events
             </a>
           </button>
+          <p>
+            <br />
+            <br />
+            or scroll down
+          </p>
+          <strong>&darr;</strong>
         </div>
       )}
 
