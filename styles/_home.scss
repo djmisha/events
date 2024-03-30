@@ -3,7 +3,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: calc(80vh - 180px);
+  background-color: $lightGrey;
+  padding: 2em;
+  // border: 1px solid black;
+  @media only screen and (min-width: 768px) {
+    height: calc(400px);
+  }
   > div {
     text-align: center;
   }
@@ -18,7 +23,9 @@
 }
 
 .home-your-location {
-  text-align: center;
+  p {
+    text-align: center;
+  }
   p strong {
     font-size: 18px;
     font-weight: normal;
@@ -26,7 +33,7 @@
 }
 
 .home-search {
-  margin-top: 2em;
+  margin-top: 0.5em;
 }
 
 .one {

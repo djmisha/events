@@ -1,28 +1,37 @@
 # Roadmap
 
-- Better SEO on City Pages
-- Better SEO on Artist Pages
-- put Ads on artist pages - why not!
+- Better SEO on City Pages - need keyword research
+- Better SEO on Artist Pages - need keyword research
+- put Ads on artist pages - need to get approved by Google
 - homepage: add section for top touring artists
 - homepage: Header with Search Section
 - homepage: your locaiton is... here are events in....
-- Event pages - better layout and sorting
-- Ability to Submit Events - they become featured
+- Event pages -
+  - better layout - better how? improved cards
+  - improved sorting - how? need examples
+- Ability to Submit Events - they become featured, need login for thid
 - Databased to hold data.
+  - hold top artists data so that it can be shown on the homepage
 - homepage - feetch data at build time, store it in context? refresh every month
+- context
+  - if user visited a city, show that city on homepage, store all visited locations in context
 
-## 2024
-
-- [x] refesh images March 29, 2024
-- [x] locator.js - returns a city that does not match an available city
-
-### Bugs
-
-### Wishlist
+### Ready for Dev
 
 - [] put locations into a context, utilize context more
 - [] get the all events data at build time, rathar than the static JSON object file
 - [] migrate the image node.js code into this repo
+
+### Bugs
+
+- [] locator - returns a city that does not match an available city
+
+## 2024
+
+### Homepage
+
+- [x] refesh images March 29, 2024
+- [x] locator.js - returns a city that does not match an available city
 
 ### Homepage
 
@@ -39,10 +48,6 @@
 - [x] add artist information from other api sources: https://www.last.fm/api#getting-started
 
 ## 2023 - Q4
-
-### Homepage
-
-- [] add section for top artists
 
 ### Styling
 

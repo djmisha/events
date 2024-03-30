@@ -31,7 +31,7 @@ export default function Home({ locations }) {
         <div className="hero-home">
           <div>
             <h1>Find EDM Events</h1>
-            <p>Discover dance music in a city near you </p>
+            <p>Discover dance music near you </p>
           </div>
           <div className="home-search">
             <HomeSearchAutocomplete />
