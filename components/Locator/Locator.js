@@ -106,7 +106,7 @@ const Locator = ({ locations }) => {
 
   return (
     <>
-      {userLocation && (
+      {userLocation && events && (
         <div className="home-your-location">
           <h2>
             Near You in&nbsp;

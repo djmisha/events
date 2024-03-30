@@ -1,12 +1,19 @@
 # Roadmap
 
-- better SEO on City Pages
+- Better SEO on City Pages
 - Better SEO on Artist Pages
-- put Ads on artist pages?
-- refesh images
+- put Ads on artist pages - why not!
+- homepage: add section for top touring artists
+- homepage: Header with Search Section
+- homepage: your locaiton is... here are events in....
+- Event pages - better layout and sorting
+- Ability to Submit Events - they become featured
+- Databased to hold data.
+- homepage - feetch data at build time, store it in context? refresh every month
 
 ## 2024
 
+- [x] refesh images March 29, 2024
 - [x] locator.js - returns a city that does not match an available city
 
 ### Bugs
