@@ -9,8 +9,15 @@ import {
   createLocationObject,
 } from "../../utils/getUserLocation.js";
 import { urlBigData, cityOrState } from "../../utils/utilities";
+import getEvents from "../../utils/getEvents";
+import EventCard from "../EventCard/EventCard";
 
 const Locator = ({ locations }) => {
+  // Events state
+  const [events, setEvents] = useState();
+  const [loading, setLoading] = useState(true);
+
+  // Loction state
   const [userLocation, setUserLocation] = useState();
   const [hasCity, setHasCity] = useState(false);
   const dataLocationFetchedRef = useRef(false);
@@ -93,30 +100,34 @@ const Locator = ({ locations }) => {
     getGeoLocation();
   }, [locations]);
 
+  useEffect(() => {
+    if (userLocation?.id) getEvents(userLocation.id, setEvents, setLoading);
+  }, [userLocation]);
+
   return (
     <>
       {userLocation && (
         <div className="home-your-location">
-          <p>Your location is</p>
-          <p>
+          <h2>
+            Near You in&nbsp;
             <strong>
               {cityOrState(userLocation.city, userLocation.state)}
             </strong>
-          </p>
+          </h2>
+          <div id="artistfeed">
+            {events &&
+              events.map((event, index) => {
+                if (index < 10) return <EventCard event={event} key={index} />;
+              })}
+          </div>
           <button>
             <a
               href={`events/${locationUrl(userLocation, hasCity)}`}
               className="secondary"
             >
-              View Events
+              View All
             </a>
           </button>
-          <p>
-            <br />
-            <br />
-            or scroll down
-          </p>
-          <strong>&darr;</strong>
         </div>
       )}
 
