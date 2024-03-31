@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import Link from "next/link";
-import Hamburger from "../components/Hamburger/Hamburger";
 import { getArtistsCounts } from "../utils/getArtists";
 import ArtistImage from "../components/Artists/ArtistImage";
 import { ToSlugArtist } from "../utils/utilities";
+import Navigation from "../components/Navigation/Navigation";
 
-const title = "Top Touring EDM Artists";
+const title = "Top Touring EDM DJ's & Artists";
 
 /**
  * Gets server side data for page,
@@ -44,7 +44,7 @@ const Artists = ({ events }) => {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         ></meta>
       </Head>
-      <Hamburger />
+      <Navigation />
       <>
         <h1>Top Touring Artists</h1>
         <div className="top-artists-list">

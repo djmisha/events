@@ -1,3 +1,14 @@
+.main-navigation {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  z-index: 999;
+}
+
 .search {
   text-align: center;
   display: flex;

@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import { getLocations } from "../utils/getLocations";
-import Hamburger from "../components/Hamburger/Hamburger";
 import HomeSearchAutocomplete from "../components/SearchAutoComplete/HomeSearchAutocomplete";
 import Locator from "../components/Locator/Locator";
 import CitiesStates from "../components/Homepage/CitiesStates";
+import Navigation from "../components/Navigation/Navigation";
 
 export async function getServerSideProps() {
   const locations = getLocations();
@@ -26,7 +26,7 @@ export default function Home({ locations }) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         ></meta>
       </Head>
-      <Hamburger />
+      <Navigation />
       <section className="one">
         <div className="hero-home">
           <div>
