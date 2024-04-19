@@ -31,7 +31,7 @@ const SpecialEventsModule = ({ locationData }) => {
               </div>
               <span class="event-artist" itemprop="name">
                 <div class="artist">DJ Misha</div>
-                <div class="artist">Tim Seely</div>
+                <div class="artist">Tim Seeley</div>
                 <div class="artist">MixdUpMike</div>
                 <div class="artist">DJ FroDaddy</div>
                 <div class="artist">Mario Moreno</div>
