@@ -25,7 +25,7 @@ const SpecialEventsModule = ({ locationData }) => {
                 <br />
               </span>
               <div class="event-venue">
-                with DJ's playing all vinyl sets...
+                with DJs playing all vinyl sets...
                 <br />
                 <br />
               </div>
