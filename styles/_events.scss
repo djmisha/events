@@ -272,3 +272,23 @@
     text-decoration: none !important;
   }
 }
+
+.special-event {
+  background-color: rgb(250, 212, 218);
+  display: block;
+  height: auto;
+  border: 4px solid pink;
+}
+
+.special-event .event-info {
+  width: 100%;
+}
+
+.special-event .event-date {
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+.special-event .artist {
+  font-size: 23px;
+  padding-bottom: 15px;
+}
