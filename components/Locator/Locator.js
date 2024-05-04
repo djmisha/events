@@ -11,7 +11,6 @@ import {
 import { urlBigData, cityOrState } from "../../utils/utilities";
 import getEvents from "../../utils/getEvents";
 import EventCard from "../EventCard/EventCard";
-import SpecialEventsModule from "../EventsModule/SpecialEventsModule.js";
 
 const Locator = ({ locations }) => {
   // Events state
@@ -115,9 +114,6 @@ const Locator = ({ locations }) => {
               {cityOrState(userLocation.city, userLocation.state)}
             </strong>
           </h2>
-          {events && userLocation.city === "San Diego" && (
-            <SpecialEventsModule locationData={userLocation} />
-          )}
           <div id="artistfeed">
             {events &&
               events.map((event, index) => {
