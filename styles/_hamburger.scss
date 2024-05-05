@@ -108,4 +108,30 @@
       text-decoration: none;
     }
   }
+
+  .recently-viewed {
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      border-bottom: none;
+      padding: 0;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      li {
+        padding: 5px;
+        a {
+          color: $black;
+          text-decoration: none;
+          font-size: 18px;
+        }
+      }
+    }
+  }
 }
