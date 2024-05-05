@@ -8,7 +8,6 @@ import { searchFilter } from "../../utils/searchFilter";
 import { makePageHeadline } from "../../utils/utilities";
 import Filter from "../../components/Filter/Filter";
 import Sidebar from "../../components/NavigationBar/Sidebar";
-import SpecialEventsModule from "./SpecialEventsModule";
 
 const EventsModule = ({ locationData, isHome }) => {
   let [filterVisible, setFilterVisible] = useState(false);
@@ -54,7 +53,6 @@ const EventsModule = ({ locationData, isHome }) => {
         />
         {loading && <Spinner isLoading={loading} text="Loading Events" />}
         <div id="eventfeed">
-          <SpecialEventsModule locationData={locationData} />
           {events &&
             events.map((event, index) => {
               return <EventCard event={event} key={index} />;

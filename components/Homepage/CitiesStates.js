@@ -1,31 +1,33 @@
+import { useContext } from "react";
+import { AppContext } from "../../pages/AppContext";
 import Link from "next/link";
 
 const CitiesStates = ({ locations }) => {
+  const cities = locations.slice(0, 50);
+  const states = locations.slice(50);
+  const { addLocation } = useContext(AppContext);
+
+  const handleClick = (location) => addLocation(location);
+
+  const renderList = (locations, property) => {
+    return locations.map((location) => (
+      <li key={location.id}>
+        <Link
+          href={`/events/${location.slug}`}
+          onClick={() => handleClick(location)}
+        >
+          {location[property]}
+        </Link>
+      </li>
+    ));
+  };
+
   return (
     <>
       <h2>Cities</h2>
-      <ul>
-        {locations.map((location, index) => {
-          if (index > 49) return;
-          return (
-            <li key={location.id}>
-              <Link href={`/events/${location.slug}`}>{location.city}</Link>
-            </li>
-          );
-        })}
-      </ul>
+      <ul>{renderList(cities, "city")}</ul>
       <h2>States</h2>
-      <ul>
-        {locations.map((location, index) => {
-          if (index > 49) {
-            return (
-              <li key={location.id}>
-                <Link href={`/events/${location.slug}`}>{location.state}</Link>
-              </li>
-            );
-          }
-        })}
-      </ul>
+      <ul>{renderList(states, "state")}</ul>
     </>
   );
 };

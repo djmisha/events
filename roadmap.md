@@ -1,7 +1,5 @@
 # Roadmap
 
-- Better SEO on City Pages - need keyword research
-- Better SEO on Artist Pages - need keyword research
 - put Ads on artist pages - need to get approved by Google
 - homepage: add section for top touring artists
 - homepage: Header with Search Section
@@ -14,7 +12,13 @@
   - hold top artists data so that it can be shown on the homepage
 - homepage - feetch data at build time, store it in context? refresh every month
 - context
-  - if user visited a city, show that city on homepage, store all visited locations in context
+  - if user visited a city, show that city on homepage and navigation, store all visited locations in context
+
+### SEO 
+
+- SEO: Homepage - Title and Description - need keyword research
+- Better SEO on City Pages - need keyword research
+- Better SEO on Artist Pages - need keyword research
 
 ### Ready for Dev
 

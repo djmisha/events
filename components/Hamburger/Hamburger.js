@@ -1,12 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AppContext } from "../../pages/AppContext";
+import { toSlug } from "../../utils/getLocations";
 
 const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+  const { locationCtx } = useContext(AppContext);
 
   return (
     <>
@@ -39,6 +42,30 @@ const Hamburger = () => {
             Home
           </Link>
           <Link href="/artists">Top Artists</Link>
+        </div>
+        <div className="recently-viewed">
+          <h2>Your Locations</h2>
+          <ul>
+            {locationCtx?.map((location, index) => (
+              <li key={index}>
+                {location.city ? (
+                  <Link
+                    href={`/events/${toSlug(location.city)}`}
+                    onClick={handleClick}
+                  >
+                    {location.city}, {location.state}
+                  </Link>
+                ) : (
+                  <Link
+                    href={`/events/${toSlug(location.state)}`}
+                    onClick={handleClick}
+                  >
+                    {location.state}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="social-items">
           <a
@@ -103,6 +130,13 @@ const Hamburger = () => {
           alt="sandiegohousemusic.com"
           className="logo"
         />
+        <div>
+          Created by
+          <br />
+          <Link href="https://djmisha.com" target="_blank" title="San Diego DJ">
+            San Diego DJ
+          </Link>
+        </div>
       </div>
     </>
   );

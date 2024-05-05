@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
+import { AppContext } from "../../pages/AppContext.js";
 import { locationUrl } from "../../utils/getLocations";
 import {
   UserLocationService,
@@ -11,9 +12,11 @@ import {
 import { urlBigData, cityOrState } from "../../utils/utilities";
 import getEvents from "../../utils/getEvents";
 import EventCard from "../EventCard/EventCard";
-import SpecialEventsModule from "../EventsModule/SpecialEventsModule.js";
 
 const Locator = ({ locations }) => {
+  // App context
+  const { locationCtx, addLocation } = useContext(AppContext);
+
   // Events state
   const [events, setEvents] = useState();
   const [loading, setLoading] = useState(true);
@@ -35,6 +38,7 @@ const Locator = ({ locations }) => {
       if (hasUserLocation()) {
         location = matchToLocation();
         setUserLocation(location);
+        addLocation(location);
         if (location.city) setMatchesCity(location.city);
         return;
       }
@@ -74,6 +78,8 @@ const Locator = ({ locations }) => {
             if (geoLocation) {
               if (geoFetchedRef.current) return;
               setUserLocation(geoLocation);
+              addLocation(geoLocation);
+
               geoFetchedRef.current = true;
             }
           },
@@ -88,6 +94,7 @@ const Locator = ({ locations }) => {
                 location = await UserLocationService();
                 setMatchesCity(location.city);
                 setUserLocation(location);
+                addLocation(location);
               };
 
               if (dataLocationFetchedRef.current) return;
@@ -99,7 +106,7 @@ const Locator = ({ locations }) => {
       }
     };
     getGeoLocation();
-  }, [locations]);
+  }, [locations, addLocation]);
 
   useEffect(() => {
     if (userLocation?.id) getEvents(userLocation.id, setEvents, setLoading);
@@ -115,9 +122,6 @@ const Locator = ({ locations }) => {
               {cityOrState(userLocation.city, userLocation.state)}
             </strong>
           </h2>
-          {events && userLocation.city === "San Diego" && (
-            <SpecialEventsModule locationData={userLocation} />
-          )}
           <div id="artistfeed">
             {events &&
               events.map((event, index) => {
