@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppContext } from "../../pages/AppContext";
+import { AppContext } from "../../features/AppContext";
 import Link from "next/link";
 
 const CitiesStates = ({ locations }) => {

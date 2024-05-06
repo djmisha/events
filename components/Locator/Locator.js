@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useContext } from "react";
-import { AppContext } from "../../pages/AppContext.js";
+import { AppContext } from "../../features/AppContext.js";
 import { locationUrl } from "../../utils/getLocations";
 import {
   UserLocationService,

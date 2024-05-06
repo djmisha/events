@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useContext } from "react";
-import { AppContext } from "../../pages/AppContext";
+import { AppContext } from "../../features/AppContext";
 import { toSlug } from "../../utils/getLocations";
 
 const Hamburger = () => {

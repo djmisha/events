@@ -1,5 +1,4 @@
-import { createContext } from "react";
-import { AppProvider } from "./AppContext";
+import { AppProvider } from "../features/AppContext";
 import { Poppins } from "next/font/google";
 import "../styles/global.scss";
 
