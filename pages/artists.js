@@ -25,24 +25,24 @@ export async function getStaticProps() {
   const events = getArtistsCounts(json.data);
 
   // PUT THIS BLOCK INTO A SEPERATE FILE
-  const apiEvents = events.slice(0, 30);
+  // const apiEvents = events.slice(0, 30);
 
-  const response = await fetch(
-    "https://sandiegohousemusic.com/api/supabase/posttopartists",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(apiEvents),
-    }
-  );
+  // const response = await fetch(
+  //   "http://localhost:3000/api/supabase/posttopartists",
+  //   {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(apiEvents),
+  //   }
+  // );
 
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
+  // if (!response.ok) {
+  //   throw new Error(`HTTP error! status: ${response.status}`);
+  // }
 
-  const postArtists = await response.json();
+  // const postArtists = await response.json();
   // PUT THIS INTO A SEPERATE FILE
 
   return {
