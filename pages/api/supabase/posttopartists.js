@@ -2,6 +2,7 @@ import supabase from "../../../features/Supabase";
 
 const setData = async (artists) => {
   try {
+    // Delete all rows
     let { error: deleteError } = await supabase
       .from("topartists")
       .delete()
@@ -29,7 +30,6 @@ const setData = async (artists) => {
 
 export default async function handler(req, res) {
   try {
-    console.log(req.body);
     await setData(req.body);
     res.setHeader("Cache-Control", "s-maxage=604800"); // cache for one week
     res.status(200).json({ message: "Success" });

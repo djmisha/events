@@ -133,7 +133,7 @@ const Locator = ({ locations }) => {
               href={`events/${locationUrl(userLocation, hasCity)}`}
               className="secondary"
             >
-              View All
+              All events in {cityOrState(userLocation.city, userLocation.state)}
             </a>
           </button>
         </div>

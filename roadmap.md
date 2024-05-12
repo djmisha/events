@@ -14,7 +14,7 @@
 - context
   - if user visited a city, show that city on homepage and navigation, store all visited locations in context
 
-### SEO 
+### SEO
 
 - SEO: Homepage - Title and Description - need keyword research
 - Better SEO on City Pages - need keyword research
@@ -22,7 +22,7 @@
 
 ### Ready for Dev
 
-- [] put locations into a context, utilize context more
+- [x] put locations into a context, utilize context more
 - [] get the all events data at build time, rathar than the static JSON object file
 - [] migrate the image node.js code into this repo
 

@@ -130,13 +130,6 @@ const Hamburger = () => {
           alt="sandiegohousemusic.com"
           className="logo"
         />
-        <div>
-          Created by
-          <br />
-          <Link href="https://djmisha.com" target="_blank" title="San Diego DJ">
-            San Diego DJ
-          </Link>
-        </div>
       </div>
     </>
   );
