@@ -30,8 +30,11 @@ const setData = async (artists) => {
 
 export default async function handler(req, res) {
   try {
+    if (!req.body) {
+      res.status(400).json({ message: "Missing body" });
+      return;
+    }
     await setData(req.body);
-    res.setHeader("Cache-Control", "s-maxage=604800"); // cache for one week
     res.status(200).json({ message: "Success" });
   } catch (error) {
     console.error("Error in handler: ", error);
