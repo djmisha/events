@@ -94,13 +94,18 @@ const Artists = ({ events }) => {
         <h1>Top Touring Artists</h1>
         <div className="top-artists-list">
           {topArtists?.map((item) => {
-            const { id, name, count } = item;
+            console.log(item);
+            const { id, name, count, locations } = item;
             return (
               <Link href={`/artist/${ToSlugArtist(name)}`} key={id}>
                 <div className="top-artists-single" key={name}>
                   <ArtistImage name={name} />
                   <div className="top-artists-single-name">
-                    {name} <span>{count} shows</span>
+                    {name}
+                    <div className="top-artists-single-counts">
+                      <span>{count} shows</span>
+                      <span>{locations} cities</span>
+                    </div>
                   </div>
                 </div>
               </Link>

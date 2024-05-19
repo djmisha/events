@@ -137,25 +137,25 @@
 .artist-fallback {
   background-color: white;
   // background-image: url("https://music.sandiegohousemusic.com/artist-images/no-image.jpg");
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 120px;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 5px;
+  border-radius: 6px;
   margin-right: 20px;
 }
 
 .artist-image {
-  border-radius: 5px;
-  width: 60px;
-  height: 60px;
+  border-radius: 6px;
+  width: 120px;
+  height: 120px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .event-date {
-  font-size: 13px;
-  line-height: 19px;
+  font-size: 15px;
+  line-height: 26px;
   font-weight: 400;
   color: $blue;
 }
@@ -175,16 +175,18 @@
 }
 
 .event-title {
-  font-size: 15px;
+  // font-size: 16px;
   color: $black;
   padding-right: 7px;
+  padding-bottom: 3px;
+  display: block;
 }
 
 .event-artist {
   word-wrap: anywhere;
   font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
+  // font-size: 15px;
+  line-height: 24px;
   padding-bottom: 5px;
   text-align: left;
   position: relative;
@@ -227,7 +229,7 @@
 .event-venue {
   display: block;
   font-size: 15px;
-  line-height: 20px;
+  line-height: 26px;
   color: $black;
 }
 

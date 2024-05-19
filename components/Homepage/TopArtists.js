@@ -15,13 +15,18 @@ const TopArtists = ({ artists }) => {
       <h2>Top Touring Artists</h2>
       <div className="top-artists-list">
         {randomArtists?.map((artist) => {
-          const { name, id, count } = artist;
+          const { id, name, count, locations } = artist;
+
           return (
             <Link href={`/artist/${ToSlugArtist(name)}`} key={id}>
               <div className="top-artists-single">
                 <ArtistImage name={name} />
                 <div className="top-artists-single-name">
-                  {name} <span>{count} shows</span>
+                  {name}
+                  <div className="top-artists-single-counts">
+                    <span>{count} shows</span>
+                    <span>{locations} cities</span>
+                  </div>
                 </div>
               </div>
             </Link>
