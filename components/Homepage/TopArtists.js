@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import ArtistImage from "../Artists/ArtistImage";
-import { ToSlugArtist } from "../../utils/utilities";
+import { ToSlugArtist, shuffleArray } from "../../utils/utilities";
 
 const TopArtists = ({ artists }) => {
-  if (!artists || artists.length === 0) return null;
+  const [randomArtists, setRandomArtists] = useState([]);
+
+  useEffect(() => {
+    setRandomArtists(shuffleArray(artists));
+  }, [artists]);
 
   return (
     <>
       <h2>Top Touring Artists</h2>
       <div className="top-artists-list">
-        {artists.map((artist) => {
+        {randomArtists?.map((artist) => {
           const { name, id, count } = artist;
           return (
             <Link href={`/artist/${ToSlugArtist(name)}`} key={id}>

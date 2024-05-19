@@ -1,9 +1,10 @@
+import { useEffect, useRef } from "react";
 import Head from "next/head";
 import Layout from "../components/layout";
 import Link from "next/link";
 import { getArtistsCounts } from "../utils/getArtists";
 import ArtistImage from "../components/Artists/ArtistImage";
-import { ToSlugArtist } from "../utils/utilities";
+import { ToSlugArtist, shuffleArray } from "../utils/utilities";
 import Navigation from "../components/Navigation/Navigation";
 
 const title = "Top Touring EDM DJ's & Artists";
@@ -19,31 +20,22 @@ export async function getStaticProps() {
   const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
   const EDMURL = "https://edmtrain.com/api/events?";
   const URL = EDMURL + "&client=" + KEY;
-  const apiResponse = await fetch(URL);
+
+  let apiResponse;
+
+  try {
+    apiResponse = await fetch(URL);
+  } catch (error) {
+    console.error("Fetch failed: ", error);
+    throw new Error(`Fetch failed: ${error.message}`);
+  }
+
+  if (!apiResponse.ok) {
+    throw new Error(`HTTP error! status: ${apiResponse.status}`);
+  }
 
   const json = await apiResponse.json();
   const events = getArtistsCounts(json.data);
-
-  // PUT THIS BLOCK INTO A SEPERATE FILE
-  // const apiEvents = events.slice(0, 30);
-
-  // const response = await fetch(
-  //   "http://localhost:3000/api/supabase/posttopartists",
-  //   {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(apiEvents),
-  //   }
-  // );
-
-  // if (!response.ok) {
-  //   throw new Error(`HTTP error! status: ${response.status}`);
-  // }
-
-  // const postArtists = await response.json();
-  // PUT THIS INTO A SEPERATE FILE
 
   return {
     props: {
@@ -55,6 +47,36 @@ export async function getStaticProps() {
 
 const Artists = ({ events }) => {
   const topArtists = events.slice(0, 200);
+  const apiEvents = events.slice(0, 30);
+  const hasFetched = useRef(false);
+
+  useEffect(() => {
+    if (!hasFetched.current && apiEvents) {
+      // TODO: Extract into a func
+      async function postData() {
+        let response;
+        try {
+          response = await fetch(
+            // "http://localhost:3000/api/supabase/posttopartists",
+            "https://sandiegohousemusic.com/api/supabase/posttopartists",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(apiEvents),
+            }
+          );
+        } catch (error) {
+          console.error("Fetch failed: ", error);
+          throw new Error(`Fetch failed: ${error.message}`);
+        }
+      }
+
+      postData();
+      hasFetched.current = true;
+    }
+  }, [apiEvents]);
 
   return (
     <Layout>
@@ -69,20 +91,19 @@ const Artists = ({ events }) => {
       <>
         <h1>Top Touring Artists</h1>
         <div className="top-artists-list">
-          {topArtists &&
-            topArtists.map((item) => {
-              const { id, name, count } = item;
-              return (
-                <Link href={`/artist/${ToSlugArtist(name)}`} key={id}>
-                  <div className="top-artists-single" key={name}>
-                    <ArtistImage name={name} />
-                    <div className="top-artists-single-name">
-                      {name} <span>{count} shows</span>
-                    </div>
+          {topArtists?.map((item) => {
+            const { id, name, count } = item;
+            return (
+              <Link href={`/artist/${ToSlugArtist(name)}`} key={id}>
+                <div className="top-artists-single" key={name}>
+                  <ArtistImage name={name} />
+                  <div className="top-artists-single-name">
+                    {name} <span>{count} shows</span>
                   </div>
-                </Link>
-              );
-            })}
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </>
     </Layout>
