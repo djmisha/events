@@ -1,16 +1,11 @@
-import Script from "next/script";
-
-function GoogleAutoAds() {
+const GoogleAutoAds = () => {
   return (
-    <>
-      <Script
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6261738507723190"
-        strategy="afterInteractive"
-        crossOrigin="anonymous"
-        async
-      />
-    </>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6261738507723190"
+      crossOrigin="anonymous"
+    ></script>
   );
-}
+};
 
 export default GoogleAutoAds;
