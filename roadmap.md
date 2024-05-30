@@ -1,9 +1,14 @@
 # Roadmap
 
-### Ready for Dev
+## Ready for Dev
 
+### SEO
+
+- SEO: Homepage - Title and Description - need keyword research
+- Better SEO on Artist Pages - need keyword research
+- [] put Ads on artist pages - not showing
 - [] get the all events data at build time, rathar than the static JSON object file?
-- [] migrate the image node.js code into this repo
+- [] wont do: migrate the image node.js code into this repo
 - [] security: check supabase message for security issues
 - [] bug: artists page uses different layout so there is no context for the location
 
@@ -28,15 +33,9 @@
 
 - start DB with artist data, including bios
 
-### SEO
-
-- SEO: Homepage - Title and Description - need keyword research
-- Better SEO on City Pages - need keyword research
-- Better SEO on Artist Pages - need keyword research
-
 ## 2024 Completed
 
-- [x] put Ads on artist pages
+- [x] Better SEO on City Pages - need keyword research
 - [x] if user visited a city, show that city on homepage and navigation, store all visited locations in context
 - [x] hold top artists data so that it can be shown on the homepage
 - [x] need to get ads approved by Google÷

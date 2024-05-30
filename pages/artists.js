@@ -6,7 +6,6 @@ import { getArtistsCounts } from "../utils/getArtists";
 import ArtistImage from "../components/Artists/ArtistImage";
 import { ToSlugArtist } from "../utils/utilities";
 import Navigation from "../components/Navigation/Navigation";
-import GoogleAutoAds from "../components/3rdParty/googleAds";
 
 const title = "Top Touring EDM DJ's & Artists";
 
@@ -87,7 +86,6 @@ const Artists = ({ events }) => {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         ></meta>
-        <GoogleAutoAds />
       </Head>
       <Navigation />
       <>

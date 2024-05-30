@@ -10,6 +10,7 @@ import ArtistImage from "../../components/Artists/ArtistImage";
 import ArtistBio from "../../components/Artists/ArtistBio";
 import EventCard from "../../components/EventCard/EventCard";
 import Hamburger from "../../components/Hamburger/Hamburger";
+import GoogleAutoAds from "../components/3rdParty/googleAds";
 
 export default function Artist({ artistData }) {
   const { name, id } = artistData;
@@ -29,6 +30,7 @@ export default function Artist({ artistData }) {
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <GoogleAutoAds />
       </Head>
       <Hamburger />
       <div className="artist">
