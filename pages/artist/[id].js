@@ -41,10 +41,9 @@ export default function Artist({ artistData }) {
         <ArtistBio name={name} />
         <h2>{name} Events</h2>
         <div id="artistfeed">
-          {events &&
-            events.map((event, index) => {
-              return <EventCard event={event} key={index} />;
-            })}
+          {events?.map((event) => (
+            <EventCard event={event} key={event.id} />
+          ))}
         </div>
       </div>
     </Layout>
