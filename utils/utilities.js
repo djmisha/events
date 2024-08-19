@@ -83,10 +83,11 @@ export const urlBigData = (lat, long) => {
  * Randomize Array Utility
  */
 export const shuffleArray = (array) => {
+  if (!array) return;
   const newArray = array;
-  var currentIndex = array.length,
-    temporaryValue,
-    randomIndex;
+  let currentIndex = array?.length;
+  let temporaryValue;
+  let randomIndex;
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
