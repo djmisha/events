@@ -2,13 +2,11 @@
 
 ## Ready for Dev
 
-### SEO
+-
 
-- SEO: Homepage - Title and Description - need keyword research
-- Better SEO on Artist Pages - need keyword research
-- [] put Ads on artist pages - not showing
+- [x] put Ads on artist pages - not showing
 - [] get the all events data at build time, rathar than the static JSON object file?
-- [] wont do: migrate the image node.js code into this repo
+- [x] wont do: migrate the image node.js code into this repo
 - [] security: check supabase message for security issues
 - [] bug: artists page uses different layout so there is no context for the location
 
@@ -17,6 +15,12 @@
 - table for locations
 - table for events
 - table for all artists
+  - populates from last.fm with data on each artist
+
+### SEO
+
+- SEO: Homepage - Title and Description - need keyword research
+- Better SEO on Artist Pages - need keyword research
 
 ## Ideas
 
@@ -27,11 +31,11 @@
 
 - Ability to Submit Events - they become featured, need login for thid
 
+  - NEED TABLE FOR SUBMITTED EVENTS
+
 - homepage - what else can we add on homepage to expland it and make it more useful
 
 - context - what else can we put there to keep
-
-- start DB with artist data, including bios
 
 ## 2024 Completed
 
