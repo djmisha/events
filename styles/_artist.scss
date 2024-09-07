@@ -24,3 +24,15 @@
     font-size: 0.9rem;
   }
 }
+
+.artist-tags span {
+  padding: 3px 15px;
+  margin: 5px;
+  border: 1px solid $blue;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  text-align: center;
+  display: inline-block;
+  background-color: $blue;
+  color: $white;
+}

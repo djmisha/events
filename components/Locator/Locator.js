@@ -117,16 +117,15 @@ const Locator = ({ locations }) => {
       {userLocation && events && (
         <div className="home-your-location">
           <h2>
-            Near You in&nbsp;
+            Near You in{" "}
             <strong>
               {cityOrState(userLocation.city, userLocation.state)}
             </strong>
           </h2>
           <div id="artistfeed">
-            {events &&
-              events.map((event, index) => {
-                if (index < 10) return <EventCard event={event} key={index} />;
-              })}
+            {events?.slice(0, 10).map((event) => (
+              <EventCard event={event} key={event.id} />
+            ))}
           </div>
           <button>
             <a

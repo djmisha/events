@@ -44,10 +44,10 @@ const Hamburger = () => {
           <Link href="/artists">Top Artists</Link>
         </div>
         <div className="recently-viewed">
-          <h2>Your Locations</h2>
+          <span>Your Locations</span>
           <ul>
             {locationCtx?.map((location, index) => (
-              <li key={index}>
+              <li key={location.state}>
                 {location.city ? (
                   <Link
                     href={`/events/${toSlug(location.city)}`}
