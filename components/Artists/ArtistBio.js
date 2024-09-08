@@ -2,7 +2,7 @@ import { formatBio } from "./ArtistBio.helpers";
 
 const ArtistBio = ({ lastFMDdata }) => {
   const bio = formatBio(lastFMDdata.artist.bio.content);
-  const tags = [lastFMDdata.artist.tags.tag];
+  const tags = lastFMDdata.artist.tags.tag;
   const name = lastFMDdata.artist.name;
 
   return (
