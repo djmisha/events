@@ -1,21 +1,9 @@
-import { useState, useEffect } from "react";
-import { lastFMUrl, formatBio } from "./ArtistBio.helpers";
+import { formatBio } from "./ArtistBio.helpers";
 
-const ArtistBio = ({ name }) => {
-  const [bio, setBio] = useState("");
-  const [tags, setTags] = useState([]);
-
-  useEffect(() => {
-    const getBio = async () => {
-      const apiResponse = await fetch(lastFMUrl(name));
-      const json = await apiResponse.json();
-      const text = formatBio(json.artist.bio.content);
-      const tags = json.artist.tags.tag;
-      setBio(text);
-      setTags(tags);
-    };
-    getBio();
-  }, [name]);
+const ArtistBio = ({ lastFMDdata }) => {
+  const bio = formatBio(lastFMDdata.artist.bio.content);
+  const tags = lastFMDdata.artist.tags.tag;
+  const name = lastFMDdata.artist.name;
 
   return (
     bio &&

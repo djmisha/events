@@ -12,7 +12,7 @@ import EventCard from "../../components/EventCard/EventCard";
 import Hamburger from "../../components/Hamburger/Hamburger";
 import GoogleAutoAds from "../../components/3rdParty/googleAds";
 
-export default function Artist({ artistData }) {
+export default function Artist({ artistData, lastFMDdata }) {
   const { name, id } = artistData;
   const [events, setEvents] = useState();
   const dataFetchedRef = useRef();
@@ -24,6 +24,8 @@ export default function Artist({ artistData }) {
     dataFetchedRef.current = id;
     getArtistEvents(id, setEvents);
   }, [id]);
+
+  console.log(lastFMDdata);
 
   return (
     <Layout>
@@ -38,7 +40,7 @@ export default function Artist({ artistData }) {
           <ArtistImage name={name} />
           <h1>{name}</h1>
         </div>
-        <ArtistBio name={name} />
+        <ArtistBio lastFMDdata={lastFMDdata} />
         <h2>{name} Events</h2>
         <div id="artistfeed">
           {events?.map((event) => (
@@ -65,11 +67,18 @@ export async function getStaticPaths() {
  * @returns locationData
  */
 export async function getStaticProps({ params }) {
-  const artistData = getArtistData(params.id);
+  const artistData = await getArtistData(params.id);
+
+  const { name } = artistData;
+  const lastFMDquery = await fetch(
+    `https://sandiegohousemusic.com/api/lastfm/artistgetinfo/${name}`
+  );
+  const lastFMDdata = await lastFMDquery.json();
 
   return {
     props: {
       artistData,
+      lastFMDdata,
     },
   };
 }
