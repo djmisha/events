@@ -17,17 +17,36 @@ export default function Artist({ artistData }) {
   const [events, setEvents] = useState();
   const eventDataFetchedRef = useRef();
   const [lastFMDdata, setLastFMDdata] = useState();
+  const lastFMDataFetchedRef = useRef();
   const title = `${name} - Upcoming Events & Artist Informaton`;
   const description = `${name} Tour Dates, Shows, Concert Tickets & Live Streams. Learn more about ${name}`;
 
+  const fetchLastFMData = async (url) => {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      throw error;
+    }
+  };
+
+  // Fetches events for artist
   useEffect(() => {
     if (eventDataFetchedRef.current === id) return;
     eventDataFetchedRef.current = id;
     getArtistEvents(id, setEvents);
   }, [id]);
 
+  // Fetches LastFM data for artist
   useEffect(() => {
-    // Determine URL to use based on env
+    if (lastFMDataFetchedRef.current === name) return;
+    lastFMDataFetchedRef.current = name;
+
     const setURL = (name) => {
       let url;
 
@@ -42,37 +61,14 @@ export default function Artist({ artistData }) {
 
     const url = setURL(name);
 
-    const fetchLastFMData = async (url) => {
-      try {
-        const response = await fetch(url, {
-          mode: "no-cors",
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-        });
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        return data;
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        throw error;
-      }
-    };
-
     fetchLastFMData(url)
       .then((lastFMData) => {
-        console.log("Fetched data:", lastFMData);
         setLastFMDdata(lastFMData);
-        // Do something with lastFMData
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   }, [name]);
-
-  console.log(lastFMDdata);
 
   return (
     <Layout>
