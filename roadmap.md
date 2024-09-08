@@ -2,7 +2,7 @@
 
 ## Ready for Dev
 
--
+- [] ARTIST PAGES: social media icons
 
 - [x] put Ads on artist pages - not showing
 - [] get the all events data at build time, rathar than the static JSON object file?

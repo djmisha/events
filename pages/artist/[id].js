@@ -12,18 +12,65 @@ import EventCard from "../../components/EventCard/EventCard";
 import Hamburger from "../../components/Hamburger/Hamburger";
 import GoogleAutoAds from "../../components/3rdParty/googleAds";
 
-export default function Artist({ artistData, lastFMDdata }) {
+export default function Artist({ artistData }) {
   const { name, id } = artistData;
   const [events, setEvents] = useState();
-  const dataFetchedRef = useRef();
+  const eventDataFetchedRef = useRef();
+  const [lastFMDdata, setLastFMDdata] = useState();
   const title = `${name} - Upcoming Events & Artist Informaton`;
   const description = `${name} Tour Dates, Shows, Concert Tickets & Live Streams. Learn more about ${name}`;
 
   useEffect(() => {
-    if (dataFetchedRef.current === id) return;
-    dataFetchedRef.current = id;
+    if (eventDataFetchedRef.current === id) return;
+    eventDataFetchedRef.current = id;
     getArtistEvents(id, setEvents);
   }, [id]);
+
+  useEffect(() => {
+    // Determine URL to use based on env
+    const setURL = (name) => {
+      let url;
+
+      if (process.env.NODE_ENV === "development") {
+        url = `http://localhost:3000/api/lastfm/artistgetinfo/${name}`;
+      } else {
+        url = `https://sandiegohousemusic.com/api/lastfm/artistgetinfo/${name}`;
+      }
+
+      return url;
+    };
+
+    const url = setURL(name);
+
+    const fetchLastFMData = async (url) => {
+      try {
+        const response = await fetch(url, {
+          mode: "no-cors",
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        });
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        throw error;
+      }
+    };
+
+    fetchLastFMData(url)
+      .then((lastFMData) => {
+        console.log("Fetched data:", lastFMData);
+        setLastFMDdata(lastFMData);
+        // Do something with lastFMData
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, [name]);
 
   console.log(lastFMDdata);
 
@@ -40,7 +87,7 @@ export default function Artist({ artistData, lastFMDdata }) {
           <ArtistImage name={name} />
           <h1>{name}</h1>
         </div>
-        <ArtistBio lastFMDdata={lastFMDdata} />
+        {lastFMDdata && <ArtistBio lastFMDdata={lastFMDdata} />}
         <h2>{name} Events</h2>
         <div id="artistfeed">
           {events?.map((event) => (
@@ -69,16 +116,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const artistData = await getArtistData(params.id);
 
-  const { name } = artistData;
-  const lastFMDquery = await fetch(
-    `https://sandiegohousemusic.com/api/lastfm/artistgetinfo/${name}`
-  );
-  const lastFMDdata = await lastFMDquery.json();
-
   return {
     props: {
       artistData,
-      lastFMDdata,
     },
   };
 }
