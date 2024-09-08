@@ -2,12 +2,11 @@ import { formatBio } from "./ArtistBio.helpers";
 
 const ArtistBio = ({ lastFMDdata }) => {
   const bio = formatBio(lastFMDdata.artist.bio.content);
-  const tags = lastFMDdata.artist.tags.tag;
+  const tags = [lastFMDdata.artist.tags.tag];
   const name = lastFMDdata.artist.name;
 
   return (
-    bio &&
-    tags.length && (
+    bio && (
       <div className="artist-bio">
         <h2>About {name}</h2>
         <p
@@ -16,7 +15,7 @@ const ArtistBio = ({ lastFMDdata }) => {
         ></p>
         <h3>{name} Music Styles</h3>
         <div className="artist-tags">
-          {tags.map((tag) => (
+          {tags?.map((tag) => (
             <span key={tag.name} className="artist-tag">
               {tag.name}
             </span>
