@@ -20,7 +20,7 @@ const ArtistBio = ({ name }) => {
     }
   };
 
-  // Fetches LastFM data for artist
+  // Fetches LastFM data for artist bio
   useEffect(() => {
     if (lastFMDataFetchedRef.current === name) return;
     lastFMDataFetchedRef.current = name;
