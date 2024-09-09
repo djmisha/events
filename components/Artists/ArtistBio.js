@@ -1,17 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-
 import { formatBio } from "./ArtistBio.helpers";
 
 const ArtistBio = ({ name }) => {
-  const [lastFMDdata, setLastFMDdata] = useState();
+  const [lastFMdata, setLastFMdata] = useState(undefined);
   const lastFMDataFetchedRef = useRef();
 
   const fetchLastFMData = async (url) => {
     try {
       const response = await fetch(url, { mode: "no-cors" });
-      if (!response.ok)
-        throw new Error(`HTTP error! status: ${response.status}`);
-
       const data = await response.json();
       return data;
     } catch (error) {
@@ -31,7 +27,7 @@ const ArtistBio = ({ name }) => {
       if (process.env.NODE_ENV === "development") {
         url = `http://localhost:3000/api/lastfm/artistgetinfo/${name}`;
       } else {
-        url = `https://sandiegohousemusic.com/api/lastfm/artistgetinfo/${name}`;
+        url = `https://www.sandiegohousemusic.com/api/lastfm/artistgetinfo/${name}`;
       }
 
       return url;
@@ -40,27 +36,29 @@ const ArtistBio = ({ name }) => {
     const url = setURL(name);
 
     fetchLastFMData(url)
-      .then((lastFMData) => {
-        setLastFMDdata(lastFMData);
+      .then((data) => {
+        setLastFMdata(data);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-  }, [name]);
+  }, [name, lastFMdata]);
+
+  console.log("lastFMdata: ", lastFMdata);
 
   return (
-    lastFMDdata && (
+    lastFMdata && (
       <div className="artist-bio">
         <h2>About {name}</h2>
         <p
           className="artist-bio-text"
           dangerouslySetInnerHTML={{
-            __html: formatBio(lastFMDdata.artist.bio.content),
+            __html: formatBio(lastFMdata.artist.bio.content),
           }}
         ></p>
         <h3>{name} Music Style and Tags</h3>
         <div className="artist-tags">
-          {lastFMDdata.artist.tags.tag.map((tag) => (
+          {lastFMdata.artist.tags.tag.map((tag) => (
             <span key={tag.name} className="artist-tag">
               {tag.name}
             </span>
