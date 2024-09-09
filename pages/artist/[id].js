@@ -16,24 +16,9 @@ export default function Artist({ artistData }) {
   const { name, id } = artistData;
   const [events, setEvents] = useState();
   const eventDataFetchedRef = useRef();
-  const [lastFMDdata, setLastFMDdata] = useState();
-  const lastFMDataFetchedRef = useRef();
+
   const title = `${name} - Upcoming Events & Artist Informaton`;
   const description = `${name} Tour Dates, Shows, Concert Tickets & Live Streams. Learn more about ${name}`;
-
-  const fetchLastFMData = async (url) => {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      throw error;
-    }
-  };
 
   // Fetches events for artist
   useEffect(() => {
@@ -41,34 +26,6 @@ export default function Artist({ artistData }) {
     eventDataFetchedRef.current = id;
     getArtistEvents(id, setEvents);
   }, [id]);
-
-  // Fetches LastFM data for artist
-  useEffect(() => {
-    if (lastFMDataFetchedRef.current === name) return;
-    lastFMDataFetchedRef.current = name;
-
-    const setURL = (name) => {
-      let url;
-
-      if (process.env.NODE_ENV === "development") {
-        url = `http://localhost:3000/api/lastfm/artistgetinfo/${name}`;
-      } else {
-        url = `https://sandiegohousemusic.com/api/lastfm/artistgetinfo/${name}`;
-      }
-
-      return url;
-    };
-
-    const url = setURL(name);
-
-    fetchLastFMData(url)
-      .then((lastFMData) => {
-        setLastFMDdata(lastFMData);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }, [name]);
 
   return (
     <Layout>
@@ -83,7 +40,7 @@ export default function Artist({ artistData }) {
           <ArtistImage name={name} />
           <h1>{name}</h1>
         </div>
-        {lastFMDdata && <ArtistBio lastFMDdata={lastFMDdata} />}
+        <ArtistBio name={name} />
         <h2>{name} Events</h2>
         <div id="artistfeed">
           {events?.map((event) => (
