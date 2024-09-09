@@ -31,7 +31,7 @@ const ArtistBio = ({ name }) => {
       if (process.env.NODE_ENV === "development") {
         url = `http://localhost:3000/api/lastfm/artistgetinfo/${name}`;
       } else {
-        url = `https://sandiegohousemusic.com/api/lastfm/artistgetinfo/${name}`;
+        url = `https://www.sandiegohousemusic.com/api/lastfm/artistgetinfo/${name}`;
       }
 
       return url;
