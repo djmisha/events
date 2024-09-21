@@ -44,8 +44,6 @@ const ArtistBio = ({ name }) => {
       });
   }, [name, lastFMdata]);
 
-  console.log("lastFMdata: ", lastFMdata);
-
   return (
     lastFMdata && (
       <div className="artist-bio">
@@ -56,7 +54,7 @@ const ArtistBio = ({ name }) => {
             __html: formatBio(lastFMdata.artist.bio.content),
           }}
         ></p>
-        <h3>{name} Music Style and Tags</h3>
+        <h3>{name} Music Style</h3>
         <div className="artist-tags">
           {lastFMdata.artist.tags.tag.map((tag) => (
             <span key={tag.name} className="artist-tag">
