@@ -53,17 +53,16 @@ export const getUniqueArtists = (array) => {
   const allArtists = [];
 
   array.map((event) => {
-    event.artistList &&
-      event.artistList.map((artist) => {
-        const { id, name } = artist;
-        const slug = ToSlugArtist(name);
+    event.artistList?.map((artist) => {
+      const { id, name } = artist;
+      const slug = ToSlugArtist(name);
 
-        allArtists.push({
-          id,
-          name,
-          slug,
-        });
+      allArtists.push({
+        id,
+        name,
+        slug,
       });
+    });
   });
 
   const cleanArtists = dedupeObjArray(allArtists);
