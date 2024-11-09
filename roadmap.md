@@ -1,21 +1,30 @@
 # Roadmap
 
+## Working
+
+- table for all artists
+  - [x] create table to hold top aritst
+  - at build time - fetch the data from Supabase artists table
+    - need to write func to fetch all artists from endpoint - deploy the endpoint first
+  - inserts only new ones from the EDM TRAIN API, when feteched from top artists page
+  - populates from last.fm with bio data on each artist
+  - populates from last.fm with TAGS data on each artist
+  - table for artist TAGS - shoued it be a table or an array in the artist table?
+
 ## Ready for Dev
 
 - [] ARTIST PAGES: social media icons
 
-- [x] put Ads on artist pages - not showing
 - [] get the all events data at build time, rathar than the static JSON object file?
-- [x] wont do: migrate the image node.js code into this repo
-- [] security: check supabase message for security issues
+
 - [] bug: artists page uses different layout so there is no context for the location
 
 ## Database
 
 - table for locations
+- table for venues!
 - table for events
-- table for all artists
-  - populates from last.fm with data on each artist
+  - populate with all events from EDM TRAIN API?
 
 ### SEO
 
@@ -39,6 +48,9 @@
 
 ## 2024 Completed
 
+- [x] put Ads on artist pages - not showing
+- [x] wont do: migrate the image node.js code into this repo
+- [x] security: check supabase message for security issues
 - [x] Better SEO on City Pages - need keyword research
 - [x] if user visited a city, show that city on homepage and navigation, store all visited locations in context
 - [x] hold top artists data so that it can be shown on the homepage
