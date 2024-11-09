@@ -37,6 +37,10 @@ export async function getStaticProps() {
   const json = await apiResponse.json();
   const events = getArtistsCounts(json.data);
 
+  // @TODO
+  // USE THIS DATA TO ADD TO SUPABASE ARTIST TABLE THE NEW ARTISTS 
+  // USE DATA TO ADD ALL EVENTS TO SUPABASE EVENTS TABLE
+
   return {
     props: {
       events,
@@ -92,7 +96,6 @@ const Artists = ({ events }) => {
         <h1>Top Touring Artists</h1>
         <div className="top-artists-list">
           {topArtists?.map((item) => {
-            console.log(item);
             const { id, name, count, locations } = item;
             return (
               <Link href={`/artist/${ToSlugArtist(name)}`} key={id}>
