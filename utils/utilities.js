@@ -120,20 +120,15 @@ export const makeImageUrl = (string) => {
 };
 
 export const ToSlugArtist = (string) => {
+  if (!string) return "undefined";
   const cleanString = string
-    .split("'")
-    .join("")
-    .split("/")
-    .join("-")
-    .split("(")
-    .join("")
-    .split(")")
-    .join("")
-    .split(" ")
-    .join("-")
+    .replace(/[^a-zA-Z0-9 ]/g, "-") // Replace non-alphanumeric characters except spaces
+    .replace(/ /g, "-") // Replace spaces with dashes
     .split("&")
     .join("&amp;")
-    .toLowerCase();
+    .toLowerCase()
+    .replace(/-+/g, "-") // Replace multiple dashes with a single dash
+    .replace(/^-+|-+$/g, ""); // Trim dashes from the start and end of the string
 
   return cleanString;
 };

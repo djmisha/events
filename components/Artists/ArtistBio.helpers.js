@@ -1,4 +1,5 @@
 export const formatBio = (bio) => {
+  if (!bio) return "";
   let clean = bio
     .replace(/<a\b[^>]*>(.*?)<\/a>./i, "")
     .replace(/\n/g, "<br>")

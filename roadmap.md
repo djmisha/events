@@ -1,5 +1,26 @@
 # Roadmap
 
+## 2025 Ideas
+
+- homepage simplified
+- locations page - with city and states, removed from homepage
+- venues pages - with all venues in a city
+- artist directory with all artists
+- artists page - adds new bio to db from last.fm
+
+## HOW to MONITIZE
+
+- links to buy tickets - integrations with ticket providers
+- better ads on artist pages - remove auto ads?
+- add on homepage (all adds eleganty)
+- add on events pages (all adds eleganty)
+
+### SEO Continued
+
+- events pages - titles and descriptions - keyword optimization
+- cross linking pages - between events, artists, locations, and venues
+- link each artists from the events card. - link to artist page
+
 ## Working
 
 - table for all artists
@@ -38,7 +59,7 @@
   - better layout - better how? improved cards
   - improved sorting - how? need examples
 
-- Ability to Submit Events - they become featured, need login for thid
+- \*\* Ability to Submit Events - they become featured, need login for thid
 
   - NEED TABLE FOR SUBMITTED EVENTS
 

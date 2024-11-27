@@ -1,4 +1,5 @@
 import sampleEvents from "./allevents.sample.json";
+import artistDB from "./../localArtistsDB.json";
 import { removeDuplicates, ToSlugArtist } from "./utilities";
 import { parseData } from "./getEvents";
 
@@ -52,32 +53,31 @@ const dedupeObjArray = (array) => {
 export const getUniqueArtists = (array) => {
   const allArtists = [];
 
-  array.map((event) => {
-    event.artistList?.map((artist) => {
-      const { id, name } = artist;
-      const slug = ToSlugArtist(name);
+  array.map((artist) => {
+    const { id, name } = artist;
+    const slug = ToSlugArtist(name);
 
-      allArtists.push({
-        id,
-        name,
-        slug,
-      });
+    allArtists.push({
+      id,
+      name,
+      slug,
     });
   });
 
+  // TODO:  probably dont need this anymore, array is already unique but double check
   const cleanArtists = dedupeObjArray(allArtists);
 
   return cleanArtists;
 };
 
 // all the unique artists from static data
-export const allArtists = getUniqueArtists(sampleEvents);
+export const allArtists = getUniqueArtists(artistDB);
 
 /**
- * This algo counts the number of times an artists appears
+ * This algo counts the number of times an artists appears in the data
  * and returns a sorted array with the artist name, id, counts
  *
- * todo:
+ * Todo:
  * - need to loop only cities? because artists appear again on State events? maybe not
  * @returns Array
  */
@@ -153,7 +153,7 @@ const uniqueArtists = getUniqueArtists(sampleEvents);
 
 // gets slug for each artists
 export const getAritstIds = () => {
-  return uniqueArtists.map((artist) => {
+  return artistDB.map((artist) => {
     const { name } = artist;
     const id = ToSlugArtist(name);
 
@@ -168,7 +168,7 @@ export const getAritstIds = () => {
 // get data for each artist
 export const getArtistData = (slug) => {
   let data;
-  uniqueArtists.map((artist) => {
+  artistDB.map((artist) => {
     const { name } = artist;
     if (slug === ToSlugArtist(name)) data = artist;
   });

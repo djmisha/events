@@ -19,6 +19,8 @@ const EventsModule = ({ locationData, isHome }) => {
   const dataFetchedRef = useRef();
   const searchTermRef = useRef("");
 
+  // @Todo - this can be done server side, when the page is rendered - the data is requestsed
+  // and sent to the client so the call does not have to be made here
   useEffect(() => {
     if (dataFetchedRef.current === id) return;
     dataFetchedRef.current = id;
@@ -53,10 +55,9 @@ const EventsModule = ({ locationData, isHome }) => {
         />
         {loading && <Spinner isLoading={loading} text="Loading Events" />}
         <div id="eventfeed">
-          {events &&
-            events.map((event, index) => {
-              return <EventCard event={event} key={index} />;
-            })}
+          {events?.map((event) => {
+            return <EventCard event={event} key={event.id} />;
+          })}
         </div>
       </section>
       {events && <Sidebar events={events} setSearchTerm={setSearchTerm} />}

@@ -45,18 +45,19 @@ const ArtistBio = ({ name }) => {
   }, [name, lastFMdata]);
 
   return (
-    lastFMdata && (
+    lastFMdata &&
+    !lastFMdata.error && (
       <div className="artist-bio">
         <h2>About {name}</h2>
         <p
           className="artist-bio-text"
           dangerouslySetInnerHTML={{
-            __html: formatBio(lastFMdata.artist.bio.content),
+            __html: formatBio(lastFMdata?.artist?.bio?.content),
           }}
         ></p>
         <h3>{name} Music Style</h3>
         <div className="artist-tags">
-          {lastFMdata.artist.tags.tag.map((tag) => (
+          {lastFMdata?.artist?.tags?.tag?.map((tag) => (
             <span key={tag.name} className="artist-tag">
               {tag.name}
             </span>
