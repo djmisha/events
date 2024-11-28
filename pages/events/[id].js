@@ -24,9 +24,14 @@ export default function Location({ locationData }) {
 
 // Gets slugs for each dynamic page
 export async function getStaticPaths() {
-  const paths = getLocationIds();
+  const paths = await getLocationIds();
+
+  const validPaths = paths.filter(
+    (path) => path?.params?.id && typeof path.params.id === "string"
+  );
+
   return {
-    paths,
+    paths: validPaths,
     fallback: false,
   };
 }

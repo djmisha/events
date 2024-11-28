@@ -152,7 +152,7 @@ export const getArtistsCounts = (array) => {
 const uniqueArtists = getUniqueArtists(sampleEvents);
 
 // gets slug for each artists
-export const getAritstIds = () => {
+export const getAritstIds = async () => {
   return artistDB.map((artist) => {
     const { name } = artist;
     const id = ToSlugArtist(name);
@@ -166,7 +166,7 @@ export const getAritstIds = () => {
 };
 
 // get data for each artist
-export const getArtistData = (slug) => {
+export const getArtistData = async (slug) => {
   let data;
   artistDB.map((artist) => {
     const { name } = artist;

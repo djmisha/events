@@ -58,13 +58,17 @@ export default function Artist({ artistData }) {
 
 // Gets slugs for each dynamic page
 export async function getStaticPaths() {
-  const paths = getAritstIds();
+  const paths = await getAritstIds();
+
+  const validPaths = paths.filter(
+    (path) => path?.params?.id && typeof path.params.id === "string"
+  );
+
   return {
-    paths,
+    paths: validPaths,
     fallback: false,
   };
 }
-
 /**
  * Gets data for each page based on slug
  * @param {*} params
