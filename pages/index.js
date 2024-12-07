@@ -7,7 +7,7 @@ import CitiesStates from "../components/Homepage/CitiesStates";
 import Navigation from "../components/Navigation/Navigation";
 import TopArtists from "../components/Homepage/TopArtists";
 import Link from "next/link";
-import TicketMaster from "../components/TicketMaster/TicketMaster";
+// import TicketMaster from "../components/TicketMaster/TicketMaster";
 
 export async function getServerSideProps() {
   const locations = getLocations();
@@ -49,7 +49,7 @@ export default function Home({ locations, topArtists }) {
         ></meta>
       </Head>
       <Navigation />
-      <TicketMaster />
+      {/* <TicketMaster /> */}
       <section className="one">
         <div className="hero-home">
           <div>
