@@ -10,7 +10,7 @@ import {
   createLocationObject,
 } from "../../utils/getUserLocation.js";
 import { urlBigData, cityOrState } from "../../utils/utilities";
-import getEvents from "../../utils/getEvents";
+import { getEventsHome } from "../../utils/getEvents";
 import EventCard from "../EventCard/EventCard";
 
 const Locator = ({ locations }) => {
@@ -20,7 +20,7 @@ const Locator = ({ locations }) => {
   // Events state
   const [events, setEvents] = useState();
   const [loading, setLoading] = useState(true);
-
+  console.log(events);
   // Loction state
   const [userLocation, setUserLocation] = useState();
   const [hasCity, setHasCity] = useState(false);
@@ -109,7 +109,8 @@ const Locator = ({ locations }) => {
   }, [locations, addLocation]);
 
   useEffect(() => {
-    if (userLocation?.id) getEvents(userLocation.id, setEvents, setLoading);
+    if (userLocation?.id) getEventsHome(userLocation.id, setEvents, setLoading);
+    console.log(userLocation);
   }, [userLocation]);
 
   return (

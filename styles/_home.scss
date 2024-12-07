@@ -1,17 +1,15 @@
 .hero-home {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   background-color: $lightGrey;
-  padding: 2em;
-  @media only screen and (min-width: 768px) {
-    height: calc(400px);
-  }
+  padding: 0 2em;
+  height: 93vh;
+
   > div {
     text-align: center;
   }
   h1 {
+    padding-top: 30vh;
     text-align: center;
     border: none;
     font-size: 30px;

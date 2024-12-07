@@ -4,8 +4,9 @@ import { getLocationIds, getLocationData } from "../../utils/getLocations";
 import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModule from "../../components/EventsModule/EventsModule";
 import Hamburger from "../../components/Hamburger/Hamburger";
+import getEvents from "../../utils/getEvents";
 
-export default function Location({ locationData }) {
+export default function Location({ locationData, events }) {
   const { city, state } = locationData;
   const title = makePageTitle(city, state);
   const description = makePageDescription(city, state);
@@ -17,7 +18,7 @@ export default function Location({ locationData }) {
         <meta name="description" content={description} />
       </Head>
       <Hamburger />
-      <EventsModule locationData={locationData} />
+      <EventsModule locationData={locationData} events={events} />
     </Layout>
   );
 }
@@ -43,10 +44,12 @@ export async function getStaticPaths() {
  */
 export async function getStaticProps({ params }) {
   const locationData = getLocationData(params.id);
+  const events = await getEvents(locationData.id);
 
   return {
     props: {
       locationData,
+      events,
     },
   };
 }
