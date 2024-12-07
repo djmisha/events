@@ -7,6 +7,7 @@ import CitiesStates from "../components/Homepage/CitiesStates";
 import Navigation from "../components/Navigation/Navigation";
 import TopArtists from "../components/Homepage/TopArtists";
 import Link from "next/link";
+import TicketMaster from "../components/TicketMaster/TicketMaster";
 
 export async function getServerSideProps() {
   const locations = getLocations();
@@ -39,11 +40,16 @@ export default function Home({ locations, topArtists }) {
       <Head>
         <title>{siteTitle}</title>
         <meta
+          name="impact-site-verification"
+          value="5cfd0d65-e35f-46d0-888f-cd6252e7d10c"
+        />
+        <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         ></meta>
       </Head>
       <Navigation />
+      <TicketMaster />
       <section className="one">
         <div className="hero-home">
           <div>
