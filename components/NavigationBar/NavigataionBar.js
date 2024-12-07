@@ -60,7 +60,7 @@ const NavigationBar = ({
             setSearchTerm={setSearchTerm}
             navItems={dates}
           />
-          <NavItem
+          {/* <NavItem
             image="/images/icon-map.svg"
             text="city"
             title="Select Location"
@@ -68,7 +68,7 @@ const NavigationBar = ({
             navItems={locations}
             isLocation={true}
             isHome={isHome}
-          />
+          /> */}
         </section>
       </div>
     </>
