@@ -121,14 +121,17 @@ export const makeImageUrl = (string) => {
 
 export const ToSlugArtist = (string) => {
   if (!string) return "undefined";
+
   const cleanString = string
-    .replace(/[^a-zA-Z0-9 ]/g, "-") // Replace non-alphanumeric characters except spaces
-    .replace(/ /g, "-") // Replace spaces with dashes
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // Remove combining diacritical marks but keep base letters
+    .replace(/[^a-zA-Z0-9\u00C0-\u024F ]/g, "-") // Keep letters including accented ones
+    .replace(/ /g, "-")
     .split("&")
     .join("&amp;")
     .toLowerCase()
-    .replace(/-+/g, "-") // Replace multiple dashes with a single dash
-    .replace(/^-+|-+$/g, ""); // Trim dashes from the start and end of the string
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
 
   return cleanString;
 };
