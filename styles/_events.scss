@@ -85,6 +85,7 @@
   margin-bottom: 10px;
   display: flex;
   overflow: hidden;
+  border: 2px solid $lightGrey;
   @media only screen and (min-width: 768px) {
     border-radius: $borderRadius;
     margin-bottom: 0;
@@ -132,11 +133,14 @@
       display: inline-block;
     }
   }
+  &.ticketmaster-border {
+    border: 2px solid $pink;
+  }
 }
 
 .artist-fallback {
   background-color: white;
-  // background-image: url("https://music.sandiegohousemusic.com/artist-images/no-image.jpg");
+  background-image: url("https://www.sandiegohousemusic.com/images/housemusic192.png");
   width: 120px;
   height: 120px;
   background-repeat: no-repeat;

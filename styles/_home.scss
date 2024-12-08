@@ -3,17 +3,18 @@
   flex-direction: column;
   background-color: $lightGrey;
   padding: 0 2em;
-  height: 93vh;
+  height: calc(100vh - 60px);
 
   > div {
     text-align: center;
   }
   h1 {
-    padding-top: 30vh;
+    padding-top: 26vh;
     text-align: center;
     border: none;
     font-size: 30px;
     @media only screen and (min-width: 768px) {
+      padding-top: 33vh;
       font-size: 35px;
     }
   }
