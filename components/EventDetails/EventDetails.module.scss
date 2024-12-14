@@ -46,8 +46,9 @@
 }
 
 .eventArtist {
+  font-size: 24px;
+  font-weight: 500;
   word-wrap: anywhere;
-  font-weight: 400;
   line-height: 34px;
   text-align: left;
   position: relative;
@@ -68,11 +69,6 @@
   }
 }
 
-.truncatedArtist {
-  color: grey;
-  font-size: 12px;
-}
-
 .eventVenue {
   display: block;
   font-size: 15px;
@@ -86,7 +82,7 @@
     display: block;
   }
   a {
-    color: $black;
+    color: #878787;
 
     span {
       padding-top: 5px;
