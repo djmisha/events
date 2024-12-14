@@ -105,16 +105,8 @@ export const shuffleArray = (array) => {
 export const makeImageUrl = (string) => {
   const url = "/images/artists/";
   const cleanString = string.split("'").join("&#39").split("/").join("&#47");
-  // when these are on it does not work.
-  // todo: image scrape - file names should not have special characters
-  // .split("(")
-  // .join("%28")
-  // .split(")")
-  // .join("%29")
-  // .split(" ")
-  // .join("%20");
-
   const imageURL = `${url}${cleanString}.jpg`;
+
   return imageURL;
 };
 
