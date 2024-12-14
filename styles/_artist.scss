@@ -3,16 +3,25 @@
     border: none;
     text-align: center;
   }
-  .artist-header {
-    .artist-fallback,
-    .artist-image {
-      border-radius: 50%;
-      width: 120px;
-      height: 120px;
-      margin: 0 auto;
-      text-align: center;
-    }
-  }
+}
+
+.artist-fallback {
+  background-color: white;
+  background-image: url("https://www.sandiegohousemusic.com/images/housemusic192.png");
+  width: 120px;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.artist-fallback,
+.artist-image {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  text-align: center;
+  background-size: cover;
 }
 
 .artist-bio {
