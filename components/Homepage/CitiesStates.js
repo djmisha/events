@@ -1,10 +1,17 @@
 import { useContext } from "react";
 import { AppContext } from "../../features/AppContext";
 import Link from "next/link";
+import styles from "./CitiesStates.module.scss";
 
-const CitiesStates = ({ locations }) => {
-  const cities = locations.slice(0, 50);
-  const states = locations.slice(50);
+const CitiesStates = ({
+  locations,
+  showCitiesOnly = false,
+  showStatesOnly = false,
+}) => {
+  const cities = locations.filter((location) => location.city);
+  const states = locations.filter(
+    (location) => location.state && !location.city
+  );
   const { addLocation } = useContext(AppContext);
 
   const handleClick = (location) => addLocation(location);
@@ -23,12 +30,20 @@ const CitiesStates = ({ locations }) => {
   };
 
   return (
-    <>
-      <h2>Cities</h2>
-      <ul>{renderList(cities, "city")}</ul>
-      <h2>States</h2>
-      <ul>{renderList(states, "state")}</ul>
-    </>
+    <div className={styles.citiesStates}>
+      {!showStatesOnly && (
+        <>
+          <h2>Cities</h2>
+          <ul>{renderList(cities, "city")}</ul>
+        </>
+      )}
+      {!showCitiesOnly && (
+        <>
+          <h2>States</h2>
+          <ul>{renderList(states, "state")}</ul>
+        </>
+      )}
+    </div>
   );
 };
 

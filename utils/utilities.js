@@ -115,7 +115,6 @@ export const makeImageUrl = (string) => {
   // .join("%20");
 
   const imageURL = `${url}${cleanString}.jpg`;
-
   return imageURL;
 };
 

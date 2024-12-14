@@ -58,7 +58,7 @@ const EventsModule = ({ locationData, isHome, events: initialEvents }) => {
           })}
         </div>
       </section>
-      {events && <Sidebar events={events} setSearchTerm={setSearchTerm} />}
+      {/* {events && <Sidebar events={events} setSearchTerm={setSearchTerm} />} */}
       {events && (
         <NavigationBar
           events={events}

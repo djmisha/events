@@ -3,21 +3,55 @@ import Artists from "../Artists/Artists";
 import setDates from "../../utils/setDates";
 import { makeImageUrl } from "../../utils/utilities";
 import Image from "next/image";
+import Modal from "../Modal/Modal";
+import EventDetails from "../EventDetails/EventDetails";
+import styles from "./EventCard.module.scss";
 
 export const EventCard = ({ event }) => {
-  const { date, artistList, name, venue, link, isVisible, eventSource } = event;
-  const { name: venueName, address } = venue;
+  const {
+    date,
+    artistList,
+    name,
+    venue,
+    link,
+    isVisible,
+    eventSource,
+    imageUrl,
+  } = event;
+  const { name: venueName } = venue; // Removed address
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
-  const [isOpen, setIsOpen] = useState(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const truncatedArtistList =
+    artistList.length > 3
+      ? artistList.slice(0, 3).concat({
+          name: (
+            <span className={styles.truncatedArtist}>
+              ... {artistList.length - 3} more artists
+            </span>
+          ),
+        })
+      : artistList;
 
   const ArtistImage = () => {
-    const url = artistList[0]?.name
-      ? makeImageUrl(artistList[0].name)
-      : makeImageUrl("no-image");
+    const url =
+      imageUrl ||
+      (artistList[0]?.name
+        ? makeImageUrl(artistList[0].name)
+        : makeImageUrl("no-image"));
     return (
-      <div className="artist-fallback">
+      <div className={styles.artistFallback}>
         <div
-          className="artist-image"
+          className={styles.artistImage}
           style={{
             backgroundImage: `url('${url}')`,
           }}
@@ -26,76 +60,57 @@ export const EventCard = ({ event }) => {
     );
   };
 
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <div
-      className={`single-event ${isOpen ? "view-full" : "view-partial"} ${
-        isVisible ? "visible" : "hidden"
-      } `}
-      itemScope=""
-      itemType="http://schema.org/Event"
-      onClick={handleClick}
-    >
-      <ArtistImage />
-      <div className="event-info">
-        <div className="event-date" itemProp="startDate" content={daySchema}>
-          <div>
-            {dayOfWeek}, {dayMonth}
+    <>
+      <div
+        className={`${styles.singleEvent} ${styles.viewFull} ${
+          isVisible ? styles.visible : styles.hidden
+        } ${eventSource === "ticketmaster" ? styles.ticketmasterBorder : ""}`}
+        itemScope=""
+        itemType="http://schema.org/Event"
+        onClick={handleModalOpen}
+      >
+        <ArtistImage />
+        <div className={styles.eventInfo}>
+          <div
+            className={styles.eventDate}
+            itemProp="startDate"
+            content={daySchema}
+          >
+            <div>
+              {dayOfWeek}, {dayMonth}
+            </div>
+          </div>
+          <div className={styles.eventTitleArtist}>
+            {name && (
+              <span className={styles.eventTitle} itemProp="name">
+                {name}
+              </span>
+            )}
+            <span className={styles.eventArtist} itemProp="name">
+              <Artists data={truncatedArtistList} />
+            </span>
+          </div>
+          <div
+            className={styles.eventVenue}
+            itemProp="location"
+            itemScope=""
+            itemType="http://schema.org/Place"
+          >
+            <span itemProp="name">{venueName}</span>{" "}
+          </div>
+          <div className={styles.eventLink}>
+            <a onClick={handleModalOpen}>View Details</a>
           </div>
         </div>
-        <div className="event-title-artist">
-          {name && (
-            <span className="event-title" itemProp="name">
-              {name}
-            </span>
-          )}
-          <span className="event-artist" itemProp="name">
-            <Artists data={artistList} />
-          </span>
-        </div>
-        <div
-          className="event-venue"
-          itemProp="location"
-          itemScope=""
-          itemType="http://schema.org/Place"
-        >
-          <span itemProp="name">{venueName}</span>{" "}
-        </div>
-        <div
-          className="event-location"
-          itemScope=""
-          itemType="http://schema.org/PostalAddress"
-          itemProp="address"
-          content={address}
-        >
-          {address && (
-            <a
-              rel="noreferrer"
-              href={`https://www.google.com/maps/search/${venueName}${address}`}
-              target="_blank"
-            >
-              <span>
-                {address}
-                <Image
-                  src="/images/icon-link.svg"
-                  alt="Map Icon"
-                  width="15"
-                  height="15"
-                />
-              </span>
-            </a>
-          )}
-        </div>
-        <div className="event-link">
-          <a href={link} target="_blank" rel="noreferrer">
-            View on {eventSource}
-          </a>
-        </div>
       </div>
-    </div>
+      {isModalOpen && (
+        <Modal
+          component={() => <EventDetails event={event} />}
+          onClose={handleModalClose}
+        />
+      )}
+    </>
   );
 };
 

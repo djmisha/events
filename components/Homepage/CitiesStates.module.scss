@@ -1,0 +1,21 @@
+.citiesStates {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      width: 50%;
+      padding: 10px 0px;
+      @media only screen and (min-width: 768px) {
+        width: 25%;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}

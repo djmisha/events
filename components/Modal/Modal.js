@@ -1,27 +1,28 @@
-import Image from "next/image";
+import React from "react";
+import PropTypes from "prop-types";
+import styles from "./Modal.module.scss";
 
-const Modal = ({ content, title, isOpen, SetIsOpen }) => {
-  const handleClose = () => {
-    SetIsOpen(false);
-  };
-
+const Modal = ({ component: Component, onClose }) => {
   return (
-    <div className={`modal ${isOpen ? "modal-open" : "modal-closed"}`}>
-      <div className="modal-content">
-        <div className="modal-close" onClick={handleClose}>
-          <Image
-            width={25}
-            height={25}
-            src="/images/icon-back.svg"
-            alt="Menu"
-          />
-          <span>Back</span>
+    <div className={styles["modal-overlay"]} onClick={onClose}>
+      <div
+        className={styles["modal-content"]}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button className={styles["modal-close"]} onClick={onClose}>
+          &times;
+        </button>
+        <div className={styles["modal-body"]}>
+          <Component />
         </div>
-        <h3>{title}</h3>
-        <div dangerouslySetInnerHTML={{ __html: content }}></div>
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  component: PropTypes.elementType.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default Modal;
