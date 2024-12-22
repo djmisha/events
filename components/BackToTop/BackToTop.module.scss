@@ -1,4 +1,4 @@
-.back-to-top {
+.backToTop {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -15,10 +15,10 @@
   z-index: 1;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  &.b-visible {
+  &.visible {
     opacity: 1;
   }
-  &.b-hidden {
+  &.hidden {
     opacity: 0;
   }
 }
