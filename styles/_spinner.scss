@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 .spinner {
   > div {
     z-index: 9999;

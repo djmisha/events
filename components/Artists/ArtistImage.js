@@ -16,7 +16,7 @@ const ArtistImage = ({ id }) => {
 };
 
 ArtistImage.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number,
 };
 
 export default ArtistImage;

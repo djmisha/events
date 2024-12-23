@@ -1,4 +1,4 @@
-@import "../../styles/_variables.scss";
+@use "../../styles/_variables" as v;
 
 .singleEvent {
   position: relative;
@@ -7,7 +7,7 @@
   padding: 20px 10px 20px 10px;
   margin: 0px 0px;
   position: relative;
-  background-color: $lightGrey;
+  background-color: v.$lightGrey;
   transition: all 0.15s ease-in-out;
   position: relative;
   top: 0;
@@ -15,10 +15,10 @@
   margin-bottom: 10px;
   display: flex;
   overflow: hidden;
-  border: 2px solid $lightGrey;
+  border: 2px solid v.$lightGrey;
   cursor: pointer;
   @media only screen and (min-width: 768px) {
-    border-radius: $borderRadius;
+    border-radius: v.$borderRadius;
     margin-bottom: 0;
     padding: 20px 20px 20px 20px;
   }
@@ -27,7 +27,7 @@
   }
   @media only screen and (min-width: 768px) {
     &:hover {
-      border: 2px solid $blue;
+      border: 2px solid v.$blue;
     }
   }
 
@@ -46,7 +46,7 @@
     }
   }
   &.ticketmaster-border {
-    border: 2px solid $pink;
+    border: 2px solid v.$pink;
   }
 }
 
@@ -73,7 +73,7 @@
   font-size: 15px;
   line-height: 26px;
   font-weight: 400;
-  color: $blue;
+  color: v.$blue;
 }
 
 .eventInfo {
@@ -81,7 +81,7 @@
 }
 
 .eventTitle {
-  color: $black;
+  color: v.$black;
   padding-bottom: 10px;
   display: block;
 }
@@ -98,10 +98,10 @@
     padding-right: 7px;
   }
   > div:nth-of-type(even) {
-    color: $orange;
+    color: v.$orange;
   }
   > div:nth-of-type(odd) {
-    color: $pink;
+    color: v.$pink;
   }
   @media only screen and (min-width: 768px) {
     padding-bottom: 10px;
@@ -117,7 +117,7 @@
   display: block;
   font-size: 15px;
   line-height: 26px;
-  color: $black;
+  color: v.$black;
 }
 
 .eventLocation {
@@ -150,7 +150,7 @@
   display: inline-block;
   font-weight: 400;
   padding: 5px 15px;
-  border-radius: $borderRadius;
+  border-radius: v.$borderRadius;
   color: rgb(180, 180, 180);
   @media only screen and (min-width: 768px) {
     margin-top: 30px;

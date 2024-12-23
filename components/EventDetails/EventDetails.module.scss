@@ -1,4 +1,4 @@
-@import "../../styles/_variables.scss";
+@use "../../styles/_variables" as v;
 
 .eventDetails {
   display: flex;
@@ -34,13 +34,13 @@
   font-size: 15px;
   line-height: 26px;
   font-weight: 400;
-  color: $blue;
+  color: v.$blue;
   padding-bottom: 10px;
-  border-bottom: 1px solid $lightGrey;
+  border-bottom: 1px solid v.$lightGrey;
 }
 
 .eventTitle {
-  color: $black;
+  color: v.$black;
   padding-bottom: 10px;
   display: block;
 }
@@ -59,10 +59,10 @@
     padding-right: 7px;
   }
   > div:nth-of-type(even) {
-    color: $orange;
+    color: v.$orange;
   }
   > div:nth-of-type(odd) {
-    color: $pink;
+    color: v.$pink;
   }
   @media only screen and (min-width: 768px) {
     padding-bottom: 10px;
@@ -73,7 +73,7 @@
   display: block;
   font-size: 15px;
   line-height: 26px;
-  color: $black;
+  color: v.$black;
   padding-top: 20px;
 }
 
@@ -103,14 +103,14 @@
 .eventLink a {
   font-size: 12px;
   text-decoration: none;
-  border: 1px solid $pink !important;
+  border: 1px solid v.$pink !important;
   margin-top: 40px;
   display: inline-block;
   font-weight: 400;
   padding: 5px 15px;
-  border-radius: $borderRadius;
-  background-color: $pink;
-  color: $white;
+  border-radius: v.$borderRadius;
+  background-color: v.$pink;
+  color: v.$white;
   @media only screen and (min-width: 768px) {
     margin-top: 30px;
   }

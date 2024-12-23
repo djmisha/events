@@ -1,5 +1,18 @@
 # Roadmap
 
+## Ticketmaster to do
+
+- figure out why link does not work ??
+- check API and see how you can get more data or events
+- make Ticket Master API work for STATE and for EVENT DATA (to be used on event overlay)
+- [x] add fallback image
+
+# Other stuff
+
+- pagination for events pages
+- remove twitch from navigation
+- add dj misha somewhere!
+
 ## 2025 Ideas
 
 - homepage simplified
@@ -25,8 +38,7 @@
 
 - table for all artists
   - [x] create table to hold top aritst
-  - at build time - fetch the data from Supabase artists table
-    - need to write func to fetch all artists from endpoint - deploy the endpoint first
+  - [x] at build time - build from local JSON file
   - inserts only new ones from the EDM TRAIN API, when feteched from top artists page
   - populates from last.fm with bio data on each artist
   - populates from last.fm with TAGS data on each artist
@@ -36,16 +48,17 @@
 
 - [] ARTIST PAGES: social media icons
 
-- [] get the all events data at build time, rathar than the static JSON object file?
+- [x] get the all events data at build time, rathar than the static JSON object file?
 
 - [] bug: artists page uses different layout so there is no context for the location
 
 ## Database
 
+- all artits table to include slug
 - table for locations
 - table for venues!
 - table for events
-  - populate with all events from EDM TRAIN API?
+  - populate with each new events call from EDM TRAIN API
 
 ### SEO
 
