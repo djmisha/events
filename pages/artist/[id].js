@@ -37,7 +37,7 @@ export default function Artist({ artistData }) {
       <Hamburger />
       <div className="artist">
         <div className="artist-header">
-          <ArtistImage name={name} />
+          <ArtistImage name={id} />
           <h1>{name}</h1>
         </div>
         <ArtistBio name={name} />
