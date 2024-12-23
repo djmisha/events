@@ -35,34 +35,27 @@ export async function getStaticProps() {
   }
 
   const json = await apiResponse.json();
-  const events = getArtistsCounts(json.data);
-
-  // @TODO
-  // USE THIS DATA TO ADD TO SUPABASE ARTIST TABLE THE NEW ARTISTS 
-  // USE DATA TO ADD ALL EVENTS TO SUPABASE EVENTS TABLE
+  const uniqueArtists = getArtistsCounts(json.data);
 
   return {
     props: {
-      events,
+      uniqueArtists,
     },
     revalidate: 2419200, // 1 month
   };
 }
 
-const Artists = ({ events }) => {
-  const topArtists = events.slice(0, 200);
-  const apiEvents = events.slice(0, 30);
+const Artists = ({ uniqueArtists }) => {
+  const topArtists = uniqueArtists.slice(0, 200);
+  const apiEvents = uniqueArtists.slice(0, 30);
   const hasFetched = useRef(false);
 
   useEffect(() => {
     if (!hasFetched.current && apiEvents) {
-      // TODO: Extract into a func
       async function postData() {
-        let response;
         try {
-          response = await fetch(
-            // "http://localhost:3000/api/supabase/posttopartists",
-            "https://sandiegohousemusic.com/api/supabase/posttopartists",
+          await fetch(
+            `${process.env.NEXT_PUBLIC_BASE_URL}/api/supabase/posttopartists`,
             {
               method: "POST",
               headers: {
@@ -73,7 +66,6 @@ const Artists = ({ events }) => {
           );
         } catch (error) {
           console.error("Fetch failed: ", error);
-          throw new Error(`Fetch failed: ${error.message}`);
         }
       }
 
@@ -97,10 +89,11 @@ const Artists = ({ events }) => {
         <div className="top-artists-list">
           {topArtists?.map((item) => {
             const { id, name, count, locations } = item;
+
             return (
               <Link href={`/artist/${ToSlugArtist(name)}`} key={id}>
                 <div className="top-artists-single" key={name}>
-                  <ArtistImage name={name} />
+                  <ArtistImage id={id} />
                   <div className="top-artists-single-name">
                     {name}
                     <div className="top-artists-single-counts">
