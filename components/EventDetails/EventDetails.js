@@ -1,30 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Artists from "../Artists/Artists";
+import ArtistImage from "../Artists/ArtistImage";
 import setDates from "../../utils/setDates";
-import { makeImageUrl } from "../../utils/utilities";
 import styles from "./EventDetails.module.scss";
 
 const EventDetails = ({ event }) => {
-  const { date, artistList, name, venue, link, eventSource, imageUrl } = event;
+  const { date, artistList, name, venue, link, eventSource } = event;
   const { name: venueName, address } = venue;
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
-
-  const url =
-    imageUrl ||
-    (artistList[0]?.name
-      ? makeImageUrl(artistList[0].name)
-      : makeImageUrl("no-image"));
 
   return (
     <div className={styles.eventDetails}>
       <div className={styles.artistFallback}>
-        <div
-          className={styles.artistImage}
-          style={{
-            backgroundImage: `url('${url}')`,
-          }}
-        ></div>
+        <ArtistImage id={artistList[0]?.id} />
       </div>
       <div className={styles.eventInfo}>
         <div

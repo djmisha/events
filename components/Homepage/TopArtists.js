@@ -20,7 +20,7 @@ const TopArtists = ({ artists }) => {
           return (
             <Link href={`/artist/${ToSlugArtist(name)}`} key={id}>
               <div className="top-artists-single">
-                <ArtistImage name={name} />
+                <ArtistImage id={id} />
                 <div className="top-artists-single-name">
                   {name}
                   <div className="top-artists-single-counts">

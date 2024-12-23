@@ -1,7 +1,8 @@
-import { makeImageUrl } from "../../utils/utilities";
+import PropTypes from "prop-types";
 
-const ArtistImage = ({ name }) => {
-  const url = name ? makeImageUrl(name) : makeImageUrl("no-image");
+const ArtistImage = ({ id }) => {
+  const url = id ? `/images/artists/${id}.jpg` : "/images/artists/no-image.jpg";
+
   return (
     <div className="artist-fallback">
       <div
@@ -12,6 +13,10 @@ const ArtistImage = ({ name }) => {
       ></div>
     </div>
   );
+};
+
+ArtistImage.propTypes = {
+  id: PropTypes.string,
 };
 
 export default ArtistImage;

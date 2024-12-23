@@ -1,23 +1,13 @@
 import React, { useState } from "react";
 import Artists from "../Artists/Artists";
+import ArtistImage from "../Artists/ArtistImage";
 import setDates from "../../utils/setDates";
-import { makeImageUrl } from "../../utils/utilities";
-import Image from "next/image";
 import Modal from "../Modal/Modal";
 import EventDetails from "../EventDetails/EventDetails";
 import styles from "./EventCard.module.scss";
 
 export const EventCard = ({ event }) => {
-  const {
-    date,
-    artistList,
-    name,
-    venue,
-    link,
-    isVisible,
-    eventSource,
-    imageUrl,
-  } = event;
+  const { date, artistList, name, venue, link, isVisible, eventSource } = event;
   const { name: venueName } = venue; // Removed address
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
 
@@ -42,20 +32,11 @@ export const EventCard = ({ event }) => {
         })
       : artistList;
 
-  const ArtistImage = () => {
-    const url =
-      imageUrl ||
-      (artistList[0]?.name
-        ? makeImageUrl(artistList[0].name)
-        : makeImageUrl("no-image"));
+  const ArtistImageWrapper = () => {
+    const artistId = artistList[0]?.id;
     return (
       <div className={styles.artistFallback}>
-        <div
-          className={styles.artistImage}
-          style={{
-            backgroundImage: `url('${url}')`,
-          }}
-        ></div>
+        <ArtistImage id={artistId} />
       </div>
     );
   };
@@ -70,7 +51,7 @@ export const EventCard = ({ event }) => {
         itemType="http://schema.org/Event"
         onClick={handleModalOpen}
       >
-        <ArtistImage />
+        <ArtistImageWrapper />
         <div className={styles.eventInfo}>
           <div
             className={styles.eventDate}
