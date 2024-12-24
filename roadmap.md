@@ -1,5 +1,10 @@
 # Roadmap
 
+## Next.js 15 Upgrade
+
+- app router - rename folder structure
+- refactor getserver side props
+
 ## Ticketmaster to do
 
 - figure out why link does not work ??
