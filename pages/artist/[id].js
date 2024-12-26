@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Layout from "../../components/layout";
 import {
-  getAritstIds,
   getArtistData,
   getArtistEvents,
+  getArtistLastFM,
 } from "../../utils/getArtists";
 import ArtistImage from "../../components/Artists/ArtistImage";
 import ArtistBio from "../../components/Artists/ArtistBio";
@@ -12,20 +11,11 @@ import EventCard from "../../components/EventCard/EventCard";
 import Hamburger from "../../components/Hamburger/Hamburger";
 import GoogleAutoAds from "../../components/3rdParty/googleAds";
 
-export default function Artist({ artistData }) {
+export default function Artist({ artistData, events, lastFMdata }) {
   const { name, id } = artistData;
-  const [events, setEvents] = useState();
-  const eventDataFetchedRef = useRef();
 
   const title = `${name} - Upcoming Events & Artist Informaton`;
   const description = `${name} Tour Dates, Shows, Concert Tickets & Live Streams. Learn more about ${name}`;
-
-  // Fetches events for artist
-  useEffect(() => {
-    if (eventDataFetchedRef.current === id) return;
-    eventDataFetchedRef.current = id;
-    getArtistEvents(id, setEvents);
-  }, [id]);
 
   return (
     <Layout>
@@ -40,7 +30,7 @@ export default function Artist({ artistData }) {
           <ArtistImage name={id} />
           <h1>{name}</h1>
         </div>
-        <ArtistBio name={name} />
+        <ArtistBio name={name} lastFMdata={lastFMdata} />
         {events?.length != 0 && (
           <>
             <h2>{name} Upcoming Events</h2>
@@ -56,30 +46,24 @@ export default function Artist({ artistData }) {
   );
 }
 
-// Gets slugs for each dynamic page
-export async function getStaticPaths() {
-  const paths = await getAritstIds();
+// Remove getStaticPaths as it's not needed with getServerSideProps
 
-  const validPaths = paths.filter(
-    (path) => path?.params?.id && typeof path.params.id === "string"
-  );
+export async function getServerSideProps({ params }) {
+  try {
+    const artistData = await getArtistData(params.id);
+    const events = await getArtistEvents(artistData.id);
+    const lastFMdata = await getArtistLastFM(artistData.name);
 
-  return {
-    paths: validPaths,
-    fallback: false,
-  };
-}
-/**
- * Gets data for each page based on slug
- * @param {*} params
- * @returns locationData
- */
-export async function getStaticProps({ params }) {
-  const artistData = await getArtistData(params.id);
-
-  return {
-    props: {
-      artistData,
-    },
-  };
+    return {
+      props: {
+        artistData,
+        events,
+        lastFMdata: lastFMdata || null,
+      },
+    };
+  } catch (error) {
+    return {
+      notFound: true,
+    };
+  }
 }

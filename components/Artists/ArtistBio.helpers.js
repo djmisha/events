@@ -1,3 +1,4 @@
+// @TODO - add line breaks before read more, add paragraph style for CC license
 export const formatBio = (bio) => {
   if (!bio) return "";
   let clean = bio
