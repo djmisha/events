@@ -199,9 +199,28 @@ export const getArtistEvents = async (id, setEvents) => {
   const response = await fetch(url, { mode: "no-cors" });
   if (response.ok) {
     const json = await response.json();
-    parseData(json.data);
-    setEvents(json.data);
+    const data = parseData(json.data);
+    return data;
   } else {
     throw new Error(response.statusText);
+  }
+};
+
+// get LastFM data for artist
+export const getArtistLastFM = async (name) => {
+  try {
+    const url =
+      process.env.NODE_ENV === "development"
+        ? `http://localhost:3000/api/lastfm/artistgetinfo/${name}`
+        : `https://www.sandiegohousemusic.com/api/lastfm/artistgetinfo/${name}`;
+
+    const response = await fetch(url, { mode: "no-cors" });
+    if (!response.ok) return null;
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching LastFM data:", error);
+    return null;
   }
 };
