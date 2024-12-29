@@ -51,5 +51,6 @@ export async function getStaticProps({ params }) {
       locationData,
       events,
     },
+    revalidate: 21600, // Revalidate every 6 hours
   };
 }
