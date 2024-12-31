@@ -27,7 +27,7 @@ export default function Artist({ artistData, events, lastFMdata }) {
       <Hamburger />
       <div className="artist">
         <div className="artist-header">
-          <ArtistImage name={id} />
+          <ArtistImage id={id} />
           <h1>{name}</h1>
         </div>
         <ArtistBio name={name} lastFMdata={lastFMdata} />
