@@ -30,7 +30,14 @@ export async function getServerSideProps({ params, res }) {
   );
 
   const locationData = getLocationData(params.id);
-  const events = await getEvents(locationData);
+
+  if (!locationData.id) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const events = await getEvents(locationData.id);
 
   return {
     props: {
