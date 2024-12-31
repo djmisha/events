@@ -45,8 +45,13 @@ export default function Artist({ artistData, events, lastFMdata }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, res }) {
   try {
+    res.setHeader(
+      "Cache-Control",
+      "public, s-maxage=86400, stale-while-revalidate=86400"
+    );
+
     const artistData = await getArtistData(params.id);
     const events = await getArtistEvents(artistData.id);
     const lastFMdata = await getArtistLastFM(artistData.name);
