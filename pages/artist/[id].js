@@ -13,7 +13,6 @@ import GoogleAutoAds from "../../components/3rdParty/googleAds";
 
 export default function Artist({ artistData, events, lastFMdata }) {
   const { name, id } = artistData;
-
   const title = `${name} - Upcoming Events & Artist Informaton`;
   const description = `${name} Tour Dates, Shows, Concert Tickets & Live Streams. Learn more about ${name}`;
 
@@ -45,8 +44,6 @@ export default function Artist({ artistData, events, lastFMdata }) {
     </Layout>
   );
 }
-
-// Remove getStaticPaths as it's not needed with getServerSideProps
 
 export async function getServerSideProps({ params }) {
   try {
