@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import ArtistImage from "../Artists/ArtistImage";
 import { ToSlugArtist, shuffleArray } from "../../utils/utilities";
@@ -6,9 +6,13 @@ import { ToSlugArtist, shuffleArray } from "../../utils/utilities";
 const TopArtists = () => {
   const [randomArtists, setRandomArtists] = useState([]);
   const [artists, setArtists] = useState([]);
+  const fetchedRef = useRef(false);
 
   useEffect(() => {
     const fetchArtists = async () => {
+      if (fetchedRef.current) return;
+      fetchedRef.current = true;
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/supabase/gettopartists`
       );
