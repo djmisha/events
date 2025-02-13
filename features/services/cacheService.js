@@ -5,11 +5,46 @@ const HOURS = 6;
 const CACHE_MAX_AGE = HOURS * 60 * 60; // 6 hours in seconds
 
 /**
+ * Ensures a cache entry exists for the given location
+ * If no entry exists, creates one with immediate update needed
+ * @param {string} locationId - The ID of the location to initialize
+ */
+const ensureCacheEntry = async (locationId) => {
+  const { data, error } = await supabase
+    .from("cache_control")
+    .select("location_id")
+    .eq("location_id", locationId)
+    .maybeSingle();
+
+  if (error) {
+    console.error("Cache initialization error:", error);
+    return;
+  }
+
+  if (!data) {
+    const now = new Date();
+    // Create initial cache entry with expired timestamp to force update
+    const { error: insertError } = await supabase.from("cache_control").insert({
+      location_id: locationId,
+      last_update: now.toISOString(),
+      next_update: now.toISOString(), // Set to current time to trigger immediate update
+    });
+
+    if (insertError) {
+      console.error("Cache entry creation error:", insertError);
+    }
+  }
+};
+
+/**
  * Determines if a location's cached data needs to be updated
  * @param {string} locationId - The ID of the location to check
  * @returns {Promise<boolean>} - True if cache needs update, false otherwise
  */
 export const checkNeedsUpdate = async (locationId) => {
+  // Ensure cache entry exists before checking
+  await ensureCacheEntry(locationId);
+
   const now = new Date();
 
   // Query the cache_control table for the location's next update time
@@ -17,10 +52,10 @@ export const checkNeedsUpdate = async (locationId) => {
     .from("cache_control")
     .select("next_update")
     .eq("location_id", locationId)
-    .single();
+    .maybeSingle(); // Changed from single() to maybeSingle()
 
-  // Handle database errors, excluding "not found" errors
-  if (error && error.code !== "PGNF") {
+  // If there's an error that's not related to finding rows
+  if (error) {
     console.error("Cache check error:", error);
     return true; // Conservative approach: update on error
   }
