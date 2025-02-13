@@ -1,8 +1,10 @@
-/**
- * EDMtrain API
- * @param {*} req
- * @param {*} res - event data object
- */
+import { updateDBEvents } from "../../../features/services/eventService";
+import {
+  checkNeedsUpdate,
+  updateCacheTimestamp,
+} from "../../../features/services/cacheService";
+
+const CACHE_MAX_AGE = 21600; // 6 hours in seconds
 
 export default async function handler(req, res) {
   const { id } = req.query;
@@ -11,12 +13,35 @@ export default async function handler(req, res) {
   const URL = EDMURL + id + "&client=" + KEY;
 
   try {
+    // Always fetch from EDMtrain
     const apiResponse = await fetch(URL);
     const data = await apiResponse.json();
-    res.setHeader("Cache-Control", "s-maxage=21600"); // 6 hours
-    res.status(200).json(data);
+
+    if (!data.data) {
+      throw new Error("Invalid event data received");
+    }
+
+    // Check if we need to update the database
+    const needsUpdate = await checkNeedsUpdate(id);
+    if (needsUpdate) {
+      console.log(`Updating database for location ${id}`);
+      // Update database and cache timestamp in the background
+      Promise.all([
+        updateDBEvents(data.data, id),
+        updateCacheTimestamp(id),
+      ]).catch((error) => {
+        console.error("Background update error:", error);
+      });
+    }
+
+    // Always return fresh API data
+    res.setHeader(
+      "Cache-Control",
+      `s-maxage=${CACHE_MAX_AGE}, stale-while-revalidate`
+    );
+    return res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ error });
-    console.error(error);
+    console.error("Error details:", error);
+    res.status(500).json({ error: error.message });
   }
 }
