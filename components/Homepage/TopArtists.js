@@ -3,8 +3,25 @@ import Link from "next/link";
 import ArtistImage from "../Artists/ArtistImage";
 import { ToSlugArtist, shuffleArray } from "../../utils/utilities";
 
-const TopArtists = ({ artists }) => {
+const TopArtists = () => {
   const [randomArtists, setRandomArtists] = useState([]);
+  const [artists, setArtists] = useState([]);
+
+  useEffect(() => {
+    const fetchArtists = async () => {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/supabase/gettopartists`
+      );
+      if (res.ok) {
+        const data = await res.json();
+        setArtists(data.data);
+      } else {
+        console.error("Error fetching data: ", res.status);
+      }
+    };
+
+    fetchArtists();
+  }, []);
 
   useEffect(() => {
     setRandomArtists(shuffleArray(artists));

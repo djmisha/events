@@ -12,29 +12,14 @@ import Link from "next/link";
 export async function getServerSideProps() {
   const locations = getLocations();
 
-  // PUT THIS BLOCK INTO A SEPERATE FILE
-  const res = await fetch(
-    "https://sandiegohousemusic.com/api/supabase/gettopartists"
-  );
-  const topArtists = await res.json();
-
-  if (!res.ok) {
-    console.error("Error fetching data: ", res.status);
-    return {
-      notFound: true,
-    };
-  }
-  // PUT THIS BLOCK INTO A SEPERATE FILE
-
   return {
     props: {
       locations,
-      topArtists,
     },
   };
 }
 
-export default function Home({ locations, topArtists }) {
+export default function Home({ locations }) {
   return (
     <Layout home>
       <Head>
@@ -63,7 +48,7 @@ export default function Home({ locations, topArtists }) {
         <Locator locations={locations} />
       </section>
       <section className="two">
-        <TopArtists artists={topArtists.data} />
+        <TopArtists />
         <CitiesStates locations={locations} />
       </section>
       <footer>
