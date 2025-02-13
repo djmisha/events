@@ -31,6 +31,48 @@
 
 import supabase from "../../features/Supabase";
 
+// Add utility functions and constants
+const BATCH_SIZES = {
+  DELETE: 50, // Reduced batch size for deletes
+  UPSERT: 25, // Small batch size for upserts
+};
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Retry operation with exponential backoff
+ */
+const retryOperation = async (operation, maxRetries = 3) => {
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      return await operation();
+    } catch (error) {
+      const waitTime = Math.min(1000 * Math.pow(2, attempt), 10000);
+      console.warn(
+        `Attempt ${
+          attempt + 1
+        }/${maxRetries} failed. Retrying in ${waitTime}ms...`
+      );
+      await delay(waitTime);
+      if (attempt === maxRetries - 1) throw error;
+    }
+  }
+};
+
+/**
+ * Process data in smaller batches
+ */
+const processBatch = async (items, operation) => {
+  const results = [];
+  for (let i = 0; i < items.length; i += BATCH_SIZES.UPSERT) {
+    const batch = items.slice(i, i + BATCH_SIZES.UPSERT);
+    await delay(500); // Delay between batches
+    const result = await retryOperation(() => operation(batch));
+    results.push(result);
+  }
+  return results;
+};
+
 /**
  * Deletes events that are older than one day from the database
  * Uses batch processing to handle large datasets efficiently
@@ -47,6 +89,8 @@ const deleteOldEvents = async () => {
 
   try {
     while (hasMore) {
+      await delay(1000); // Delay between main batch operations
+
       // Get next batch of old events using pagination with ID
       const { data: oldEvents, error: fetchError } = await supabase
         .from("events")
@@ -55,7 +99,7 @@ const deleteOldEvents = async () => {
         .lt("event_date", oneDayAgo.toISOString())
         .gt("id", lastId) // Get records after the last ID we processed
         .order("id", { ascending: true })
-        .limit(batchSize);
+        .limit(BATCH_SIZES.DELETE);
 
       if (fetchError) {
         console.error("Error fetching old events:", fetchError);
@@ -73,26 +117,24 @@ const deleteOldEvents = async () => {
       lastId = batchIds[batchIds.length - 1]; // Track last processed ID for pagination
 
       // Delete related artist entries first to maintain referential integrity
-      const { error: artistError } = await supabase
-        .from("event_artists")
-        .delete()
-        .in("event_id", batchIds);
+      await retryOperation(async () => {
+        const { error } = await supabase
+          .from("event_artists")
+          .delete()
+          .in("event_id", batchIds);
+        if (error) throw error;
+      });
 
-      if (artistError) {
-        console.error("Error deleting artist entries:", artistError);
-        throw artistError;
-      }
+      await delay(500); // Delay between deletes
 
       // Delete the events after removing related records
-      const { error: eventError } = await supabase
-        .from("events")
-        .delete()
-        .in("id", batchIds);
-
-      if (eventError) {
-        console.error("Error deleting events:", eventError);
-        throw eventError;
-      }
+      await retryOperation(async () => {
+        const { error } = await supabase
+          .from("events")
+          .delete()
+          .in("id", batchIds);
+        if (error) throw error;
+      });
 
       totalDeleted += batchIds.length;
       console.log(
@@ -100,7 +142,7 @@ const deleteOldEvents = async () => {
       );
 
       // Check if we've processed all records
-      if (oldEvents.length < batchSize) {
+      if (oldEvents.length < BATCH_SIZES.DELETE) {
         hasMore = false;
       }
     }
@@ -190,42 +232,43 @@ const addNewEventsfromEDMTrain = async (data, locationId) => {
     const eventsToInsert = Array.from(eventMap.values());
     const artistData = Array.from(artistMap.values());
 
-    console.log("Batch operation quantities:", {
+    console.log("Starting batch operations with sizes:", {
       venues: venueData.length,
       events: eventsToInsert.length,
       artists: artistData.length,
     });
 
-    // Batch upsert venues
+    // Process venues in batches
     if (venueData.length > 0) {
-      const { error: venueError } = await supabase
-        .from("venues")
-        .upsert(venueData, { onConflict: "id" });
-
-      if (venueError) throw venueError;
-      console.log(`✓ Successfully processed ${venueData.length} venues`);
+      await processBatch(venueData, async (batch) => {
+        const { error } = await supabase
+          .from("venues")
+          .upsert(batch, { onConflict: "id" });
+        if (error) throw error;
+      });
+      console.log(`✓ Processed ${venueData.length} venues`);
     }
 
-    // Batch upsert events
+    // Process events in batches
     if (eventsToInsert.length > 0) {
-      const { error: eventError } = await supabase
-        .from("events")
-        .upsert(eventsToInsert, { onConflict: "id" });
-
-      if (eventError) throw eventError;
-      console.log(`✓ Successfully processed ${eventsToInsert.length} events`);
+      await processBatch(eventsToInsert, async (batch) => {
+        const { error } = await supabase
+          .from("events")
+          .upsert(batch, { onConflict: "id" });
+        if (error) throw error;
+      });
+      console.log(`✓ Processed ${eventsToInsert.length} events`);
     }
 
-    // Batch upsert artists
+    // Process artists in batches
     if (artistData.length > 0) {
-      const { error: artistError } = await supabase
-        .from("event_artists")
-        .upsert(artistData, { onConflict: "event_id,artist_id" });
-
-      if (artistError) throw artistError;
-      console.log(
-        `✓ Successfully processed ${artistData.length} artist entries`
-      );
+      await processBatch(artistData, async (batch) => {
+        const { error } = await supabase
+          .from("event_artists")
+          .upsert(batch, { onConflict: "event_id,artist_id" });
+        if (error) throw error;
+      });
+      console.log(`✓ Processed ${artistData.length} artist entries`);
     }
 
     console.log("All batch operations completed successfully");
