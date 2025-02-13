@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const ArtistImage = ({ id }) => {
-  const url = id ? `/images/artists/${id}.jpg` : "/images/artists/no-image.jpg";
+  const url = id ? `/images/artists/${id}.jpg` : "/images/housemusic192.png";
 
   return (
     <div className="artist-fallback">

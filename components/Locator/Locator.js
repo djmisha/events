@@ -20,7 +20,8 @@ const Locator = ({ locations }) => {
   // Events state
   const [events, setEvents] = useState();
   const [loading, setLoading] = useState(true);
-  console.log(events);
+  const eventsFetchedRef = useRef(false);
+
   // Loction state
   const [userLocation, setUserLocation] = useState();
   const [hasCity, setHasCity] = useState(false);
@@ -109,8 +110,10 @@ const Locator = ({ locations }) => {
   }, [locations, addLocation]);
 
   useEffect(() => {
-    if (userLocation?.id) getEventsHome(userLocation.id, setEvents, setLoading);
-    console.log(userLocation);
+    if (userLocation?.id && !eventsFetchedRef.current) {
+      eventsFetchedRef.current = true;
+      getEventsHome(userLocation.id, setEvents, setLoading);
+    }
   }, [userLocation]);
 
   return (
