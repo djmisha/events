@@ -1,4 +1,3 @@
-import events from "./events.sample.json";
 import setDates from "./setDates";
 
 /**
@@ -6,17 +5,9 @@ import setDates from "./setDates";
  * @param {number} id - City or State
  * @returns {Promise<Array>} - Events data
  */
-const getEvents = (id, setEvents, setLoading) => {
-  if (process.env.NODE_ENV === "development") {
-    return getSampleEvents();
-  } else {
-    return getEventsProd(id);
-  }
-};
 
-const getEventsProd = async (id) => {
-  console.log(id);
-  const PATH = `https://www.sandiegohousemusic.com/api/events/${id}`;
+const getEvents = async (id) => {
+  const PATH = `${process.env.NEXT_PUBLIC_BASE_URL}/api/events/${id}`;
 
   try {
     const response = await fetch(PATH, { mode: "cors" });
@@ -29,13 +20,6 @@ const getEventsProd = async (id) => {
     console.error(error);
     return [];
   }
-};
-
-// does not make API Call
-const getSampleEvents = async () => {
-  parseData(events);
-  console.log(events);
-  return events;
 };
 
 export const parseData = (data) => {
@@ -56,25 +40,17 @@ export const parseData = (data) => {
 export default getEvents;
 
 export const getEventsHome = async (id, setEvents, setLoading) => {
-  if (process.env.NODE_ENV === "development") {
-    console.log("getEventsHome");
-    const sample = await getSampleEvents();
-    parseData(sample);
-    setEvents(sample);
-    setLoading(false);
-  } else {
-    const PATH = `https://www.sandiegohousemusic.com/api/events/${id}`;
+  const PATH = `${process.env.NEXT_PUBLIC_BASE_URL}/api/events/${id}`;
 
-    await fetch(PATH, { mode: "cors" })
-      .then(function (response) {
-        response.json().then((res) => {
-          parseData(res.data);
-          setEvents(res.data);
-          setLoading(false);
-        });
-      })
-      .catch(function (error) {
-        console.error(error);
+  await fetch(PATH, { mode: "cors" })
+    .then(function (response) {
+      response.json().then((res) => {
+        parseData(res.data);
+        setEvents(res.data);
+        setLoading(false);
       });
-  }
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
 };
