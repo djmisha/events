@@ -7,7 +7,7 @@ import Hamburger from "../../components/Hamburger/Hamburger";
 import getEvents from "../../utils/getEvents";
 
 export default function Location({ locationData, events }) {
-  const { city, state } = locationData;
+  const { city, state, id } = locationData;
   const title = makePageTitle(city, state);
   const description = makePageDescription(city, state);
 
@@ -18,11 +18,7 @@ export default function Location({ locationData, events }) {
         <meta name="description" content={description} />
       </Head>
       <Hamburger />
-      <EventsModule
-        key={locationData.id}
-        locationData={locationData}
-        events={events}
-      />
+      <EventsModule key={id} locationData={locationData} events={events} />
     </Layout>
   );
 }

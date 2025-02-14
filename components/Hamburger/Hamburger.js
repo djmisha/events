@@ -5,6 +5,17 @@ import { AppContext } from "../../features/AppContext";
 import { toSlug } from "../../utils/getLocations";
 import styles from "./Hamburger.module.scss";
 
+const LocationLink = ({ city, state, onClick }) => {
+  const href = `/events/${toSlug(city || state)}`;
+  const label = city ? `${city}, ${state}` : state;
+
+  return (
+    <Link href={href} onClick={onClick} shallow={false}>
+      {label}
+    </Link>
+  );
+};
+
 const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
@@ -54,27 +65,13 @@ const Hamburger = () => {
           <div className={styles["recently-viewed"]}>
             <span>Recently Viewed</span>
             <ul>
-              {locationCtx?.map((location, index) => (
-                <li key={location.state}>
-                  {location.city ? (
-                    <Link
-                      href={`/events/${toSlug(location.city)}`}
-                      onClick={handleClick}
-                      scroll={false}
-                      shallow={false}
-                    >
-                      {location.city}, {location.state}
-                    </Link>
-                  ) : (
-                    <Link
-                      href={`/events/${toSlug(location.state)}`}
-                      onClick={handleClick}
-                      scroll={false}
-                      shallow={false}
-                    >
-                      {location.state}
-                    </Link>
-                  )}
+              {locationCtx?.map((location) => (
+                <li key={`${location.city}-${location.state}`}>
+                  <LocationLink
+                    city={location.city}
+                    state={location.state}
+                    onClick={handleClick}
+                  />
                 </li>
               ))}
             </ul>
