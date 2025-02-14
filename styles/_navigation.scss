@@ -340,7 +340,7 @@
 #date-list.visible {
   transition: all 0.3s ease-in-out;
   overflow: scroll;
-  bottom: 0px;
+  top: 0px;
   left: 0;
   right: 0;
   height: calc(100vh);
