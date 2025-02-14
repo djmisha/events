@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import CitiesStates from "../components/Homepage/CitiesStates";
-import Navigation from "../components/Navigation/Navigation";
 import { getLocations } from "../utils/getLocations";
 import NavigationBar from "../components/NavigationBar/NavigataionBar";
 
