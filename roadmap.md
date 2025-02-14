@@ -1,5 +1,11 @@
 # Roadmap
 
+# Database Options
+
+https://pocketbase.io/
+
+- VENUE PAGES - with all events at that venue !!!
+
 ## Next.js 15 Upgrade
 
 - app router - rename folder structure
