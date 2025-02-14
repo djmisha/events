@@ -16,10 +16,7 @@ export const MenuList = ({
   };
 
   const homeSlug = (slug) => {
-    if (isHome) {
-      return `/events/${slug}`;
-    }
-    return slug;
+    return `/events/${slug}`;
   };
   // @TODO - refactor dry
   return (

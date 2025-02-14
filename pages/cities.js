@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import CitiesStates from "../components/Homepage/CitiesStates";
 import { getLocations } from "../utils/getLocations";
-import NavigationBar from "../components/NavigationBar/NavigataionBar";
+import NavigationBar from "../components/Navigation/NavigataionBar";
 
 export async function getServerSideProps() {
   const locations = await getLocations();

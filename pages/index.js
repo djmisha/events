@@ -6,7 +6,7 @@ import Locator from "../components/Locator/Locator";
 import CitiesStates from "../components/Homepage/CitiesStates";
 import TopArtists from "../components/Homepage/TopArtists";
 import Link from "next/link";
-import NavigationBar from "../components/NavigationBar/NavigataionBar";
+import NavigationBar from "../components/Navigation/NavigataionBar";
 // import TicketMaster from "../components/TicketMaster/TicketMaster";
 
 export async function getServerSideProps() {
