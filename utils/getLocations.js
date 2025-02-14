@@ -45,23 +45,6 @@ const addCityAndState = (locations) => {
 
 export const allLocations = addCityAndState(locations);
 
-// gets id's for each location
-export const getLocationIds = () => {
-  return allLocations.map((location) => {
-    let id;
-    if (location.city) {
-      id = toSlug(location.city);
-    } else {
-      id = toSlug(location.state);
-    }
-    return {
-      params: {
-        id,
-      },
-    };
-  });
-};
-
 // gets all locations for homepage
 export const getLocations = () => {
   return allLocations.map((location) => {

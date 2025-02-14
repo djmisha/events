@@ -60,6 +60,8 @@ const Hamburger = () => {
                     <Link
                       href={`/events/${toSlug(location.city)}`}
                       onClick={handleClick}
+                      scroll={false}
+                      shallow={false}
                     >
                       {location.city}, {location.state}
                     </Link>
@@ -67,6 +69,8 @@ const Hamburger = () => {
                     <Link
                       href={`/events/${toSlug(location.state)}`}
                       onClick={handleClick}
+                      scroll={false}
+                      shallow={false}
                     >
                       {location.state}
                     </Link>

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "../../components/layout";
-import { getLocationIds, getLocationData } from "../../utils/getLocations";
+import { getLocationData } from "../../utils/getLocations";
 import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModule from "../../components/EventsModule/EventsModule";
 import Hamburger from "../../components/Hamburger/Hamburger";
@@ -18,7 +18,11 @@ export default function Location({ locationData, events }) {
         <meta name="description" content={description} />
       </Head>
       <Hamburger />
-      <EventsModule locationData={locationData} events={events} />
+      <EventsModule
+        key={locationData.id}
+        locationData={locationData}
+        events={events}
+      />
     </Layout>
   );
 }
