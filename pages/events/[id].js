@@ -3,7 +3,6 @@ import Layout from "../../components/layout";
 import { getLocationData } from "../../utils/getLocations";
 import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModule from "../../components/EventsModule/EventsModule";
-import Hamburger from "../../components/Hamburger/Hamburger";
 import getEvents from "../../utils/getEvents";
 
 export default function Location({ locationData, events }) {
@@ -17,7 +16,6 @@ export default function Location({ locationData, events }) {
         <title>{title}</title>
         <meta name="description" content={description} />
       </Head>
-      <Hamburger />
       <EventsModule key={id} locationData={locationData} events={events} />
     </Layout>
   );

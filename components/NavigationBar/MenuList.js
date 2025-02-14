@@ -9,6 +9,7 @@ export const MenuList = ({
   setSearchTerm,
   isLocation,
   isHome,
+  onClose,
 }) => {
   const handleClick = (e) => {
     setSearchTerm(e.target.innerText);
@@ -28,7 +29,13 @@ export const MenuList = ({
           <h2>{title}</h2>
           {navItems.map((item, index) => {
             return (
-              <div key={index + item} onClick={(e) => handleClick(e)}>
+              <div
+                key={index + item}
+                onClick={(e) => {
+                  if (setSearchTerm) setSearchTerm(item);
+                  onClose(e);
+                }}
+              >
                 {item}
               </div>
             );

@@ -17,61 +17,74 @@ const NavigationBar = ({
   setFilterVisible,
   isHome,
 }) => {
-  const venues = makeVenues(events);
-  const dates = makeDates(events);
-  const artists = makeArtists(events);
+  const venues = makeVenues(events ?? []);
+  const dates = makeDates(events ?? []);
+  const artists = makeArtists(events ?? []);
   const locations = makeLocations();
 
   return (
-    <>
+    <div className="main-navigation">
       <div className="top-nav-bar">
-        {events && (
-          <SearchAutoComplete
-            data={events}
-            setSearchTerm={setSearchTerm}
-            events={events}
-            setEvents={setEvents}
-            setFilterVisible={setFilterVisible}
-          />
-        )}
-        <Hamburger locationData={locationData} />
+        <div className="nav-grid">
+          <Hamburger locationData={locationData} />
+          <div className="nav-slot">
+            {locations?.length > 0 ? (
+              <NavItem
+                image="/images/icon-map.svg"
+                text="city"
+                title="Select Location"
+                setSearchTerm={setSearchTerm}
+                navItems={locations}
+                isLocation={true}
+                isHome={isHome}
+              />
+            ) : (
+              <div className="nav-placeholder" />
+            )}
+          </div>
+          <div className="nav-slot">
+            {venues?.length > 0 ? (
+              <NavItem
+                image="/images/icon-venue.svg"
+                text="venue"
+                navItems={venues}
+                title="Venues"
+                setSearchTerm={setSearchTerm}
+              />
+            ) : (
+              <div className="nav-placeholder" />
+            )}
+          </div>
+          <div className="nav-slot">
+            {artists?.length > 0 ? (
+              <NavItem
+                image="/images/icon-dj.svg"
+                text="artist"
+                navItems={artists}
+                title="DJ's and Artists"
+                setSearchTerm={setSearchTerm}
+              />
+            ) : (
+              <div className="nav-placeholder" />
+            )}
+          </div>
+          <div className="nav-slot">
+            {dates?.length > 0 ? (
+              <NavItem
+                image="/images/icon-cal.svg"
+                text="date"
+                title="Upcoming Dates"
+                setSearchTerm={setSearchTerm}
+                navItems={dates}
+              />
+            ) : (
+              <div className="nav-placeholder" />
+            )}
+          </div>
+        </div>
       </div>
       <BackToTop />
-      <div className="navigations">
-        <section className="sort">
-          <NavItem
-            image="/images/icon-venue.svg"
-            text="venue"
-            navItems={venues}
-            title="Venues"
-            setSearchTerm={setSearchTerm}
-          />
-          <NavItem
-            image="/images/icon-dj.svg"
-            text="artist"
-            navItems={artists}
-            title="DJ's and Artists"
-            setSearchTerm={setSearchTerm}
-          />
-          <NavItem
-            image="/images/icon-cal.svg"
-            text="date"
-            title="Upcoming Dates"
-            setSearchTerm={setSearchTerm}
-            navItems={dates}
-          />
-          {/* <NavItem
-            image="/images/icon-map.svg"
-            text="city"
-            title="Select Location"
-            setSearchTerm={setSearchTerm}
-            navItems={locations}
-            isLocation={true}
-            isHome={isHome}
-          /> */}
-        </section>
-      </div>
-    </>
+    </div>
   );
 };
 
