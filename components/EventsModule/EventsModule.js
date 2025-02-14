@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { storeUserLocation } from "../../utils/getUserLocation";
 import EventCard from "../../components/EventCard/EventCard";
-import NavigationBar from "../../components/NavigationBar/NavigataionBar";
+import NavigationBar from "../../components/Navigation/NavigataionBar";
 import { searchFilter } from "../../utils/searchFilter";
 import { makePageHeadline } from "../../utils/utilities";
 import Filter from "../../components/Filter/Filter";

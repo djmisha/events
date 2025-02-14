@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { storeUserLocation } from "../../utils/getUserLocation";
 import EventCard from "../../components/EventCard/EventCard";
-import NavigationBar from "../../components/NavigationBar/NavigataionBar";
+import NavigationBar from "../../components/Navigation/NavigataionBar";
 import { searchFilter } from "../../utils/searchFilter";
 import { makePageHeadline } from "../../utils/utilities";
 import Filter from "../../components/Filter/Filter";
-import Sidebar from "../../components/NavigationBar/Sidebar";
 
 const EventsModuleSinglePage = ({ locationData, events: eventsSSR }) => {
   let [filterVisible, setFilterVisible] = useState(false);
@@ -65,7 +64,6 @@ const EventsModuleSinglePage = ({ locationData, events: eventsSSR }) => {
               })}
           </div>
         </section>
-        {events && <Sidebar events={events} setSearchTerm={setSearchTerm} />}
       </div>
     </>
   );

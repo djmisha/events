@@ -9,7 +9,7 @@ import ArtistImage from "../../components/Artists/ArtistImage";
 import ArtistBio from "../../components/Artists/ArtistBio";
 import EventCard from "../../components/EventCard/EventCard";
 import GoogleAutoAds from "../../components/3rdParty/googleAds";
-import NavigationBar from "../../components/NavigationBar/NavigataionBar";
+import NavigationBar from "../../components/Navigation/NavigataionBar";
 
 export default function Artist({ artistData, events, lastFMdata }) {
   const { name, id } = artistData;

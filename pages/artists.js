@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getArtistsCounts } from "../utils/getArtists";
 import ArtistImage from "../components/Artists/ArtistImage";
 import { ToSlugArtist } from "../utils/utilities";
-import NavigationBar from "../components/NavigationBar/NavigataionBar";
+import NavigationBar from "../components/Navigation/NavigataionBar";
 
 const title = "Top Touring EDM DJ's & Artists";
 
