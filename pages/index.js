@@ -4,9 +4,9 @@ import { getLocations } from "../utils/getLocations";
 import HomeSearchAutocomplete from "../components/SearchAutoComplete/HomeSearchAutocomplete";
 import Locator from "../components/Locator/Locator";
 import CitiesStates from "../components/Homepage/CitiesStates";
-import Navigation from "../components/Navigation/Navigation";
 import TopArtists from "../components/Homepage/TopArtists";
 import Link from "next/link";
+import NavigationBar from "../components/NavigationBar/NavigataionBar";
 // import TicketMaster from "../components/TicketMaster/TicketMaster";
 
 export async function getServerSideProps() {
@@ -33,7 +33,7 @@ export default function Home({ locations }) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         ></meta>
       </Head>
-      <Navigation />
+      <NavigationBar />
       {/* <TicketMaster /> */}
       <section className="one">
         <div className="hero-home">

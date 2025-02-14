@@ -38,24 +38,7 @@ const EventsModuleSinglePage = ({ locationData, events: eventsSSR }) => {
   }, [searchTerm, events]);
 
   return (
-    <div className="main-wrap" id="top">
-      <section className="upcoming-events">
-        <h1>{title}</h1>
-        <Filter
-          events={events}
-          setEvents={setEvents}
-          searchTerm={searchTermRef.current}
-          filterVisible={filterVisible}
-          setFilterVisible={setFilterVisible}
-        />
-        <div id="eventfeed">
-          {events &&
-            events.map((event, index) => {
-              return <EventCard event={event} key={index} />;
-            })}
-        </div>
-      </section>
-      {events && <Sidebar events={events} setSearchTerm={setSearchTerm} />}
+    <>
       {events && (
         <NavigationBar
           events={events}
@@ -65,7 +48,26 @@ const EventsModuleSinglePage = ({ locationData, events: eventsSSR }) => {
           setFilterVisible={setFilterVisible}
         />
       )}
-    </div>
+      <div className="main-wrap" id="top">
+        <section className="upcoming-events">
+          <h1>{title}</h1>
+          <Filter
+            events={events}
+            setEvents={setEvents}
+            searchTerm={searchTermRef.current}
+            filterVisible={filterVisible}
+            setFilterVisible={setFilterVisible}
+          />
+          <div id="eventfeed">
+            {events &&
+              events.map((event, index) => {
+                return <EventCard event={event} key={index} />;
+              })}
+          </div>
+        </section>
+        {events && <Sidebar events={events} setSearchTerm={setSearchTerm} />}
+      </div>
+    </>
   );
 };
 

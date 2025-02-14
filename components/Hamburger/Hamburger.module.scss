@@ -1,26 +1,13 @@
 @use "../../styles/variables" as *;
 
-.top-nav-bar {
-  height: 60px;
-  background-color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 600;
-}
-
 .nav-burger {
   cursor: pointer;
-  top: 1.2rem;
-  left: 1rem;
-  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-top: -9px;
+  margin-top: 10px;
   span {
     display: block;
     font-size: 12px;
@@ -31,20 +18,26 @@
 
 .nav-close {
   cursor: pointer;
-  top: 1.2rem;
-  left: 1rem;
+  top: 15px;
+  right: 15px;
   position: fixed;
+  background: none;
+  border: none;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
   align-items: center;
-  margin-top: -9px;
+  gap: 8px;
+  padding: 8px;
+  color: $black;
+  z-index: 10000;
+
+  &:hover {
+    color: $pink;
+  }
+
   span {
-    display: block;
     font-size: 12px;
-    font-weight: 400;
     text-transform: uppercase;
+    font-weight: 400;
   }
 }
 
@@ -53,7 +46,8 @@
   left: 0;
   right: 0;
   width: 100vw;
-  transition: all 0.25 ease-in;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
   background-color: $white;
   position: fixed;
   text-align: center;
@@ -61,13 +55,13 @@
   z-index: 8998;
   display: flex;
   flex-direction: column;
+  top: 0px;
   justify-content: space-around;
   &.nav-open {
-    top: 0px;
+    transform: translateX(0);
   }
   &.nav-closed {
-    top: calc(-100vh);
-    display: none;
+    transform: translateX(-100%);
   }
   img.logo {
     margin: 0 auto;
