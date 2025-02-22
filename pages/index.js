@@ -7,7 +7,8 @@ import CitiesStates from "../components/Homepage/CitiesStates";
 import TopArtists from "../components/Homepage/TopArtists";
 import Link from "next/link";
 import NavigationBar from "../components/Navigation/NavigataionBar";
-// import TicketMaster from "../components/TicketMaster/TicketMaster";
+import Hero from "../components/Homepage/Hero";
+import Footer from "../components/Footer/Footer";
 
 export async function getServerSideProps() {
   const locations = getLocations();
@@ -34,30 +35,15 @@ export default function Home({ locations }) {
         ></meta>
       </Head>
       <NavigationBar />
-      {/* <TicketMaster /> */}
-      <section className="one">
-        <div className="hero-home">
-          <div>
-            <h1>Find EDM Events</h1>
-            <p>Discover dance music near you </p>
-          </div>
-          <div className="home-search">
-            <HomeSearchAutocomplete />
-          </div>
-        </div>
-        <Locator locations={locations} />
-      </section>
+      {/* <section className="one"> */}
+      <Hero />
+      {/* </section> */}
+      <Locator locations={locations} />
       <section className="two">
         <TopArtists />
         <CitiesStates locations={locations} />
       </section>
-      <footer>
-        <br></br>
-        Created by{" "}
-        <Link href="https://djmisha.com" target="_blank" title="San Diego DJ">
-          San Diego DJ
-        </Link>
-      </footer>
+      <Footer />
     </Layout>
   );
 }
