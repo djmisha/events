@@ -1,0 +1,28 @@
+@use "../../styles/_variables" as v;
+
+.artistsList {
+  padding: 0;
+  padding-bottom: 40px;
+  transition: all 0.25s ease-out;
+
+  @media only screen and (min-width: 650px) {
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 20px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.moreButton {
+  a {
+    text-decoration: none;
+  }
+}
