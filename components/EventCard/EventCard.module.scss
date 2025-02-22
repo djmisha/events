@@ -74,7 +74,7 @@
 .eventDate {
   font-size: 15px;
   line-height: 26px;
-  font-weight: 400;
+  font-weight: 500; // Changed from 400 to 500
   color: v.$blue;
   display: flex;
   align-items: center;
@@ -152,6 +152,7 @@
   color: v.$black;
   margin: 0;
   padding: 0;
+  font-weight: 500; // Add medium font weight
 
   .icon {
     color: inherit;
