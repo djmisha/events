@@ -1,6 +1,8 @@
 import { useState } from "react";
-import Image from "next/image";
+import MenuOverlay from "../ui/MenuOverlay";
+import MenuTrigger from "../ui/MenuTrigger";
 import MenuList from "./MenuList";
+import styles from "./NavItem.module.css";
 
 const NavItem = ({
   image,
@@ -11,46 +13,35 @@ const NavItem = ({
   isLocation,
   isHome,
 }) => {
-  const [isOpen, SetIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpen = (e) => {
-    SetIsOpen(true);
-  };
-
-  const handleClose = (e) => {
-    SetIsOpen(false);
+  const handleClose = () => {
+    setIsOpen(false);
   };
 
   return (
-    <div className={`sort-${text} ${isOpen ? "visible" : ""}`}>
-      <div className="sort-trigger" id="drop-trigger" onClick={handleOpen}>
-        <Image width={23} height={23} src={image} alt={text} />
-        <span>{text}</span>
-      </div>
-      <div id={`${text}-list`} className={isOpen ? "visible" : ""}>
-        {isOpen && (
-          <button className="nav-close-button" onClick={handleClose}>
-            <Image
-              width={25}
-              height={25}
-              src="/images/icon-close.svg"
-              alt="Close"
-            />
-            <span>CLOSE</span>
-          </button>
-        )}
-        <h2>{title}</h2>
-        <MenuList
-          navItems={navItems}
-          text={text}
-          isOpen={isOpen}
-          title={title}
-          setSearchTerm={setSearchTerm}
-          isLocation={isLocation}
-          isHome={isHome}
-          onClose={handleClose} // Add this line
-        />
-      </div>
+    <div className={styles.navItem}>
+      <MenuTrigger
+        icon={image}
+        text={text}
+        onClick={() => setIsOpen(true)}
+        iconAlt={text}
+      />
+      <MenuOverlay isOpen={isOpen} onClose={handleClose}>
+        <div className={styles.menuContent}>
+          <h2 className={styles.menuTitle}>{title}</h2>
+          <MenuList
+            navItems={navItems}
+            text={text}
+            isOpen={isOpen}
+            title={title}
+            setSearchTerm={setSearchTerm}
+            isLocation={isLocation}
+            isHome={isHome}
+            onClose={handleClose}
+          />
+        </div>
+      </MenuOverlay>
     </div>
   );
 };

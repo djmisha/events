@@ -13,72 +13,6 @@
   justify-content: center;
 }
 
-#form-search {
-  margin: 10px 10px;
-  display: flex;
-  position: relative;
-  color: #767679;
-  justify-content: space-between;
-  width: 100%;
-  @media only screen and (min-width: 768px) {
-    max-width: 500px;
-    margin: 20px 10px;
-  }
-  @media only screen and (min-width: 1080px) {
-    margin: 20px 10px;
-  }
-  img {
-    position: absolute;
-    left: 10px;
-    top: 5px;
-    width: 30px;
-    z-index: 199;
-  }
-  label {
-    position: absolute;
-    left: -999px;
-    top: -999px;
-  }
-  input {
-    font-family: $fontFamily;
-    padding: 10px 30px 10px 50px;
-    font-size: 12px;
-    line-height: 0;
-    width: 100%;
-    border: 1px solid $borderGrey;
-    background: $white;
-    transition: all 0.15s ease-in-out;
-    position: relative;
-    display: block;
-    color: #767679;
-    border-radius: 30px;
-    @media only screen and (min-width: 768px) {
-      width: 300px;
-    }
-    &:hover {
-      border: 1px solid $borderGrey;
-    }
-    &:focus {
-      border: 1px solid $borderGrey;
-      background: #fff;
-    }
-  }
-  button {
-    font-family: $fontFamily;
-    margin-left: 10px;
-    width: 20%;
-    min-width: 100px;
-    background-color: $white;
-    border: 1px solid $borderGrey;
-    cursor: pointer;
-    color: #000;
-    border-radius: 30px;
-    &:hover {
-      border: 1px solid $borderGrey;
-    }
-  }
-}
-
 .search-all {
   top: 0px;
   left: 0;
@@ -194,7 +128,6 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 8px;
     width: 100%;
-    // max-width: 600px;
     margin: 0 auto;
   }
 
@@ -262,29 +195,6 @@
   padding: 0px 15px 0px 15px;
   z-index: 8;
   border-bottom: 1px solid $borderGrey;
-
-  .nav-close-button {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px;
-    color: $black;
-    z-index: 10000;
-    text-transform: uppercase;
-    font-weight: 400;
-
-    span {
-      font-family: $fontFamily;
-
-      font-size: 12px;
-    }
-  }
 
   h2 {
     padding-top: 25px;

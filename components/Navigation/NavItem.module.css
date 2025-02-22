@@ -1,0 +1,14 @@
+.navItem {
+  position: relative;
+}
+
+.menuContent {
+  padding: 0 1rem;
+}
+
+.menuTitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding-top: 1rem;
+}
