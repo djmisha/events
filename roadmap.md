@@ -22,7 +22,7 @@ https://pocketbase.io/
 
 - pagination for events pages
 - remove twitch from navigation
-- add dj misha somewhere!
+- add dj misha somewhere - do like an google ad, inbetween events
 
 ## 2025 Ideas
 
@@ -80,16 +80,19 @@ https://pocketbase.io/
 
 - Event pages
 
-  - better layout - better how? improved cards
   - improved sorting - how? need examples
 
-- \*\* Ability to Submit Events - they become featured, need login for thid
+- Ability to Submit Events - they become featured, need login for this
 
-  - NEED TABLE FOR SUBMITTED EVENTS
+- NEED TABLE FOR SUBMITTED EVENTS
 
 - homepage - what else can we add on homepage to expland it and make it more useful
 
 - context - what else can we put there to keep
+
+## 2025 Completed
+
+- better layout - better how? improved cards
 
 ## 2024 Completed
 
