@@ -36,7 +36,7 @@ const Locator = ({ locations }) => {
             </strong>
           </h2>
           <div id="artistfeed">
-            {events?.slice(0, 10).map((event) => (
+            {events?.slice(0, 9).map((event) => (
               <EventCard event={event} key={event.id} />
             ))}
           </div>
