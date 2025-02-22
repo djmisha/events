@@ -6,6 +6,8 @@ import { getArtistsCounts } from "../utils/getArtists";
 import ArtistImage from "../components/Artists/ArtistImage";
 import { ToSlugArtist } from "../utils/utilities";
 import NavigationBar from "../components/Navigation/NavigataionBar";
+import TopArtistsCard from "../components/TopArtistsCard/TopArtistsCard";
+import styles from "../styles/Artists.module.scss";
 
 const title = "Top Touring EDM DJ's & Artists";
 
@@ -86,25 +88,10 @@ const Artists = ({ uniqueArtists }) => {
       <NavigationBar />
       <>
         <h1>Top Touring Artists</h1>
-        <div className="top-artists-list">
-          {topArtists?.map((item) => {
-            const { id, name, count, locations } = item;
-
-            return (
-              <Link href={`/artist/${ToSlugArtist(name)}`} key={id}>
-                <div className="top-artists-single" key={name}>
-                  <ArtistImage id={id} />
-                  <div className="top-artists-single-name">
-                    {name}
-                    <div className="top-artists-single-counts">
-                      <span>{count} shows</span>
-                      <span>{locations} cities</span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
+        <div className={styles.artistsList}>
+          {topArtists?.map((artist) => (
+            <TopArtistsCard key={artist.id} artist={artist} />
+          ))}
         </div>
       </>
     </Layout>

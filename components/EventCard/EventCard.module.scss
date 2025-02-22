@@ -4,22 +4,21 @@
   position: relative;
   transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: left;
-  padding: 20px 10px 20px 10px;
-  margin: 0px 0px;
+  padding: 20px 15px 20px 15px; // Increased bottom padding
+  margin: 0px 10px 25px 10px; // Added horizontal margins
   position: relative;
   background-color: white;
   top: 0;
   text-align: left;
-  margin-bottom: 10px;
   display: flex;
   overflow: hidden;
   border: 1px solid v.$lightGrey;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
   transform: translateY(0);
+  border-radius: v.$borderRadius;
   @media only screen and (min-width: 768px) {
-    border-radius: v.$borderRadius;
-    margin-bottom: 0;
+    margin: 0; // Reset margins for desktop
     padding: 20px 20px 20px 20px;
   }
   &.hidden {
@@ -28,7 +27,7 @@
   @media only screen and (min-width: 768px) {
     &:hover {
       transform: translateY(-2px) scale(1.005);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.09);
       border: 1px solid v.$lightGrey;
     }
   }
