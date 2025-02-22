@@ -4,6 +4,8 @@ import ArtistImage from "../Artists/ArtistImage";
 import { ToSlugArtist, shuffleArray } from "../../utils/utilities";
 import TopArtistsCard from "../TopArtistsCard/TopArtistsCard";
 import styles from "./TopArtists.module.scss";
+import Button from "../Button/Button";
+import buttonStyles from "../Button/Button.module.scss";
 
 const TopArtists = () => {
   const [randomArtists, setRandomArtists] = useState([]);
@@ -41,11 +43,15 @@ const TopArtists = () => {
           <TopArtistsCard key={artist.id} artist={artist} />
         ))}
       </div>
-      <button className={styles.moreButton}>
-        <a href={`/artists`} className="secondary">
+      <div className={buttonStyles.buttonWrapper}>
+        <Button
+          href="/artists"
+          variant="secondary"
+          className={styles.moreButton}
+        >
           More Top Touring Artists
-        </a>
-      </button>
+        </Button>
+      </div>
     </>
   );
 };
