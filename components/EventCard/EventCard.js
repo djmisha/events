@@ -5,13 +5,14 @@ import setDates from "../../utils/setDates";
 import Modal from "../Modal/Modal";
 import EventDetails from "../EventDetails/EventDetails";
 import styles from "./EventCard.module.scss";
-import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { FaRegCalendar, FaRegBuilding, FaUsers } from "react-icons/fa"; // Add FaUsers import
 
 export const EventCard = ({ event }) => {
-  const { date, artistList, name, venue, link, isVisible, eventSource } = event;
+  const { date, artistList, name, venue, isVisible, eventSource, festivalInd } =
+    event;
   const { name: venueName } = venue; // Removed address
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
-
+  console.log(event);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalOpen = () => {
@@ -55,16 +56,26 @@ export const EventCard = ({ event }) => {
         <ArtistImageWrapper />
         <div className={styles.eventInfo}>
           <div className={styles.dateAndTitle}>
-            <div
-              className={styles.eventDate}
-              itemProp="startDate"
-              content={daySchema}
-            >
-              <FaCalendarAlt className={styles.icon} />
-              <div>
-                {dayOfWeek}, {dayMonth}
+            <div className={styles.topRow}>
+              <div
+                className={styles.eventDate}
+                itemProp="startDate"
+                content={daySchema}
+              >
+                <FaRegCalendar className={styles.icon} />
+                <div>
+                  {dayOfWeek}, {dayMonth}
+                </div>
               </div>
+
+              {festivalInd && (
+                <div className={styles.festivalIndicator}>
+                  <FaUsers className={styles.icon} />
+                  <span>Festival</span>
+                </div>
+              )}
             </div>
+
             {name && (
               <span className={styles.eventTitle} itemProp="name">
                 {name}
@@ -82,7 +93,7 @@ export const EventCard = ({ event }) => {
             itemScope=""
             itemType="http://schema.org/Place"
           >
-            <FaMapMarkerAlt className={styles.icon} />
+            <FaRegBuilding className={styles.icon} />
             <span itemProp="name">{venueName}</span>
           </div>
         </div>

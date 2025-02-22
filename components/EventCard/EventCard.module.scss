@@ -2,7 +2,7 @@
 
 .singleEvent {
   position: relative;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: left;
   padding: 20px 10px 20px 10px;
   margin: 0px 0px;
@@ -140,6 +140,7 @@
 .truncatedArtist {
   color: #878787;
   font-size: 12px;
+  font-weight: 400; // Added normal font weight
 }
 
 .eventVenue {
@@ -176,5 +177,26 @@
     width: 10px;
     height: 10px;
     margin-left: 7px;
+  }
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.festivalIndicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: v.$orange;
+  font-size: 13px;
+  font-weight: 500;
+
+  .icon {
+    color: inherit;
+    font-size: 12px;
   }
 }
