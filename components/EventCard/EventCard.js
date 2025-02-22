@@ -5,14 +5,21 @@ import setDates from "../../utils/setDates";
 import Modal from "../Modal/Modal";
 import EventDetails from "../EventDetails/EventDetails";
 import styles from "./EventCard.module.scss";
-import { FaRegCalendar, FaRegBuilding, FaUsers } from "react-icons/fa"; // Add FaUsers import
+import { FaRegCalendar, FaRegBuilding, FaUsers, FaVideo } from "react-icons/fa"; // Add FaUsers and FaVideo import
 
 export const EventCard = ({ event }) => {
-  const { date, artistList, name, venue, isVisible, eventSource, festivalInd } =
-    event;
+  const {
+    date,
+    artistList,
+    name,
+    venue,
+    isVisible,
+    eventSource,
+    festivalInd,
+    livestreamInd,
+  } = event;
   const { name: venueName } = venue; // Removed address
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
-  console.log(event);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalOpen = () => {
@@ -72,6 +79,13 @@ export const EventCard = ({ event }) => {
                 <div className={styles.festivalIndicator}>
                   <FaUsers className={styles.icon} />
                   <span>Festival</span>
+                </div>
+              )}
+
+              {livestreamInd && (
+                <div className={styles.festivalIndicator}>
+                  <FaVideo className={styles.icon} />
+                  <span>Stream</span>
                 </div>
               )}
             </div>
