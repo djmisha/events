@@ -5,6 +5,8 @@ import { cityOrState } from "../../utils/utilities";
 import { getEventsHome } from "../../utils/getEvents";
 import { getGeoLocation } from "../../services/locationService";
 import EventCard from "../EventCard/EventCard";
+import Button from "../Button/Button";
+import styles from "../Button/Button.module.scss";
 
 const Locator = ({ locations }) => {
   const { locationCtx, addLocation } = useContext(AppContext);
@@ -40,14 +42,14 @@ const Locator = ({ locations }) => {
               <EventCard event={event} key={event.id} />
             ))}
           </div>
-          <button>
-            <a
+          <div className={styles.buttonWrapper}>
+            <Button
               href={`events/${locationUrl(userLocation, hasCity)}`}
-              className="secondary"
+              variant="secondary"
             >
               All events in {cityOrState(userLocation.city, userLocation.state)}
-            </a>
-          </button>
+            </Button>
+          </div>
         </div>
       )}
 

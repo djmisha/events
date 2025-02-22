@@ -53,31 +53,6 @@ h3 {
   }
 }
 
-button {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  a {
-    display: block;
-    font-size: 16px;
-    background-color: $white;
-    text-align: center;
-    padding: 10px 18px;
-    text-decoration: none;
-    border-radius: 50px;
-    &.primary {
-      color: $pink;
-      border: 1px solid $pink;
-    }
-    &.secondary {
-      color: $blue;
-      border: 1px solid $blue;
-    }
-  }
-}
-
 img.loading {
   width: 100px;
   height: 100px;
