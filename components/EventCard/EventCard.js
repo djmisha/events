@@ -5,6 +5,7 @@ import setDates from "../../utils/setDates";
 import Modal from "../Modal/Modal";
 import EventDetails from "../EventDetails/EventDetails";
 import styles from "./EventCard.module.scss";
+import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 export const EventCard = ({ event }) => {
   const { date, artistList, name, venue, link, isVisible, eventSource } = event;
@@ -22,11 +23,11 @@ export const EventCard = ({ event }) => {
   };
 
   const truncatedArtistList =
-    artistList.length > 3
-      ? artistList.slice(0, 3).concat({
+    artistList.length > 2
+      ? artistList.slice(0, 2).concat({
           name: (
             <span className={styles.truncatedArtist}>
-              ... {artistList.length - 3} more artists
+              ... {artistList.length - 2} more artists
             </span>
           ),
         })
@@ -53,35 +54,36 @@ export const EventCard = ({ event }) => {
       >
         <ArtistImageWrapper />
         <div className={styles.eventInfo}>
-          <div
-            className={styles.eventDate}
-            itemProp="startDate"
-            content={daySchema}
-          >
-            <div>
-              {dayOfWeek}, {dayMonth}
+          <div className={styles.dateAndTitle}>
+            <div
+              className={styles.eventDate}
+              itemProp="startDate"
+              content={daySchema}
+            >
+              <FaCalendarAlt className={styles.icon} />
+              <div>
+                {dayOfWeek}, {dayMonth}
+              </div>
             </div>
-          </div>
-          <div className={styles.eventTitleArtist}>
             {name && (
               <span className={styles.eventTitle} itemProp="name">
                 {name}
               </span>
             )}
-            <span className={styles.eventArtist} itemProp="name">
-              <Artists data={truncatedArtistList} />
-            </span>
           </div>
+
+          <span className={styles.eventArtist} itemProp="name">
+            <Artists data={truncatedArtistList} />
+          </span>
+
           <div
             className={styles.eventVenue}
             itemProp="location"
             itemScope=""
             itemType="http://schema.org/Place"
           >
-            <span itemProp="name">{venueName}</span>{" "}
-          </div>
-          <div className={styles.eventLink}>
-            <a onClick={handleModalOpen}>View Details</a>
+            <FaMapMarkerAlt className={styles.icon} />
+            <span itemProp="name">{venueName}</span>
           </div>
         </div>
       </div>
