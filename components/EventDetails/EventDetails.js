@@ -4,6 +4,8 @@ import Artists from "../Artists/Artists";
 import ArtistImage from "../Artists/ArtistImage";
 import setDates from "../../utils/setDates";
 import styles from "./EventDetails.module.scss";
+import { FaRegCalendar, FaRegBuilding, FaMapMarkerAlt } from "react-icons/fa"; // Add icons import
+import Button from "../Button/Button";
 
 const EventDetails = ({ event }) => {
   const { date, artistList, name, venue, link, eventSource } = event;
@@ -21,6 +23,7 @@ const EventDetails = ({ event }) => {
           itemProp="startDate"
           content={daySchema}
         >
+          <FaRegCalendar className={styles.icon} />
           <div>
             {dayOfWeek}, {dayMonth}
           </div>
@@ -41,6 +44,7 @@ const EventDetails = ({ event }) => {
           itemScope=""
           itemType="http://schema.org/Place"
         >
+          <FaRegBuilding className={styles.icon} />
           <span itemProp="name">{venueName}</span>{" "}
         </div>
         <div
@@ -56,14 +60,20 @@ const EventDetails = ({ event }) => {
               href={`https://www.google.com/maps/search/${venueName}${address}`}
               target="_blank"
             >
+              <FaMapMarkerAlt className={styles.icon} />
               <span>{address}</span>
             </a>
           )}
         </div>
         <div className={styles.eventLink}>
-          <a href={link} target="_blank" rel="noreferrer">
+          <Button
+            href={link}
+            variant="primary"
+            target="_blank"
+            rel="noreferrer"
+          >
             View on {eventSource}
-          </a>
+          </Button>
         </div>
       </div>
     </div>

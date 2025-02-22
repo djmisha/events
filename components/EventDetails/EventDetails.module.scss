@@ -33,10 +33,23 @@
 .eventDate {
   font-size: 15px;
   line-height: 26px;
-  font-weight: 400;
+  font-weight: 500;
   color: v.$blue;
   padding-bottom: 10px;
   border-bottom: 1px solid v.$lightGrey;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center; // Add this
+  text-align: center; // Add this
+
+  .icon {
+    color: inherit;
+  }
+
+  div {
+    display: inline-block; // Add this
+  }
 }
 
 .eventTitle {
@@ -46,17 +59,16 @@
 }
 
 .eventArtist {
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 21px;
+  font-weight: 600;
   word-wrap: anywhere;
-  line-height: 34px;
-  text-align: left;
+  line-height: 24px;
+  text-align: center;
   position: relative;
   padding-bottom: 10px;
-  text-align: center;
 
   > div {
-    padding-right: 7px;
+    padding-right: 4px;
   }
   > div:nth-of-type(even) {
     color: v.$orange;
@@ -70,11 +82,24 @@
 }
 
 .eventVenue {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 15px;
   line-height: 26px;
   color: v.$black;
+  font-weight: 500;
   padding-top: 20px;
+  justify-content: center; // Add this
+  text-align: center; // Add this
+
+  .icon {
+    color: inherit;
+  }
+
+  span {
+    display: inline-block; // Add this
+  }
 }
 
 .eventLocation {
@@ -82,7 +107,15 @@
     display: block;
   }
   a {
-    color: #878787;
+    color: v.$black;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+
+    .icon {
+      color: inherit;
+    }
 
     span {
       padding-top: 5px;
