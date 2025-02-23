@@ -32,22 +32,22 @@
   margin-left: 20px;
   width: 100%;
   height: 120px;
-  position: relative; // Add position relative
+  position: relative;
 }
 
 .artistName {
   font-size: 21px;
   font-weight: 600;
   color: v.$pink;
-  position: absolute; // Position absolutely
-  top: 43%; // Center vertically
-  transform: translateY(-50%); // Adjust for perfect centering
+  position: absolute;
+  top: 43%;
+  transform: translateY(-50%);
 }
 
 .artistCounts {
   display: flex;
   gap: 16px;
-  margin-top: auto; // Pushes counts to the bottom
+  margin-top: auto;
 }
 
 .countItem {
@@ -56,7 +56,8 @@
   gap: 6px;
   font-size: 14px;
   font-weight: 500;
-  color: v.$black; // Changed from grey to black
+  line-height: 12px;
+  color: v.$black;
 
   .icon {
     font-size: 12px;

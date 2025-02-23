@@ -1,4 +1,4 @@
-import { urlBigData } from "../utils/utilities";
+import { urlBigData } from "../../utils/utilities.js";
 import {
   UserLocationService,
   hasUserLocation,
@@ -6,7 +6,7 @@ import {
   matchesCity,
   getLocationId,
   createLocationObject,
-} from "../utils/getUserLocation.js";
+} from "../../utils/getUserLocation.js";
 
 export const getGeoLocation = async (
   locations,

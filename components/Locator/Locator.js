@@ -3,7 +3,7 @@ import { AppContext } from "../../features/AppContext.js";
 import { locationUrl } from "../../utils/getLocations";
 import { cityOrState } from "../../utils/utilities";
 import { getEventsHome } from "../../utils/getEvents";
-import { getGeoLocation } from "../../services/locationService";
+import { getGeoLocation } from "../../features/services/locationService.js";
 import EventCard from "../EventCard/EventCard";
 import Button from "../Button/Button";
 import styles from "../Button/Button.module.scss";
