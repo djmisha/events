@@ -1,11 +1,9 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import { getLocations } from "../utils/getLocations";
-import HomeSearchAutocomplete from "../components/SearchAutoComplete/HomeSearchAutocomplete";
 import Locator from "../components/Locator/Locator";
 import CitiesStates from "../components/Homepage/CitiesStates";
 import TopArtists from "../components/Homepage/TopArtists";
-import Link from "next/link";
 import NavigationBar from "../components/Navigation/NavigataionBar";
 import Hero from "../components/Homepage/Hero";
 import Footer from "../components/Footer/Footer";
