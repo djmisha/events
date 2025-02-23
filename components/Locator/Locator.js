@@ -52,15 +52,6 @@ const Locator = ({ locations }) => {
           </div>
         </div>
       )}
-
-      {!userLocation && (
-        <div className="home-your-location">
-          <p>Scroll down for locations</p>
-          <p>
-            <strong>&darr;</strong>
-          </p>
-        </div>
-      )}
     </>
   );
 };
