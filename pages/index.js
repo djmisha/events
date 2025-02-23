@@ -35,9 +35,7 @@ export default function Home({ locations }) {
         ></meta>
       </Head>
       <NavigationBar />
-      {/* <section className="one"> */}
       <Hero />
-      {/* </section> */}
       <Locator locations={locations} />
       <section className="two">
         <TopArtists />
