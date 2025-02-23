@@ -61,50 +61,6 @@ const Hamburger = () => {
       )}
 
       <div className={styles["bottom-items"]}>
-        <div className={styles["social-items"]}>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            href="https://twitch.tv/sdhousemusic/"
-            className={styles["twitch"]}
-          >
-            <Image
-              width={40}
-              height={40}
-              src="/images/icon-twitch.svg"
-              alt="Menu"
-            />
-            <span>Twitch</span>
-          </a>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.instagram.com/sdhousemusic/"
-            className={styles["instagram"]}
-          >
-            <Image
-              width={40}
-              height={40}
-              src="/images/icon-instagram.svg"
-              alt="Menu"
-            />
-            <span>Instagram</span>
-          </a>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.facebook.com/San-Diego-House-Music-135772356433768/"
-            className={styles["facebook"]}
-          >
-            <Image
-              width={40}
-              height={40}
-              src="/images/icon-facebook.svg"
-              alt="Menu"
-            />
-            <span>Facebook</span>
-          </a>
-        </div>
         <Image
           width={200}
           height={67}

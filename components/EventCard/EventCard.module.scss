@@ -17,6 +17,8 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
   transform: translateY(0);
   border-radius: v.$borderRadius;
+  // min-height: 100px; // Add minimum height instead of fixed height
+  height: auto; // Allow height to grow
   @media only screen and (min-width: 768px) {
     margin: 0; // Reset margins for desktop
     padding: 20px 20px 20px 20px;
@@ -86,11 +88,14 @@
 }
 
 .eventInfo {
-  width: calc(100% - 100px);
+  width: calc(
+    100% - 140px
+  ); // Adjust width to account for artistFallback margin
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 120px;
+  gap: 10px; // Add gap between elements
+  height: auto; // Remove fixed height
 }
 
 .dateAndTitle {
@@ -147,7 +152,7 @@
   align-items: center;
   gap: 8px;
   font-size: 15px;
-  line-height: 26px;
+  line-height: 15px;
   color: v.$black;
   margin: 0;
   padding: 0;
