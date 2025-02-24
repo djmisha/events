@@ -6,55 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
-}
-
-.heroBackground {
-  //TODO - fix this
-  // height: 400px;
-  // position: absolute;
-  // top: -50%;
-  // left: -50%;
-  // right: -50%;
-  // bottom: -50%;
-  // background: linear-gradient(
-  //   225deg,
-  //   #1a1a1a 0%,
-  //   #000000 25%,
-  //   #1a1a1a 50%,
-  //   #000000 75%,
-  //   #1a1a1a 100%
-  // );
-  // background-size: 200% 200%;
-  // animation: gradientMove 20s linear infinite;
-
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   background: linear-gradient(
-  //     45deg,
-  //     rgba($pink, 0.15) 0%,
-  //     rgba(0, 0, 0, 0.1) 25%,
-  //     rgba($pink, 0.15) 50%,
-  //     rgba(0, 0, 0, 0.1) 75%,
-  //     rgba($pink, 0.15) 100%
-  //   );
-  //   background-size: 200% 200%;
-  //   animation: gradientMove 15s linear infinite;
-  // }
-}
-
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 200% 200%;
-  }
+  background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
 }
 
 .content {
