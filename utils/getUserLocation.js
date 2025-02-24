@@ -91,6 +91,5 @@ export const storeUserLocation = (id) => {
 // Checks local storage for location
 export const hasUserLocation = () => {
   const id = localStorage.getItem("locID");
-  if (id) return true;
-  return false;
+  return !!id;
 };

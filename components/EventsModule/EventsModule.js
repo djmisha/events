@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { storeUserLocation } from "../../utils/getUserLocation";
 import EventCard from "../../components/EventCard/EventCard";
 import NavigationBar from "../../components/Navigation/NavigataionBar";
 import { searchFilter } from "../../utils/searchFilter";
@@ -19,7 +18,6 @@ const EventsModule = ({ locationData, isHome, events: initialEvents }) => {
     if (dataFetchedRef.current === id) return;
     dataFetchedRef.current = id;
     setFilterVisible(false);
-    storeUserLocation(id);
   }, [id]);
 
   useEffect(() => {

@@ -6,6 +6,7 @@ import {
   matchesCity,
   getLocationId,
   createLocationObject,
+  storeUserLocation,
 } from "../../utils/getUserLocation.js";
 
 export const getGeoLocation = async (
@@ -65,6 +66,7 @@ const handleGeolocationSuccess = async (
   if (id) {
     setUserLocation(locationObject);
     addLocation(locationObject);
+    storeUserLocation(id);
   }
 };
 
@@ -79,5 +81,6 @@ const handleGeolocationError = async (
     setHasCity(matchesCity(location.city));
     setUserLocation(location);
     addLocation(location);
+    storeUserLocation(location.id);
   }
 };
