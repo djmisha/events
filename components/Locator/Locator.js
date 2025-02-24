@@ -6,7 +6,8 @@ import { getEventsHome } from "../../utils/getEvents";
 import { getGeoLocation } from "../../features/services/locationService.js";
 import EventCard from "../EventCard/EventCard";
 import Button from "../Button/Button";
-import styles from "../Button/Button.module.scss";
+import buttonStyles from "../Button/Button.module.scss";
+import styles from "./Locator.module.scss";
 
 const Locator = ({ locations }) => {
   const { locationCtx, addLocation } = useContext(AppContext);
@@ -29,27 +30,53 @@ const Locator = ({ locations }) => {
 
   return (
     <>
-      {userLocation && events && (
+      {userLocation && (
         <div className="home-your-location">
-          <h2>
-            Near You in{" "}
-            <strong>
-              {cityOrState(userLocation.city, userLocation.state)}
-            </strong>
-          </h2>
-          <div id="artistfeed">
-            {events?.slice(0, 9).map((event) => (
-              <EventCard event={event} key={event.id} />
-            ))}
+          <div
+            className={styles.locationCard}
+            onClick={() =>
+              (window.location.href = `events/${locationUrl(
+                userLocation,
+                hasCity
+              )}`)
+            }
+          >
+            <p className={styles.locationText}>
+              Looks like you're in{" "}
+              <strong>
+                {cityOrState(userLocation.city, userLocation.state)}
+              </strong>
+            </p>
+            <span className={styles.viewEventsLink}>
+              View events in{" "}
+              {cityOrState(userLocation.city, userLocation.state)} →
+            </span>
           </div>
-          <div className={styles.buttonWrapper}>
-            <Button
-              href={`events/${locationUrl(userLocation, hasCity)}`}
-              variant="secondary"
-            >
-              All events in {cityOrState(userLocation.city, userLocation.state)}
-            </Button>
-          </div>
+
+          {events && (
+            <>
+              <h2>
+                Near You in{" "}
+                <strong>
+                  {cityOrState(userLocation.city, userLocation.state)}
+                </strong>
+              </h2>
+              <div id="artistfeed">
+                {events?.slice(0, 9).map((event) => (
+                  <EventCard event={event} key={event.id} />
+                ))}
+              </div>
+              <div className={buttonStyles.buttonWrapper}>
+                <Button
+                  href={`events/${locationUrl(userLocation, hasCity)}`}
+                  variant="secondary"
+                >
+                  All events in{" "}
+                  {cityOrState(userLocation.city, userLocation.state)}
+                </Button>
+              </div>
+            </>
+          )}
         </div>
       )}
     </>
