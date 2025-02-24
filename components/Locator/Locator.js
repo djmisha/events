@@ -42,7 +42,7 @@ const Locator = ({ locations }) => {
             }
           >
             <p className={styles.locationText}>
-              Looks like you're in{" "}
+              Looks like you&apos;re in{" "}
               <strong>
                 {cityOrState(userLocation.city, userLocation.state)}
               </strong>
