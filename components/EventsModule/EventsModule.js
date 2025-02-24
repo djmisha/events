@@ -15,8 +15,6 @@ const EventsModule = ({ locationData, isHome, events: initialEvents }) => {
   const dataFetchedRef = useRef();
   const searchTermRef = useRef("");
 
-  // @Todo - this can be done server side, when the page is rendered - the data is requestsed
-  // and sent to the client so the call does not have to be made here
   useEffect(() => {
     if (dataFetchedRef.current === id) return;
     dataFetchedRef.current = id;
