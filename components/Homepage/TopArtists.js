@@ -38,6 +38,11 @@ const TopArtists = () => {
   return (
     <>
       <h2>Top Touring Artists</h2>
+      <p>
+        Discover our selection of top touring artists, ranked by their number of
+        shows and city appearances. Click to learn more about each artist, read
+        their bios, and explore upcoming events.
+      </p>
       <div className={styles.artistsList}>
         {randomArtists?.map((artist) => (
           <TopArtistsCard key={artist.id} artist={artist} />
@@ -49,7 +54,7 @@ const TopArtists = () => {
           variant="secondary"
           className={styles.moreButton}
         >
-          More Top Touring Artists
+          View More Top Touring Artists
         </Button>
       </div>
     </>

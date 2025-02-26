@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import Script from "next/script";
 
-export const siteTitle = "Find EDM Events";
+export const siteTitle = "House Music & EDM Events Across North America";
 
 export default function Layout({ children, home }) {
   return (

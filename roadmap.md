@@ -1,10 +1,27 @@
 # Roadmap
 
+LOGIN AUTH:
+
+https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=router&router=pages
+
 # Database Options
 
 https://pocketbase.io/
 
-- VENUE PAGES - with all events at that venue !!!
+## VENUE PAGES - with all events at that venue !!!
+
+https://www.sandiegohousemusic.com/venues/orlando
+
+https://www.sandiegohousemusic.com/venues/orlando/venue-name
+
+- query events from supabase
+
+# Itegrations
+
+- Stub Hub API https://developer.stubhub.com/api-reference/catalog https://developer.stubhub.com/docs/authentication/application-only-authentication-flow
+
+- Ticketmaster API
+  - watiting on response from Ticketmaster
 
 ## Next.js 15 Upgrade
 

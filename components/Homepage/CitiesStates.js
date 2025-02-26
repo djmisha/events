@@ -33,13 +33,18 @@ const CitiesStates = ({
     <div className={styles.citiesStates}>
       {!showStatesOnly && (
         <>
-          <h2>Cities</h2>
+          <h2>Popular Dance Music Cities in North America</h2>
+          <p>
+            Explore electronic dance music events in major North American
+            cities. From nightclub shows to festivals and DJ performances, find
+            upcoming events in your city or plan your next music destination.
+          </p>
           <ul>{renderList(cities, "city")}</ul>
         </>
       )}
       {!showCitiesOnly && (
         <>
-          <h2>States</h2>
+          <h2>Browse EDM Events by State</h2>
           <ul>{renderList(states, "state")}</ul>
         </>
       )}
