@@ -23,6 +23,17 @@ const Footer = () => {
           <Link href="/states">Events by State</Link>
         </div>
 
+        <div className={styles.partners}>
+          <h3>Partners</h3>
+          <Link href="https://djmisha.com" target="_blank" title="San Diego DJ">
+            San Diego DJ
+          </Link>
+          <Link href="https://edmtrain.com" target="_blank">
+            EDM Train
+          </Link>
+          <Link href="https://www.last.fm">Last Fm</Link>
+        </div>
+
         <div className={styles.social}>
           <h3>Follow Us</h3>
           <div className={styles.socialIcons}>
@@ -71,14 +82,8 @@ const Footer = () => {
 
       <div className={styles.bottom}>
         <p className={styles.copyright}>
-          © {new Date().getFullYear()} sandiegohousemusic.com. All rights
+          &copy; {new Date().getFullYear()} sandiegohousemusic.com. All rights
           reserved.
-        </p>
-        <p>
-          Created by{" "}
-          <Link href="https://djmisha.com" target="_blank" title="San Diego DJ">
-            San Diego DJ
-          </Link>
         </p>
       </div>
     </footer>

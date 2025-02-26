@@ -9,10 +9,10 @@
 }
 
 .grid {
-  max-width: 1200px;
+  // max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 60px;
   margin-bottom: 60px;
 
@@ -32,6 +32,7 @@
   display: flex;
   align-items: flex-start;
   margin-top: 2rem;
+  min-width: 200px;
 
   img {
     max-width: 100%;
@@ -40,7 +41,8 @@
   }
 }
 
-.navigation {
+.navigation,
+.partners {
   display: flex;
   flex-direction: column;
   gap: 15px;
