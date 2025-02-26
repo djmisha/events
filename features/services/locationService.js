@@ -1,12 +1,9 @@
 import { urlBigData } from "../../utils/utilities.js";
 import {
   UserLocationService,
-  hasUserLocation,
-  matchToLocation,
   matchesCity,
   getLocationId,
   createLocationObject,
-  storeUserLocation,
 } from "../../utils/getUserLocation.js";
 
 export const getGeoLocation = async (
@@ -16,14 +13,6 @@ export const getGeoLocation = async (
   setHasCity
 ) => {
   let location;
-  // If we have a cookie, use it
-  if (hasUserLocation()) {
-    location = matchToLocation();
-    setUserLocation(location);
-    addLocation(location);
-    if (location.city) setHasCity(matchesCity(location.city));
-    return;
-  }
 
   if (navigator.geolocation) {
     location = navigator.geolocation.getCurrentPosition(
@@ -66,7 +55,6 @@ const handleGeolocationSuccess = async (
   if (id) {
     setUserLocation(locationObject);
     addLocation(locationObject);
-    storeUserLocation(id);
   }
 };
 
@@ -81,6 +69,5 @@ const handleGeolocationError = async (
     setHasCity(matchesCity(location.city));
     setUserLocation(location);
     addLocation(location);
-    storeUserLocation(location.id);
   }
 };

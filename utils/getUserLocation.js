@@ -56,23 +56,6 @@ export const createLocationObject = (city, state, id) => {
   };
 };
 
-export const matchToLocation = () => {
-  let city;
-  let state;
-  const id = Number(localStorage.getItem("locID"));
-
-  locations.forEach((location) => {
-    if (location.id === id) {
-      city = location.city;
-      state = location.state;
-    }
-  });
-
-  const location = createLocationObject(city, state, id);
-
-  return location;
-};
-
 // check if city matches a city in the locations.json
 export const matchesCity = (city) => {
   let hasCity = false;
@@ -81,15 +64,4 @@ export const matchesCity = (city) => {
   });
 
   return hasCity;
-};
-
-// Sets local storage with location
-export const storeUserLocation = (id) => {
-  localStorage.setItem("locID", id);
-};
-
-// Checks local storage for location
-export const hasUserLocation = () => {
-  const id = localStorage.getItem("locID");
-  return !!id;
 };
