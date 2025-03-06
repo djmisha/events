@@ -1,8 +1,27 @@
 # Roadmap
 
+## Supabase Production Checklist
+
+https://supabase.com/docs/guides/deployment/going-into-prod#auth-rate-limits
+
 LOGIN AUTH:
 
-https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=router&router=pages
+done: https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=router&router=pages
+
+Todo:
+
+- [x] need to set up email SMTP for
+- PROFILE PAGE - with user info
+
+SIGN UP -> CONFIRM LINK -> PROFILE PAGE
+
+-> Can select default location from dropdown
+
+-> Homepage - if logged in shows default location button
+
+- need login page icon. sign up page icon
+- how does password reset work?
+- plan for login features to be added, profile flow after sign up
 
 # Database Options
 
