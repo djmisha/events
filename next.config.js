@@ -10,6 +10,11 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
+  exportPathMap: async function (defaultPathMap) {
+    const paths = { ...defaultPathMap };
+    delete paths["/auth/confirm"];
+    return paths;
+  },
 };
 
 module.exports = nextConfig;

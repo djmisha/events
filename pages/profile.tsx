@@ -79,7 +79,6 @@ export default function ProfilePage({ user }: ProfileFormProps) {
 
       const { error } = await supabase.from("profiles").upsert(updates, {
         onConflict: "id",
-        returning: "minimal",
       });
 
       if (error) {
