@@ -124,10 +124,10 @@
   }
 
   .nav-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
+    padding-right: 10px;
     margin: 0 auto;
   }
 

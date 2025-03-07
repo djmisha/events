@@ -4,6 +4,7 @@ import NavigationBar from "../../components/Navigation/NavigataionBar";
 import { searchFilter } from "../../utils/searchFilter";
 import { makePageHeadline } from "../../utils/utilities";
 import Filter from "../../components/Filter/Filter";
+import EventsFiltered from "../../components/Filter/EventsFilter";
 
 const EventsModule = ({ locationData, isHome, events: initialEvents }) => {
   let [filterVisible, setFilterVisible] = useState(false);
@@ -48,6 +49,11 @@ const EventsModule = ({ locationData, isHome, events: initialEvents }) => {
       <div className="main-wrap" id="top">
         <section className="upcoming-events">
           <h1>{title}</h1>
+          <EventsFiltered
+            events={events}
+            setSearchTerm={setSearchTerm}
+            locationData={locationData}
+          />
           <Filter
             events={events}
             setEvents={setEvents}
