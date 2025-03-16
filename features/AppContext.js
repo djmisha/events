@@ -1,10 +1,11 @@
 import React, { createContext, useState, useMemo } from "react";
+import { createClient } from "../utils/supabase/component";
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [locationCtx, setLocationCtx] = useState([]);
-  const [eventsCtx, setEventsCtx] = useState([]);
+  const supabase = createClient();
 
   const addLocation = (location) => {
     setLocationCtx((prevLocations) => {
@@ -22,8 +23,12 @@ export const AppProvider = ({ children }) => {
   };
 
   const value = useMemo(
-    () => ({ locationCtx, addLocation, eventsCtx, setEventsCtx }),
-    [locationCtx, eventsCtx]
+    () => ({
+      locationCtx,
+      addLocation,
+      supabase,
+    }),
+    [locationCtx]
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

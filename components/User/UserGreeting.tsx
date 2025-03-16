@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { createClient } from "../../utils/supabase/component";
+import { useState, useEffect, useContext } from "react";
 import Link from "next/link";
 import styles from "./UserGreeting.module.scss";
+import { AppContext } from "../../features/AppContext";
 
 interface Profile {
   id: string;
@@ -15,7 +15,9 @@ interface Profile {
 const UserGreeting = () => {
   const [user, setUser] = useState<any>(null);
   const [profile, setProfile] = useState<Partial<Profile> | null>(null);
-  const supabase = createClient();
+  const { supabase } = useContext(AppContext);
+
+  const DEFAULT_ICON = "/images/icon-user.svg";
 
   useEffect(() => {
     async function getUserAndProfile() {
@@ -40,34 +42,33 @@ const UserGreeting = () => {
     }
 
     getUserAndProfile();
-  }, []);
+  }, [supabase]);
 
-  if (!user) {
-    return (
-      <div className={styles.loginContainer}>
-        <Link href="/login" className={styles.loginLink}>
-          <img
-            src="/images/icon-user.svg"
-            alt="Login"
-            className={styles.loginIcon}
-          />
-          <div>Login</div>
-        </Link>
-      </div>
-    );
-  }
+  const renderContent = () => {
+    if (!user) {
+      return {
+        href: "/login",
+        iconSrc: DEFAULT_ICON,
+        iconAlt: "Login",
+        text: "Login",
+      };
+    }
+
+    return {
+      href: "/profile",
+      iconSrc: profile?.avatar_url || DEFAULT_ICON,
+      iconAlt: profile?.username || "Profile",
+      text: profile?.username || "Profile",
+    };
+  };
+
+  const { href, iconSrc, iconAlt, text } = renderContent();
 
   return (
-    <div className={styles.greetingContainer}>
-      <Link href="/profile" className={styles.profileLink}>
-        {profile?.username && <div>Hello, {profile?.username}!</div>}
-        {profile?.avatar_url && (
-          <img
-            src={profile.avatar_url}
-            alt={profile.full_name}
-            className={styles.avatar}
-          />
-        )}
+    <div className={styles.loginContainer}>
+      <Link href={href} className={styles.loginLink}>
+        <img src={iconSrc} alt={iconAlt} className={styles.loginIcon} />
+        {text && <div>{text}</div>}
       </Link>
     </div>
   );

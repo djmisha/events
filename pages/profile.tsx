@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import type { User } from "@supabase/supabase-js";
 import type { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
 import styles from "../styles/Login.module.css";
-
-import { createClient } from "../utils/supabase/component"; // Make sure we're importing the component client
+import { AppContext } from "../features/AppContext";
 import { createClient as createServerClient } from "../utils/supabase/server-props";
 
 interface Profile {
@@ -34,8 +33,7 @@ export default function ProfilePage({ user }: ProfileFormProps) {
     website: "",
   });
 
-  // Use the client-side supabase client
-  const supabase = createClient();
+  const { supabase } = useContext(AppContext);
 
   useEffect(() => {
     async function loadProfile() {
@@ -65,7 +63,7 @@ export default function ProfilePage({ user }: ProfileFormProps) {
     }
 
     loadProfile();
-  }, [user.id]); // Remove supabase from dependencies to avoid re-fetching
+  }, [user.id, supabase]);
 
   async function updateProfile() {
     try {
