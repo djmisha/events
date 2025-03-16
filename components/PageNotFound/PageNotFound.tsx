@@ -49,7 +49,8 @@ const PageNotFound = () => {
       <div className={styles.errorCard}>
         <h1>404 - Page Not Found</h1>
         <p className={styles.message}>
-          The page you're looking for doesn't exist or has been moved.
+          The page you&lsquo;re looking for doesn&lsquo;t exist or has been
+          moved.
         </p>
         <div className={styles.redirectMessage}>
           <p>
