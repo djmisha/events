@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, useContext } from "react";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 import styles from "./Login.module.scss";
 import { AppContext } from "../../features/AppContext";
 
@@ -18,6 +19,7 @@ export default function Login() {
   const [resetEmail, setResetEmail] = useState("");
   const [isResetting, setIsResetting] = useState(false);
   const [resetMessage, setResetMessage] = useState("");
+  const [captchaToken, setCaptchaToken] = useState("");
 
   async function logIn() {
     if (isLoggingIn) return;
@@ -47,13 +49,15 @@ export default function Login() {
   }
 
   async function resetPassword() {
-    if (isResetting) return;
+    if (isResetting || !captchaToken) return;
 
     setIsResetting(true);
     setResetMessage("");
 
     try {
-      const { error } = await supabase.auth.resetPasswordForEmail(resetEmail);
+      const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
+        captcha_token: captchaToken,
+      });
 
       if (error) {
         console.error(error);
@@ -71,6 +75,7 @@ export default function Login() {
       setResetMessage("An unexpected error occurred");
     } finally {
       setIsResetting(false);
+      setCaptchaToken(""); // Reset captcha token after use
     }
   }
 
@@ -149,12 +154,16 @@ export default function Login() {
                 disabled={isResetting}
               />
             </div>
+            <HCaptcha
+              sitekey="74e2165e-2f0a-4314-9838-a5720a2e1fac"
+              onVerify={(token) => setCaptchaToken(token)}
+            />
             <div className={styles.buttonGroup}>
               <button
                 type="button"
                 onClick={resetPassword}
                 className={`${styles.button} ${styles.secondaryButton}`}
-                disabled={isResetting}
+                disabled={isResetting || !captchaToken}
               >
                 {isResetting ? "Sending..." : "Reset Password"}
               </button>
