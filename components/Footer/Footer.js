@@ -21,6 +21,7 @@ const Footer = () => {
           <Link href="/artists">Top Artists</Link>
           <Link href="/cities">Events by City</Link>
           <Link href="/states">Events by State</Link>
+          <Link href="/login">Login / Signup</Link>
         </div>
 
         <div className={styles.partners}>
@@ -31,7 +32,9 @@ const Footer = () => {
           <Link href="https://edmtrain.com" target="_blank">
             EDM Train
           </Link>
-          <Link href="https://www.last.fm">Last Fm</Link>
+          <Link href="https://www.last.fm" target="_blank">
+            Last Fm
+          </Link>
         </div>
 
         <div className={styles.social}>

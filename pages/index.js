@@ -10,6 +10,7 @@ import Hero from "../components/Homepage/Hero";
 import Footer from "../components/Footer/Footer";
 import UserWelcome from "../components/User/UserWelcome";
 import FavoriteArtists from "../components/User/FavoriteArtists";
+import SignupCTA from "../components/Homepage/SignupCTA";
 import { createClient as createServerClient } from "../utils/supabase/server-props";
 import { AppContext } from "../features/AppContext";
 
@@ -81,6 +82,7 @@ export default function Home({ locations, user, profile, defaultLocation }) {
       </Head>
       <NavigationBar />
       <Hero />
+      {!isLoggedIn && <SignupCTA />}
       {isLoggedIn ? (
         <>
           <UserWelcome
@@ -97,6 +99,7 @@ export default function Home({ locations, user, profile, defaultLocation }) {
         <TopArtists />
         <CitiesStates locations={locations} />
       </section>
+
       <Footer />
     </Layout>
   );
