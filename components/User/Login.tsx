@@ -13,6 +13,12 @@ export default function Login() {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Forgot password state
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [resetEmail, setResetEmail] = useState("");
+  const [isResetting, setIsResetting] = useState(false);
+  const [resetMessage, setResetMessage] = useState("");
+
   async function logIn() {
     if (isLoggingIn) return;
 
@@ -37,6 +43,34 @@ export default function Login() {
       setErrorMessage("An unexpected error occurred");
     } finally {
       setIsLoggingIn(false);
+    }
+  }
+
+  async function resetPassword() {
+    if (isResetting) return;
+
+    setIsResetting(true);
+    setResetMessage("");
+
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(resetEmail);
+
+      if (error) {
+        console.error(error);
+        if (error.message.includes("captcha verification process failed")) {
+          setResetMessage("Captcha verification failed. Please try again.");
+        } else {
+          setResetMessage(error.message);
+        }
+        return;
+      }
+
+      setResetMessage("Password reset email sent!");
+    } catch (err) {
+      console.error(err);
+      setResetMessage("An unexpected error occurred");
+    } finally {
+      setIsResetting(false);
     }
   }
 
@@ -90,6 +124,45 @@ export default function Login() {
           </button>
         </div>
       </form>
+
+      <p
+        className={styles.forgotPassword}
+        onClick={() => setShowForgotPassword(!showForgotPassword)}
+      >
+        Forgot your password?
+      </p>
+
+      {showForgotPassword && (
+        <div className={styles.resetContainer}>
+          <div className={styles.formGroup}>
+            <label htmlFor="resetEmail" className={styles.label}>
+              Email Address
+            </label>
+            <input
+              id="resetEmail"
+              type="email"
+              value={resetEmail}
+              onChange={(e) => setResetEmail(e.target.value)}
+              className={styles.input}
+              placeholder="your@email.com"
+              disabled={isResetting}
+            />
+          </div>
+          <div className={styles.buttonGroup}>
+            <button
+              type="button"
+              onClick={resetPassword}
+              className={`${styles.button} ${styles.secondaryButton}`}
+              disabled={isResetting}
+            >
+              {isResetting ? "Sending..." : "Reset Password"}
+            </button>
+          </div>
+          {resetMessage && (
+            <div className={styles.resetMessage}>{resetMessage}</div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

@@ -1,11 +1,13 @@
 import Login from "../components/User/Login";
-import Signup from "../components/User/Signup";
+import Link from "next/link";
 
 export default function LoginPage() {
   return (
     <main>
       <Login />
-      <Signup />
+      <p>
+        Don't have an account? <Link href="/signup">Sign up</Link>
+      </p>
     </main>
   );
 }
