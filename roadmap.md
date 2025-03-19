@@ -1,5 +1,7 @@
 # Roadmap
 
+! Client side Supabase should less access - read only. Server side should have more access.
+
 ## Supabase Production Checklist
 
 https://supabase.com/docs/guides/deployment/going-into-prod#auth-rate-limits
@@ -11,17 +13,14 @@ done: https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=route
 Todo:
 
 - [x] need to set up email SMTP for
-- PROFILE PAGE - with user info
+- [x] PROFILE PAGE - with user info
+- [x] SIGN UP -> CONFIRM LINK -> PROFILE PAGE
+- [x] Can select default location from dropdown
+- [x] Homepage - LOGGED IN EXPERIENCE - if logged in shows default location button
+- [x] need login page icon. sign up page icon
 
-SIGN UP -> CONFIRM LINK -> PROFILE PAGE
-
--> Can select default location from dropdown
-
--> Homepage - if logged in shows default location button
-
-- need login page icon. sign up page icon
 - how does password reset work?
-- plan for login features to be added, profile flow after sign up
+- create plan for login features to be added, profile flow after sign up
 
 # Database Options
 
@@ -102,10 +101,10 @@ https://www.sandiegohousemusic.com/venues/orlando/venue-name
 ## Database
 
 - all artits table to include slug
-- table for locations
-- table for venues!
-- table for events
-  - populate with each new events call from EDM TRAIN API
+- [x] table for locations
+- [x] table for venues!
+- [x]table for events
+  - [x] populate with each new events call from EDM TRAIN API
 
 ### SEO
 
@@ -127,6 +126,14 @@ https://www.sandiegohousemusic.com/venues/orlando/venue-name
 - context - what else can we put there to keep
 
 ## 2025 Completed
+
+## Database
+
+- [x] table for locations
+- [x] table for venues!
+- [x]table for events
+
+  - [x] populate with each new events call from EDM TRAIN API
 
 - better layout - better how? improved cards
 

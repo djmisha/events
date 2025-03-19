@@ -41,6 +41,9 @@ const Hamburger = () => {
         <Link href="/states" onClick={handleClose}>
           Events by State
         </Link>
+        <Link href="/login" onClick={handleClose}>
+          Login / Sign Up
+        </Link>
       </div>
 
       {locationCtx?.length > 0 && (

@@ -4,7 +4,7 @@ import Hamburger from "../Hamburger/Hamburger";
 import BackToTop from "../BackToTop/BackToTop";
 import UserGreeting from "../User/UserGreeting";
 
-const NavigationBar = ({ events, setSearchTerm, locationData, isHome }) => {
+const NavigationBar = ({ events, setSearchTerm, locationData }) => {
   const locations = makeLocations();
 
   return (

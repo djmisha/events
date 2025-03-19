@@ -5,6 +5,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [locationCtx, setLocationCtx] = useState([]);
+  const [user, setUser] = useState(null);
   const supabase = createClient();
 
   const addLocation = (location) => {
@@ -27,8 +28,10 @@ export const AppProvider = ({ children }) => {
       locationCtx,
       addLocation,
       supabase,
+      user,
+      setUser,
     }),
-    [locationCtx]
+    [locationCtx, user]
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

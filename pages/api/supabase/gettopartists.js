@@ -1,8 +1,8 @@
-import supabase from "../../../features/Supabase";
+import { supabaseAdmin } from "../../../features/Supabase";
 
 const getData = async () => {
   try {
-    let { data, error } = await supabase.from("topartists").select("*");
+    let { data, error } = await supabaseAdmin.from("topartists").select("*");
 
     if (error) {
       console.error("Error fetching data: ", error);

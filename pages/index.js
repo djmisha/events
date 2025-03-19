@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useEffect, useContext } from "react";
 import Layout, { siteTitle } from "../components/layout";
 import { getLocations } from "../utils/getLocations";
 import Locator from "../components/Locator/Locator";
@@ -7,18 +8,64 @@ import TopArtists from "../components/Homepage/TopArtists";
 import NavigationBar from "../components/Navigation/NavigataionBar";
 import Hero from "../components/Homepage/Hero";
 import Footer from "../components/Footer/Footer";
+import UserWelcome from "../components/User/UserWelcome";
+import FavoriteArtists from "../components/User/FavoriteArtists";
+import { createClient as createServerClient } from "../utils/supabase/server-props";
+import { AppContext } from "../features/AppContext";
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   const locations = getLocations();
+
+  // Use server-side client to check authentication status
+  const supabase = createServerClient(context);
+  const { data: userData } = await supabase.auth.getUser();
+
+  // Get user data if logged in
+  const user = userData?.user || null;
+  let profile = null;
+  let defaultLocation = null;
+
+  // If user is logged in, fetch their profile
+  if (user) {
+    const { data: profileData } = await supabase
+      .from("profiles")
+      .select("username, full_name, default_location_id, favorite_artists")
+      .eq("id", user.id)
+      .single();
+
+    profile = profileData || null;
+
+    // If profile has default location, fetch the location data
+    if (profile?.default_location_id) {
+      // Convert default_location_id to number to ensure correct comparison
+      const locationId = parseInt(profile.default_location_id, 10);
+
+      // Find the location in the locations array
+      defaultLocation = locations.find((loc) => loc.id === locationId) || null;
+    }
+  }
 
   return {
     props: {
       locations,
+      user,
+      profile,
+      defaultLocation,
     },
   };
 }
 
-export default function Home({ locations }) {
+export default function Home({ locations, user, profile, defaultLocation }) {
+  const isLoggedIn = !!user;
+  const { setUser } = useContext(AppContext);
+
+  // Update AppContext with user data when component mounts
+  useEffect(() => {
+    if (user) {
+      setUser(user);
+    }
+  }, [user, setUser]);
+
   return (
     <Layout home>
       <Head>
@@ -34,7 +81,18 @@ export default function Home({ locations }) {
       </Head>
       <NavigationBar />
       <Hero />
-      <Locator locations={locations} />
+      {isLoggedIn ? (
+        <>
+          <UserWelcome
+            user={user}
+            profile={profile}
+            defaultLocation={defaultLocation}
+          />
+          {user && <FavoriteArtists userId={user.id} />}
+        </>
+      ) : (
+        <Locator locations={locations} />
+      )}
       <section className="two">
         <TopArtists />
         <CitiesStates locations={locations} />
