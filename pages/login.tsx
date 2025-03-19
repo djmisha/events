@@ -6,7 +6,7 @@ export default function LoginPage() {
     <main>
       <Login />
       <p>
-        Don't have an account? <Link href="/signup">Sign up</Link>
+        Don&apos;t have an account? <Link href="/signup">Sign up</Link>
       </p>
     </main>
   );
