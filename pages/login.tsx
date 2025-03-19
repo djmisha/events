@@ -5,9 +5,11 @@ export default function LoginPage() {
   return (
     <main>
       <Login />
-      <p>
-        Don&apos;t have an account? <Link href="/signup">Sign up</Link>
-      </p>
+      <center>
+        <p>
+          Don&apos;t have an account? <Link href="/signup">Sign up</Link>
+        </p>
+      </center>
     </main>
   );
 }

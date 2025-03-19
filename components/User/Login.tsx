@@ -13,16 +13,10 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-
-  // Forgot password state
-  const [showForgotPassword, setShowForgotPassword] = useState(false);
-  const [resetEmail, setResetEmail] = useState("");
-  const [isResetting, setIsResetting] = useState(false);
-  const [resetMessage, setResetMessage] = useState("");
   const [captchaToken, setCaptchaToken] = useState("");
 
   async function logIn() {
-    if (isLoggingIn) return;
+    if (isLoggingIn || !captchaToken) return;
 
     setIsLoggingIn(true);
     setErrorMessage("");
@@ -31,11 +25,18 @@ export default function Login() {
       const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
+        options: {
+          captchaToken,
+        },
       });
 
       if (error) {
         console.error(error);
-        setErrorMessage(error.message);
+        if (error.message.includes("captcha verification process failed")) {
+          setErrorMessage("Captcha verification failed. Please try again.");
+        } else {
+          setErrorMessage(error.message);
+        }
         return;
       }
 
@@ -45,36 +46,6 @@ export default function Login() {
       setErrorMessage("An unexpected error occurred");
     } finally {
       setIsLoggingIn(false);
-    }
-  }
-
-  async function resetPassword() {
-    if (isResetting || !captchaToken) return;
-
-    setIsResetting(true);
-    setResetMessage("");
-
-    try {
-      const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
-        captchaToken,
-      });
-
-      if (error) {
-        console.error(error);
-        if (error.message.includes("captcha verification process failed")) {
-          setResetMessage("Captcha verification failed. Please try again.");
-        } else {
-          setResetMessage(error.message);
-        }
-        return;
-      }
-
-      setResetMessage("Password reset email sent!");
-    } catch (err) {
-      console.error(err);
-      setResetMessage("An unexpected error occurred");
-    } finally {
-      setIsResetting(false);
       setCaptchaToken(""); // Reset captcha token after use
     }
   }
@@ -119,12 +90,17 @@ export default function Login() {
             />
           </div>
 
+          <HCaptcha
+            sitekey="74e2165e-2f0a-4314-9838-a5720a2e1fac"
+            onVerify={(token) => setCaptchaToken(token)}
+          />
+
           <div className={styles.buttonGroup}>
             <button
               type="button"
               onClick={logIn}
               className={`${styles.button} ${styles.primaryButton}`}
-              disabled={isLoggingIn}
+              disabled={isLoggingIn || !captchaToken}
             >
               {isLoggingIn ? "Logging in..." : "Log in"}
             </button>
@@ -133,46 +109,10 @@ export default function Login() {
 
         <p
           className={styles.forgotPassword}
-          onClick={() => setShowForgotPassword(!showForgotPassword)}
+          onClick={() => router.push("/passwordreset")}
         >
           Forgot your password?
         </p>
-
-        {showForgotPassword && (
-          <div className={styles.resetContainer}>
-            <div className={styles.formGroup}>
-              <label htmlFor="resetEmail" className={styles.label}>
-                Email Address
-              </label>
-              <input
-                id="resetEmail"
-                type="email"
-                value={resetEmail}
-                onChange={(e) => setResetEmail(e.target.value)}
-                className={styles.input}
-                placeholder="your@email.com"
-                disabled={isResetting}
-              />
-            </div>
-            <HCaptcha
-              sitekey="74e2165e-2f0a-4314-9838-a5720a2e1fac"
-              onVerify={(token) => setCaptchaToken(token)}
-            />
-            <div className={styles.buttonGroup}>
-              <button
-                type="button"
-                onClick={resetPassword}
-                className={`${styles.button} ${styles.secondaryButton}`}
-                disabled={isResetting || !captchaToken}
-              >
-                {isResetting ? "Sending..." : "Reset Password"}
-              </button>
-            </div>
-            {resetMessage && (
-              <div className={styles.resetMessage}>{resetMessage}</div>
-            )}
-          </div>
-        )}
       </div>
     </div>
   );
