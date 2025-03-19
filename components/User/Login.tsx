@@ -56,7 +56,7 @@ export default function Login() {
 
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
-        captcha_token: captchaToken,
+        captchaToken,
       });
 
       if (error) {
