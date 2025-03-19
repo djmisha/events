@@ -5,7 +5,7 @@ export default function SignupCTA() {
   return (
     <section className={styles.ctaSignup}>
       <div className={styles.ctaLeft}>
-        <h2>Create an Account Today!</h2>
+        <h2>Create a Free Account Today!</h2>
         <ul>
           <li>Save your default location</li>
           <li>Add favorite artists</li>
