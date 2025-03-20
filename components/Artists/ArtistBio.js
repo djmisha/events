@@ -1,5 +1,22 @@
 import { formatBio } from "./ArtistBio.helpers";
-import { saveTagsToSupabase } from "../../api/saveTagsToSupabase";
+
+const saveTags = async (tags) => {
+  try {
+    const response = await fetch("/api/saveTags", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ tags }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to save tags");
+    }
+  } catch (error) {
+    console.error("Error saving tags:", error);
+  }
+};
 
 const ArtistBio = ({ name, lastFMdata }) => {
   if (!lastFMdata || lastFMdata.error) return null;
@@ -8,7 +25,7 @@ const ArtistBio = ({ name, lastFMdata }) => {
   const tags = lastFMdata?.artist?.tags?.tag;
   const hasTags = Array.isArray(tags) && tags.length > 0;
 
-  if (hasTags) saveTagsToSupabase(tags);
+  if (hasTags) saveTags(tags);
 
   return (
     <div className="artist-bio">
