@@ -1,4 +1,5 @@
 import { formatBio } from "./ArtistBio.helpers";
+import { saveTagsToSupabase } from "../../api/saveTagsToSupabase";
 
 const ArtistBio = ({ name, lastFMdata }) => {
   if (!lastFMdata || lastFMdata.error) return null;
@@ -6,6 +7,8 @@ const ArtistBio = ({ name, lastFMdata }) => {
   const bioContent = lastFMdata?.artist?.bio?.content;
   const tags = lastFMdata?.artist?.tags?.tag;
   const hasTags = Array.isArray(tags) && tags.length > 0;
+
+  if (hasTags) saveTagsToSupabase(tags);
 
   return (
     <div className="artist-bio">
