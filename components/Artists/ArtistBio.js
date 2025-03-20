@@ -47,7 +47,7 @@ const ArtistBio = ({ name, lastFMdata }) => {
           <div className="artist-tags">
             {tags.map((tag) => (
               <span key={tag.name} className="artist-tag">
-                {tag.name}
+                {tag.name.toLowerCase().replace(/-/g, " ")}
               </span>
             ))}
           </div>
