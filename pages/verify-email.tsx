@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import Head from "next/head";
 import styles from "../components/User/Login.module.scss";
 
 export default function VerifyEmail() {
+  const router = useRouter();
   const navigateToLogin = () => {
     router.push("/login");
   };

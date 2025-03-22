@@ -400,10 +400,17 @@ export default function EditProfile({ user }: ProfileFormProps) {
               variant="primary"
               onClick={updateProfile}
               disabled={loading || !formValid}
+              href="#"
+              className={styles.button}
             >
               {loading ? "Updating..." : "Update Profile"}
             </Button>
-            <Button variant="secondary" onClick={() => router.push("/")}>
+            <Button
+              variant="secondary"
+              onClick={() => router.push("/")}
+              href="#"
+              className={styles.button}
+            >
               Cancel
             </Button>
           </div>
@@ -414,6 +421,7 @@ export default function EditProfile({ user }: ProfileFormProps) {
               variant="logoutButton"
               onClick={handleLogout}
               disabled={loading}
+              href="#"
               className={styles.logoutButton}
             >
               {loading ? "Processing..." : "Log Out"}
