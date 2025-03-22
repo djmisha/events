@@ -1,12 +1,54 @@
-import React, { createContext, useState, useMemo } from "react";
+import React, {
+  createContext,
+  useState,
+  useMemo,
+  useEffect,
+  useRef,
+} from "react";
 import { createClient } from "../utils/supabase/component";
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [locationCtx, setLocationCtx] = useState([]);
-  const [user, setUser] = useState(null);
+  const [profile, setProfile] = useState(null);
   const supabase = createClient();
+  const isProfileInitialized = useRef(false);
+
+  // Set isProfileInitialized flag when profile is set from props
+  useEffect(() => {
+    if (profile && !isProfileInitialized.current) {
+      isProfileInitialized.current = true;
+    }
+  }, [profile]);
+
+  useEffect(() => {
+    // Only fetch user data if profile is not already initialized from server props
+    if (isProfileInitialized.current) return;
+
+    const fetchUserAndProfile = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      if (user) {
+        // Fetch profile if user exists
+        const { data, error } = await supabase
+          .from("profiles")
+          .select("*")
+          .eq("id", user.id)
+          .single();
+
+        if (!error && data) {
+          setProfile(data);
+        }
+      } else {
+        setProfile(null);
+      }
+    };
+
+    fetchUserAndProfile();
+  }, [supabase]);
 
   const addLocation = (location) => {
     setLocationCtx((prevLocations) => {
@@ -28,10 +70,11 @@ export const AppProvider = ({ children }) => {
       locationCtx,
       addLocation,
       supabase,
-      user,
-      setUser,
+      profile,
+      setProfile,
+      isLoggedIn: !!profile,
     }),
-    [locationCtx, user]
+    [locationCtx, profile]
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

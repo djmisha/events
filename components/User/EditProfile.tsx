@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import { AppContext } from "../../features/AppContext";
 import styles from "./EditProfile.module.scss";
 import locations from "../../utils/locations.json";
-import Button from "../Button/Button";
 
 interface Profile {
   id: string;
@@ -40,7 +39,9 @@ const sanitizeInput = (input: string): string => {
 
 export default function EditProfile({ user }: ProfileFormProps) {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  // Replace single loading state with two separate loading states
+  const [isLoadingProfile, setIsLoadingProfile] = useState(false);
+  const [isLoadingLogout, setIsLoadingLogout] = useState(false);
   const [message, setMessage] = useState<{
     type: "success" | "error";
     text: string;
@@ -104,7 +105,7 @@ export default function EditProfile({ user }: ProfileFormProps) {
   useEffect(() => {
     async function loadProfile() {
       try {
-        setLoading(true);
+        setIsLoadingProfile(true);
         const { data, error } = await supabase
           .from("profiles")
           .select("*")
@@ -129,7 +130,7 @@ export default function EditProfile({ user }: ProfileFormProps) {
       } catch (error) {
         console.error("Error loading profile:", error);
       } finally {
-        setLoading(false);
+        setIsLoadingProfile(false);
       }
     }
 
@@ -152,7 +153,7 @@ export default function EditProfile({ user }: ProfileFormProps) {
     }
 
     try {
-      setLoading(true);
+      setIsLoadingProfile(true);
 
       // Final sanitization before database submission
       const sanitizedProfile = {
@@ -186,13 +187,13 @@ export default function EditProfile({ user }: ProfileFormProps) {
       console.error("Error updating profile:", error);
       setMessage({ type: "error", text: "An unexpected error occurred" });
     } finally {
-      setLoading(false);
+      setIsLoadingProfile(false);
     }
   }
 
   async function handleLogout() {
     try {
-      setLoading(true);
+      setIsLoadingLogout(true);
       const { error } = await supabase.auth.signOut();
       if (error) {
         console.error("Error logging out:", error);
@@ -204,7 +205,7 @@ export default function EditProfile({ user }: ProfileFormProps) {
       console.error("Unexpected error during logout:", error);
       setMessage({ type: "error", text: "An unexpected error occurred" });
     } finally {
-      setLoading(false);
+      setIsLoadingLogout(false);
     }
   }
 
@@ -396,36 +397,32 @@ export default function EditProfile({ user }: ProfileFormProps) {
           </div>
 
           <div className={styles.buttonGroup}>
-            <Button
-              variant="primary"
-              onClick={updateProfile}
-              disabled={loading || !formValid}
-              href="#"
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                updateProfile();
+              }}
+              disabled={isLoadingProfile || !formValid}
               className={styles.button}
             >
-              {loading ? "Updating..." : "Update Profile"}
-            </Button>
-            <Button
-              variant="secondary"
-              onClick={() => router.push("/")}
-              href="#"
-              className={styles.button}
-            >
-              Cancel
-            </Button>
+              {isLoadingProfile ? "Updating..." : "Update Profile"}
+            </button>
           </div>
 
           <div className={styles.logoutSection}>
             <hr className={styles.divider} />
-            <Button
-              variant="logoutButton"
-              onClick={handleLogout}
-              disabled={loading}
-              href="#"
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                handleLogout();
+              }}
+              disabled={isLoadingLogout}
               className={styles.logoutButton}
             >
-              {loading ? "Processing..." : "Log Out"}
-            </Button>
+              {isLoadingLogout ? "Processing..." : "Log Out"}
+            </button>
           </div>
         </form>
       </div>

@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
   if (user) {
     const { data: profileData } = await supabase
       .from("profiles")
-      .select("username, full_name, default_location_id, favorite_artists")
+      .select("*") // Fetch all fields instead of just specific ones
       .eq("id", user.id)
       .single();
 
@@ -50,23 +50,22 @@ export async function getServerSideProps(context) {
   return {
     props: {
       locations,
-      user,
       profile,
       defaultLocation,
     },
   };
 }
 
-export default function Home({ locations, user, profile, defaultLocation }) {
-  const isLoggedIn = !!user;
-  const { setUser } = useContext(AppContext);
+export default function Home({ locations, profile, defaultLocation }) {
+  const isLoggedIn = !!profile;
+  const { setProfile } = useContext(AppContext);
 
-  // Update AppContext with user data when component mounts
+  // Update AppContext with profile data when component mounts
   useEffect(() => {
-    if (user) {
-      setUser(user);
+    if (profile) {
+      setProfile(profile);
     }
-  }, [user, setUser]);
+  }, [profile, setProfile]);
 
   return (
     <Layout home>
@@ -87,12 +86,8 @@ export default function Home({ locations, user, profile, defaultLocation }) {
       {!isLoggedIn && <SignupCTA />}
       {isLoggedIn ? (
         <>
-          <UserWelcome
-            user={user}
-            profile={profile}
-            defaultLocation={defaultLocation}
-          />
-          {user && <FavoriteArtists userId={user.id} />}
+          <UserWelcome defaultLocation={defaultLocation} />
+          <FavoriteArtists />
         </>
       ) : (
         <Locator locations={locations} />

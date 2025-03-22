@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import Link from "next/link";
 import styles from "./UserGreeting.module.scss";
 import { AppContext } from "../../features/AppContext";
@@ -13,39 +13,11 @@ interface Profile {
 }
 
 const UserGreeting = () => {
-  const [user, setUser] = useState<any>(null);
-  const [profile, setProfile] = useState<Partial<Profile> | null>(null);
-  const { supabase } = useContext(AppContext);
-
+  const { profile } = useContext(AppContext);
   const DEFAULT_ICON = "/images/icon-user.svg";
 
-  useEffect(() => {
-    async function getUserAndProfile() {
-      // Get user
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      setUser(user);
-
-      // If user exists, get profile
-      if (user) {
-        const { data, error } = await supabase
-          .from("profiles")
-          .select("*")
-          .eq("id", user.id)
-          .single();
-
-        if (!error && data) {
-          setProfile(data);
-        }
-      }
-    }
-
-    getUserAndProfile();
-  }, [supabase]);
-
   const renderContent = () => {
-    if (!user) {
+    if (!profile) {
       return {
         href: "/login",
         iconSrc: DEFAULT_ICON,
@@ -56,9 +28,9 @@ const UserGreeting = () => {
 
     return {
       href: "/profile",
-      iconSrc: profile?.avatar_url || DEFAULT_ICON,
-      iconAlt: profile?.username || "Profile",
-      text: profile?.username || "Profile",
+      iconSrc: profile.avatar_url || DEFAULT_ICON,
+      iconAlt: profile.username || "Profile",
+      text: profile.username || "Profile",
     };
   };
 

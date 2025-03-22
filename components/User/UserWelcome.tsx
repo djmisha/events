@@ -1,8 +1,9 @@
+import { useContext } from "react";
 import Link from "next/link";
 import styles from "./UserWelcome.module.scss";
-import { User } from "@supabase/supabase-js";
 import { cityOrState } from "../../utils/utilities";
 import Button from "../Button/Button";
+import { AppContext } from "../../features/AppContext";
 
 interface Location {
   id: number;
@@ -11,33 +12,16 @@ interface Location {
   slug: string;
 }
 
-interface Profile {
-  username: string;
-  full_name: string;
-  default_location_id?: number | string; // Accept either number or string
-}
-
 interface UserWelcomeProps {
-  user: User;
-  profile: Profile | null;
   defaultLocation: Location | null;
 }
 
-const UserWelcome = ({ user, profile, defaultLocation }: UserWelcomeProps) => {
-  if (!user) return null;
+const UserWelcome = ({ defaultLocation }: UserWelcomeProps) => {
+  const { profile } = useContext(AppContext);
 
-  const displayName =
-    profile?.username ||
-    profile?.full_name ||
-    user.email?.split("@")[0] ||
-    "there";
+  if (!profile) return null;
 
-  // For debugging
-  console.log("User Welcome Props:", {
-    user: !!user,
-    profile,
-    defaultLocation,
-  });
+  const displayName = profile.username || profile.full_name || "there";
 
   return (
     <div className={styles.welcomeContainer}>
@@ -66,7 +50,7 @@ const UserWelcome = ({ user, profile, defaultLocation }: UserWelcomeProps) => {
           </div>
         ) : (
           <div className={styles.locationInfo}>
-            <p>You haven&quote;t set a default location yet.</p>
+            <p>You haven&apos;t set a default location yet.</p>
             <Button
               href="/profile"
               variant="primary"
