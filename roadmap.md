@@ -1,5 +1,11 @@
 # Roadmap
 
+## TO GO LIVE WITH LOGIN
+
+- make password reset work
+
+- profile page - add navigaion and footer
+
 ! Client side Supabase should less access - read only. Server side should have more access.
 
 ## Supabase Production Checklist
@@ -9,15 +15,6 @@ https://supabase.com/docs/guides/deployment/going-into-prod#auth-rate-limits
 LOGIN AUTH:
 
 done: https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=router&router=pages
-
-Todo:
-
-- [x] need to set up email SMTP for
-- [x] PROFILE PAGE - with user info
-- [x] SIGN UP -> CONFIRM LINK -> PROFILE PAGE
-- [x] Can select default location from dropdown
-- [x] Homepage - LOGGED IN EXPERIENCE - if logged in shows default location button
-- [x] need login page icon. sign up page icon
 
 - how does password reset work?
 - create plan for login features to be added, profile flow after sign up
@@ -129,13 +126,17 @@ https://www.sandiegohousemusic.com/venues/orlando/venue-name
 
 ## Database
 
+- [x] need to set up email SMTP for
+- [x] PROFILE PAGE - with user info
+- [x] SIGN UP -> CONFIRM LINK -> PROFILE PAGE
+- [x] Can select default location from dropdown
+- [x] Homepage - LOGGED IN EXPERIENCE - if logged in shows default location button
+- [x] need login page icon. sign up page icon
 - [x] table for locations
 - [x] table for venues!
 - [x]table for events
-
-  - [x] populate with each new events call from EDM TRAIN API
-
-- better layout - better how? improved cards
+- [x] populate with each new events call from EDM TRAIN API
+- [x] better layout - better how? improved cards
 
 ## 2024 Completed
 
@@ -206,3 +207,4 @@ https://www.sandiegohousemusic.com/venues/orlando/venue-name
 - [x] fix desktop styling for artist pages
 - [x] bring back top artist page
 - [x] add artist information from other api sources: last.fm
+- [x] redirect on sign up to profile page

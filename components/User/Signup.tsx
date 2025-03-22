@@ -27,8 +27,10 @@ export default function Signup() {
       const { error } = await supabase.auth.signUp({
         email: signupEmail,
         password: signupPassword,
+        username: signupEmail,
         options: {
           captchaToken,
+          emailRedirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/verify-email`,
         },
       });
 
@@ -54,14 +56,6 @@ export default function Signup() {
     <div className={styles.centerContainer}>
       <div className={styles.formContainer}>
         <h1 className={styles.title}>Create an Account</h1>
-
-        {signupErrorMessage && (
-          <div className={styles.errorMessage}>{signupErrorMessage}</div>
-        )}
-
-        {signupSuccessMessage && (
-          <div className={styles.successMessage}>{signupSuccessMessage}</div>
-        )}
 
         <form>
           <div className={styles.formGroup}>
@@ -109,6 +103,13 @@ export default function Signup() {
               {isSigningUp ? "Signing up..." : "Sign up"}
             </button>
           </div>
+          {signupErrorMessage && (
+            <div className={styles.errorMessage}>{signupErrorMessage}</div>
+          )}
+
+          {signupSuccessMessage && (
+            <div className={styles.successMessage}>{signupSuccessMessage}</div>
+          )}
         </form>
       </div>
     </div>

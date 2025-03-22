@@ -18,10 +18,8 @@ export default function PasswordReset() {
     setResetMessage("");
 
     try {
-      const { error } = await supabase.auth.resetPasswordForEmail({
-        email: resetEmail,
-        redirectUrl: "https://your-app.com/reset-password",
-        captchaToken,
+      const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
+        redirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/change-password`,
       });
 
       if (error) {

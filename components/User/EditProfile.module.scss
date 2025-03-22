@@ -120,3 +120,20 @@
   background-color: #fee2e2;
   color: #991b1b;
 }
+
+.required {
+  color: red;
+  margin-left: 3px;
+}
+
+.inputError {
+  border-color: red !important;
+  background-color: rgba(255, 0, 0, 0.05);
+}
+
+.errorText {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}

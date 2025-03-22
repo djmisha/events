@@ -14,7 +14,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .formContainer {
@@ -126,4 +125,26 @@
   color: #4f46e5;
   cursor: pointer;
   margin-top: 1rem;
+}
+
+.errorMessage {
+  background-color: #ffebee;
+  color: #d32f2f;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 15px;
+  border: 1px solid #ef9a9a;
+  font-weight: bold;
+  text-align: center;
+}
+
+.successMessage {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 15px;
+  border: 1px solid #a5d6a7;
+  font-weight: bold;
+  text-align: center;
 }
