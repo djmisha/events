@@ -92,10 +92,12 @@ export default function ChangePassword({ user }) {
 
         <div className={styles.buttonContainer}>
           <Button
+            href="/"
             variant="primary"
             onClick={null}
             disabled={isLoading}
             type="submit"
+            className={styles.button}
           >
             {isLoading ? "Updating..." : "Update Password"}
           </Button>
