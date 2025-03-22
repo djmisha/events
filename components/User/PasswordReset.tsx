@@ -20,6 +20,7 @@ export default function PasswordReset() {
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
         redirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/change-password`,
+        captchaToken,
       });
 
       if (error) {
