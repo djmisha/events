@@ -1,0 +1,28 @@
+.ctaSignup {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.ctaLeft {
+  flex: 1;
+  margin-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+.ctaRight {
+  flex: 1;
+}

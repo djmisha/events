@@ -1,0 +1,120 @@
+@use "../../styles/variables" as *;
+
+.event-filter-main-navigation {
+  height: 60px;
+  width: calc(100% - 20px);
+  position: relative;
+  background-color: $white;
+  z-index: 1;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.event-filter-top-nav-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  left: 0px;
+  z-index: 800;
+  height: 60px;
+  padding-bottom: 0px;
+  background-color: $white;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  @media only screen and (min-width: 768px) {
+    margin: 0;
+  }
+  > div {
+    &.visible .sort-trigger {
+      background-color: $lightPink;
+      color: $pink;
+      &:after {
+        color: $pink;
+      }
+    }
+  }
+  .sort-trigger {
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1px solid transparent;
+    background-color: $white;
+    color: #000;
+    width: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40px;
+    min-width: 50px;
+    padding-top: 17px;
+
+    span {
+      display: block;
+      margin-top: 4px;
+      margin-bottom: 12px;
+    }
+    &:before {
+      position: relative;
+      top: 2px;
+      font-size: 14px;
+      margin-right: 6px;
+      @media only screen and (min-width: 1080px) {
+        font-size: 20px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .nav-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .nav-slot {
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-placeholder {
+    width: 100%;
+    height: 40px;
+    visibility: hidden;
+  }
+}
+
+.event-filter-by {
+  border: 1px solid $lightGrey;
+  width: 80px;
+  text-transform: uppercase;
+  background-color: white;
+  color: black;
+  padding: 0 20px;
+}
+
+.event-filter-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.event-filter-nav-slot {
+  min-width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

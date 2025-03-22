@@ -29,7 +29,7 @@
  *             └─→ 2. Delete from events table
  */
 
-import supabase from "../../features/Supabase";
+import { supabaseAdmin } from "../Supabase";
 
 // Add utility functions and constants
 const BATCH_SIZES = {
@@ -92,7 +92,7 @@ const deleteOldEvents = async () => {
       await delay(1000); // Delay between main batch operations
 
       // Get next batch of old events using pagination with ID
-      const { data: oldEvents, error: fetchError } = await supabase
+      const { data: oldEvents, error: fetchError } = await supabaseAdmin
         .from("events")
         .select("id")
         .not("event_date", "is", null)
@@ -118,7 +118,7 @@ const deleteOldEvents = async () => {
 
       // Delete related artist entries first to maintain referential integrity
       await retryOperation(async () => {
-        const { error } = await supabase
+        const { error } = await supabaseAdmin
           .from("event_artists")
           .delete()
           .in("event_id", batchIds);
@@ -129,7 +129,7 @@ const deleteOldEvents = async () => {
 
       // Delete the events after removing related records
       await retryOperation(async () => {
-        const { error } = await supabase
+        const { error } = await supabaseAdmin
           .from("events")
           .delete()
           .in("id", batchIds);
@@ -241,7 +241,7 @@ const addNewEventsfromEDMTrain = async (data, locationId) => {
     // Process venues in batches
     if (venueData.length > 0) {
       await processBatch(venueData, async (batch) => {
-        const { error } = await supabase
+        const { error } = await supabaseAdmin
           .from("venues")
           .upsert(batch, { onConflict: "id" });
         if (error) throw error;
@@ -252,7 +252,7 @@ const addNewEventsfromEDMTrain = async (data, locationId) => {
     // Process events in batches
     if (eventsToInsert.length > 0) {
       await processBatch(eventsToInsert, async (batch) => {
-        const { error } = await supabase
+        const { error } = await supabaseAdmin
           .from("events")
           .upsert(batch, { onConflict: "id" });
         if (error) throw error;
@@ -263,7 +263,7 @@ const addNewEventsfromEDMTrain = async (data, locationId) => {
     // Process artists in batches
     if (artistData.length > 0) {
       await processBatch(artistData, async (batch) => {
-        const { error } = await supabase
+        const { error } = await supabaseAdmin
           .from("event_artists")
           .upsert(batch, { onConflict: "event_id,artist_id" });
         if (error) throw error;

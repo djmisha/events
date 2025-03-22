@@ -1,0 +1,46 @@
+.favoritesContainer {
+  margin: 2rem 0;
+  padding: 0.5rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+
+  h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+.artistsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.loading {
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.noFavorites {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  text-align: center;
+  color: #6b7280;
+
+  h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+  }
+}
+
+@media (max-width: 640px) {
+  .artistsGrid {
+    grid-template-columns: 1fr;
+  }
+}
