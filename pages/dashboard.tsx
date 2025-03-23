@@ -2,7 +2,6 @@ import type { User } from "@supabase/supabase-js";
 import type { GetServerSidePropsContext } from "next";
 import UserDashboard from "../components/User/UserDashboard";
 import { createClient as createServerClient } from "../utils/supabase/server-props";
-import NavigationBar from "../components/Navigation/NavigataionBar";
 import { getLocations } from "../utils/getLocations";
 
 interface DashboardProps {
@@ -17,15 +16,11 @@ export default function DashboardPage({
   defaultLocation,
 }: DashboardProps) {
   return (
-    <>
-      <NavigationBar events={[]} setSearchTerm={() => {}} locationData={{}} />
-      <UserDashboard
-        user={user}
-        profile={profile}
-        defaultLocation={defaultLocation}
-      />
-      ;
-    </>
+    <UserDashboard
+      user={user}
+      profile={profile}
+      defaultLocation={defaultLocation}
+    />
   );
 }
 

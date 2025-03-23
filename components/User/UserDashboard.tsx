@@ -5,6 +5,7 @@ import styles from "./UserDashboard.module.scss";
 import { AppContext } from "../../features/AppContext";
 import FavoriteArtists from "./FavoriteArtists";
 import ArtistSearch from "./ArtistSearch";
+import OtherLocations from "./OtherLocations";
 import locationsData from "../../utils/locations.json";
 
 interface UserDashboardProps {
@@ -29,7 +30,6 @@ interface FormattedLocation {
 }
 
 export default function UserDashboard({
-  user,
   profile: serverProfile,
   defaultLocation,
 }: UserDashboardProps) {
@@ -45,11 +45,12 @@ export default function UserDashboard({
   useEffect(() => {
     if (defaultLocation) {
       // Use the server provided location data
+      const cityName = defaultLocation.city || defaultLocation.state;
       setFormattedLocation({
         id: defaultLocation.id,
-        city: defaultLocation.city || defaultLocation.state,
+        city: cityName,
         state: defaultLocation.state,
-        slug: `location/${defaultLocation.id}`,
+        slug: `events/${cityName.toLowerCase().replace(/\s+/g, "-")}`,
       });
     } else if (profile?.default_city) {
       // Fall back to client-side location finding
@@ -63,11 +64,12 @@ export default function UserDashboard({
 
         if (location) {
           // Format the location data
+          const cityName = location.city || location.state;
           setFormattedLocation({
             id: location.id,
-            city: location.city || location.state, // If city is null, use state name
+            city: cityName,
             state: location.state,
-            slug: `location/${location.id}`,
+            slug: `events/${cityName.toLowerCase().replace(/\s+/g, "-")}`,
           });
         } else {
           console.log("Location not found for ID:", locationId);
@@ -114,6 +116,9 @@ export default function UserDashboard({
           </div>
         </div>
       )}
+
+      {/* Other Locations section */}
+      {/* <OtherLocations currentLocationId={formattedLocation?.id} /> */}
 
       {/* Artist Management Section */}
       <div className={styles.artistManagementSection}>
