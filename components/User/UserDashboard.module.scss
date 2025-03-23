@@ -188,6 +188,56 @@
   height: 100%;
 }
 
+.greetingSection {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+}
+
+.defaultCitySection {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+  }
+
+  .cityInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  .viewEventsLink {
+    display: inline-block;
+    background-color: #4a90e2;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #3a80d2;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .dashboardGrid {
     grid-template-columns: 1fr;

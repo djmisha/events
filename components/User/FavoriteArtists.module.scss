@@ -17,6 +17,13 @@
   gap: 1rem;
 }
 
+.artistsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
 .loading {
   padding: 2rem;
   text-align: center;
@@ -36,6 +43,55 @@
     font-size: 1.5rem;
     font-weight: 600;
     color: #111827;
+  }
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.editButton {
+  padding: 6px 12px;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: #e5e7eb;
+  }
+}
+
+.artistCardWrapper {
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.removeButton {
+  padding: 5px 10px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  z-index: 10; /* Ensure button appears above the card */
+
+  &:hover {
+    background-color: #dc2626;
   }
 }
 

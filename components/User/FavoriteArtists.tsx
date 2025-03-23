@@ -18,6 +18,7 @@ interface FavoriteArtistsProps {
 const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
   const [favoriteArtists, setFavoriteArtists] = useState<Artist[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isEditing, setIsEditing] = useState(false);
   const { supabase } = useContext(AppContext);
 
   useEffect(() => {
@@ -41,7 +42,10 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
         // Convert array indices to artist objects
         if (profile?.favorite_artists?.length) {
           const favArtists = profile.favorite_artists
-            .map((index: number) => artistsData[index])
+            .map((index: number) => ({
+              ...artistsData[index],
+              arrayIndex: index, // Store the original index for later use
+            }))
             .filter(Boolean);
 
           setFavoriteArtists(favArtists);
@@ -55,6 +59,45 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
 
     fetchFavoriteArtists();
   }, [supabase, userId]);
+
+  const removeArtist = async (artistIndex: number) => {
+    try {
+      // Get current profile data
+      const { data: profile, error: fetchError } = await supabase
+        .from("profiles")
+        .select("favorite_artists")
+        .eq("id", userId)
+        .single();
+
+      if (fetchError) {
+        console.error("Error fetching profile:", fetchError);
+        return;
+      }
+
+      // Remove the artist from the array
+      const updatedFavorites = profile.favorite_artists.filter(
+        (index: number) => index !== artistIndex
+      );
+
+      // Update the database
+      const { error: updateError } = await supabase
+        .from("profiles")
+        .update({ favorite_artists: updatedFavorites })
+        .eq("id", userId);
+
+      if (updateError) {
+        console.error("Error updating favorites:", updateError);
+        return;
+      }
+
+      // Update the local state
+      setFavoriteArtists((prevArtists) =>
+        prevArtists.filter((artist) => artist.arrayIndex !== artistIndex)
+      );
+    } catch (error) {
+      console.error("Error removing artist:", error);
+    }
+  };
 
   if (loading) {
     return (
@@ -73,14 +116,32 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
 
   return (
     <div className={styles.favoritesContainer}>
-      <h3>Your Favorite Artists</h3>
-      <div className={styles.artistsGrid}>
+      <div className={styles.headerRow}>
+        <h3>Your Favorite Artists</h3>
+        <button
+          className={styles.editButton}
+          onClick={() => setIsEditing(!isEditing)}
+        >
+          {isEditing ? "Done" : "Edit"}
+        </button>
+      </div>
+      <div className={styles.artistsList}>
         {favoriteArtists.map((artist) => (
-          <TopArtistsCard
-            key={artist.id}
-            artist={artist}
-            showCounts={!!(artist.count && artist.locations)}
-          />
+          <div key={artist.id} className={styles.artistCardWrapper}>
+            <TopArtistsCard
+              artist={artist}
+              showCounts={!!(artist.count && artist.locations)}
+              fullWidth={true}
+            />
+            {isEditing && (
+              <button
+                className={styles.removeButton}
+                onClick={() => removeArtist(artist.arrayIndex)}
+              >
+                Remove
+              </button>
+            )}
+          </div>
         ))}
       </div>
     </div>

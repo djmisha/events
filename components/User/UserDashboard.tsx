@@ -1,76 +1,64 @@
 import { useContext, useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import type { User } from "@supabase/supabase-js";
+import Link from "next/link";
 import styles from "./UserDashboard.module.scss";
 import { AppContext } from "../../features/AppContext";
 import FavoriteArtists from "./FavoriteArtists";
-import UserGreeting from "./UserGreeting";
-import UserWelcome from "./UserWelcome";
 import ArtistSearch from "./ArtistSearch";
+import locationsData from "../../utils/locations.json";
 
-export default function UserDashboard() {
-  const router = useRouter();
-  const { profile, isLoggedIn, supabase } = useContext(AppContext);
-  const [isLoading, setIsLoading] = useState(true);
-  const [authChecked, setAuthChecked] = useState(false);
-  const [defaultCity, setDefaultCity] = useState(null);
-  const [formattedLocation, setFormattedLocation] = useState(null);
+interface UserDashboardProps {
+  user: User;
+}
+
+interface Location {
+  id: number;
+  city: string | null;
+  state: string;
+  stateCode: string;
+  slug?: string;
+}
+
+interface FormattedLocation {
+  id: number;
+  city: string;
+  state: string;
+  slug: string;
+}
+
+export default function UserDashboard({ user }: UserDashboardProps) {
+  const { profile } = useContext(AppContext);
+  const [formattedLocation, setFormattedLocation] =
+    useState<FormattedLocation | null>(null);
   const [refreshFavorites, setRefreshFavorites] = useState(0);
 
-  // Check auth status once
-  useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const { data } = await supabase.auth.getSession();
-        // Only redirect if we've confirmed there's no session
-        if (!data.session) {
-          router.push("/login");
-        }
-      } catch (error) {
-        console.error("Auth check error:", error);
-      } finally {
-        setIsLoading(false);
-        setAuthChecked(true);
-      }
-    };
-
-    checkAuth();
-  }, [supabase, router]);
-
-  // Fetch user's default city
+  // Find location data by ID and format it
   useEffect(() => {
     if (profile?.default_city) {
-      setDefaultCity(profile.default_city);
-    } else if (profile) {
-      // Fetch the first city from locations table as default
-      const fetchDefaultCity = async () => {
-        const { data, error } = await supabase
-          .from("locations")
-          .select("*")
-          .limit(1)
-          .single();
+      const locationId =
+        typeof profile.default_city === "object"
+          ? profile.default_city.id
+          : Number(profile.default_city);
 
-        if (!error && data) {
-          setDefaultCity(data);
+      const findLocation = () => {
+        const location = locationsData.find((loc) => loc.id === locationId);
+
+        if (location) {
+          // Format the location data
+          setFormattedLocation({
+            id: location.id,
+            city: location.city || location.state, // If city is null, use state name
+            state: location.state,
+            slug: `location/${location.id}`,
+          });
+        } else {
+          console.log("Location not found for ID:", locationId);
         }
       };
 
-      fetchDefaultCity();
+      findLocation();
     }
-  }, [profile, supabase]);
-
-  // Format location data for UserWelcome component
-  useEffect(() => {
-    if (defaultCity) {
-      if (typeof defaultCity === "object") {
-        setFormattedLocation({
-          id: defaultCity.id,
-          city: defaultCity.city || defaultCity.name,
-          state: defaultCity.state || "",
-          slug: defaultCity.slug || `location/${defaultCity.id}`,
-        });
-      }
-    }
-  }, [defaultCity]);
+  }, [profile]);
 
   // Callback for when an artist is added or removed
   const handleArtistToggled = () => {
@@ -78,34 +66,36 @@ export default function UserDashboard() {
     setRefreshFavorites((prev) => prev + 1);
   };
 
-  // Show loading state while checking auth
-  if (isLoading) {
-    return (
-      <div className={styles.loadingContainer}>
-        <div className={styles.loadingSpinner}></div>
-        <p>Loading your dashboard...</p>
-      </div>
-    );
-  }
-
-  // Only check profile-based login after auth check is complete
-  if (authChecked && !isLoggedIn) {
-    return (
-      <div className={styles.loadingContainer}>
-        <p>Please log in to access your dashboard.</p>
-      </div>
-    );
-  }
+  console.log("UserDashboard profile:", profile);
 
   return (
     <div className={styles.dashboardContainer}>
-      <div className={styles.dashboardHeader}>
-        <h1>Dashboard</h1>
-        <UserGreeting />
-      </div>
-
-      {/* Replace welcome section with UserWelcome component */}
-      {profile && <UserWelcome defaultLocation={formattedLocation} />}
+      {/* Greeting section */}
+      {profile && (
+        <div className={styles.greetingSection}>
+          <h2>
+            Greetings,{" "}
+            {profile.username || profile.email?.split("@")[0] || "User"}
+          </h2>
+        </div>
+      )}
+      {/* Default city section */}
+      {formattedLocation && (
+        <div className={styles.defaultCitySection}>
+          <h3>Your Default City</h3>
+          <div className={styles.cityInfo}>
+            <p>
+              {formattedLocation.city}, {formattedLocation.state}
+            </p>
+            <Link
+              href={`/${formattedLocation.slug}`}
+              className={styles.viewEventsLink}
+            >
+              View Events in {formattedLocation.city}
+            </Link>
+          </div>
+        </div>
+      )}
 
       {/* Artist Management Section */}
       <div className={styles.artistManagementSection}>
