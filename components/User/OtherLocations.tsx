@@ -33,10 +33,12 @@ const OtherLocations: React.FC<OtherLocationsProps> = ({
   const [loading, setLoading] = useState(true);
   const [showAllLocations, setShowAllLocations] = useState(false);
 
-  // Filter only cities (where city isn't null)
-  const cityLocations = locationsData.filter((loc) => loc.city !== null);
+  // Filter only cities (where city isn't null) and sort alphabetically by city name
+  const cityLocations = locationsData
+    .filter((loc) => loc.city !== null)
+    .sort((a, b) => (a.city || "").localeCompare(b.city || ""));
 
-  // Get popular cities (you could customize this logic based on your preference)
+  // Get popular cities (first 10 from alphabetically sorted list)
   const popularCities = cityLocations.slice(0, 10);
 
   // Format a location for display and linking
@@ -168,7 +170,7 @@ const OtherLocations: React.FC<OtherLocationsProps> = ({
                   href={`/${location.slug}`}
                   className={styles.locationLink}
                 >
-                  {location.city}, {location.state}
+                  {location.city}
                 </Link>
                 <button
                   onClick={() => removeLocation(location.id)}
@@ -209,9 +211,7 @@ const OtherLocations: React.FC<OtherLocationsProps> = ({
 
               return (
                 <div key={location.id} className={styles.locationItem}>
-                  <span className={styles.locationName}>
-                    {location.city}, {location.state}
-                  </span>
+                  <span className={styles.locationName}>{location.city}</span>
                   <button
                     onClick={() => addLocation(location.id)}
                     className={styles.addButton}
