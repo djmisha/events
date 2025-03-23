@@ -87,7 +87,7 @@ export default function Home({ locations, profile, defaultLocation }) {
       {isLoggedIn ? (
         <>
           <UserWelcome defaultLocation={defaultLocation} />
-          <FavoriteArtists />
+          {/* <FavoriteArtists /> */}
         </>
       ) : (
         <Locator locations={locations} />

@@ -9,6 +9,8 @@ import locationsData from "../../utils/locations.json";
 
 interface UserDashboardProps {
   user: User;
+  profile?: any;
+  defaultLocation?: any;
 }
 
 interface Location {
@@ -26,15 +28,31 @@ interface FormattedLocation {
   slug: string;
 }
 
-export default function UserDashboard({ user }: UserDashboardProps) {
-  const { profile } = useContext(AppContext);
+export default function UserDashboard({
+  user,
+  profile: serverProfile,
+  defaultLocation,
+}: UserDashboardProps) {
+  const { profile: contextProfile } = useContext(AppContext);
   const [formattedLocation, setFormattedLocation] =
     useState<FormattedLocation | null>(null);
   const [refreshFavorites, setRefreshFavorites] = useState(0);
 
-  // Find location data by ID and format it
+  // Use server provided profile or context profile
+  const profile = serverProfile || contextProfile;
+
+  // Use server-side defaultLocation or find it client side
   useEffect(() => {
-    if (profile?.default_city) {
+    if (defaultLocation) {
+      // Use the server provided location data
+      setFormattedLocation({
+        id: defaultLocation.id,
+        city: defaultLocation.city || defaultLocation.state,
+        state: defaultLocation.state,
+        slug: `location/${defaultLocation.id}`,
+      });
+    } else if (profile?.default_city) {
+      // Fall back to client-side location finding
       const locationId =
         typeof profile.default_city === "object"
           ? profile.default_city.id
@@ -58,7 +76,7 @@ export default function UserDashboard({ user }: UserDashboardProps) {
 
       findLocation();
     }
-  }, [profile]);
+  }, [profile, defaultLocation]);
 
   // Callback for when an artist is added or removed
   const handleArtistToggled = () => {
@@ -91,7 +109,7 @@ export default function UserDashboard({ user }: UserDashboardProps) {
               href={`/${formattedLocation.slug}`}
               className={styles.viewEventsLink}
             >
-              View Events in {formattedLocation.city}
+              View Events
             </Link>
           </div>
         </div>
@@ -124,16 +142,14 @@ export default function UserDashboard({ user }: UserDashboardProps) {
 
       <h2 className={styles.sectionTitle}>Quick Access</h2>
       <div className={styles.dashboardGrid}>
-        <div className={styles.dashboardCard}>
+        <Link href="/profile" className={styles.dashboardCard}>
           <h3>Profile</h3>
           <p>View and edit your profile information</p>
-        </div>
+        </Link>
 
         <div className={styles.dashboardCard}>
           <h3>My Events</h3>
-          <p>
-            Coming soon... manage events you haveve created or signed up for
-          </p>
+          <p>Coming soon... manage events you have favorited</p>
         </div>
         {/* 
         <div className={styles.dashboardCard}>
