@@ -9,6 +9,7 @@ interface Artist {
   name: string;
   count?: number;
   locations?: number;
+  arrayIndex?: number; // Add arrayIndex property to fix the type error
 }
 
 interface FavoriteArtistsProps {
@@ -131,7 +132,6 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
             <TopArtistsCard
               artist={artist}
               showCounts={!!(artist.count && artist.locations)}
-              fullWidth={true}
             />
             {isEditing && (
               <button
