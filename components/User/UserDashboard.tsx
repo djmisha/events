@@ -118,7 +118,10 @@ export default function UserDashboard({
       )}
 
       {/* Other Locations section */}
-      {/* <OtherLocations currentLocationId={formattedLocation?.id} /> */}
+      <OtherLocations
+        currentLocationId={formattedLocation?.id}
+        userId={profile?.id}
+      />
 
       {/* Artist Management Section */}
       <div className={styles.artistManagementSection}>

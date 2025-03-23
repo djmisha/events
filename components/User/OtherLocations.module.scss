@@ -1,6 +1,6 @@
 .otherLocationsContainer {
   margin-top: 1.5rem;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: #f7f7f7;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -8,19 +8,110 @@
 
 .sectionTitle {
   font-size: 1.2rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   font-weight: 600;
   color: #333;
+}
+
+.subsectionTitle {
+  font-size: 1rem;
+  margin: 1rem 0 0.5rem;
+  font-weight: 500;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .locationsList {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.locationItem {
+  background-color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.locationLink {
+  color: #3182ce;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.locationName {
+  color: #333;
+}
+
+.addButton,
+.removeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.addButton {
+  color: #3182ce;
+  background-color: #ebf8ff;
+
+  &:hover {
+    background-color: #bee3f8;
+  }
+}
+
+.removeButton {
+  color: #e53e3e;
+  background-color: #fff5f5;
+
+  &:hover {
+    background-color: #fed7d7;
+  }
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  color: #3182ce;
+  cursor: pointer;
+  font-size: 0.85rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.savedLocationsSection,
+.addLocationsSection {
+  margin-top: 1rem;
 }
 
 .placeholderText {
   color: #888;
   font-style: italic;
   padding: 0.5rem 0;
+}
+
+.loading {
+  color: #888;
+  font-style: italic;
+  margin-top: 0.5rem;
 }
