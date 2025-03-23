@@ -2,7 +2,6 @@ import type { User } from "@supabase/supabase-js";
 import type { GetServerSidePropsContext } from "next";
 import NavigationBar from "../components/Navigation/NavigataionBar";
 import EditProfile from "../components/User/EditProfile";
-import ArtistSearch from "../components/User/ArtistSearch";
 import { createClient as createServerClient } from "../utils/supabase/server-props";
 
 interface ProfileFormProps {
@@ -14,14 +13,6 @@ export default function ProfilePage({ user }: ProfileFormProps) {
     <>
       <NavigationBar events={[]} setSearchTerm={() => {}} locationData={{}} />
       <EditProfile user={user} />
-      {user && (
-        <ArtistSearch
-          userId={user.id}
-          onArtistAdded={() => {
-            // Optionally add logic to refresh any data that needs to be updated
-          }}
-        />
-      )}
     </>
   );
 }

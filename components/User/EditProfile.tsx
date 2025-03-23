@@ -409,21 +409,6 @@ export default function EditProfile({ user }: ProfileFormProps) {
               {isLoadingProfile ? "Updating..." : "Update Profile"}
             </button>
           </div>
-
-          <div className={styles.logoutSection}>
-            <hr className={styles.divider} />
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                handleLogout();
-              }}
-              disabled={isLoadingLogout}
-              className={styles.logoutButton}
-            >
-              {isLoadingLogout ? "Processing..." : "Log Out"}
-            </button>
-          </div>
         </form>
       </div>
     </div>
