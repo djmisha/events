@@ -135,7 +135,7 @@ export default function UserDashboard({
             {/* Default city section */}
             {formattedLocation && (
               <div className={styles.defaultCitySection}>
-                <h3>Your Default City</h3>
+                <h2>Your Default City</h2>
                 <div className={styles.cityInfo}>
                   <p>
                     {formattedLocation.city}, {formattedLocation.state}

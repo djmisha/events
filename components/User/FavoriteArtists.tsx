@@ -118,7 +118,7 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
   return (
     <div className={styles.favoritesContainer}>
       <div className={styles.headerRow}>
-        <h3>Your Favorite Artists</h3>
+        <h2>Your Favorite Artists</h2>
         <button
           className={styles.editButton}
           onClick={() => setIsEditing(!isEditing)}

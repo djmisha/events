@@ -157,7 +157,7 @@ const OtherLocations: React.FC<OtherLocationsProps> = ({
 
   return (
     <div className={styles.otherLocationsContainer}>
-      <h3 className={styles.sectionTitle}>Other Locations</h3>
+      <h3 className={styles.sectionTitle}>More Locations</h3>
 
       {/* User's saved locations */}
       {savedLocations.length > 0 && (
