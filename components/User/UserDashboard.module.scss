@@ -173,7 +173,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  margin: 2rem 0;
 }
 
 .artistsColumn {
@@ -184,7 +183,6 @@
 .searchSection {
   background-color: #fff;
   border-radius: 8px;
-  padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   height: 100%;
 }
@@ -236,6 +234,50 @@
     &:hover {
       background-color: #3a80d2;
     }
+  }
+}
+
+.tabNavigation {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tabButton {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.activeTab {
+  border-bottom: 3px solid #4a90e2;
+  font-weight: 600;
+}
+
+.tabContent {
+  margin-top: 20px;
+}
+
+.locationTab,
+.artistTab,
+.settingsTab {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

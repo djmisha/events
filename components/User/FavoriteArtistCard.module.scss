@@ -1,0 +1,79 @@
+.favoriteArtistCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 80px; // Smaller height than the original
+}
+
+.artistLink {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.artistContent {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.imageContainer {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  margin-right: 16px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.artistInfo {
+  flex: 1;
+}
+
+.artistName {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.artistCounts {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: #555;
+}
+
+.countItem {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.removeButton {
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #ff6b81;
+  }
+}

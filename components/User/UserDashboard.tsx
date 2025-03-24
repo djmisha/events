@@ -6,6 +6,7 @@ import { AppContext } from "../../features/AppContext";
 import FavoriteArtists from "./FavoriteArtists";
 import ArtistSearch from "./ArtistSearch";
 import OtherLocations from "./OtherLocations";
+import Greeting from "./Greeting";
 import locationsData from "../../utils/locations.json";
 
 interface UserDashboardProps {
@@ -37,6 +38,9 @@ export default function UserDashboard({
   const [formattedLocation, setFormattedLocation] =
     useState<FormattedLocation | null>(null);
   const [refreshFavorites, setRefreshFavorites] = useState(0);
+  const [activeTab, setActiveTab] = useState<
+    "location" | "artist" | "settings"
+  >("location");
 
   // Use server provided profile or context profile
   const profile = serverProfile || contextProfile;
@@ -90,85 +94,126 @@ export default function UserDashboard({
 
   return (
     <div className={styles.dashboardContainer}>
-      {/* Greeting section */}
       {profile && (
-        <div className={styles.greetingSection}>
-          <h2>
-            Greetings,{" "}
-            {profile.username || profile.email?.split("@")[0] || "User"}
-          </h2>
-        </div>
-      )}
-      {/* Default city section */}
-      {formattedLocation && (
-        <div className={styles.defaultCitySection}>
-          <h3>Your Default City</h3>
-          <div className={styles.cityInfo}>
-            <p>
-              {formattedLocation.city}, {formattedLocation.state}
-            </p>
-            <Link
-              href={`/${formattedLocation.slug}`}
-              className={styles.viewEventsLink}
-            >
-              View Events
-            </Link>
-          </div>
-        </div>
+        <Greeting username={profile.username} email={profile.email} />
       )}
 
-      {/* Other Locations section */}
-      <OtherLocations
-        currentLocationId={formattedLocation?.id}
-        userId={profile?.id}
-      />
-
-      {/* Artist Management Section */}
-      <div className={styles.artistManagementSection}>
-        <div className={styles.artistsColumn}>
-          {profile && (
-            <div className={styles.artistsSection}>
-              <FavoriteArtists
-                userId={profile.id}
-                key={`favorites-${refreshFavorites}`}
-              />
-            </div>
-          )}
-        </div>
-
-        <div className={styles.artistsColumn}>
-          {profile && (
-            <div className={styles.searchSection}>
-              <ArtistSearch
-                userId={profile.id}
-                onArtistAdded={handleArtistToggled}
-              />
-            </div>
-          )}
-        </div>
+      {/* Tab Navigation */}
+      <div className={styles.tabNavigation}>
+        <button
+          className={`${styles.tabButton} ${
+            activeTab === "location" ? styles.activeTab : ""
+          }`}
+          onClick={() => setActiveTab("location")}
+        >
+          Location
+        </button>
+        <button
+          className={`${styles.tabButton} ${
+            activeTab === "artist" ? styles.activeTab : ""
+          }`}
+          onClick={() => setActiveTab("artist")}
+        >
+          Artist
+        </button>
+        <button
+          className={`${styles.tabButton} ${
+            activeTab === "settings" ? styles.activeTab : ""
+          }`}
+          onClick={() => setActiveTab("settings")}
+        >
+          Settings
+        </button>
       </div>
 
-      <h2 className={styles.sectionTitle}>Quick Access</h2>
-      <div className={styles.dashboardGrid}>
-        <Link href="/profile" className={styles.dashboardCard}>
-          <h3>Profile</h3>
-          <p>View and edit your profile information</p>
-        </Link>
+      {/* Tab Content */}
+      <div className={styles.tabContent}>
+        {/* Location Tab */}
+        {activeTab === "location" && (
+          <div className={styles.locationTab}>
+            {/* Default city section */}
+            {formattedLocation && (
+              <div className={styles.defaultCitySection}>
+                <h3>Your Default City</h3>
+                <div className={styles.cityInfo}>
+                  <p>
+                    {formattedLocation.city}, {formattedLocation.state}
+                  </p>
+                  <Link
+                    href={`/${formattedLocation.slug}`}
+                    className={styles.viewEventsLink}
+                  >
+                    View Events
+                  </Link>
+                </div>
+              </div>
+            )}
 
-        <div className={styles.dashboardCard}>
-          <h3>My Events</h3>
-          <p>Coming soon... manage events you have favorited</p>
-        </div>
-        {/* 
-        <div className={styles.dashboardCard}>
-          <h3>Messages</h3>
-          <p>View your messages and notifications</p>
-        </div>
+            {/* Other Locations section */}
+            <OtherLocations
+              currentLocationId={formattedLocation?.id}
+              userId={profile?.id}
+            />
+          </div>
+        )}
 
-        <div className={styles.dashboardCard}>
-          <h3>Settings</h3>
-          <p>Adjust your account settings and preferences</p>
-        </div> */}
+        {/* Artist Tab */}
+        {activeTab === "artist" && (
+          <div className={styles.artistTab}>
+            {/* Artist Management Section */}
+            <div className={styles.artistManagementSection}>
+              <div className={styles.artistsColumn}>
+                {profile && (
+                  <div className={styles.artistsSection}>
+                    <FavoriteArtists
+                      userId={profile.id}
+                      key={`favorites-${refreshFavorites}`}
+                    />
+                  </div>
+                )}
+              </div>
+
+              <div className={styles.artistsColumn}>
+                {profile && (
+                  <div className={styles.searchSection}>
+                    <ArtistSearch
+                      userId={profile.id}
+                      onArtistAdded={handleArtistToggled}
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Settings/Quick Access Tab */}
+        {activeTab === "settings" && (
+          <div className={styles.settingsTab}>
+            <h2 className={styles.sectionTitle}>Quick Access</h2>
+            <div className={styles.dashboardGrid}>
+              <Link href="/profile" className={styles.dashboardCard}>
+                <h3>Profile</h3>
+                <p>View and edit your profile information</p>
+              </Link>
+
+              <div className={styles.dashboardCard}>
+                <h3>My Events</h3>
+                <p>Coming soon... manage events you have favorited</p>
+              </div>
+              {/* 
+              <div className={styles.dashboardCard}>
+                <h3>Messages</h3>
+                <p>View your messages and notifications</p>
+              </div>
+
+              <div className={styles.dashboardCard}>
+                <h3>Settings</h3>
+                <p>Adjust your account settings and preferences</p>
+              </div> */}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

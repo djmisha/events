@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../../features/AppContext";
 import styles from "./FavoriteArtists.module.scss";
 import artistsData from "../../localArtistsDB.json";
-import TopArtistsCard from "../TopArtistsCard/TopArtistsCard";
+import FavoriteArtistCard from "./FavoriteArtistCard";
 
 interface Artist {
   id: string;
@@ -129,18 +129,11 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
       <div className={styles.artistsList}>
         {favoriteArtists.map((artist) => (
           <div key={artist.id} className={styles.artistCardWrapper}>
-            <TopArtistsCard
+            <FavoriteArtistCard
               artist={artist}
-              showCounts={!!(artist.count && artist.locations)}
+              isEditing={isEditing}
+              onRemove={removeArtist}
             />
-            {isEditing && (
-              <button
-                className={styles.removeButton}
-                onClick={() => removeArtist(artist.arrayIndex)}
-              >
-                Remove
-              </button>
-            )}
           </div>
         ))}
       </div>
