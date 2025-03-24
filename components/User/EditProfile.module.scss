@@ -2,21 +2,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  // padding: 2rem;
   background-color: #f9fafb;
 }
 
 .formContainer {
   width: 100%;
   max-width: 400px;
-  padding: 2rem;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: 1.5rem;

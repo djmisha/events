@@ -27,7 +27,7 @@ const UserGreeting = () => {
     }
 
     return {
-      href: "/profile",
+      href: "/dashboard",
       iconSrc: profile.avatar_url || DEFAULT_ICON,
       iconAlt: profile.username || "Profile",
       text: profile.username || "Profile",
