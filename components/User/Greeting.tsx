@@ -36,9 +36,9 @@ const Greeting: React.FC<GreetingProps> = ({ username, email }) => {
 
   return (
     <div className={styles.greetingContainer}>
-      <h2 className={styles.greetingText}>
+      <h1 className={styles.greetingText}>
         Good {timeOfDay}, {displayName}
-      </h2>
+      </h1>
     </div>
   );
 };

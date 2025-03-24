@@ -3,6 +3,7 @@ import { AppContext } from "../../features/AppContext";
 import styles from "./FavoriteArtists.module.scss";
 import artistsData from "../../localArtistsDB.json";
 import FavoriteArtistCard from "./FavoriteArtistCard";
+import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 
 interface Artist {
   id: string;
@@ -21,8 +22,28 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
   const [loading, setLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
   const [draggedItem, setDraggedItem] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const { supabase } = useContext(AppContext);
 
+  // Detect if we're on mobile
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    checkIfMobile();
+
+    // Listen for window resize
+    window.addEventListener("resize", checkIfMobile);
+
+    // Clean up
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
+
+  // Fetch favorite artists
   useEffect(() => {
     const fetchFavoriteArtists = async () => {
       if (!userId) return;
@@ -133,10 +154,44 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
     if (draggedItem === null || !isEditing) return;
 
     // Save the new order to Supabase
+    saveArtistOrder(favoriteArtists);
+    setDraggedItem(null);
+  };
+
+  // Function to move artist up in the list
+  const moveArtistUp = (index: number) => {
+    if (index === 0) return; // Already at the top
+
+    const newItems = [...favoriteArtists];
+    const temp = newItems[index];
+    newItems[index] = newItems[index - 1];
+    newItems[index - 1] = temp;
+
+    setFavoriteArtists(newItems);
+
+    // Save the new order to Supabase
+    saveArtistOrder(newItems);
+  };
+
+  // Function to move artist down in the list
+  const moveArtistDown = (index: number) => {
+    if (index === favoriteArtists.length - 1) return; // Already at the bottom
+
+    const newItems = [...favoriteArtists];
+    const temp = newItems[index];
+    newItems[index] = newItems[index + 1];
+    newItems[index + 1] = temp;
+
+    setFavoriteArtists(newItems);
+
+    // Save the new order to Supabase
+    saveArtistOrder(newItems);
+  };
+
+  // Common function to save artist order to Supabase
+  const saveArtistOrder = async (artists: Artist[]) => {
     try {
-      const updatedFavorites = favoriteArtists.map(
-        (artist) => artist.arrayIndex
-      );
+      const updatedFavorites = artists.map((artist) => artist.arrayIndex);
 
       const { error } = await supabase
         .from("profiles")
@@ -149,8 +204,6 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
     } catch (error) {
       console.error("Error saving artist order:", error);
     }
-
-    setDraggedItem(null);
   };
 
   // Get instructions message for edit mode
@@ -158,7 +211,9 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
     if (isEditing) {
       return (
         <div className={styles.editInstructions}>
-          Drag artists to reorder them or tap the remove button to delete
+          {isMobile
+            ? "Tap and hold to drag artists and reorder them"
+            : "Drag artists to reorder them or tap the remove button to delete"}
         </div>
       );
     }
@@ -213,7 +268,27 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
               onRemove={removeArtist}
               disableLinks={isEditing}
             />
-            {isEditing && (
+            {isEditing && isMobile && (
+              <div className={styles.mobileControls}>
+                <button
+                  className={`${styles.mobileButton} ${styles.upButton}`}
+                  onClick={() => moveArtistUp(index)}
+                  disabled={index === 0}
+                  aria-label="Move artist up"
+                >
+                  <FaArrowUp />
+                </button>
+                <button
+                  className={`${styles.mobileButton} ${styles.downButton}`}
+                  onClick={() => moveArtistDown(index)}
+                  disabled={index === favoriteArtists.length - 1}
+                  aria-label="Move artist down"
+                >
+                  <FaArrowDown />
+                </button>
+              </div>
+            )}
+            {isEditing && !isMobile && (
               <div className={styles.dragHandle} aria-hidden="true">
                 <span>⋮⋮</span>
               </div>

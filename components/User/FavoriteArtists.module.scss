@@ -112,6 +112,11 @@
   &:hover {
     background-color: #e5e7eb;
   }
+
+  // Only show grab cursor on desktop
+  @media (min-width: 768px) {
+    cursor: grab;
+  }
 }
 
 .dragging {
@@ -146,6 +151,55 @@
   font-size: 14px;
   color: #92400e;
   text-align: center;
+}
+
+.mobileControls {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 5;
+}
+
+.mobileButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover,
+  &:focus {
+    background-color: #e5e7eb;
+    color: #111827;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: #f9fafb;
+      color: #4b5563;
+    }
+  }
+}
+
+.upButton {
+  margin-bottom: 4px;
+}
+
+.downButton {
+  margin-top: 4px;
 }
 
 @media (max-width: 640px) {
