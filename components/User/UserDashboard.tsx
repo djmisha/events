@@ -107,7 +107,7 @@ export default function UserDashboard({
           }`}
           onClick={() => setActiveTab("location")}
         >
-          Location
+          Locations
         </button>
         <button
           className={`${styles.tabButton} ${
@@ -115,7 +115,7 @@ export default function UserDashboard({
           }`}
           onClick={() => setActiveTab("artist")}
         >
-          Artist
+          Artists
         </button>
         <button
           className={`${styles.tabButton} ${

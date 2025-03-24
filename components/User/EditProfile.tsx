@@ -230,7 +230,7 @@ export default function EditProfile({ user }: ProfileFormProps) {
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
-        <h1 className={styles.title}>Profile Settings</h1>
+        <h2>Profile Settings</h2>
         {message && (
           <div
             className={`${styles.message} ${
