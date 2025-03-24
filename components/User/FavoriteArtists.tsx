@@ -9,7 +9,7 @@ interface Artist {
   name: string;
   count?: number;
   locations?: number;
-  arrayIndex?: number; // Add arrayIndex property to fix the type error
+  arrayIndex?: number;
 }
 
 interface FavoriteArtistsProps {
@@ -20,6 +20,7 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
   const [favoriteArtists, setFavoriteArtists] = useState<Artist[]>([]);
   const [loading, setLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
+  const [draggedItem, setDraggedItem] = useState<number | null>(null);
   const { supabase } = useContext(AppContext);
 
   useEffect(() => {
@@ -43,10 +44,15 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
         // Convert array indices to artist objects
         if (profile?.favorite_artists?.length) {
           const favArtists = profile.favorite_artists
-            .map((index: number) => ({
-              ...artistsData[index],
-              arrayIndex: index, // Store the original index for later use
-            }))
+            .map((index: number) => {
+              const artist = artistsData[index];
+              if (!artist) return null;
+              return {
+                ...artist,
+                id: String(artist.id),
+                arrayIndex: index,
+              };
+            })
             .filter(Boolean);
 
           setFavoriteArtists(favArtists);
@@ -100,6 +106,65 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
     }
   };
 
+  // Manual drag-and-drop functionality
+  const handleDragStart = (index: number) => {
+    if (!isEditing) return;
+    setDraggedItem(index);
+  };
+
+  const handleDragOver = (e: React.DragEvent, index: number) => {
+    e.preventDefault();
+    if (draggedItem === null || !isEditing) return;
+
+    // If we're not dragging over a different item, do nothing
+    if (draggedItem === index) return;
+
+    // Reorder the list
+    const newItems = [...favoriteArtists];
+    const draggedItemContent = newItems[draggedItem];
+    newItems.splice(draggedItem, 1);
+    newItems.splice(index, 0, draggedItemContent);
+
+    setFavoriteArtists(newItems);
+    setDraggedItem(index);
+  };
+
+  const handleDragEnd = async () => {
+    if (draggedItem === null || !isEditing) return;
+
+    // Save the new order to Supabase
+    try {
+      const updatedFavorites = favoriteArtists.map(
+        (artist) => artist.arrayIndex
+      );
+
+      const { error } = await supabase
+        .from("profiles")
+        .update({ favorite_artists: updatedFavorites })
+        .eq("id", userId);
+
+      if (error) {
+        console.error("Error updating favorites order:", error);
+      }
+    } catch (error) {
+      console.error("Error saving artist order:", error);
+    }
+
+    setDraggedItem(null);
+  };
+
+  // Get instructions message for edit mode
+  const getInstructions = () => {
+    if (isEditing) {
+      return (
+        <div className={styles.editInstructions}>
+          Drag artists to reorder them or tap the remove button to delete
+        </div>
+      );
+    }
+    return null;
+  };
+
   if (loading) {
     return (
       <div className={styles.loading}>Loading your favorite artists...</div>
@@ -126,14 +191,33 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
           {isEditing ? "Done" : "Edit"}
         </button>
       </div>
+
+      {getInstructions()}
+
       <div className={styles.artistsList}>
-        {favoriteArtists.map((artist) => (
-          <div key={artist.id} className={styles.artistCardWrapper}>
+        {favoriteArtists.map((artist, index) => (
+          <div
+            key={`artist-${artist.arrayIndex || index}`}
+            className={`${styles.artistCardWrapper} ${
+              isEditing ? styles.draggable : ""
+            } ${draggedItem === index ? styles.dragging : ""}`}
+            draggable={isEditing}
+            onDragStart={() => handleDragStart(index)}
+            onDragOver={(e) => handleDragOver(e, index)}
+            onDragEnd={handleDragEnd}
+            data-is-editing={isEditing}
+          >
             <FavoriteArtistCard
               artist={artist}
               isEditing={isEditing}
               onRemove={removeArtist}
+              disableLinks={isEditing}
             />
+            {isEditing && (
+              <div className={styles.dragHandle} aria-hidden="true">
+                <span>⋮⋮</span>
+              </div>
+            )}
           </div>
         ))}
       </div>

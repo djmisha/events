@@ -7,7 +7,6 @@ import FavoriteArtists from "./FavoriteArtists";
 import ArtistSearch from "./ArtistSearch";
 import OtherLocations from "./OtherLocations";
 import Greeting from "./Greeting";
-import EditProfile from "./EditProfile";
 import locationsData from "../../utils/locations.json";
 
 interface UserDashboardProps {
@@ -191,7 +190,28 @@ export default function UserDashboard({
         {/* Settings/Quick Access Tab */}
         {activeTab === "settings" && (
           <div className={styles.settingsTab}>
-            {profile?.id && <EditProfile user={profile} />}
+            <h2 className={styles.sectionTitle}>Quick Access</h2>
+            <div className={styles.dashboardGrid}>
+              <Link href="/profile" className={styles.dashboardCard}>
+                <h3>Profile</h3>
+                <p>View and edit your profile information</p>
+              </Link>
+
+              <div className={styles.dashboardCard}>
+                <h3>My Events</h3>
+                <p>Coming soon... manage events you have favorited</p>
+              </div>
+              {/* 
+              <div className={styles.dashboardCard}>
+                <h3>Messages</h3>
+                <p>View your messages and notifications</p>
+              </div>
+
+              <div className={styles.dashboardCard}>
+                <h3>Settings</h3>
+                <p>Adjust your account settings and preferences</p>
+              </div> */}
+            </div>
           </div>
         )}
       </div>

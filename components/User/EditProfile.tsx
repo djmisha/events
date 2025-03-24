@@ -227,6 +227,8 @@ export default function EditProfile({ user }: ProfileFormProps) {
 
   const groupedLocations = getGroupedLocations();
 
+  console.log(user);
+
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
@@ -243,7 +245,7 @@ export default function EditProfile({ user }: ProfileFormProps) {
           </div>
         )}
         <form>
-          <div className={styles.formGroup}>
+          {/* <div className={styles.formGroup}>
             <label htmlFor="email" className={styles.label}>
               Email
             </label>
@@ -257,7 +259,7 @@ export default function EditProfile({ user }: ProfileFormProps) {
             <small className={styles.helperText}>
               Your email cannot be changed
             </small>
-          </div>
+          </div> */}
 
           <div className={styles.formGroup}>
             <label htmlFor="username" className={styles.label}>
