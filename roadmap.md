@@ -1,5 +1,12 @@
 # Roadmap
 
+https://httpie.io/app
+
+https://ui.shadcn.com/docs/installation/next
+
+https://www.npmjs.com/package/sonner
+
+
 ## TO GO LIVE WITH LOGIN
 
 - make password reset work

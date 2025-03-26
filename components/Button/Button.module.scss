@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../../styles/variables" as *;
 
 .button {
@@ -22,7 +23,7 @@
     border: none;
 
     &:hover {
-      background-color: darken($pink, 10%);
+      background-color: color.adjust($pink, $lightness: -10%);
     }
   }
 
