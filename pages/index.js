@@ -1,18 +1,19 @@
 import Head from "next/head";
-import { useEffect, useContext } from "react";
-import Layout, { siteTitle } from "../components/layout";
-import { getLocations } from "../utils/getLocations";
-import Locator from "../components/Locator/Locator";
-import CitiesStates from "../components/Homepage/CitiesStates";
-import TopArtists from "../components/Homepage/TopArtists";
-import NavigationBar from "../components/Navigation/NavigataionBar";
-import Hero from "../components/Homepage/Hero";
-import Footer from "../components/Footer/Footer";
-import UserWelcome from "../components/User/UserWelcome";
-import SignupCTA from "../components/Homepage/SignupCTA";
+import { useContext, useEffect } from "react";
 import Verify from "../components/Auth/Verify";
-import { createClient as createServerClient } from "../utils/supabase/server-props";
+import Footer from "../components/Footer/Footer";
+import CitiesStates from "../components/Homepage/CitiesStates";
+import Hero from "../components/Homepage/Hero";
+import SignupCTA from "../components/Homepage/SignupCTA";
+import TopArtists from "../components/Homepage/TopArtists";
+import WelcomeMessage from "../components/Homepage/WelcomeMessage";
+import Layout, { siteTitle } from "../components/layout";
+import Locator from "../components/Locator/Locator";
+import NavigationBar from "../components/Navigation/NavigataionBar";
+import UserWelcome from "../components/User/UserWelcome";
 import { AppContext } from "../features/AppContext";
+import { getLocations } from "../utils/getLocations";
+import { createClient as createServerClient } from "../utils/supabase/server-props";
 
 export async function getServerSideProps(context) {
   const locations = getLocations();
@@ -61,9 +62,7 @@ export default function Home({ locations, profile, defaultLocation }) {
 
   // Update AppContext with profile data when component mounts
   useEffect(() => {
-    if (profile) {
-      setProfile(profile);
-    }
+    if (profile) setProfile(profile);
   }, [profile, setProfile]);
 
   return (
@@ -82,17 +81,17 @@ export default function Home({ locations, profile, defaultLocation }) {
       <NavigationBar />
       <Verify />
       <Hero />
-      {!isLoggedIn && <SignupCTA />}
+      {!isLoggedIn && <WelcomeMessage />}
       {isLoggedIn ? (
         <>
           <UserWelcome defaultLocation={defaultLocation} />
-          {/* <FavoriteArtists /> */}
         </>
       ) : (
         <Locator locations={locations} />
       )}
       <section className="two">
         <TopArtists />
+        {!isLoggedIn && <SignupCTA />}
         <CitiesStates locations={locations} />
       </section>
 

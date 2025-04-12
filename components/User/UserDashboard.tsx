@@ -95,10 +95,6 @@ export default function UserDashboard({
 
   return (
     <div className={styles.dashboardContainer}>
-      {profile && (
-        <Greeting username={profile.username} email={profile.email} />
-      )}
-
       {/* Tab Navigation */}
       <div className={styles.tabNavigation}>
         <button
@@ -132,6 +128,9 @@ export default function UserDashboard({
         {/* Location Tab */}
         {activeTab === "location" && (
           <div className={styles.locationTab}>
+            {profile && (
+              <Greeting username={profile.username} email={profile.email} />
+            )}
             {/* Default city section */}
             {formattedLocation && (
               <div className={styles.defaultCitySection}>

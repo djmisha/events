@@ -1,6 +1,9 @@
+/// THIS WAS USED TO INSERT ARTISTS INTO SUPABASE
+// Can now be refactored.
+
 import supabase from "../../../features/Supabase";
 import { getUniqueArtists } from "../../../utils/getArtists";
-import sampleEvents from "../../../utils/allevents.sample.json";
+import sampleEvents from "../../../localArtistsDB.json";
 
 const fetchExistingArtists = async () => {
   let allArtists = [];
@@ -58,7 +61,7 @@ const writeArtistsToSupabase = async (eventsArray) => {
   // Write the new artists to Supabase using upsert
   if (newArtists.length > 0) {
     const { data, error } = await supabase
-      .from("artists") // Replace 'artists' with your actual table name
+      .from("artists")
       .upsert(newArtists, { onConflict: ["id"] }); // Use upsert with conflict resolution on 'id'
 
     if (error) {
@@ -75,6 +78,9 @@ const writeArtistsToSupabase = async (eventsArray) => {
 };
 
 export default async function handler(req, res) {
+  res.status(200).json({ message: "Hello" });
+
+  return;
   try {
     // Write the artists to Supabase
     const data = await writeArtistsToSupabase(sampleEvents);
