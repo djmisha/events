@@ -57,7 +57,7 @@ const EventDetails = ({ event }) => {
           {address && (
             <a
               rel="noreferrer"
-              href={`https://www.google.com/maps/search/${venueName}${address}`}
+              href={`https://www.google.com/maps/search/${venueName} ${address}`}
               target="_blank"
             >
               <FaMapMarkerAlt className={styles.icon} />

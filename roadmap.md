@@ -2,10 +2,11 @@
 
 https://httpie.io/app
 
-https://ui.shadcn.com/docs/installation/next
+SHADCDN UI https://ui.shadcn.com/docs/installation/next
 
-https://www.npmjs.com/package/sonner
+NOTIFICATIONS https://www.npmjs.com/package/sonner
 
+SUPABASE UI https://supabase.com/ui/docs/nextjs/password-based-auth
 
 ## TO GO LIVE WITH LOGIN
 
