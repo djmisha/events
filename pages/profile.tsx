@@ -11,7 +11,7 @@ interface ProfileFormProps {
 export default function ProfilePage({ user }: ProfileFormProps) {
   return (
     <>
-      <NavigationBar events={[]} setSearchTerm={() => {}} locationData={{}} />
+      <NavigationBar setSearchTerm={() => {}} locationData={{}} />
       <EditProfile user={user} />
     </>
   );
