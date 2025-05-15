@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import ArtistImage from "../Artists/ArtistImage";
-import { ToSlugArtist, shuffleArray } from "../../utils/utilities";
+import { useState, useEffect, useRef } from "react";
+import { shuffleArray, filterSurpriseGuest } from "../../utils/utilities";
 import TopArtistsCard from "../TopArtistsCard/TopArtistsCard";
 import styles from "./TopArtists.module.scss";
 import Button from "../Button/Button";
@@ -17,9 +15,19 @@ const TopArtists = () => {
       if (fetchedRef.current) return;
       fetchedRef.current = true;
 
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/supabase/gettopartists`
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+      if (!baseUrl) {
+        console.error(
+          "NEXT_PUBLIC_BASE_URL is not set in your environment variables."
+        );
+        return;
+      }
+      console.log(
+        "Fetching artists from:",
+        `${baseUrl}/api/supabase/gettopartists`
       );
+
+      const res = await fetch(`${baseUrl}/api/supabase/gettopartists`);
       if (res.ok) {
         const data = await res.json();
         setArtists(data.data);
@@ -32,7 +40,7 @@ const TopArtists = () => {
   }, []);
 
   useEffect(() => {
-    setRandomArtists(shuffleArray(artists));
+    setRandomArtists(shuffleArray(filterSurpriseGuest(artists)));
   }, [artists]);
 
   return (

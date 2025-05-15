@@ -1,10 +1,8 @@
 import { useEffect, useRef } from "react";
 import Head from "next/head";
 import Layout from "../components/layout";
-import Link from "next/link";
 import { getArtistsCounts } from "../utils/getArtists";
-import ArtistImage from "../components/Artists/ArtistImage";
-import { ToSlugArtist } from "../utils/utilities";
+import { filterSurpriseGuest } from "../utils/utilities";
 import NavigationBar from "../components/Navigation/NavigataionBar";
 import TopArtistsCard from "../components/TopArtistsCard/TopArtistsCard";
 import styles from "../styles/Artists.module.scss";
@@ -48,8 +46,9 @@ export async function getStaticProps() {
 }
 
 const Artists = ({ uniqueArtists }) => {
-  const topArtists = uniqueArtists.slice(0, 200);
-  const apiEvents = uniqueArtists.slice(0, 30);
+  const filteredArtists = filterSurpriseGuest(uniqueArtists);
+  const topArtists = filteredArtists.slice(0, 200);
+  const apiEvents = filteredArtists.slice(0, 30);
   const hasFetched = useRef(false);
 
   useEffect(() => {

@@ -126,3 +126,17 @@ export const ToSlugArtist = (string) => {
 
   return cleanString;
 };
+
+/**
+ * Removes artists with the name "Surprise Guest", "TBD", or "Special Guest" from an array.
+ * @param {Array} artists
+ * @returns {Array}
+ */
+export function filterSurpriseGuest(artists) {
+  return artists.filter((artist) => {
+    const name = artist.name?.toLowerCase();
+    return (
+      name !== "surprise guest" && name !== "tbd" && name !== "special guest"
+    );
+  });
+}

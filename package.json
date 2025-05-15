@@ -28,7 +28,8 @@
     "sass": "^1.56.1"
   },
   "volta": {
-    "node": "20.0.0"
+    "node": "20.0.0",
+    "yarn": "1.22.19"
   },
   "devDependencies": {
     "@types/react": "19.0.10",
