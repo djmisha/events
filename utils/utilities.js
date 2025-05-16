@@ -136,7 +136,10 @@ export function filterSurpriseGuest(artists) {
   return artists.filter((artist) => {
     const name = artist.name?.toLowerCase();
     return (
-      name !== "surprise guest" && name !== "tbd" && name !== "special guest"
+      name !== "tbd" &&
+      name !== "tba" &&
+      name !== "surprise guest" &&
+      name !== "special guest"
     );
   });
 }

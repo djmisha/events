@@ -2,11 +2,12 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 import { useState } from "react";
 
+const fallbackUrl = "/images/housemusic192.png";
+
 const ArtistImage = ({ id }) => {
   const [imgError, setImgError] = useState(false);
-  const url = id ? `/images/artists/${id}.jpg` : "/images/housemusic192.png";
-
-  if (imgError) return null;
+  const [triedFallback, setTriedFallback] = useState(false);
+  const url = id && !imgError ? `/images/artists/${id}.jpg` : fallbackUrl;
 
   return (
     <div className="artist-fallback">
@@ -14,11 +15,18 @@ const ArtistImage = ({ id }) => {
         className="artist-image"
         src={url}
         alt="Artist"
-        width={200} // Adjust as needed for your layout
-        height={200} // Adjust as needed for your layout
+        width={200}
+        height={200}
         loading="lazy"
         style={{ objectFit: "cover" }}
-        onError={() => setImgError(true)}
+        onError={() => {
+          if (!imgError) {
+            setImgError(true);
+            setTriedFallback(true);
+          } else {
+            setTriedFallback(true);
+          }
+        }}
       />
     </div>
   );
