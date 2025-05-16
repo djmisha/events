@@ -74,7 +74,14 @@ export const EventCard = ({ event }) => {
                   {dayOfWeek}, {dayMonth}
                 </div>
               </div>
+            </div>
 
+            {name && (
+              <span className={styles.eventTitle} itemProp="name">
+                {name}
+              </span>
+            )}
+            <div className={styles.eventType}>
               {festivalInd && (
                 <div className={styles.festivalIndicator}>
                   <FaUsers className={styles.icon} />
@@ -83,18 +90,12 @@ export const EventCard = ({ event }) => {
               )}
 
               {livestreamInd && (
-                <div className={styles.festivalIndicator}>
+                <div className={styles.liveSteamIndicator}>
                   <FaVideo className={styles.icon} />
                   <span>Stream</span>
                 </div>
               )}
             </div>
-
-            {name && (
-              <span className={styles.eventTitle} itemProp="name">
-                {name}
-              </span>
-            )}
           </div>
 
           <span className={styles.eventArtist} itemProp="name">

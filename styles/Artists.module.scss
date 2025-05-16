@@ -19,4 +19,7 @@
   @media only screen and (min-width: 1080px) {
     grid-template-columns: repeat(2, 1fr);
   }
+  a {
+    text-decoration: none;
+  }
 }

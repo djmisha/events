@@ -192,7 +192,26 @@
   width: 100%;
 }
 
+.eventType {
+  display: flex;
+}
+
 .festivalIndicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: v.$orange;
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 10px;
+
+  .icon {
+    color: inherit;
+    font-size: 12px;
+  }
+}
+
+.liveSteamIndicator {
   display: flex;
   align-items: center;
   gap: 4px;

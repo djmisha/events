@@ -142,7 +142,7 @@ https://www.sandiegohousemusic.com/venues/orlando/venue-name
 - [x] need login page icon. sign up page icon
 - [x] table for locations
 - [x] table for venues!
-- [x]table for events
+- [x] table for events
 - [x] populate with each new events call from EDM TRAIN API
 - [x] better layout - better how? improved cards
 
