@@ -1,6 +1,9 @@
 import { formatBio } from "./ArtistBio.helpers";
 
 const saveTags = async (tags) => {
+  // Save tags to the database or API
+  // removing for now to save function requests
+  // most tags are already saved in the database
   try {
     const response = await fetch("/api/saveTags", {
       method: "POST",
@@ -25,7 +28,7 @@ const ArtistBio = ({ name, lastFMdata }) => {
   const tags = lastFMdata?.artist?.tags?.tag;
   const hasTags = Array.isArray(tags) && tags.length > 0;
 
-  if (hasTags) saveTags(tags);
+  // if (hasTags) saveTags(tags);
 
   return (
     <div className="artist-bio">
