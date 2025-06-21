@@ -22,17 +22,21 @@ export default async function handler(req, res) {
     }
 
     // Check if we need to update the database
-    const needsUpdate = await checkNeedsUpdate(id);
-    if (needsUpdate) {
-      console.log(`Updating database for location ${id}`);
-      // Update database and cache timestamp in the background
-      Promise.all([
-        updateDBEvents(data.data, id),
-        updateCacheTimestamp(id),
-      ]).catch((error) => {
-        console.error("Background update error:", error);
-      });
-    }
+
+    // commenting this out as currently it is probably causing too many edge requests on vercel
+    // think about an approach that does this work in the DB instead of on the server.
+
+    // const needsUpdate = await checkNeedsUpdate(id);
+    // if (needsUpdate) {
+    //   console.log(`Updating database for location ${id}`);
+    //   // Update database and cache timestamp in the background
+    //   Promise.all([
+    //     updateDBEvents(data.data, id),
+    //     updateCacheTimestamp(id),
+    //   ]).catch((error) => {
+    //     console.error("Background update error:", error);
+    //   });
+    // }
 
     // Always return fresh API data
     res.setHeader(
