@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
+import styles from "./ArtistImage.module.scss";
 
 const ArtistImage = ({ id }) => {
   const url = id ? `/images/artists/${id}.jpg` : "/images/housemusic192.png";
 
   return (
-    <div className="artist-fallback">
+    <div className={styles.artistFallback}>
       <div
-        className="artist-image"
+        className={styles.artistImage}
         style={{
           backgroundImage: `url('${url}')`,
         }}

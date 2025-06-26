@@ -97,7 +97,9 @@ const Pagination = ({
           return (
             <button
               key={page}
-              className={`${styles.pageButton} ${currentPage === page ? styles.active : ""}`}
+              className={`${styles.pageButton} ${
+                currentPage === page ? styles.active : ""
+              }`}
               onClick={() => handlePageClick(page)}
             >
               {page}

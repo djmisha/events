@@ -10,6 +10,7 @@ import ArtistBio from "../../components/Artists/ArtistBio";
 import EventCard from "../../components/EventCard/EventCard";
 import GoogleAutoAds from "../../components/3rdParty/googleAds";
 import NavigationBar from "../../components/Navigation/NavigataionBar";
+import styles from "../../components/Artists/Artist.module.scss";
 
 export default function Artist({ artistData, events, lastFMdata }) {
   const { name, id } = artistData;
@@ -24,7 +25,7 @@ export default function Artist({ artistData, events, lastFMdata }) {
         <GoogleAutoAds />
       </Head>
       <NavigationBar />
-      <div className="artist">
+      <div className={styles.artist}>
         <div className="artist-header">
           <ArtistImage id={id} />
           <h1>{name}</h1>
