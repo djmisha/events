@@ -1,4 +1,9 @@
-import { makeVenues, makeArtists, makeDates } from "../../utils/utilities";
+import {
+  makeVenues,
+  makeArtists,
+  makeDates,
+  makePromoters,
+} from "../../utils/utilities";
 import NavItem from "../Navigation/NavItem";
 import BackToTop from "../BackToTop/BackToTop";
 import {
@@ -6,6 +11,7 @@ import {
   FaMapMarkerAlt,
   FaUsers,
   FaFilter,
+  FaBullhorn,
 } from "react-icons/fa";
 import { useState } from "react";
 import MenuOverlay from "../ui/MenuOverlay";
@@ -16,15 +22,22 @@ const EventsFilter = ({ events, setSearchTerm }) => {
   const [isDateMenuOpen, setIsDateMenuOpen] = useState(false);
   const [isVenueMenuOpen, setIsVenueMenuOpen] = useState(false);
   const [isArtistMenuOpen, setIsArtistMenuOpen] = useState(false);
+  const [isPromoterMenuOpen, setIsPromoterMenuOpen] = useState(false);
 
   const venues = makeVenues(events ?? []);
   const dates = makeDates(events ?? []);
   const artists = makeArtists(events ?? []);
+  const promoters = makePromoters(events ?? []);
 
   // Calculate statistics from events data
   const getStatistics = () => {
     if (!events || events.length === 0) {
-      return { totalEvents: 0, totalVenues: 0, totalArtists: 0 };
+      return {
+        totalEvents: 0,
+        totalVenues: 0,
+        totalArtists: 0,
+        totalPromoters: 0,
+      };
     }
 
     // Get visible events (when filtering is active)
@@ -54,10 +67,12 @@ const EventsFilter = ({ events, setSearchTerm }) => {
       totalEvents: visibleEvents.length,
       totalVenues: uniqueVenues.size,
       totalArtists: uniqueArtists.size,
+      totalPromoters: promoters.length,
     };
   };
 
-  const { totalEvents, totalVenues, totalArtists } = getStatistics();
+  const { totalEvents, totalVenues, totalArtists, totalPromoters } =
+    getStatistics();
 
   return (
     <div className={styles["event-filter-main-navigation"]}>
@@ -165,6 +180,39 @@ const EventsFilter = ({ events, setSearchTerm }) => {
                   title="DJ's and Artists"
                   setSearchTerm={setSearchTerm}
                   onClose={() => setIsArtistMenuOpen(false)}
+                />
+              </div>
+            </MenuOverlay>
+          </div>
+          <div className={styles["event-filter-nav-slot"]}>
+            <div
+              className={`${styles["count-nav-item"]} ${styles.green}`}
+              onClick={() => setIsPromoterMenuOpen(true)}
+            >
+              <div className={`${styles.iconWrapper} ${styles.green}`}>
+                <FaBullhorn className={styles.icon} />
+              </div>
+              <div className={styles.content}>
+                <div className={styles.count}>
+                  {totalPromoters.toLocaleString()}
+                </div>
+                <div className={styles.label}>
+                  {totalPromoters === 1 ? "Promoter" : "Promoters"}
+                </div>
+              </div>
+            </div>
+            <MenuOverlay
+              isOpen={isPromoterMenuOpen}
+              onClose={() => setIsPromoterMenuOpen(false)}
+            >
+              <div className={styles.menuContent}>
+                <MenuList
+                  navItems={promoters}
+                  text="promoter"
+                  title="Promoters"
+                  isOpen={isPromoterMenuOpen}
+                  setSearchTerm={setSearchTerm}
+                  onClose={() => setIsPromoterMenuOpen(false)}
                 />
               </div>
             </MenuOverlay>

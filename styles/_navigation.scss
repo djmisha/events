@@ -180,6 +180,7 @@
 #venue-list,
 #date-list,
 #artist-list,
+#promoter-list,
 #city-list {
   overflow: scroll;
   left: -100%;
@@ -246,6 +247,7 @@
 
 #venue-list.visible,
 #artist-list.visible,
+#promoter-list.visible,
 #city-list.visible,
 #date-list.visible {
   transition: all 0.3s ease-in-out;

@@ -73,16 +73,15 @@ const Pagination = ({
       </div>
 
       <div className={styles.paginationControls}>
-        {/* Previous button */}
-        <button
-          className={`${styles.pageButton} ${
-            currentPage === 1 ? styles.disabled : ""
-          }`}
-          onClick={() => currentPage > 1 && handlePageClick(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          ‹ Previous
-        </button>
+        {/* Previous button - only show if not on first page */}
+        {currentPage > 1 && (
+          <button
+            className={styles.pageButton}
+            onClick={() => handlePageClick(currentPage - 1)}
+          >
+            ‹ Previous
+          </button>
+        )}
 
         {/* Page numbers */}
         {getPageNumbers().map((page, index) => {

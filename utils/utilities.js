@@ -27,7 +27,7 @@ export const makeVenues = (data) => {
 };
 
 export const makeDates = (data) => {
-  return removeDuplicates(data.map((item) => item.formattedDate));
+  return removeDuplicates(data.map((item) => item.date));
 };
 
 export const makeArtists = (data) => {
@@ -143,3 +143,21 @@ export function filterSurpriseGuest(artists) {
     );
   });
 }
+
+export const makePromoters = (data) => {
+  // Count occurrences of each event name
+  const eventNameCounts = {};
+  data.forEach((item) => {
+    if (item.name) {
+      eventNameCounts[item.name] = (eventNameCounts[item.name] || 0) + 1;
+    }
+  });
+
+  // Filter to only include event names with more than 2 events
+  const promoters = Object.keys(eventNameCounts).filter(
+    (eventName) => eventNameCounts[eventName] > 1
+  );
+
+  // Alphabetize the list and remove duplicates
+  return removeDuplicates(promoters).sort();
+};
