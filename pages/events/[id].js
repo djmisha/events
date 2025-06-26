@@ -5,7 +5,7 @@ import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModule from "../../components/EventsModule/EventsModule";
 import getEvents from "../../utils/getEvents";
 
-export default function Location({ locationData, events }) {
+export default function Location({ locationData, events, initialPage }) {
   const { city, state, id } = locationData;
   const title = makePageTitle(city, state);
   const description = makePageDescription(city, state);
@@ -16,12 +16,17 @@ export default function Location({ locationData, events }) {
         <title>{title}</title>
         <meta name="description" content={description} />
       </Head>
-      <EventsModule key={id} locationData={locationData} events={events} />
+      <EventsModule
+        key={id}
+        locationData={locationData}
+        events={events}
+        initialPage={initialPage}
+      />
     </Layout>
   );
 }
 
-export async function getServerSideProps({ params, res }) {
+export async function getServerSideProps({ params, query, res }) {
   res.setHeader(
     "Cache-Control",
     "public, s-maxage=21600, stale-while-revalidate=21600"
@@ -37,10 +42,14 @@ export async function getServerSideProps({ params, res }) {
 
   const events = await getEvents(locationData.id);
 
+  // Get the initial page from query parameters, default to 1
+  const initialPage = parseInt(query.page) || 1;
+
   return {
     props: {
       locationData,
       events,
+      initialPage,
     },
   };
 }

@@ -6,11 +6,24 @@ const Filter = ({
   searchTerm,
   filterVisible,
   setFilterVisible,
+  onClearFilter,
 }) => {
   const handleClick = () => {
     const newEvents = clearSearch(events);
     setEvents(newEvents);
-    setFilterVisible(false);
+
+    // Use custom clear handler if provided (for pagination persistence)
+    if (onClearFilter) {
+      onClearFilter();
+    } else {
+      // Fallback to original behavior
+      setFilterVisible(false);
+      // Scroll to top when clearing filter to show paginated results from the beginning
+      const topElement = document.getElementById("top");
+      if (topElement) {
+        topElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   return (

@@ -1,14 +1,26 @@
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
 import EventCard from "../../components/EventCard/EventCard";
 import NavigationBar from "../../components/Navigation/NavigataionBar";
 import { searchFilter } from "../../utils/searchFilter";
 import { makePageHeadline } from "../../utils/utilities";
 import Filter from "../../components/Filter/Filter";
 import EventsFiltered from "../../components/Filter/EventsFilter";
+import Pagination from "../../components/Pagination/Pagination";
 
-const EventsModule = ({ locationData, isHome, events: initialEvents }) => {
+const EventsModule = ({
+  locationData,
+  isHome,
+  events: initialEvents,
+  initialPage = 1,
+}) => {
+  const router = useRouter();
   let [filterVisible, setFilterVisible] = useState(false);
   const [events, setEvents] = useState(initialEvents);
+  const [allEvents, setAllEvents] = useState(initialEvents); // Store original events
+  const [currentPage, setCurrentPage] = useState(initialPage);
+  const [lastPageBeforeFilter, setLastPageBeforeFilter] = useState(initialPage); // Remember page before filtering
+  const eventsPerPage = 21;
   const { city, state, id } = locationData;
   const title = makePageHeadline(city, state);
   const [searchTerm, setSearchTerm] = useState();
@@ -19,12 +31,19 @@ const EventsModule = ({ locationData, isHome, events: initialEvents }) => {
     if (dataFetchedRef.current === id) return;
     dataFetchedRef.current = id;
     setFilterVisible(false);
-  }, [id]);
+    setCurrentPage(initialPage); // Use initial page from props
+    setLastPageBeforeFilter(initialPage);
+    setAllEvents(initialEvents); // Update stored original events
+  }, [id, initialEvents, initialPage]);
 
   useEffect(() => {
-    if (searchTerm && events) {
-      const filteredEvents = searchFilter(searchTerm, events);
+    if (searchTerm && allEvents) {
+      const filteredEvents = searchFilter(searchTerm, allEvents);
       if (filteredEvents) {
+        // Store current page before filtering
+        if (!filterVisible) {
+          setLastPageBeforeFilter(currentPage);
+        }
         setEvents(filteredEvents);
         searchTermRef.current = searchTerm;
         setFilterVisible(true);
@@ -32,13 +51,63 @@ const EventsModule = ({ locationData, isHome, events: initialEvents }) => {
         window.location = "#top";
       }
     }
-  }, [searchTerm, events]);
+  }, [searchTerm, allEvents, currentPage, filterVisible]);
+
+  // Helper function to get events for current page when not filtering
+  const getPaginatedEvents = () => {
+    if (filterVisible) {
+      // When filtering, show all filtered events (no pagination)
+      return events;
+    }
+
+    // When not filtering, show paginated events
+    const startIndex = (currentPage - 1) * eventsPerPage;
+    const endIndex = startIndex + eventsPerPage;
+    return allEvents.slice(startIndex, endIndex);
+  };
+
+  // Get total count of visible events for pagination info
+  const getVisibleEventsCount = () => {
+    if (filterVisible) {
+      return events.filter((event) => event.isVisible !== false).length;
+    }
+    return allEvents.length;
+  };
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+
+    // Update URL to include page number using slug instead of id
+    const newUrl =
+      pageNumber === 1
+        ? `/events/${locationData.slug}`
+        : `/events/${locationData.slug}?page=${pageNumber}`;
+
+    // Use router.push with shallow: true to avoid full page reload
+    router.push(newUrl + "#top", undefined, { shallow: true });
+  };
+
+  // Function to handle clearing filters and returning to remembered page
+  const handleClearFilter = () => {
+    setFilterVisible(false);
+    setCurrentPage(lastPageBeforeFilter);
+
+    // Update URL to remembered page using slug instead of id
+    const newUrl =
+      lastPageBeforeFilter === 1
+        ? `/events/${locationData.slug}`
+        : `/events/${locationData.slug}?page=${lastPageBeforeFilter}`;
+
+    router.push(newUrl + "#top", undefined, { shallow: true });
+  };
+
+  const displayEvents = getPaginatedEvents();
 
   return (
     <>
       {events && (
         <NavigationBar
-          events={events}
+          events={allEvents} // Always pass all events to navigation
           setSearchTerm={setSearchTerm}
           locationData={locationData}
           setEvents={setEvents}
@@ -60,12 +129,23 @@ const EventsModule = ({ locationData, isHome, events: initialEvents }) => {
             searchTerm={searchTermRef.current}
             filterVisible={filterVisible}
             setFilterVisible={setFilterVisible}
+            onClearFilter={handleClearFilter}
           />
           <div id="eventfeed">
-            {events?.map((event) => {
+            {displayEvents?.map((event) => {
               return <EventCard event={event} key={event.id} />;
             })}
           </div>
+
+          {/* Show pagination only when not filtering */}
+          {!filterVisible && (
+            <Pagination
+              currentPage={currentPage}
+              totalEvents={getVisibleEventsCount()}
+              eventsPerPage={eventsPerPage}
+              onPageChange={handlePageChange}
+            />
+          )}
         </section>
       </div>
     </>

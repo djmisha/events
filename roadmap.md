@@ -1,218 +1,176 @@
-# Roadmap
+# 🎯 Core Product Goals
 
-https://httpie.io/app
+## 🌐 Login & User Authentication
 
-SHADCDN UI https://ui.shadcn.com/docs/installation/next
+- [x] Set up sign up → confirm email → redirect to profile
+- [x] Show default location if logged in
+- [x] Add login and sign up icons
+- [x] Profile page with user info
+- [ ] Make password reset work
+- [ ] Add navigation and footer to profile page
 
-NOTIFICATIONS https://www.npmjs.com/package/sonner
+**Security Note:**
 
-SUPABASE UI https://supabase.com/ui/docs/nextjs/password-based-auth
+- Client-side Supabase should have limited (read-only) access
+- Server-side Supabase should handle sensitive access
 
-## TO GO LIVE WITH LOGIN
-
-- make password reset work
-
-- profile page - add navigaion and footer
-
-! Client side Supabase should less access - read only. Server side should have more access.
-
-## Supabase Production Checklist
+### ✅ Supabase Production Checklist
 
 https://supabase.com/docs/guides/deployment/going-into-prod#auth-rate-limits
 
-LOGIN AUTH:
+---
 
-done: https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=router&router=pages
+# 🔧 In Progress / Working
 
-- how does password reset work?
-- create plan for login features to be added, profile flow after sign up
+## 🎟 Event Pages
 
-# Database Options
+- [ ] Implement pagination (21 results/page, scroll to top on page change)
+- [ ] Maintain filter behavior — hide pagination on filter, resume on clear
+- [ ] Remove Twitch from navigation
+- [ ] Add DJ Misha promo block (like a Google Ad) between events
 
-https://pocketbase.io/
+## 🎤 Artists
 
-## VENUE PAGES - with all events at that venue !!!
+- [x] Table for all artists
+- [x] Populate from local JSON → EDM Train → Last.fm
+- [ ] Add social media icons to artist pages
+- [ ] Bug: artists page layout lacks location context
+- [ ] Decide: artist tags as array or separate table
 
-https://www.sandiegohousemusic.com/venues/orlando
+---
 
-https://www.sandiegohousemusic.com/venues/orlando/venue-name
+# 📊 Database
 
-- query events from supabase
+### Tables
 
-# Itegrations
+- [x] Locations
+- [x] Venues
+- [x] Events
+- [x] Artists
+- [ ] Add slug field to artists
+- [ ] Table for submitted events
 
-- Stub Hub API https://developer.stubhub.com/api-reference/catalog https://developer.stubhub.com/docs/authentication/application-only-authentication-flow
+### Features
 
-- Ticketmaster API
-  - watiting on response from Ticketmaster
+- [x] Default location dropdown in profile
+- [x] Populate events from EDM Train API
+- [x] SMTP Email setup
+- [x] Add homepage experience for logged-in users
 
-## Next.js 15 Upgrade
+---
 
-- app router - rename folder structure
-- refactor getserver side props
+# 🚀 Ready for Dev
 
-## Ticketmaster to do
+- [ ] Artist pages: social media icons
+- [ ] Fix artist layout bug (location context missing)
 
-- figure out why link does not work ??
-- check API and see how you can get more data or events
-- make Ticket Master API work for STATE and for EVENT DATA (to be used on event overlay)
-- [x] add fallback image
+---
 
-# Other stuff
+# 🔁 Integrations
 
-- pagination for events pages
-- remove twitch from navigation
-- add dj misha somewhere - do like an google ad, inbetween events
+## StubHub
 
-## 2025 Ideas
+- https://developer.stubhub.com/docs/authentication/application-only-authentication-flow
 
-- homepage simplified
-- locations page - with city and states, removed from homepage
-- venues pages - with all venues in a city
-- artist directory with all artists
-- artists page - adds new bio to db from last.fm
+## Ticketmaster
 
-## HOW to MONITIZE
+- Waiting on response
+- [ ] Fix broken link
+- [ ] Expand data (for event overlay, state-level filtering)
+- [x] Add fallback image
 
-- links to buy tickets - integrations with ticket providers
-- better ads on artist pages - remove auto ads?
-- add on homepage (all adds eleganty)
-- add on events pages (all adds eleganty)
+---
 
-### SEO Continued
+# 🛠 Next.js 15 Upgrade
 
-- events pages - titles and descriptions - keyword optimization
-- cross linking pages - between events, artists, locations, and venues
-- link each artists from the events card. - link to artist page
+- [ ] Rename folder structure to use app router
+- [ ] Refactor getServerSideProps
 
-## Working
+---
 
-- table for all artists
-  - [x] create table to hold top aritst
-  - [x] at build time - build from local JSON file
-  - inserts only new ones from the EDM TRAIN API, when feteched from top artists page
-  - populates from last.fm with bio data on each artist
-  - populates from last.fm with TAGS data on each artist
-  - table for artist TAGS - shoued it be a table or an array in the artist table?
+# 💡 Feature Ideas & Monetization
 
-## Ready for Dev
+## Event Experience
 
-- [] ARTIST PAGES: social media icons
+- [ ] Improved event sorting (define how)
+- [ ] Submit events (login required) → featured
 
-- [x] get the all events data at build time, rathar than the static JSON object file?
+## Monetization
 
-- [] bug: artists page uses different layout so there is no context for the location
+- [ ] Ticket links for affiliate revenue
+- [ ] Ads on artist pages
+- [ ] Elegant homepage/event page ads
+- [ ] Improve ad placement quality
 
-## Database
+## Homepage Improvements
 
-- all artits table to include slug
-- [x] table for locations
-- [x] table for venues!
-- [x]table for events
-  - [x] populate with each new events call from EDM TRAIN API
+- [ ] Simplified layout
+- [ ] Expand with useful widgets and data
+- [ ] Add context for visited cities
+- [ ] Add section for top/random artists
 
-### SEO
+---
 
-- SEO: Homepage - Title and Description - need keyword research
-- Better SEO on Artist Pages - need keyword research
-
-## Ideas
-
-- Event pages
-
-  - improved sorting - how? need examples
-
-- Ability to Submit Events - they become featured, need login for this
-
-- NEED TABLE FOR SUBMITTED EVENTS
-
-- homepage - what else can we add on homepage to expland it and make it more useful
-
-- context - what else can we put there to keep
-
-## 2025 Completed
-
-## Database
-
-- [x] need to set up email SMTP for
-- [x] PROFILE PAGE - with user info
-- [x] SIGN UP -> CONFIRM LINK -> PROFILE PAGE
-- [x] Can select default location from dropdown
-- [x] Homepage - LOGGED IN EXPERIENCE - if logged in shows default location button
-- [x] need login page icon. sign up page icon
-- [x] table for locations
-- [x] table for venues!
-- [x] table for events
-- [x] populate with each new events call from EDM TRAIN API
-- [x] better layout - better how? improved cards
-
-## 2024 Completed
-
-- [x] put Ads on artist pages - not showing
-- [x] wont do: migrate the image node.js code into this repo
-- [x] security: check supabase message for security issues
-- [x] Better SEO on City Pages - need keyword research
-- [x] if user visited a city, show that city on homepage and navigation, store all visited locations in context
-- [x] hold top artists data so that it can be shown on the homepage
-- [x] need to get ads approved by Google÷
-- [x] put locations into a context, utilize context more
-- [x] homepage: add section for top touring artists
-- [x] homepage: Header with Search Section
-- [x] homepage: your locaiton is... here are events in....
-- [x] locator bug - returns a city that does not match an available city
-
-### Homepage
-
-- [x] refesh images March 29, 2024
-- [x] locator.js - returns a city that does not match an available city
-
-### Homepage
-
-- [x] add section for cities & states
-- [x] add artists to search input
-- [] add section for top artists, or random artists?
-
-### Artists Pages
-
-- [x] finish individual artist pages
-- [x] add artsts pages to XML sitemap
-- [x] fix desktop styling for artist pages
-- [x] bring back top artist page
-- [x] add artist information from other api sources: https://www.last.fm/api#getting-started
-
-## 2023 - Q4
-
-### Styling
-
-- [x] center spinner
-- [] improve top navbar styling - how?
-- [] improve bottom navbar styling - how?
-- [] set padding site wide, rather than componenets
-- [] improve color scheme
-- [] improve event card design
-- [] change spinner loader to skeleton loader
+# 📈 SEO
 
 ### General
 
-- [x] remove all dead css files
-- [x] remove all dead code from last cleanup
-- [] change spinner loader to skeleton loader
-- [] improve event card design
-- [] context: put locations into, instead of passing down as props
-- [] context: top artists data
+- [ ] Optimize titles + descriptions (keyword research needed)
+- [ ] Cross-link: events ↔ artists ↔ venues ↔ locations
+- [ ] Artist links from event cards
+- [ ] Better SEO for artist pages
+- [x] City page SEO improvements
+- [x] Add artist pages to XML sitemap
 
-## 2023 - Q3
+---
 
-### Homepage
+# ✅ Completed
 
-- [x] add section for cities & states
-- [x] add artists to search input
+## ✅ 2025
 
-### Artists Pages
+- [x] Profile/login/signup flow
+- [x] Logged-in homepage experience
+- [x] Database: events, venues, locations
+- [x] Homepage: top artists section, search header
+- [x] Refreshed event card layout
 
-- [x] finish individual artist pages
-- [x] add artsts pages to XML sitemap
-- [x] fix desktop styling for artist pages
-- [x] bring back top artist page
-- [x] add artist information from other api sources: last.fm
-- [x] redirect on sign up to profile page
+## ✅ 2024
+
+- [x] Google ad approval
+- [x] Remove auto ads
+- [x] Improved SEO for city pages
+- [x] Top artists stored for homepage
+- [x] Context setup for locations and top artists
+- [x] Locator bug fix
+- [x] Refreshed homepage images
+
+## ✅ 2023 Q4
+
+- [x] Remove dead CSS/code
+- [x] Homepage: cities & states section
+- [x] Artists in search input
+- [x] Individual artist pages complete
+- [x] Desktop artist styling fixes
+- [x] Top artist page restored
+- [x] Artist data from Last.fm added
+- [x] Sign-up redirect to profile
+
+---
+
+# 🧪 Styling (Backlog)
+
+- [ ] Improve top & bottom navbars
+- [ ] Set site-wide padding
+- [ ] Improve color scheme
+- [ ] Update event card design
+- [ ] Spinner → Skeleton loader
+- [x] Center spinner
+
+---
+
+# 🔗 Key Resources
+
+- App: https://httpie.io/app
+- ShadCN UI: https://ui.shadcn.com/docs/installation/next
+- Notifications: https://www.npmjs.com/package/sonner
+- Supabase UI: https://supabase.com/ui/docs/nextjs/password-based-auth

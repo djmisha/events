@@ -8,6 +8,10 @@
   z-index: 1;
   margin: 10px;
   margin-bottom: 20px;
+
+  @media only screen and (max-width: 767px) {
+    height: 48px;
+  }
 }
 
 .event-filter-top-nav-bar {
@@ -22,8 +26,13 @@
   padding-bottom: 0px;
   background-color: $white;
   width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border: none;
+
+  @media only screen and (max-width: 767px) {
+    height: 48px;
+    justify-content: center;
+  }
+
   @media only screen and (min-width: 768px) {
     margin: 0;
   }
@@ -96,25 +105,236 @@
 
 .event-filter-by {
   border: 1px solid $lightGrey;
-  width: 80px;
+  width: 100px;
   text-transform: uppercase;
   background-color: white;
   color: black;
-  padding: 0 20px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.filter-icon {
+  font-size: 0.75rem;
+  color: rgba($black, 0.6);
+
+  @media only screen and (max-width: 767px) {
+    font-size: 0.875rem;
+  }
 }
 
 .event-filter-nav-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  display: flex;
+  gap: 1rem;
   width: 100%;
   margin: 0 auto;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 767px) {
+    gap: 0.5rem;
+  }
 }
 
 .event-filter-nav-slot {
-  min-width: 60px;
-  height: 60px;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+// Filter count boxes styling - based on CountBoxes component
+.count-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background: $white;
+  border-radius: $borderRadius;
+  box-shadow: $boxShadow;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0px 5px 15px rgba($black, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media only screen and (min-width: 768px) {
+    gap: 0.875rem;
+    padding: 1rem 1.25rem;
+  }
+
+  @media only screen and (max-width: 767px) {
+    gap: 0.375rem;
+    padding: 0.5rem 0.625rem;
+    height: 48px;
+  }
+}
+
+// Pink variant for Events
+.count-nav-item.pink {
+  border-color: rgba($pink, 0.2);
+
+  &:hover {
+    border-color: rgba($pink, 0.4);
+
+    .iconWrapper {
+      transform: scale(1.05);
+    }
+
+    .count {
+      color: $pink;
+    }
+  }
+}
+
+// Blue variant for Venues
+.count-nav-item.blue {
+  border-color: rgba($blue, 0.2);
+
+  &:hover {
+    border-color: rgba($blue, 0.4);
+
+    .iconWrapper {
+      transform: scale(1.05);
+    }
+
+    .count {
+      color: $blue;
+    }
+  }
+}
+
+// Orange variant for Artists
+.count-nav-item.orange {
+  border-color: rgba($orange, 0.2);
+
+  &:hover {
+    border-color: rgba($orange, 0.4);
+
+    .iconWrapper {
+      transform: scale(1.05);
+    }
+
+    .count {
+      color: $orange;
+    }
+  }
+}
+
+// Menu styling
+.menuContent {
+  padding: 1rem;
+}
+
+.menuTitle {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $black;
+  font-family: $fontFamily;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+
+  @media only screen and (min-width: 768px) {
+    width: 44px;
+    height: 44px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.icon {
+  font-size: 1rem;
+  color: $white;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+
+  @media only screen and (max-width: 767px) {
+    font-size: 0.875rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.count {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $black;
+  font-family: $fontFamily;
+  transition: color 0.2s ease;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+
+  @media only screen and (max-width: 767px) {
+    font-size: 1rem;
+  }
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba($black, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
+  font-family: $fontFamily;
+  line-height: 1;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 0.8125rem;
+  }
+
+  @media only screen and (max-width: 767px) {
+    font-size: 0.6875rem;
+  }
+}
+
+// Color variants - solid colors instead of gradients
+.iconWrapper.pink {
+  background-color: $pink;
+}
+
+.iconWrapper.blue {
+  background-color: $blue;
+}
+
+.iconWrapper.orange {
+  background-color: $orange;
 }
