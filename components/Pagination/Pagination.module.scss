@@ -45,6 +45,8 @@
   min-width: 52px; // 20% larger than original
   touch-action: manipulation; // Better mobile touch
   user-select: none;
+  box-sizing: border-box;
+  margin: 0; /* Ensure all page buttons, including first and last, have the same width and padding */
 
   &:hover:not(.disabled) {
     background: $lightPink;
@@ -87,12 +89,31 @@
   }
 }
 
+/* Ensure all page buttons, including first and last, always have the same padding and width */
+.paginationControls > .pageButton {
+  padding: 0.875rem 1.125rem !important;
+  min-width: 52px !important;
+  margin: 0 !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .paginationControls > .pageButton {
+    padding: 1rem 1.375rem !important;
+    min-width: 60px !important;
+  }
+}
+
 .ellipsis {
-  padding: 0.875rem 0.5rem;
-  color: $black;
-  font-weight: 600;
-  opacity: 0.5;
-  user-select: none;
+  padding: 0.875rem 1.125rem;
+  min-width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $borderGrey;
+  font-size: 1rem;
+  font-weight: 500;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 /* Tablet and small desktop */

@@ -31,9 +31,7 @@ const MenuOverlay = ({ isOpen, onClose, children }) => {
         className={`${classes.menu} ${isOpen ? classes.open : ""}`}
       >
         <CloseButton onClick={onClose} className={classes.closeButton} />
-        <div className={classes.content} onClick={onClose}>
-          {children}
-        </div>
+        <div className={classes.content}>{children}</div>
       </div>
     </div>
   );

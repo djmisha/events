@@ -93,12 +93,11 @@ const Pagination = ({
             );
           }
 
+          // Always render page numbers with the same style, including 1 and last
           return (
             <button
               key={page}
-              className={`${styles.pageButton} ${
-                currentPage === page ? styles.active : ""
-              }`}
+              className={`${styles.pageButton} ${currentPage === page ? styles.active : ""}`}
               onClick={() => handlePageClick(page)}
             >
               {page}
@@ -106,18 +105,15 @@ const Pagination = ({
           );
         })}
 
-        {/* Next button */}
-        <button
-          className={`${styles.pageButton} ${
-            currentPage === totalPages ? styles.disabled : ""
-          }`}
-          onClick={() =>
-            currentPage < totalPages && handlePageClick(currentPage + 1)
-          }
-          disabled={currentPage === totalPages}
-        >
-          Next ›
-        </button>
+        {/* Next button - only show if not on last page */}
+        {currentPage < totalPages && (
+          <button
+            className={styles.pageButton}
+            onClick={() => handlePageClick(currentPage + 1)}
+          >
+            Next ›
+          </button>
+        )}
       </div>
     </div>
   );
