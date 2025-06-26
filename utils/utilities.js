@@ -27,7 +27,7 @@ export const makeVenues = (data) => {
 };
 
 export const makeDates = (data) => {
-  return removeDuplicates(data.map((item) => item.date));
+  return removeDuplicates(data.map((item) => item.formattedDate));
 };
 
 export const makeArtists = (data) => {
