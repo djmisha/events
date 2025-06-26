@@ -34,7 +34,10 @@ const Filter = ({
             <span>&times;</span>
           </div>
           <section id="searchresults">
-            <p>{searchTerm}</p>
+            <p>
+              {events.filter((event) => event.isVisible !== false).length}{" "}
+              results for <strong>{searchTerm}</strong>
+            </p>
           </section>
         </div>
       )}
