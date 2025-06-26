@@ -1,0 +1,70 @@
+@use "../../styles/variables" as *;
+@use "sass:color";
+
+.toast {
+  background: $white !important;
+  color: $black !important;
+  border: 1px solid $borderGrey !important;
+  border-radius: $borderRadius !important;
+  padding: 16px 20px !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  max-width: 500px !important;
+  min-width: 300px !important;
+  box-shadow: $boxShadow !important;
+  font-family: inherit !important;
+}
+
+.filterToastContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.filterIcon {
+  flex-shrink: 0;
+  font-size: 16px;
+  margin-left: -15px; // Move icon 15px to the left
+}
+
+.filterMessage {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+
+  .searchTerm {
+    font-weight: 600;
+    color: $primary-color;
+  }
+}
+
+.closeButton {
+  background: $primary-color;
+  border: none;
+  border-radius: 6px;
+  color: $white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 10px;
+  margin-left: 12px;
+  margin-right: -15px; // Move button 15px more to the right
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+
+  &:hover {
+    background: color.adjust($primary-color, $lightness: -10%);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

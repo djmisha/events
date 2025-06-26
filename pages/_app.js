@@ -1,5 +1,6 @@
 import { AppProvider } from "../features/AppContext";
 import { Poppins } from "next/font/google";
+import ToastProvider from "../components/ui/ToastProvider";
 import "../styles/global.scss";
 
 const poppins = Poppins({
@@ -13,6 +14,7 @@ function App({ Component, pageProps }) {
     <AppProvider>
       <div className={poppins.className}>
         <Component {...pageProps} />
+        <ToastProvider />
       </div>
     </AppProvider>
   );
