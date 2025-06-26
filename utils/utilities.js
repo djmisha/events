@@ -23,11 +23,22 @@ export const cleanString = (string) => {
  * Functions to create event arrays of strings
  */
 export const makeVenues = (data) => {
-  return removeDuplicates(data.map((item) => item.venue.name));
+  return removeDuplicates(data.map((item) => item.venue.name)).sort();
 };
 
 export const makeDates = (data) => {
-  return removeDuplicates(data.map((item) => item.formattedDate));
+  const dateMapping = {}; // Map original date to formatted date
+
+  data.forEach((item) => {
+    if (item.formattedDate && item.date) {
+      dateMapping[item.date] = item.formattedDate;
+    }
+  });
+
+  // Sort by original date (chronological order) but return formatted dates
+  return Object.keys(dateMapping)
+    .sort()
+    .map((originalDate) => dateMapping[originalDate]);
 };
 
 export const makeArtists = (data) => {
@@ -144,6 +155,22 @@ export function filterSurpriseGuest(artists) {
   });
 }
 
+export const formatDateToHuman = (dateString) => {
+  if (!dateString) return dateString;
+
+  try {
+    const date = new Date(dateString);
+    const options = {
+      weekday: "long",
+      month: "short",
+      day: "numeric",
+    };
+    return date.toLocaleDateString("en-US", options);
+  } catch (error) {
+    return dateString; // Return original if formatting fails
+  }
+};
+
 export const makePromoters = (data) => {
   // Count occurrences of each event name
   const eventNameCounts = {};
@@ -160,4 +187,63 @@ export const makePromoters = (data) => {
 
   // Alphabetize the list and remove duplicates
   return removeDuplicates(promoters).sort();
+};
+
+export const makeVenuesWithCounts = (data) => {
+  const venueCounts = {};
+  data.forEach((item) => {
+    if (item.venue && item.venue.name) {
+      venueCounts[item.venue.name] = (venueCounts[item.venue.name] || 0) + 1;
+    }
+  });
+
+  return Object.keys(venueCounts)
+    .sort()
+    .map((venue) => ({
+      name: venue,
+      count: venueCounts[venue],
+    }));
+};
+
+export const makeDatesWithCounts = (data) => {
+  const dateCounts = {};
+  const dateMapping = {}; // Map original date to formatted date
+
+  data.forEach((item) => {
+    if (item.formattedDate && item.date) {
+      dateCounts[item.formattedDate] =
+        (dateCounts[item.formattedDate] || 0) + 1;
+      dateMapping[item.date] = item.formattedDate;
+    }
+  });
+
+  // Sort by original date (chronological order) but display formatted date
+  return Object.keys(dateMapping)
+    .sort()
+    .map((originalDate) => {
+      const formattedDate = dateMapping[originalDate];
+      return {
+        name: formattedDate, // Display the formatted date
+        originalDate: formattedDate, // Use formatted date for filtering
+        count: dateCounts[formattedDate],
+      };
+    });
+};
+
+export const makePromotersWithCounts = (data) => {
+  const eventNameCounts = {};
+  data.forEach((item) => {
+    if (item.name) {
+      eventNameCounts[item.name] = (eventNameCounts[item.name] || 0) + 1;
+    }
+  });
+
+  // Filter to only include event names with more than 1 event
+  return Object.keys(eventNameCounts)
+    .filter((eventName) => eventNameCounts[eventName] > 1)
+    .sort()
+    .map((promoter) => ({
+      name: promoter,
+      count: eventNameCounts[promoter],
+    }));
 };

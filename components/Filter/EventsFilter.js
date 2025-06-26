@@ -3,6 +3,9 @@ import {
   makeArtists,
   makeDates,
   makePromoters,
+  makeVenuesWithCounts,
+  makeDatesWithCounts,
+  makePromotersWithCounts,
 } from "../../utils/utilities";
 import NavItem from "../Navigation/NavItem";
 import BackToTop from "../BackToTop/BackToTop";
@@ -28,6 +31,11 @@ const EventsFilter = ({ events, setSearchTerm }) => {
   const dates = makeDates(events ?? []);
   const artists = makeArtists(events ?? []);
   const promoters = makePromoters(events ?? []);
+
+  // Get items with counts for display
+  const venuesWithCounts = makeVenuesWithCounts(events ?? []);
+  const datesWithCounts = makeDatesWithCounts(events ?? []);
+  const promotersWithCounts = makePromotersWithCounts(events ?? []);
 
   // Calculate statistics from events data
   const getStatistics = () => {
@@ -107,6 +115,7 @@ const EventsFilter = ({ events, setSearchTerm }) => {
                 <h2 className={styles.menuTitle}>Dates</h2>
                 <MenuList
                   navItems={dates}
+                  navItemsWithCounts={datesWithCounts}
                   text="date"
                   isOpen={isDateMenuOpen}
                   title="Dates"
@@ -141,6 +150,7 @@ const EventsFilter = ({ events, setSearchTerm }) => {
                 <h2 className={styles.menuTitle}>Venues</h2>
                 <MenuList
                   navItems={venues}
+                  navItemsWithCounts={venuesWithCounts}
                   text="venue"
                   isOpen={isVenueMenuOpen}
                   title="Venues"
@@ -207,7 +217,8 @@ const EventsFilter = ({ events, setSearchTerm }) => {
             >
               <div className={styles.menuContent}>
                 <MenuList
-                  navItems={promoters}
+                  navItems={promoters.map((p) => p.name || p)}
+                  navItemsWithCounts={promotersWithCounts}
                   text="promoter"
                   title="Promoters"
                   isOpen={isPromoterMenuOpen}
