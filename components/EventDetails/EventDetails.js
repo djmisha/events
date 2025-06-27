@@ -18,11 +18,7 @@ const EventDetails = ({ event }) => {
         <ArtistImage id={artistList[0]?.id} />
       </div>
       <div className={styles.eventInfo}>
-        <div
-          className={styles.eventDate}
-          itemProp="startDate"
-          content={daySchema}
-        >
+        <div className={styles.eventDate}>
           <FaRegCalendar className={styles.icon} />
           <div>
             {dayOfWeek}, {dayMonth}
@@ -30,30 +26,19 @@ const EventDetails = ({ event }) => {
         </div>
         <div className={styles.eventTitleArtist}>
           {name && (
-            <span className={styles.eventTitle} itemProp="name">
+            <span className={styles.eventTitle}>
               {name}
             </span>
           )}
-          <span className={styles.eventArtist} itemProp="name">
+          <span className={styles.eventArtist}>
             <Artists data={artistList} />
           </span>
         </div>
-        <div
-          className={styles.eventVenue}
-          itemProp="location"
-          itemScope=""
-          itemType="http://schema.org/Place"
-        >
+        <div className={styles.eventVenue}>
           <FaRegBuilding className={styles.icon} />
-          <span itemProp="name">{venueName}</span>{" "}
+          <span>{venueName}</span>{" "}
         </div>
-        <div
-          className={styles.eventLocation}
-          itemScope=""
-          itemType="http://schema.org/PostalAddress"
-          itemProp="address"
-          content={address}
-        >
+        <div className={styles.eventLocation}>
           {address && (
             <a
               rel="noreferrer"

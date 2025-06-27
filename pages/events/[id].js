@@ -5,7 +5,7 @@ import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModule from "../../components/EventsModule/EventsModule";
 import getEvents from "../../utils/getEvents";
 
-export default function Location({ locationData, events, initialPage }) {
+export default function Location({ locationData, events, initialPage, eventId }) {
   const { city, state, id } = locationData;
   const title = makePageTitle(city, state);
   const description = makePageDescription(city, state);
@@ -21,6 +21,7 @@ export default function Location({ locationData, events, initialPage }) {
         locationData={locationData}
         events={events}
         initialPage={initialPage}
+        eventId={eventId}
       />
     </Layout>
   );

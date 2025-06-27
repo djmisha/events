@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import { useRouter } from "next/router";
 import Artists from "../Artists/Artists";
 import ArtistImage from "../Artists/ArtistImage";
 import setDates from "../../utils/setDates";
 import Modal from "../Modal/Modal";
 import EventDetails from "../EventDetails/EventDetails";
+import EventStructuredData from "../SEO/EventStructuredData";
+import { useCurrentUrl } from "../../hooks/useCurrentUrl";
+import { useEventModal } from "../../hooks/useEventModal";
 import styles from "./EventCard.module.scss";
-import { FaRegCalendar, FaRegBuilding, FaUsers, FaVideo } from "react-icons/fa"; // Add FaUsers and FaVideo import
+import { FaRegCalendar, FaRegBuilding, FaUsers, FaVideo } from "react-icons/fa";
 
-export const EventCard = ({ event }) => {
+export const EventCard = ({ event, openEventId, setOpenEventId }) => {
+  const router = useRouter();
+  const currentUrl = useCurrentUrl();
   const {
     date,
     artistList,
@@ -18,16 +24,22 @@ export const EventCard = ({ event }) => {
     festivalInd,
     livestreamInd,
   } = event;
-  const { name: venueName } = venue; // Removed address
+  const { name: venueName } = venue;
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Use the custom hook for modal management
+  const { isModalOpen, openModal, closeModal } = useEventModal(
+    event.id,
+    openEventId,
+    setOpenEventId
+  );
 
   const handleModalOpen = () => {
-    setIsModalOpen(true);
+    openModal();
   };
 
   const handleModalClose = () => {
-    setIsModalOpen(false);
+    closeModal();
   };
 
   const truncatedArtistList =
@@ -52,6 +64,10 @@ export const EventCard = ({ event }) => {
 
   return (
     <>
+      <EventStructuredData
+        event={event}
+        currentUrl={typeof window !== "undefined" ? window.location.href : null}
+      />
       <div
         className={`${styles.singleEvent} ${styles.viewFull} ${
           isVisible ? styles.visible : styles.hidden

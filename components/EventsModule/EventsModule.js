@@ -7,6 +7,7 @@ import { makePageHeadline } from "../../utils/utilities";
 import Filter from "../../components/Filter/Filter";
 import EventsFiltered from "../../components/Filter/EventsFilter";
 import Pagination from "../../components/Pagination/Pagination";
+import { useEventModalManager } from "../../hooks/useEventModal";
 import styles from "./EventsModule.module.scss";
 
 const EventsModule = ({
@@ -14,8 +15,10 @@ const EventsModule = ({
   isHome,
   events: initialEvents,
   initialPage = 1,
+  eventId,
 }) => {
   const router = useRouter();
+  const { openEventId, setOpenEventId } = useEventModalManager(); // Use the hook
   let [filterVisible, setFilterVisible] = useState(false);
   const [events, setEvents] = useState(initialEvents);
   const [allEvents, setAllEvents] = useState(initialEvents); // Store original events
@@ -134,7 +137,14 @@ const EventsModule = ({
           />
           <div className={styles.eventFeed}>
             {displayEvents?.map((event) => {
-              return <EventCard event={event} key={event.id} />;
+              return (
+                <EventCard 
+                  event={event} 
+                  key={event.id}
+                  openEventId={openEventId}
+                  setOpenEventId={setOpenEventId}
+                />
+              );
             })}
           </div>
 

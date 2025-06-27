@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useState } from "react";
 import Layout from "../../components/layout";
 import {
   getArtistData,
@@ -10,11 +11,13 @@ import ArtistBio from "../../components/Artists/ArtistBio";
 import EventCard from "../../components/EventCard/EventCard";
 import GoogleAutoAds from "../../components/3rdParty/googleAds";
 import NavigationBar from "../../components/Navigation/NavigataionBar";
+import { useEventModalManager } from "../../hooks/useEventModal";
 import styles from "../../components/Artists/Artist.module.scss";
 import feedStyles from "../../components/Artists/ArtistFeed.module.scss";
 
 export default function Artist({ artistData, events, lastFMdata }) {
   const { name, id } = artistData;
+  const { openEventId, setOpenEventId } = useEventModalManager();
   const title = `${name} - Upcoming Events & Artist Informaton`;
   const description = `${name} Tour Dates, Shows, Concert Tickets & Live Streams. Learn more about ${name}`;
 
@@ -37,7 +40,12 @@ export default function Artist({ artistData, events, lastFMdata }) {
             <h2>{name} Upcoming Events</h2>
             <div className={feedStyles.artistFeed}>
               {events?.map((event) => (
-                <EventCard event={event} key={event.id} />
+                <EventCard
+                  event={event}
+                  key={event.id}
+                  openEventId={openEventId}
+                  setOpenEventId={setOpenEventId}
+                />
               ))}
             </div>
           </>

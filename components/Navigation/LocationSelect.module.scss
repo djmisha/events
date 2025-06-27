@@ -30,13 +30,13 @@
   background-color: white;
   flex-shrink: 0;
   box-sizing: border-box;
-  
+
   &:focus {
     outline: none;
     border-color: $primary-color;
     box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
   }
-  
+
   &::placeholder {
     color: #999;
     font-style: italic;
@@ -69,12 +69,12 @@
   align-items: center;
   justify-content: center;
   transition: color 0.2s ease, background-color 0.2s ease;
-  
+
   &:hover {
     color: #666;
     background-color: rgba(0, 0, 0, 0.1);
   }
-  
+
   &:focus {
     outline: none;
     color: $primary-color;

@@ -6,12 +6,14 @@ import { getEventsHome } from "../../utils/getEvents";
 import { getGeoLocation } from "../../features/services/locationService.js";
 import EventCard from "../EventCard/EventCard";
 import Button from "../Button/Button";
+import { useEventModalManager } from "../../hooks/useEventModal";
 import buttonStyles from "../Button/Button.module.scss";
 import styles from "./Locator.module.scss";
 import feedStyles from "./LocatorFeed.module.scss";
 
 const Locator = ({ locations }) => {
   const { locationCtx, addLocation } = useContext(AppContext);
+  const { openEventId, setOpenEventId } = useEventModalManager(); // Use the hook
   const [events, setEvents] = useState();
   const [loading, setLoading] = useState(true);
   const eventsFetchedRef = useRef(false);
@@ -64,7 +66,12 @@ const Locator = ({ locations }) => {
               </h2>
               <div className={feedStyles.artistFeed}>
                 {events?.slice(0, 9).map((event) => (
-                  <EventCard event={event} key={event.id} />
+                  <EventCard 
+                    event={event} 
+                    key={event.id}
+                    openEventId={openEventId}
+                    setOpenEventId={setOpenEventId}
+                  />
                 ))}
               </div>
               <div className={buttonStyles.buttonWrapper}>
