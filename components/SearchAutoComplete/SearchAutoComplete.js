@@ -1,6 +1,7 @@
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import { formatDataforSearch } from "./SearchAutoComplete.helpers";
 import { clearSearch } from "../../utils/searchFilter";
+import styles from "./SearchAutoComplete.module.scss";
 
 function SearchAutoComplete({
   setSearchTerm,
@@ -26,7 +27,7 @@ function SearchAutoComplete({
       <>
         <span
           style={{ display: "block", textAlign: "left" }}
-          className="search-result"
+          className={styles.searchResult}
         >
           <b>{item.type}:</b> {item.name}
         </span>
@@ -35,7 +36,7 @@ function SearchAutoComplete({
   };
 
   return (
-    <div className="SearchAutoComplete">
+    <div className={styles.searchAutoComplete}>
       <header className="SearchAutoComplete-header">
         <div>
           <ReactSearchAutocomplete

@@ -11,6 +11,7 @@ import EventCard from "../../components/EventCard/EventCard";
 import GoogleAutoAds from "../../components/3rdParty/googleAds";
 import NavigationBar from "../../components/Navigation/NavigataionBar";
 import styles from "../../components/Artists/Artist.module.scss";
+import feedStyles from "../../components/Artists/ArtistFeed.module.scss";
 
 export default function Artist({ artistData, events, lastFMdata }) {
   const { name, id } = artistData;
@@ -34,7 +35,7 @@ export default function Artist({ artistData, events, lastFMdata }) {
         {events?.length != 0 && (
           <>
             <h2>{name} Upcoming Events</h2>
-            <div id="artistfeed">
+            <div className={feedStyles.artistFeed}>
               {events?.map((event) => (
                 <EventCard event={event} key={event.id} />
               ))}

@@ -31,19 +31,19 @@
 }
 
 .pageButton {
-  padding: 0.875rem 1.125rem; // 20% larger than original
+  padding: 0.875rem 1.125rem;
   border: 2px solid $borderGrey;
   background: $white;
   color: $black;
   text-decoration: none;
   border-radius: $borderRadius;
-  font-size: 1rem; // 20% larger than original
+  font-size: 1rem;
   font-weight: 500;
   font-family: $fontFamily;
   cursor: pointer;
   transition: all 0.2s ease;
-  min-width: 52px; // 20% larger than original
-  touch-action: manipulation; // Better mobile touch
+  min-width: 52px;
+  touch-action: manipulation;
   user-select: none;
   box-sizing: border-box;
   margin: 0; /* Ensure all page buttons, including first and last, have the same width and padding */
@@ -69,14 +69,14 @@
     box-shadow: $boxShadow;
 
     &:hover {
-      background: #b82a85; // Hardcoded darker shade of $pink
-      border-color: #b82a85; // Hardcoded darker shade of $pink
+      background: #b82a85;
+      border-color: #b82a85;
       transform: translateY(-1px);
     }
   }
 
   &.disabled {
-    background: #e0e0e6; // Hardcoded darker shade of $lightGrey
+    background: #e0e0e6;
     color: $borderGrey;
     cursor: not-allowed;
     border-color: $borderGrey;
@@ -129,7 +129,7 @@
   }
 
   .pageButton {
-    padding: 1rem 1.375rem; // Even larger for desktop
+    padding: 1rem 1.375rem;
     font-size: 1.125rem;
     min-width: 60px;
   }
@@ -153,15 +153,14 @@
   }
 
   .pageButton {
-    padding: 1rem 1rem; // Large touch targets for mobile
+    padding: 1rem 1rem;
     font-size: 1rem;
-    min-width: 48px; // iOS recommended minimum touch target
-    min-height: 48px; // iOS recommended minimum touch target
+    min-width: 48px;
+    min-height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    // Make text buttons more compact on small screens
     &:first-child,
     &:last-child {
       padding: 1rem 0.75rem;

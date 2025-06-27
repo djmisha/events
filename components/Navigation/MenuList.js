@@ -14,7 +14,10 @@ export const MenuList = ({
     navItemsWithCounts || navItems.map((item) => ({ name: item, count: null }));
 
   return (
-    <div id={`${text}-list`} className={isOpen ? "visible" : ""}>
+    <div
+      id={`${text}-list`}
+      className={`${styles.menuListContainer} ${isOpen ? styles.visible : ""}`}
+    >
       <h2>{title}</h2>
       {itemsToRender.map((item, index) => {
         const itemName = item.name || item;

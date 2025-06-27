@@ -1,12 +1,13 @@
 import MenuList from "./MenuList";
 import { makeVenues, makeArtists } from "../../utils/utilities";
+import styles from "./Sidebar.module.scss";
 
 const Sidebar = ({ events, setSearchTerm, isOpen = true }) => {
   const venues = makeVenues(events);
   const artists = makeArtists(events);
 
   return (
-    <section className="sidebar">
+    <section className={styles.sidebar}>
       <MenuList
         image="/images/icon-venue.svg"
         text="sidebar-venues"

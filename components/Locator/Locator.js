@@ -8,6 +8,7 @@ import EventCard from "../EventCard/EventCard";
 import Button from "../Button/Button";
 import buttonStyles from "../Button/Button.module.scss";
 import styles from "./Locator.module.scss";
+import feedStyles from "./LocatorFeed.module.scss";
 
 const Locator = ({ locations }) => {
   const { locationCtx, addLocation } = useContext(AppContext);
@@ -61,7 +62,7 @@ const Locator = ({ locations }) => {
                   {cityOrState(userLocation.city, userLocation.state)}
                 </strong>
               </h2>
-              <div id="artistfeed">
+              <div className={feedStyles.artistFeed}>
                 {events?.slice(0, 9).map((event) => (
                   <EventCard event={event} key={event.id} />
                 ))}

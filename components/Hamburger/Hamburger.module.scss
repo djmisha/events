@@ -1,5 +1,21 @@
 @use "../../styles/variables" as *;
 
+.topNavBar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  left: 0px;
+  height: 60px;
+  padding-bottom: 0px;
+  background-color: $white;
+
+  @media only screen and (min-width: 768px) {
+    margin: 0;
+  }
+}
+
 .nav-burger {
   cursor: pointer;
   display: flex;
@@ -8,6 +24,7 @@
   text-align: center;
   align-items: center;
   margin-top: 10px;
+
   span {
     display: block;
     font-size: 12px;

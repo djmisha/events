@@ -7,6 +7,7 @@ import { makePageHeadline } from "../../utils/utilities";
 import Filter from "../../components/Filter/Filter";
 import Pagination from "../../components/Pagination/Pagination";
 import CountBoxes from "../../components/CountBoxes/CountBoxes";
+import styles from "./EventsModule.module.scss";
 
 const EventsModuleSinglePage = ({ locationData, events: eventsSSR }) => {
   let [filterVisible, setFilterVisible] = useState(false);
@@ -82,8 +83,8 @@ const EventsModuleSinglePage = ({ locationData, events: eventsSSR }) => {
           setFilterVisible={setFilterVisible}
         />
       )}
-      <div className="main-wrap" id="top">
-        <section className="upcoming-events">
+      <div className={styles.mainWrap} id="top">
+        <section className={styles.upcomingEvents}>
           <h1>{title}</h1>
           <CountBoxes events={events} />
           <Filter
@@ -93,7 +94,7 @@ const EventsModuleSinglePage = ({ locationData, events: eventsSSR }) => {
             filterVisible={filterVisible}
             setFilterVisible={setFilterVisible}
           />
-          <div id="eventfeed">
+          <div className={styles.eventFeed}>
             {displayEvents &&
               displayEvents.map((event, index) => {
                 return <EventCard event={event} key={index} />;

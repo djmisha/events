@@ -4,8 +4,8 @@
   position: relative;
   transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: left;
-  padding: 20px 15px 20px 15px; // Increased bottom padding
-  margin: 0px 10px 25px 10px; // Added horizontal margins
+  padding: 20px 15px 20px 15px;
+  margin: 0px 10px 25px 10px;
   position: relative;
   background-color: white;
   top: 0;
@@ -17,10 +17,9 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
   transform: translateY(0);
   border-radius: v.$borderRadius;
-  // min-height: 100px; // Add minimum height instead of fixed height
-  height: auto; // Allow height to grow
+  height: auto;
   @media only screen and (min-width: 768px) {
-    margin: 0; // Reset margins for desktop
+    margin: 0;
     padding: 20px 20px 20px 20px;
   }
   &.hidden {
@@ -90,12 +89,12 @@
 .eventInfo {
   width: calc(
     100% - 140px
-  ); // Adjust width to account for artistFallback margin
+  );
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 10px; // Add gap between elements
-  height: auto; // Remove fixed height
+  gap: 10px;
+  height: auto;
 }
 
 .dateAndTitle {

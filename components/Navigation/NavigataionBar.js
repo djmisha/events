@@ -3,16 +3,17 @@ import LocationSelect from "./LocationSelect";
 import Hamburger from "../Hamburger/Hamburger";
 import BackToTop from "../BackToTop/BackToTop";
 import UserGreeting from "../User/UserGreeting";
+import styles from "./NavigationBar.module.scss";
 
 const NavigationBar = ({ setSearchTerm, locationData }) => {
   const locations = makeLocations();
 
   return (
-    <div className="main-navigation">
-      <div className="top-nav-bar">
-        <div className="nav-grid">
+    <div className={styles.mainNavigation}>
+      <div className={styles.topNavBar}>
+        <div className={styles.navGrid}>
           <Hamburger locationData={locationData} />
-          <div className="nav-slot">
+          <div className={styles.navSlot}>
             {locations?.length > 0 ? (
               <LocationSelect
                 image="/images/icon-map.svg"
@@ -23,7 +24,7 @@ const NavigationBar = ({ setSearchTerm, locationData }) => {
                 isLocation={true}
               />
             ) : (
-              <div className="nav-placeholder" />
+              <div className={styles.navPlaceholder} />
             )}
           </div>
           <UserGreeting />

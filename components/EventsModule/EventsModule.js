@@ -7,6 +7,7 @@ import { makePageHeadline } from "../../utils/utilities";
 import Filter from "../../components/Filter/Filter";
 import EventsFiltered from "../../components/Filter/EventsFilter";
 import Pagination from "../../components/Pagination/Pagination";
+import styles from "./EventsModule.module.scss";
 
 const EventsModule = ({
   locationData,
@@ -115,8 +116,8 @@ const EventsModule = ({
           isHome={isHome}
         />
       )}
-      <div className="main-wrap" id="top">
-        <section className="upcoming-events">
+      <div className={styles.mainWrap} id="top">
+        <section className={styles.upcomingEvents}>
           <h1>{title}</h1>
           <EventsFiltered
             events={events}
@@ -131,7 +132,7 @@ const EventsModule = ({
             setFilterVisible={setFilterVisible}
             onClearFilter={handleClearFilter}
           />
-          <div id="eventfeed">
+          <div className={styles.eventFeed}>
             {displayEvents?.map((event) => {
               return <EventCard event={event} key={event.id} />;
             })}

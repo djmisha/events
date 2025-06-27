@@ -113,7 +113,6 @@
     background-color: #e5e7eb;
   }
 
-  // Only show grab cursor on desktop
   @media (min-width: 768px) {
     cursor: grab;
   }

@@ -3,7 +3,7 @@ import styles from "./ToastProvider.module.scss";
 
 const ToastProvider = () => {
   return (
-    <Toaster 
+    <Toaster
       position="bottom-center"
       toastOptions={{
         duration: Infinity, // Make toasts persistent

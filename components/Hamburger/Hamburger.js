@@ -77,7 +77,7 @@ const Hamburger = () => {
 
   return (
     <>
-      <div className={styles["top-nav-bar"]}>
+      <div className={styles.topNavBar}>
         <MenuTrigger
           icon="/images/icon-bars-solid.svg"
           text="Menu"

@@ -2,6 +2,7 @@ import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import { formatDataforSearch } from "./HomeSearchAutocomplete.helpers";
 import { toSlug } from "../../utils/getLocations";
 import { ToSlugArtist } from "../../utils/utilities";
+import styles from "./SearchAutoComplete.module.scss";
 
 function HomeSearchAutocomplete() {
   const items = formatDataforSearch();
@@ -23,7 +24,7 @@ function HomeSearchAutocomplete() {
       <>
         <span
           style={{ display: "block", textAlign: "left" }}
-          className="search-result"
+          className={styles.searchResult}
         >
           <b>{item.type}:</b> {item.name}
         </span>
@@ -32,7 +33,7 @@ function HomeSearchAutocomplete() {
   };
 
   return (
-    <div className="HomeSearchAutocomplete">
+    <div className={styles.homeSearchAutocomplete}>
       <header className="HomeSearchAutocomplete-header">
         <div>
           <ReactSearchAutocomplete

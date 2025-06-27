@@ -25,7 +25,7 @@
 .filterIcon {
   flex-shrink: 0;
   font-size: 16px;
-  margin-left: -15px; // Move icon 15px to the left
+  margin-left: -15px;
 }
 
 .filterMessage {
@@ -50,7 +50,7 @@
   font-weight: 600;
   padding: 6px 10px;
   margin-left: 12px;
-  margin-right: -15px; // Move button 15px more to the right
+  margin-right: -15px;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;

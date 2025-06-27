@@ -1,0 +1,33 @@
+@use "../../styles/variables" as *;
+
+.sidebar {
+  padding: 0 10px;
+  @media only screen and (min-width: 768px) {
+    padding: 0;
+  }
+}
+
+.sidebarVenuesList {
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  h2 {
+    width: 90%;
+  }
+  > div {
+    width: 50%;
+  }
+}
+
+.sidebarArtistList {
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  h2 {
+    width: 90%;
+  }
+  > div {
+    width: 33%;
+  }
+}
