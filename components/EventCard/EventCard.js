@@ -23,6 +23,7 @@ export const EventCard = ({ event, openEventId, setOpenEventId }) => {
     eventSource,
     festivalInd,
     livestreamInd,
+    imageUrl,
   } = event;
   const { name: venueName } = venue;
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
@@ -57,7 +58,7 @@ export const EventCard = ({ event, openEventId, setOpenEventId }) => {
     const artistId = artistList[0]?.id;
     return (
       <div className={styles.artistFallback}>
-        <ArtistImage id={artistId} />
+        <ArtistImage id={artistId} imageUrl={imageUrl} />
       </div>
     );
   };

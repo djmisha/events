@@ -4,6 +4,8 @@
       "city": null,
       "state": "Alabama",
       "stateCode": "AL",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 32.318,
       "longitude": -86.902,
       "link": "https://edmtrain.com/alabama?utm_source=90&utm_medium=api"
@@ -13,6 +15,8 @@
       "city": null,
       "state": "Alaska",
       "stateCode": "AK",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 64.201,
       "longitude": -149.494,
       "link": "https://edmtrain.com/alaska?utm_source=90&utm_medium=api"
@@ -22,6 +26,8 @@
       "city": null,
       "state": "Alberta",
       "stateCode": "AB",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 53.933,
       "longitude": -116.577,
       "link": "https://edmtrain.com/alberta?utm_source=90&utm_medium=api"
@@ -31,6 +37,8 @@
       "city": "Calgary",
       "state": "Alberta",
       "stateCode": "AB",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 51.049,
       "longitude": -114.071,
       "link": "https://edmtrain.com/calgary-ab?utm_source=90&utm_medium=api"
@@ -40,6 +48,8 @@
       "city": "Edmonton",
       "state": "Alberta",
       "stateCode": "AB",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 53.544,
       "longitude": -113.491,
       "link": "https://edmtrain.com/edmonton-ab?utm_source=90&utm_medium=api"
@@ -49,6 +59,8 @@
       "city": null,
       "state": "Arizona",
       "stateCode": "AZ",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 34.049,
       "longitude": -111.094,
       "link": "https://edmtrain.com/arizona?utm_source=90&utm_medium=api"
@@ -58,15 +70,30 @@
       "city": "Phoenix",
       "state": "Arizona",
       "stateCode": "AZ",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 33.448,
       "longitude": -112.074,
       "link": "https://edmtrain.com/phoenix-az?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 489,
+      "city": "Tucson",
+      "state": "Arizona",
+      "stateCode": "AZ",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 32.222,
+      "longitude": -110.926,
+      "link": "https://edmtrain.com/tucson-az?utm_source=90&utm_medium=api"
   },
   {
       "id": 3,
       "city": null,
       "state": "Arkansas",
       "stateCode": "AR",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 35.201,
       "longitude": -91.832,
       "link": "https://edmtrain.com/arkansas?utm_source=90&utm_medium=api"
@@ -76,6 +103,8 @@
       "city": null,
       "state": "British Columbia",
       "stateCode": "BC",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 53.727,
       "longitude": -127.648,
       "link": "https://edmtrain.com/british-columbia?utm_source=90&utm_medium=api"
@@ -85,6 +114,8 @@
       "city": "Vancouver",
       "state": "British Columbia",
       "stateCode": "BC",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 49.283,
       "longitude": -123.121,
       "link": "https://edmtrain.com/vancouver-bc?utm_source=90&utm_medium=api"
@@ -94,6 +125,8 @@
       "city": null,
       "state": "California",
       "stateCode": "CA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 36.778,
       "longitude": -119.418,
       "link": "https://edmtrain.com/california?utm_source=90&utm_medium=api"
@@ -103,6 +136,8 @@
       "city": "Los Angeles",
       "state": "California",
       "stateCode": "CA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 34.052,
       "longitude": -118.244,
       "link": "https://edmtrain.com/los-angeles-ca?utm_source=90&utm_medium=api"
@@ -112,6 +147,8 @@
       "city": "Sacramento",
       "state": "California",
       "stateCode": "CA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 38.582,
       "longitude": -121.494,
       "link": "https://edmtrain.com/sacramento-ca?utm_source=90&utm_medium=api"
@@ -121,6 +158,8 @@
       "city": "San Diego",
       "state": "California",
       "stateCode": "CA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 32.716,
       "longitude": -117.161,
       "link": "https://edmtrain.com/san-diego-ca?utm_source=90&utm_medium=api"
@@ -130,6 +169,8 @@
       "city": "San Francisco",
       "state": "California",
       "stateCode": "CA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 37.775,
       "longitude": -122.419,
       "link": "https://edmtrain.com/san-francisco-ca?utm_source=90&utm_medium=api"
@@ -139,6 +180,8 @@
       "city": "Santa Barbara",
       "state": "California",
       "stateCode": "CA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 34.421,
       "longitude": -119.698,
       "link": "https://edmtrain.com/santa-barbara-ca?utm_source=90&utm_medium=api"
@@ -148,6 +191,8 @@
       "city": null,
       "state": "Colorado",
       "stateCode": "CO",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 39.55,
       "longitude": -105.782,
       "link": "https://edmtrain.com/colorado?utm_source=90&utm_medium=api"
@@ -157,15 +202,30 @@
       "city": "Denver",
       "state": "Colorado",
       "stateCode": "CO",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 39.739,
       "longitude": -104.99,
       "link": "https://edmtrain.com/denver-co?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 609,
+      "city": "Fort Collins",
+      "state": "Colorado",
+      "stateCode": "CO",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 40.585,
+      "longitude": -105.084,
+      "link": "https://edmtrain.com/fort-collins-co?utm_source=90&utm_medium=api"
   },
   {
       "id": 12,
       "city": null,
       "state": "Connecticut",
       "stateCode": "CT",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 41.603,
       "longitude": -73.088,
       "link": "https://edmtrain.com/connecticut?utm_source=90&utm_medium=api"
@@ -175,6 +235,8 @@
       "city": null,
       "state": "Delaware",
       "stateCode": "DE",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 38.911,
       "longitude": -75.528,
       "link": "https://edmtrain.com/delaware?utm_source=90&utm_medium=api"
@@ -184,6 +246,8 @@
       "city": "Washington",
       "state": "District of Columbia",
       "stateCode": "DC",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 38.907,
       "longitude": -77.037,
       "link": "https://edmtrain.com/washington-dc?utm_source=90&utm_medium=api"
@@ -193,15 +257,41 @@
       "city": null,
       "state": "Florida",
       "stateCode": "FL",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 27.665,
       "longitude": -81.516,
       "link": "https://edmtrain.com/florida?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 373,
+      "city": "Fort Lauderdale",
+      "state": "Florida",
+      "stateCode": "FL",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 26.122,
+      "longitude": -80.137,
+      "link": "https://edmtrain.com/fort-lauderdale-fl?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 353,
+      "city": "Jacksonville",
+      "state": "Florida",
+      "stateCode": "FL",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 30.332,
+      "longitude": -81.656,
+      "link": "https://edmtrain.com/jacksonville-fl?utm_source=90&utm_medium=api"
   },
   {
       "id": 87,
       "city": "Miami",
       "state": "Florida",
       "stateCode": "FL",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 25.762,
       "longitude": -80.192,
       "link": "https://edmtrain.com/miami-fl?utm_source=90&utm_medium=api"
@@ -211,6 +301,8 @@
       "city": "Orlando",
       "state": "Florida",
       "stateCode": "FL",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 28.538,
       "longitude": -81.379,
       "link": "https://edmtrain.com/orlando-fl?utm_source=90&utm_medium=api"
@@ -220,6 +312,8 @@
       "city": "Tampa",
       "state": "Florida",
       "stateCode": "FL",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 27.951,
       "longitude": -82.457,
       "link": "https://edmtrain.com/tampa-fl?utm_source=90&utm_medium=api"
@@ -229,6 +323,8 @@
       "city": null,
       "state": "Georgia",
       "stateCode": "GA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 32.166,
       "longitude": -82.9,
       "link": "https://edmtrain.com/georgia?utm_source=90&utm_medium=api"
@@ -238,6 +334,8 @@
       "city": "Atlanta",
       "state": "Georgia",
       "stateCode": "GA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 33.749,
       "longitude": -84.388,
       "link": "https://edmtrain.com/atlanta-ga?utm_source=90&utm_medium=api"
@@ -247,24 +345,52 @@
       "city": null,
       "state": "Hawaii",
       "stateCode": "HI",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 19.897,
       "longitude": -155.583,
       "link": "https://edmtrain.com/hawaii?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 467,
+      "city": "Honolulu",
+      "state": "Hawaii",
+      "stateCode": "HI",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 21.307,
+      "longitude": -157.858,
+      "link": "https://edmtrain.com/honolulu-hi?utm_source=90&utm_medium=api"
   },
   {
       "id": 17,
       "city": null,
       "state": "Idaho",
       "stateCode": "ID",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 44.068,
       "longitude": -114.742,
       "link": "https://edmtrain.com/idaho?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 452,
+      "city": "Boise",
+      "state": "Idaho",
+      "stateCode": "ID",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 43.619,
+      "longitude": -116.215,
+      "link": "https://edmtrain.com/boise-id?utm_source=90&utm_medium=api"
   },
   {
       "id": 18,
       "city": null,
       "state": "Illinois",
       "stateCode": "IL",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 40.633,
       "longitude": -89.399,
       "link": "https://edmtrain.com/illinois?utm_source=90&utm_medium=api"
@@ -274,6 +400,8 @@
       "city": "Chicago",
       "state": "Illinois",
       "stateCode": "IL",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 41.878,
       "longitude": -87.63,
       "link": "https://edmtrain.com/chicago-il?utm_source=90&utm_medium=api"
@@ -283,15 +411,30 @@
       "city": null,
       "state": "Indiana",
       "stateCode": "IN",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 40.267,
       "longitude": -86.135,
       "link": "https://edmtrain.com/indiana?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 376,
+      "city": "Indianapolis",
+      "state": "Indiana",
+      "stateCode": "IN",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 39.768,
+      "longitude": -86.158,
+      "link": "https://edmtrain.com/indianapolis-in?utm_source=90&utm_medium=api"
   },
   {
       "id": 20,
       "city": null,
       "state": "Iowa",
       "stateCode": "IA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 41.878,
       "longitude": -93.098,
       "link": "https://edmtrain.com/iowa?utm_source=90&utm_medium=api"
@@ -301,6 +444,8 @@
       "city": null,
       "state": "Kansas",
       "stateCode": "KS",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 39.012,
       "longitude": -98.484,
       "link": "https://edmtrain.com/kansas?utm_source=90&utm_medium=api"
@@ -310,15 +455,30 @@
       "city": null,
       "state": "Kentucky",
       "stateCode": "KY",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 37.839,
       "longitude": -84.27,
       "link": "https://edmtrain.com/kentucky?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 375,
+      "city": "Louisville",
+      "state": "Kentucky",
+      "stateCode": "KY",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 38.253,
+      "longitude": -85.758,
+      "link": "https://edmtrain.com/louisville-ky?utm_source=90&utm_medium=api"
   },
   {
       "id": 23,
       "city": null,
       "state": "Louisiana",
       "stateCode": "LA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 30.984,
       "longitude": -91.962,
       "link": "https://edmtrain.com/louisiana?utm_source=90&utm_medium=api"
@@ -328,6 +488,8 @@
       "city": "New Orleans",
       "state": "Louisiana",
       "stateCode": "LA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 29.951,
       "longitude": -90.072,
       "link": "https://edmtrain.com/new-orleans-la?utm_source=90&utm_medium=api"
@@ -337,6 +499,8 @@
       "city": null,
       "state": "Maine",
       "stateCode": "ME",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 45.254,
       "longitude": -69.445,
       "link": "https://edmtrain.com/maine?utm_source=90&utm_medium=api"
@@ -346,6 +510,8 @@
       "city": null,
       "state": "Manitoba",
       "stateCode": "MB",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 53.761,
       "longitude": -98.814,
       "link": "https://edmtrain.com/manitoba?utm_source=90&utm_medium=api"
@@ -355,6 +521,8 @@
       "city": null,
       "state": "Maryland",
       "stateCode": "MD",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 39.046,
       "longitude": -76.641,
       "link": "https://edmtrain.com/maryland?utm_source=90&utm_medium=api"
@@ -364,6 +532,8 @@
       "city": "Baltimore",
       "state": "Maryland",
       "stateCode": "MD",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 39.29,
       "longitude": -76.612,
       "link": "https://edmtrain.com/baltimore-md?utm_source=90&utm_medium=api"
@@ -373,6 +543,8 @@
       "city": null,
       "state": "Massachusetts",
       "stateCode": "MA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 42.407,
       "longitude": -71.382,
       "link": "https://edmtrain.com/massachusetts?utm_source=90&utm_medium=api"
@@ -382,6 +554,8 @@
       "city": "Boston",
       "state": "Massachusetts",
       "stateCode": "MA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 42.36,
       "longitude": -71.059,
       "link": "https://edmtrain.com/boston-ma?utm_source=90&utm_medium=api"
@@ -391,6 +565,8 @@
       "city": null,
       "state": "Michigan",
       "stateCode": "MI",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 44.315,
       "longitude": -85.602,
       "link": "https://edmtrain.com/michigan?utm_source=90&utm_medium=api"
@@ -400,6 +576,8 @@
       "city": "Detroit",
       "state": "Michigan",
       "stateCode": "MI",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 42.331,
       "longitude": -83.046,
       "link": "https://edmtrain.com/detroit-mi?utm_source=90&utm_medium=api"
@@ -409,6 +587,8 @@
       "city": "Grand Rapids",
       "state": "Michigan",
       "stateCode": "MI",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 42.963,
       "longitude": -85.668,
       "link": "https://edmtrain.com/grand-rapids-mi?utm_source=90&utm_medium=api"
@@ -418,6 +598,8 @@
       "city": null,
       "state": "Minnesota",
       "stateCode": "MN",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 46.73,
       "longitude": -94.686,
       "link": "https://edmtrain.com/minnesota?utm_source=90&utm_medium=api"
@@ -427,6 +609,8 @@
       "city": "Minneapolis",
       "state": "Minnesota",
       "stateCode": "MN",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 44.978,
       "longitude": -93.265,
       "link": "https://edmtrain.com/minneapolis-mn?utm_source=90&utm_medium=api"
@@ -436,6 +620,8 @@
       "city": null,
       "state": "Mississippi",
       "stateCode": "MS",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 32.355,
       "longitude": -89.399,
       "link": "https://edmtrain.com/mississippi?utm_source=90&utm_medium=api"
@@ -445,6 +631,8 @@
       "city": null,
       "state": "Missouri",
       "stateCode": "MO",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 37.964,
       "longitude": -91.832,
       "link": "https://edmtrain.com/missouri?utm_source=90&utm_medium=api"
@@ -454,6 +642,8 @@
       "city": "Kansas City",
       "state": "Missouri",
       "stateCode": "MO",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 39.1,
       "longitude": -94.579,
       "link": "https://edmtrain.com/kansas-city-mo?utm_source=90&utm_medium=api"
@@ -463,15 +653,30 @@
       "city": "Saint Louis",
       "state": "Missouri",
       "stateCode": "MO",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 38.627,
       "longitude": -90.199,
       "link": "https://edmtrain.com/saint-louis-mo?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 5278,
+      "city": "St. Louis",
+      "state": "Missouri",
+      "stateCode": "MO",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 38.625,
+      "longitude": -90.185,
+      "link": "https://edmtrain.com/st.-louis-mo?utm_source=90&utm_medium=api"
   },
   {
       "id": 32,
       "city": null,
       "state": "Montana",
       "stateCode": "MT",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 46.88,
       "longitude": -110.363,
       "link": "https://edmtrain.com/montana?utm_source=90&utm_medium=api"
@@ -481,6 +686,8 @@
       "city": null,
       "state": "Nebraska",
       "stateCode": "NE",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 41.493,
       "longitude": -99.902,
       "link": "https://edmtrain.com/nebraska?utm_source=90&utm_medium=api"
@@ -490,6 +697,8 @@
       "city": null,
       "state": "Nevada",
       "stateCode": "NV",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 38.803,
       "longitude": -116.419,
       "link": "https://edmtrain.com/nevada?utm_source=90&utm_medium=api"
@@ -499,6 +708,8 @@
       "city": "Las Vegas",
       "state": "Nevada",
       "stateCode": "NV",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 36.17,
       "longitude": -115.14,
       "link": "https://edmtrain.com/las-vegas-nv?utm_source=90&utm_medium=api"
@@ -508,6 +719,8 @@
       "city": "Reno",
       "state": "Nevada",
       "stateCode": "NV",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 39.53,
       "longitude": -119.814,
       "link": "https://edmtrain.com/reno-nv?utm_source=90&utm_medium=api"
@@ -517,6 +730,8 @@
       "city": null,
       "state": "New Brunswick",
       "stateCode": "NB",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 46.565,
       "longitude": -66.462,
       "link": "https://edmtrain.com/new-brunswick?utm_source=90&utm_medium=api"
@@ -526,6 +741,8 @@
       "city": null,
       "state": "New Hampshire",
       "stateCode": "NH",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 43.194,
       "longitude": -71.572,
       "link": "https://edmtrain.com/new-hampshire?utm_source=90&utm_medium=api"
@@ -535,6 +752,8 @@
       "city": null,
       "state": "New Jersey",
       "stateCode": "NJ",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 40.058,
       "longitude": -74.406,
       "link": "https://edmtrain.com/new-jersey?utm_source=90&utm_medium=api"
@@ -544,6 +763,8 @@
       "city": "Atlantic City",
       "state": "New Jersey",
       "stateCode": "NJ",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 39.364,
       "longitude": -74.423,
       "link": "https://edmtrain.com/atlantic-city-nj?utm_source=90&utm_medium=api"
@@ -553,15 +774,30 @@
       "city": null,
       "state": "New Mexico",
       "stateCode": "NM",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 34.52,
       "longitude": -105.87,
       "link": "https://edmtrain.com/new-mexico?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 461,
+      "city": "Albuquerque",
+      "state": "New Mexico",
+      "stateCode": "NM",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 35.111,
+      "longitude": -106.61,
+      "link": "https://edmtrain.com/albuquerque-nm?utm_source=90&utm_medium=api"
   },
   {
       "id": 38,
       "city": null,
       "state": "New York",
       "stateCode": "NY",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 40.713,
       "longitude": -74.006,
       "link": "https://edmtrain.com/new-york?utm_source=90&utm_medium=api"
@@ -571,24 +807,52 @@
       "city": "Buffalo",
       "state": "New York",
       "stateCode": "NY",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 42.886,
       "longitude": -78.878,
       "link": "https://edmtrain.com/buffalo-ny?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 1206,
+      "city": "Montauk",
+      "state": "New York",
+      "stateCode": "NY",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 41.036,
+      "longitude": -71.955,
+      "link": "https://edmtrain.com/montauk-ny?utm_source=90&utm_medium=api"
   },
   {
       "id": 70,
       "city": "New York City",
       "state": "New York",
       "stateCode": "NY",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 40.713,
       "longitude": -74.006,
       "link": "https://edmtrain.com/new-york-city-ny?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 3118,
+      "city": null,
+      "state": "Newfoundland and Labrador",
+      "stateCode": "NL",
+      "country": "Canada",
+      "countryCode": "CA",
+      "latitude": 53.136,
+      "longitude": -57.66,
+      "link": "https://edmtrain.com/newfoundland-and-labrador?utm_source=90&utm_medium=api"
   },
   {
       "id": 39,
       "city": null,
       "state": "North Carolina",
       "stateCode": "NC",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 35.76,
       "longitude": -79.019,
       "link": "https://edmtrain.com/north-carolina?utm_source=90&utm_medium=api"
@@ -598,6 +862,8 @@
       "city": "Asheville",
       "state": "North Carolina",
       "stateCode": "NC",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 35.595,
       "longitude": -82.551,
       "link": "https://edmtrain.com/asheville-nc?utm_source=90&utm_medium=api"
@@ -607,42 +873,96 @@
       "city": "Charlotte",
       "state": "North Carolina",
       "stateCode": "NC",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 35.227,
       "longitude": -80.843,
       "link": "https://edmtrain.com/charlotte-nc?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 349,
+      "city": "Raleigh",
+      "state": "North Carolina",
+      "stateCode": "NC",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 35.78,
+      "longitude": -78.638,
+      "link": "https://edmtrain.com/raleigh-nc?utm_source=90&utm_medium=api"
   },
   {
       "id": 40,
       "city": null,
       "state": "North Dakota",
       "stateCode": "ND",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 47.551,
       "longitude": -101.002,
       "link": "https://edmtrain.com/north-dakota?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 1786,
+      "city": null,
+      "state": "Northwest Territories",
+      "stateCode": "NT",
+      "country": "Canada",
+      "countryCode": "CA",
+      "latitude": 64.826,
+      "longitude": -124.846,
+      "link": "https://edmtrain.com/northwest-territories?utm_source=90&utm_medium=api"
   },
   {
       "id": 68,
       "city": null,
       "state": "Nova Scotia",
       "stateCode": "NS",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 44.682,
       "longitude": -63.744,
       "link": "https://edmtrain.com/nova-scotia?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 1788,
+      "city": null,
+      "state": "Nunavut",
+      "stateCode": "NU",
+      "country": "Canada",
+      "countryCode": "CA",
+      "latitude": 70.3,
+      "longitude": -83.108,
+      "link": "https://edmtrain.com/nunavut?utm_source=90&utm_medium=api"
   },
   {
       "id": 41,
       "city": null,
       "state": "Ohio",
       "stateCode": "OH",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 40.417,
       "longitude": -82.907,
       "link": "https://edmtrain.com/ohio?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 334,
+      "city": "Cincinnati",
+      "state": "Ohio",
+      "stateCode": "OH",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 39.103,
+      "longitude": -84.512,
+      "link": "https://edmtrain.com/cincinnati-oh?utm_source=90&utm_medium=api"
   },
   {
       "id": 111,
       "city": "Cleveland",
       "state": "Ohio",
       "stateCode": "OH",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 41.499,
       "longitude": -81.694,
       "link": "https://edmtrain.com/cleveland-oh?utm_source=90&utm_medium=api"
@@ -652,6 +972,8 @@
       "city": "Columbus",
       "state": "Ohio",
       "stateCode": "OH",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 39.961,
       "longitude": -82.999,
       "link": "https://edmtrain.com/columbus-oh?utm_source=90&utm_medium=api"
@@ -661,15 +983,30 @@
       "city": null,
       "state": "Oklahoma",
       "stateCode": "OK",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 35.008,
       "longitude": -97.093,
       "link": "https://edmtrain.com/oklahoma?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 384,
+      "city": "Oklahoma City",
+      "state": "Oklahoma",
+      "stateCode": "OK",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 35.468,
+      "longitude": -97.516,
+      "link": "https://edmtrain.com/oklahoma-city-ok?utm_source=90&utm_medium=api"
   },
   {
       "id": 43,
       "city": null,
       "state": "Ontario",
       "stateCode": "ON",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 51.254,
       "longitude": -85.323,
       "link": "https://edmtrain.com/ontario?utm_source=90&utm_medium=api"
@@ -679,6 +1016,8 @@
       "city": "Ottawa",
       "state": "Ontario",
       "stateCode": "ON",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 45.422,
       "longitude": -75.697,
       "link": "https://edmtrain.com/ottawa-on?utm_source=90&utm_medium=api"
@@ -688,6 +1027,8 @@
       "city": "Toronto",
       "state": "Ontario",
       "stateCode": "ON",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 43.653,
       "longitude": -79.383,
       "link": "https://edmtrain.com/toronto-on?utm_source=90&utm_medium=api"
@@ -697,6 +1038,8 @@
       "city": null,
       "state": "Oregon",
       "stateCode": "OR",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 43.804,
       "longitude": -120.554,
       "link": "https://edmtrain.com/oregon?utm_source=90&utm_medium=api"
@@ -706,6 +1049,8 @@
       "city": "Eugene",
       "state": "Oregon",
       "stateCode": "OR",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 44.052,
       "longitude": -123.087,
       "link": "https://edmtrain.com/eugene-or?utm_source=90&utm_medium=api"
@@ -715,6 +1060,8 @@
       "city": "Portland",
       "state": "Oregon",
       "stateCode": "OR",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 45.523,
       "longitude": -122.676,
       "link": "https://edmtrain.com/portland-or?utm_source=90&utm_medium=api"
@@ -724,6 +1071,8 @@
       "city": null,
       "state": "Pennsylvania",
       "stateCode": "PA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 41.203,
       "longitude": -77.195,
       "link": "https://edmtrain.com/pennsylvania?utm_source=90&utm_medium=api"
@@ -733,6 +1082,8 @@
       "city": "Philadelphia",
       "state": "Pennsylvania",
       "stateCode": "PA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 39.953,
       "longitude": -75.165,
       "link": "https://edmtrain.com/philadelphia-pa?utm_source=90&utm_medium=api"
@@ -742,15 +1093,30 @@
       "city": "Pittsburgh",
       "state": "Pennsylvania",
       "stateCode": "PA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 40.441,
       "longitude": -79.996,
       "link": "https://edmtrain.com/pittsburgh-pa?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 784,
+      "city": null,
+      "state": "Prince Edward Island",
+      "stateCode": "PE",
+      "country": "Canada",
+      "countryCode": "CA",
+      "latitude": 46.511,
+      "longitude": -63.417,
+      "link": "https://edmtrain.com/prince-edward-island?utm_source=90&utm_medium=api"
   },
   {
       "id": 47,
       "city": null,
       "state": "Quebec",
       "stateCode": "QC",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 52.94,
       "longitude": -73.549,
       "link": "https://edmtrain.com/quebec?utm_source=90&utm_medium=api"
@@ -760,6 +1126,8 @@
       "city": "Montreal",
       "state": "Quebec",
       "stateCode": "QC",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 45.502,
       "longitude": -73.567,
       "link": "https://edmtrain.com/montreal-qc?utm_source=90&utm_medium=api"
@@ -769,6 +1137,8 @@
       "city": null,
       "state": "Rhode Island",
       "stateCode": "RI",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 41.58,
       "longitude": -71.477,
       "link": "https://edmtrain.com/rhode-island?utm_source=90&utm_medium=api"
@@ -778,6 +1148,8 @@
       "city": null,
       "state": "Saskatchewan",
       "stateCode": "SK",
+      "country": "Canada",
+      "countryCode": "CA",
       "latitude": 52.94,
       "longitude": -106.451,
       "link": "https://edmtrain.com/saskatchewan?utm_source=90&utm_medium=api"
@@ -787,15 +1159,30 @@
       "city": null,
       "state": "South Carolina",
       "stateCode": "SC",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 33.836,
       "longitude": -81.164,
       "link": "https://edmtrain.com/south-carolina?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 351,
+      "city": "Charleston",
+      "state": "South Carolina",
+      "stateCode": "SC",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 32.776,
+      "longitude": -79.931,
+      "link": "https://edmtrain.com/charleston-sc?utm_source=90&utm_medium=api"
   },
   {
       "id": 53,
       "city": null,
       "state": "South Dakota",
       "stateCode": "SD",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 43.97,
       "longitude": -99.902,
       "link": "https://edmtrain.com/south-dakota?utm_source=90&utm_medium=api"
@@ -805,6 +1192,8 @@
       "city": null,
       "state": "Tennessee",
       "stateCode": "TN",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 35.517,
       "longitude": -86.58,
       "link": "https://edmtrain.com/tennessee?utm_source=90&utm_medium=api"
@@ -814,6 +1203,8 @@
       "city": "Nashville",
       "state": "Tennessee",
       "stateCode": "TN",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 36.163,
       "longitude": -86.782,
       "link": "https://edmtrain.com/nashville-tn?utm_source=90&utm_medium=api"
@@ -823,6 +1214,8 @@
       "city": null,
       "state": "Texas",
       "stateCode": "TX",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 31.969,
       "longitude": -99.902,
       "link": "https://edmtrain.com/texas?utm_source=90&utm_medium=api"
@@ -832,6 +1225,8 @@
       "city": "Austin",
       "state": "Texas",
       "stateCode": "TX",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 30.267,
       "longitude": -97.743,
       "link": "https://edmtrain.com/austin-tx?utm_source=90&utm_medium=api"
@@ -841,6 +1236,8 @@
       "city": "Dallas",
       "state": "Texas",
       "stateCode": "TX",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 32.777,
       "longitude": -96.797,
       "link": "https://edmtrain.com/dallas-tx?utm_source=90&utm_medium=api"
@@ -850,6 +1247,8 @@
       "city": "El Paso",
       "state": "Texas",
       "stateCode": "TX",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 31.778,
       "longitude": -106.442,
       "link": "https://edmtrain.com/el-paso-tx?utm_source=90&utm_medium=api"
@@ -859,15 +1258,30 @@
       "city": "Houston",
       "state": "Texas",
       "stateCode": "TX",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 29.76,
       "longitude": -95.37,
       "link": "https://edmtrain.com/houston-tx?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 387,
+      "city": "San Antonio",
+      "state": "Texas",
+      "stateCode": "TX",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 29.424,
+      "longitude": -98.494,
+      "link": "https://edmtrain.com/san-antonio-tx?utm_source=90&utm_medium=api"
   },
   {
       "id": 56,
       "city": null,
       "state": "Utah",
       "stateCode": "UT",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 39.321,
       "longitude": -111.094,
       "link": "https://edmtrain.com/utah?utm_source=90&utm_medium=api"
@@ -877,6 +1291,8 @@
       "city": "Salt Lake City",
       "state": "Utah",
       "stateCode": "UT",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 40.761,
       "longitude": -111.891,
       "link": "https://edmtrain.com/salt-lake-city-ut?utm_source=90&utm_medium=api"
@@ -886,6 +1302,8 @@
       "city": null,
       "state": "Vermont",
       "stateCode": "VT",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 44.559,
       "longitude": -72.578,
       "link": "https://edmtrain.com/vermont?utm_source=90&utm_medium=api"
@@ -895,6 +1313,8 @@
       "city": null,
       "state": "Virginia",
       "stateCode": "VA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 37.432,
       "longitude": -78.657,
       "link": "https://edmtrain.com/virginia?utm_source=90&utm_medium=api"
@@ -904,15 +1324,30 @@
       "city": "Richmond",
       "state": "Virginia",
       "stateCode": "VA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 37.541,
       "longitude": -77.436,
       "link": "https://edmtrain.com/richmond-va?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 371,
+      "city": "Virginia Beach",
+      "state": "Virginia",
+      "stateCode": "VA",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 36.853,
+      "longitude": -75.978,
+      "link": "https://edmtrain.com/virginia-beach-va?utm_source=90&utm_medium=api"
   },
   {
       "id": 59,
       "city": null,
       "state": "Washington",
       "stateCode": "WA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 47.751,
       "longitude": -120.74,
       "link": "https://edmtrain.com/washington?utm_source=90&utm_medium=api"
@@ -922,6 +1357,8 @@
       "city": "Seattle",
       "state": "Washington",
       "stateCode": "WA",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 47.606,
       "longitude": -122.332,
       "link": "https://edmtrain.com/seattle-wa?utm_source=90&utm_medium=api"
@@ -931,6 +1368,8 @@
       "city": null,
       "state": "West Virginia",
       "stateCode": "WV",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 38.598,
       "longitude": -80.455,
       "link": "https://edmtrain.com/west-virginia?utm_source=90&utm_medium=api"
@@ -940,6 +1379,8 @@
       "city": null,
       "state": "Wisconsin",
       "stateCode": "WI",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 43.784,
       "longitude": -88.788,
       "link": "https://edmtrain.com/wisconsin?utm_source=90&utm_medium=api"
@@ -949,6 +1390,8 @@
       "city": "Madison",
       "state": "Wisconsin",
       "stateCode": "WI",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 43.073,
       "longitude": -89.401,
       "link": "https://edmtrain.com/madison-wi?utm_source=90&utm_medium=api"
@@ -958,6 +1401,8 @@
       "city": "Milwaukee",
       "state": "Wisconsin",
       "stateCode": "WI",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 43.039,
       "longitude": -87.906,
       "link": "https://edmtrain.com/milwaukee-wi?utm_source=90&utm_medium=api"
@@ -967,8 +1412,21 @@
       "city": null,
       "state": "Wyoming",
       "stateCode": "WY",
+      "country": "United States",
+      "countryCode": "US",
       "latitude": 43.076,
       "longitude": -107.29,
       "link": "https://edmtrain.com/wyoming?utm_source=90&utm_medium=api"
+  },
+  {
+      "id": 1019,
+      "city": null,
+      "state": "Yukon Territory",
+      "stateCode": "YT",
+      "country": "Canada",
+      "countryCode": "CA",
+      "latitude": 64.282,
+      "longitude": -135.0,
+      "link": "https://edmtrain.com/yukon-territory?utm_source=90&utm_medium=api"
   }
 ]

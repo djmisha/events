@@ -8,14 +8,14 @@ import { FaRegCalendar, FaRegBuilding, FaMapMarkerAlt } from "react-icons/fa"; /
 import Button from "../Button/Button";
 
 const EventDetails = ({ event }) => {
-  const { date, artistList, name, venue, link, eventSource } = event;
+  const { date, artistList, name, venue, link, eventSource, imageUrl } = event;
   const { name: venueName, address } = venue;
   const { dayOfWeek, dayMonth, daySchema } = setDates(date);
 
   return (
     <div className={styles.eventDetails}>
       <div className={styles.artistFallback}>
-        <ArtistImage id={artistList[0]?.id} />
+        <ArtistImage id={artistList[0]?.id} imageUrl={imageUrl} />
       </div>
       <div className={styles.eventInfo}>
         <div className={styles.eventDate}>
@@ -25,11 +25,7 @@ const EventDetails = ({ event }) => {
           </div>
         </div>
         <div className={styles.eventTitleArtist}>
-          {name && (
-            <span className={styles.eventTitle}>
-              {name}
-            </span>
-          )}
+          {name && <span className={styles.eventTitle}>{name}</span>}
           <span className={styles.eventArtist}>
             <Artists data={artistList} />
           </span>
