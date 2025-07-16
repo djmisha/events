@@ -24,9 +24,9 @@ https://supabase.com/docs/guides/deployment/going-into-prod#auth-rate-limits
 
 ## 🎟 Event Pages
 
-- [ ] Implement pagination (21 results/page, scroll to top on page change)
-- [ ] Maintain filter behavior — hide pagination on filter, resume on clear
-- [ ] Remove Twitch from navigation
+- [x] Implement pagination (21 results/page, scroll to top on page change)
+- [x] Maintain filter behavior — hide pagination on filter, resume on clear
+- [x] Remove Twitch from navigation
 - [ ] Add DJ Misha promo block (like a Google Ad) between events
 
 ## 🎤 Artists
@@ -35,7 +35,7 @@ https://supabase.com/docs/guides/deployment/going-into-prod#auth-rate-limits
 - [x] Populate from local JSON → EDM Train → Last.fm
 - [ ] Add social media icons to artist pages
 - [ ] Bug: artists page layout lacks location context
-- [ ] Decide: artist tags as array or separate table
+- [x] Decide: artist tags as array or separate table
 
 ---
 
@@ -74,9 +74,9 @@ https://supabase.com/docs/guides/deployment/going-into-prod#auth-rate-limits
 
 ## Ticketmaster
 
-- Waiting on response
-- [ ] Fix broken link
-- [ ] Expand data (for event overlay, state-level filtering)
+- [ ] Waiting on response from Impact team
+- [x] Fix broken link
+- [x] Expand data (for event overlay, state-level filtering)
 - [x] Add fallback image
 
 ---
@@ -159,10 +159,10 @@ https://supabase.com/docs/guides/deployment/going-into-prod#auth-rate-limits
 
 # 🧪 Styling (Backlog)
 
-- [ ] Improve top & bottom navbars
-- [ ] Set site-wide padding
-- [ ] Improve color scheme
-- [ ] Update event card design
+- [x] Improve top & bottom navbars
+- [x] Set site-wide padding
+- [x] Improve color scheme
+- [x] Update event card design
 - [ ] Spinner → Skeleton loader
 - [x] Center spinner
 

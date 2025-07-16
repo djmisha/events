@@ -53,7 +53,7 @@ const EventDetails = ({ event }) => {
             target="_blank"
             rel="noreferrer"
           >
-            View on {eventSource}
+            Get Tickets
           </Button>
         </div>
       </div>

@@ -90,6 +90,7 @@
   color: v.$black;
   font-weight: 500;
   padding-top: 20px;
+  padding-bottom: 10px;
   justify-content: center;
   text-align: center;
 
@@ -103,15 +104,17 @@
 }
 
 .eventLocation {
-  @media only screen and (min-width: 768px) {
-    display: block;
-  }
   a {
     color: v.$black;
     display: flex;
     align-items: center;
     gap: 8px;
     justify-content: center;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     .icon {
       color: inherit;
