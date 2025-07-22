@@ -103,7 +103,7 @@ const EventsFilter = ({ events, setSearchTerm }) => {
                   {totalEvents.toLocaleString()}
                 </div>
                 <div className={styles.label}>
-                  {totalEvents === 1 ? "Event" : "Events"}
+                  {totalEvents === 1 ? "Date" : "Dates"}
                 </div>
               </div>
             </div>

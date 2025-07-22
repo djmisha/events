@@ -10,6 +10,7 @@ import WelcomeMessage from "../components/Homepage/WelcomeMessage";
 import Layout, { siteTitle } from "../components/layout";
 import Locator from "../components/Locator/Locator";
 import NavigationBar from "../components/Navigation/NavigataionBar";
+import QuickLocationFinder from "../components/QuickLocationFinder/QuickLocationFinder";
 import UserWelcome from "../components/User/UserWelcome";
 import { AppContext } from "../features/AppContext";
 import { getLocations } from "../utils/getLocations";
@@ -82,13 +83,20 @@ export default function Home({ locations, profile, defaultLocation }) {
       <Verify />
       <Hero />
       {!isLoggedIn && <WelcomeMessage />}
-      {isLoggedIn ? (
-        <>
-          <UserWelcome defaultLocation={defaultLocation} />
-        </>
-      ) : (
-        <Locator locations={locations} />
-      )}
+
+      {/* Quick Location Finder for all users */}
+      <QuickLocationFinder />
+
+      {
+        isLoggedIn && (
+          <>
+            <UserWelcome defaultLocation={defaultLocation} />
+          </>
+        )
+        // : (
+        //   <Locator locations={locations} />
+        // )
+      }
       <section className="two">
         <TopArtists />
         {!isLoggedIn && <SignupCTA />}

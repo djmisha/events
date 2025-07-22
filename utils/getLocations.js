@@ -87,3 +87,40 @@ export const locationUrl = (data, hasCity) => {
 
   return slug;
 };
+
+// Create internal events URL path for a location
+export const getLocationEventsUrl = (location) => {
+  if (!location) return null;
+
+  let slug;
+
+  // Prioritize city if available, otherwise use state
+  if (location.city) {
+    slug = toSlug(location.city);
+  } else if (location.state) {
+    slug = toSlug(location.state);
+  } else {
+    return null;
+  }
+
+  return `/events/${slug}`;
+};
+
+// Get location slug for URL generation
+export const getLocationSlug = (location) => {
+  if (!location) return null;
+
+  // Prioritize city if available, otherwise use state
+  if (location.city) {
+    return toSlug(location.city);
+  } else if (location.state) {
+    return toSlug(location.state);
+  }
+
+  return null;
+};
+
+// Validate if a location has a valid URL path
+export const hasValidLocationUrl = (location) => {
+  return !!(location && (location.city || location.state));
+};

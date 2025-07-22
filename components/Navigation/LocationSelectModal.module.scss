@@ -1,0 +1,36 @@
+.navItem {
+  position: relative;
+}
+
+.modalLocationManager {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  // Remove extra padding/margins since Modal already provides spacing
+  .locationManager {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  // Ensure dropdowns appear above modal
+  :global(.dropdown),
+  :global([class*="dropdown"]) {
+    z-index: 10000 !important;
+  }
+
+  // Target LocationSwitch dropdown specifically
+  .searchContainer .dropdown {
+    z-index: 10000 !important;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .modalLocationManager {
+    padding: 0;
+  }
+}
