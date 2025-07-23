@@ -72,13 +72,6 @@ https://supabase.com/docs/guides/deployment/going-into-prod#auth-rate-limits
 
 - https://developer.stubhub.com/docs/authentication/application-only-authentication-flow
 
-## Ticketmaster
-
-- [ ] Waiting on response from Impact team
-- [x] Fix broken link
-- [x] Expand data (for event overlay, state-level filtering)
-- [x] Add fallback image
-
 ---
 
 # 🛠 Next.js 15 Upgrade
@@ -92,7 +85,6 @@ https://supabase.com/docs/guides/deployment/going-into-prod#auth-rate-limits
 
 ## Event Experience
 
-- [ ] Improved event sorting (define how)
 - [ ] Submit events (login required) → featured
 
 ## Monetization
@@ -128,6 +120,16 @@ https://supabase.com/docs/guides/deployment/going-into-prod#auth-rate-limits
 
 ## ✅ 2025
 
+## Ticketmaster
+
+- [x] Waiting on response from Impact team
+- [x] Fix broken link
+- [x] Expand data (for event overlay, state-level filtering)
+- [x] Add fallback image
+
+## Other
+
+- [x] Improved event sorting (define how)
 - [x] Profile/login/signup flow
 - [x] Logged-in homepage experience
 - [x] Database: events, venues, locations

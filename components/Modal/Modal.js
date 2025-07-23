@@ -5,24 +5,26 @@ import styles from "./Modal.module.scss";
 const Modal = ({ component: Component, onClose }) => {
   // Disable body scroll when modal is open
   useEffect(() => {
-    // Save current scroll position
-    const scrollY = window.scrollY;
+    // Store original values
+    const originalOverflow = document.body.style.overflow;
+    const originalPaddingRight = document.body.style.paddingRight;
 
-    // Add styles to prevent scrolling
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = "100%";
+    // Calculate scrollbar width to prevent layout shift
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
+    // Apply scroll lock styles
     document.body.style.overflow = "hidden";
+
+    // Compensate for scrollbar removal to prevent layout shift
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
 
     // Cleanup function to restore scrolling
     return () => {
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      document.body.style.overflow = "";
-
-      // Restore scroll position
-      window.scrollTo(0, scrollY);
+      document.body.style.overflow = originalOverflow;
+      document.body.style.paddingRight = originalPaddingRight;
     };
   }, []);
   return (
