@@ -8,7 +8,6 @@ import Filter from "../../components/Filter/Filter";
 import EventsFiltered from "../../components/Filter/EventsFilter";
 import Pagination from "../../components/Pagination/Pagination";
 import { useEventModalManager } from "../../hooks/useEventModal";
-import styles from "./EventsModule.module.scss";
 
 const EventsModule = ({
   locationData,
@@ -119,9 +118,9 @@ const EventsModule = ({
           isHome={isHome}
         />
       )}
-      <div className={styles.mainWrap} id="top">
-        <section className={styles.upcomingEvents}>
-          <h1>{title}</h1>
+      <div className="flex flex-col md:p-5 md:flex-row-reverse" id="top">
+        <section className="md:w-full md:pb-20 [&_h1]:border-none [&_h1]:text-center [&_h1]:pb-2.5 [&_h1]:leading-tight">
+          <h1 id="top">{title}</h1>
           <EventsFiltered
             events={events}
             setSearchTerm={setSearchTerm}
@@ -135,11 +134,11 @@ const EventsModule = ({
             setFilterVisible={setFilterVisible}
             onClearFilter={handleClearFilter}
           />
-          <div className={styles.eventFeed}>
+          <div className="p-0 pb-10 transition-all duration-300 ease-out sm:px-2.5 sm:grid sm:grid-cols-2 sm:gap-4 md:mb-5 xl:grid-cols-3">
             {displayEvents?.map((event) => {
               return (
-                <EventCard 
-                  event={event} 
+                <EventCard
+                  event={event}
                   key={event.id}
                   openEventId={openEventId}
                   setOpenEventId={setOpenEventId}

@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
-import styles from "./PasswordReset.module.scss";
 import { AppContext } from "../../features/AppContext";
 
 export default function PasswordReset() {
@@ -44,16 +43,18 @@ export default function PasswordReset() {
   }
 
   return (
-    <div className={styles.centerContainer}>
-      <div className={styles.formContainer}>
-        <h1 className={styles.title}>Reset Password</h1>
+    <div className="flex justify-center items-center h-screen">
+      <div className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+        <h1 className="text-2xl mb-4 text-center">Reset Password</h1>
 
         {resetMessage && (
-          <div className={styles.resetMessage}>{resetMessage}</div>
+          <div className="p-3 mb-4 bg-blue-50 text-blue-800 rounded-md text-sm text-center">
+            {resetMessage}
+          </div>
         )}
 
-        <div className={styles.formGroup}>
-          <label htmlFor="resetEmail" className={styles.label}>
+        <div className="mb-4">
+          <label htmlFor="resetEmail" className="block mb-2 font-bold">
             Email Address
           </label>
           <input
@@ -61,7 +62,7 @@ export default function PasswordReset() {
             type="email"
             value={resetEmail}
             onChange={(e) => setResetEmail(e.target.value)}
-            className={styles.input}
+            className="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
             placeholder="your@email.com"
             disabled={isResetting}
           />
@@ -70,11 +71,11 @@ export default function PasswordReset() {
           sitekey="74e2165e-2f0a-4314-9838-a5720a2e1fac"
           onVerify={(token) => setCaptchaToken(token)}
         />
-        <div className={styles.buttonGroup}>
+        <div className="flex gap-4 mt-4">
           <button
             type="button"
             onClick={resetPassword}
-            className={`${styles.button} ${styles.secondaryButton}`}
+            className="flex-1 py-3 px-4 border-none rounded-md text-sm font-medium cursor-pointer transition-all duration-150 bg-gray-50 text-gray-600 border border-gray-300 hover:bg-gray-100 disabled:opacity-70 disabled:cursor-not-allowed"
             disabled={isResetting || !captchaToken}
           >
             {isResetting ? "Sending..." : "Reset Password"}

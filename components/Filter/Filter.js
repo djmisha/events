@@ -1,7 +1,6 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useRef } from "react";
 import { clearSearch } from "../../utils/searchFilter";
-import toast from "react-hot-toast";
-import styles from "../ui/ToastProvider.module.scss";
+import { toast } from "sonner";
 
 /**
  * Filter component that displays persistent toast notifications for search results
@@ -22,6 +21,8 @@ const Filter = ({
   setFilterVisible,
   onClearFilter,
 }) => {
+  const toastIdRef = useRef(null);
+
   /**
    * Handles clearing the filter, updating events, and dismissing toast
    */
@@ -30,7 +31,10 @@ const Filter = ({
     setEvents(newEvents);
 
     // Dismiss the toast
-    toast.dismiss("filter-toast");
+    if (toastIdRef.current) {
+      toast.dismiss(toastIdRef.current);
+      toastIdRef.current = null;
+    }
 
     // Use custom clear handler if provided (for pagination persistence)
     if (onClearFilter) {
@@ -64,43 +68,55 @@ const Filter = ({
       }
 
       // Dismiss any existing toast first
-      toast.dismiss("filter-toast");
+      if (toastIdRef.current) {
+        toast.dismiss(toastIdRef.current);
+        toastIdRef.current = null;
+      }
 
-      // Show new toast with custom close button
-      toast(
-        (t) => (
-          <div className={styles.filterToastContent}>
-            <div className={styles.filterIcon}>{emoji}</div>
-            <div className={styles.filterMessage}>
+      // Use setTimeout to ensure the dismissal is processed before creating new toast
+      const timeoutId = setTimeout(() => {
+        // Show new toast with wrapping text layout
+        toastIdRef.current = toast(
+          <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-lg border border-gray-200 w-full max-w-full ">
+            <div className="text-xl flex-shrink-0">{emoji}</div>
+            <div className="flex-1 text-sm text-gray-700 break-words">
               {resultCount} {resultCount === 1 ? "result" : "results"} for{" "}
-              <span className={styles.searchTerm}>{searchTerm}</span>
+              <span className="font-semibold text-gray-900">{searchTerm}</span>
             </div>
             <button
               onClick={() => {
                 handleClearFilter();
               }}
               title="Clear filter and show all events"
-              className={styles.closeButton}
+              className="w-8 h-8 flex items-center justify-center rounded-full text-white hover:opacity-80 transition-colors duration-200 font-bold text-sm flex-shrink-0"
+              style={{ backgroundColor: "#ce3197" }}
             >
               ✕
             </button>
-          </div>
-        ),
-        {
-          id: "filter-toast",
-          duration: Infinity,
-        }
-      );
+          </div>,
+          {
+            duration: Infinity,
+          }
+        );
+      }, 0);
+
+      // Clean up timeout if component unmounts
+      return () => clearTimeout(timeoutId);
     } else if (!filterVisible) {
       // Dismiss toast when filter is not visible
-      toast.dismiss("filter-toast");
+      if (toastIdRef.current) {
+        toast.dismiss(toastIdRef.current);
+        toastIdRef.current = null;
+      }
     }
   }, [filterVisible, searchTerm, events, handleClearFilter]);
 
   // Clean up toast on component unmount
   useEffect(() => {
     return () => {
-      toast.dismiss("filter-toast");
+      if (toastIdRef.current) {
+        toast.dismiss(toastIdRef.current);
+      }
     };
   }, []);
 

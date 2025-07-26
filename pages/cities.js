@@ -24,7 +24,7 @@ const CitiesPage = ({ locations }) => {
         ></meta>
       </Head>
       <NavigationBar />
-      <h1>Events By City</h1>
+      <h1 className="text-center px-2">Events By City</h1>
       <CitiesStates locations={locations} showCitiesOnly={true} />
     </Layout>
   );

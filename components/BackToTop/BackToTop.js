@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import styles from "./BackToTop.module.scss";
 
 const BackToTop = () => {
   const [visible, setVisible] = useState(false);
@@ -21,8 +20,8 @@ const BackToTop = () => {
 
   return (
     <div
-      className={`${styles.backToTop} ${
-        visible ? styles.visible : styles.hidden
+      className={`fixed flex justify-center items-center bottom-4 right-4 bg-black text-white rounded-full w-9 h-9 text-center font-bold z-10 transition-all duration-200 ease-in-out cursor-pointer ${
+        visible ? "opacity-100" : "opacity-0"
       }`}
       onClick={handleClick}
     >

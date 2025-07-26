@@ -3,7 +3,6 @@ import { useState } from "react";
 import { toSlug } from "../../utils/getLocations";
 import MenuOverlay from "../ui/MenuOverlay";
 import MenuTrigger from "../ui/MenuTrigger";
-import styles from "./LocationSelect.module.scss";
 
 const LocationSelect = ({ image, text, title, navItems }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,12 +18,12 @@ const LocationSelect = ({ image, text, title, navItems }) => {
   };
 
   // Filter nav items based on search term
-  const filteredNavItems = navItems.filter(item =>
+  const filteredNavItems = navItems.filter((item) =>
     item.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    <div className={styles.navItem}>
+    <div className="relative">
       <MenuTrigger
         icon={image}
         text={"Location"}
@@ -32,22 +31,27 @@ const LocationSelect = ({ image, text, title, navItems }) => {
         iconAlt={text}
       />
       <MenuOverlay isOpen={isOpen} onClose={handleClose}>
-        <div className={styles.menuContent}>
-          <div id={`${text}-list`} className={styles.locationList}>
-            <h2 className={styles.menuTitle}>{title}</h2>
-            <div className={styles.searchContainer}>
+        <div className="p-4 h-full flex flex-col">
+          <div
+            id={`${text}-list`}
+            className="flex flex-col gap-0 overflow-y-auto flex-1 max-h-[calc(100vh-8rem)]"
+          >
+            <h2 className="m-0 mb-4 text-xl font-semibold text-black font-[Nunito] flex-shrink-0">
+              {title}
+            </h2>
+            <div className="relative w-full mb-4 flex-shrink-0">
               <input
                 type="text"
                 placeholder="Type to filter locations..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className={styles.searchInput}
+                className="w-full py-3 pr-10 pl-3 border border-gray-300 rounded text-base font-[Nunito] bg-white flex-shrink-0 box-border focus:outline-none focus:border-indigo-600 focus:shadow-[0_0_0_2px_rgba(99,102,241,0.2)] placeholder:text-gray-500 placeholder:italic"
                 autoFocus
               />
               {searchTerm && (
                 <button
                   type="button"
-                  className={styles.clearButton}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-transparent border-none text-2xl text-gray-500 cursor-pointer p-1 leading-none rounded-full w-8 h-8 flex items-center justify-center transition-[color,background-color] duration-200 ease-[ease] hover:text-gray-600 hover:bg-black/10 focus:outline-none focus:text-indigo-600 focus:bg-indigo-600/10"
                   onClick={() => setSearchTerm("")}
                   aria-label="Clear search"
                 >
@@ -61,7 +65,7 @@ const LocationSelect = ({ image, text, title, navItems }) => {
                 <Link
                   href={slug}
                   key={index + item}
-                  className={styles.locationLink}
+                  className="flex justify-between items-center cursor-pointer py-2 px-0 no-underline text-black transition-colors duration-200 ease-[ease] flex-shrink-0 hover:bg-indigo-600/10"
                   onClick={handleClose}
                 >
                   {item}

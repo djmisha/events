@@ -1,12 +1,11 @@
 import Head from "next/head";
-import styles from "./layout.module.css";
 import Script from "next/script";
 
 export const siteTitle = "House Music & EDM Events Across North America";
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <link rel="icon" href="/images/housemusic48.png" />
 

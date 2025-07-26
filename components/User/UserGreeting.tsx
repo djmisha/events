@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Link from "next/link";
-import styles from "./UserGreeting.module.scss";
+import Image from "next/image";
 import { AppContext } from "../../features/AppContext";
 
 interface Profile {
@@ -37,9 +37,18 @@ const UserGreeting = () => {
   const { href, iconSrc, iconAlt, text } = renderContent();
 
   return (
-    <div className={styles.loginContainer}>
-      <Link href={href} className={styles.loginLink}>
-        <img src={iconSrc} alt={iconAlt} className={styles.loginIcon} />
+    <div className="w-10">
+      <Link
+        href={href}
+        className="flex h-full flex-col justify-center items-center font-medium text-xs uppercase no-underline text-black"
+      >
+        <Image
+          src={iconSrc}
+          alt={iconAlt}
+          width={29}
+          height={29}
+          className="mt-2 rounded-full"
+        />
         {text && <div>{text}</div>}
       </Link>
     </div>

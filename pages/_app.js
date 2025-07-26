@@ -1,6 +1,7 @@
 import { AppProvider } from "../features/AppContext";
 import { Poppins } from "next/font/google";
-import ToastProvider from "../components/ui/ToastProvider";
+import ToastProvider from "../components/ui/ToastProvider.sonner";
+import "../styles/tailwind.css";
 import "../styles/global.scss";
 
 const poppins = Poppins({

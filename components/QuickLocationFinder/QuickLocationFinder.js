@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import ShareLocation from "../ShareLocation/ShareLocation";
+import Button from "../Button/Button";
 import {
   getSavedLocation,
   getLocationEventsUrl,
+  detectUserLocation,
 } from "../../utils/locationService";
-import styles from "./QuickLocationFinder.module.scss";
 
 const QuickLocationFinder = ({ className = "" }) => {
   const [currentLocation, setCurrentLocation] = useState(null);
@@ -50,49 +49,42 @@ const QuickLocationFinder = ({ className = "" }) => {
     return getLocationEventsUrl(currentLocation);
   };
 
-  // Don't render anything while loading
   if (isLoading) {
     return null;
   }
 
-  // Don't show anything if user has a cookie (location is set)
-  if (hasLocationCookie && currentLocation) {
-    return (
-      <div className={`${styles.quickLocationFinder} ${className}`}>
-        <div className={styles.locationFound}>
-          <div className={styles.locationIcon}>📍</div>
-          <div className={styles.locationInfo}>
-            <h3 className={styles.locationTitle}>Your Location</h3>
-            <p className={styles.locationName}>
-              {formatLocationDisplay(currentLocation)}
-            </p>
-            <Link href={getEventsUrl()} className={styles.viewEventsButton}>
-              View Events
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const handleButtonClick = async () => {
+    if (hasLocationCookie && currentLocation) {
+      window.location.href = getEventsUrl();
+    } else {
+      try {
+        const location = await detectUserLocation();
+        if (location) {
+          setCurrentLocation(location);
+          setHasLocationCookie(true);
+        } else {
+          alert(
+            "Unable to detect your location. Please try again or select manually."
+          );
+        }
+      } catch (error) {
+        alert(
+          "Unable to detect your location. Please try again or select manually."
+        );
+      }
+    }
+  };
 
-  // Show the "We can find your location" prompt for first-time users
+  const buttonText =
+    hasLocationCookie && currentLocation
+      ? `View events in ${formatLocationDisplay(currentLocation)}`
+      : "Share your location";
+
   return (
-    <div className={`${styles.quickLocationFinder} ${className}`}>
-      <div className={styles.findLocationPrompt}>
-        <div className={styles.promptIcon}>🌍</div>
-        <div className={styles.promptContent}>
-          <h3 className={styles.promptTitle}>We can find your location</h3>
-          <p className={styles.promptDescription}>
-            Let us detect your location to show you nearby events
-          </p>
-          <ShareLocation
-            onLocationDetected={handleLocationDetected}
-            onLocationError={handleLocationError}
-            buttonText="Find My Location"
-            className={styles.shareLocationButton}
-          />
-        </div>
-      </div>
+    <div className={`max-w-lg mx-auto my-8 px-4 ${className}`}>
+      <Button onClick={handleButtonClick} color="blue" size="lg">
+        {buttonText}
+      </Button>
     </div>
   );
 };

@@ -3,7 +3,6 @@ import LocationManager from "../LocationManager/LocationManager";
 import Modal from "../Modal/Modal";
 import MenuTrigger from "../ui/MenuTrigger";
 import { useLocation } from "../../hooks/useLocation";
-import styles from "./LocationSelectModal.module.scss";
 
 const LocationSelectModal = ({ image, text = "Location" }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,7 +29,7 @@ const LocationSelectModal = ({ image, text = "Location" }) => {
       showCurrentLocation={true}
       showShareButton={true}
       showLocationSwitch={true}
-      className={styles.modalLocationManager}
+      className="max-w-lg w-full p-0"
     />
   );
 
@@ -45,13 +44,15 @@ const LocationSelectModal = ({ image, text = "Location" }) => {
       : text;
 
   return (
-    <div className={styles.navItem}>
+    <div className="relative">
       <MenuTrigger
         icon={image}
         text={displayText}
         onClick={handleOpenModal}
         iconAlt={text}
-        className={hasLocation ? styles.hasLocationTrigger : undefined}
+        iconWidth={18}
+        iconHeight={18}
+        className={`mt-2 ${hasLocation ? "hasLocationTrigger" : ""}`}
       />
 
       {isModalOpen && (

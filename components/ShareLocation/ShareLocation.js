@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../../features/AppContext";
+import Button from "../Button/Button";
 import {
   detectUserLocation,
   saveLocationToCookie,
   UserLocationService,
 } from "../../utils/locationService";
-import styles from "./ShareLocation.module.scss";
 
 const ShareLocation = ({
   onLocationDetected,
@@ -81,26 +81,31 @@ const ShareLocation = ({
   };
 
   return (
-    <div className={`${styles.shareLocation} ${className}`}>
-      <button
+    <div className={`flex flex-col items-start gap-2 ${className}`}>
+      <Button
         type="button"
         onClick={handleShareLocation}
         disabled={disabled || isLoading}
-        className={`${styles.shareButton} ${isLoading ? styles.loading : ""}`}
+        size="lg"
+        color={isLoading ? "gray" : "blue"}
+        className="w-full flex items-center justify-center"
         aria-label={isLoading ? "Detecting location..." : "Share my location"}
       >
         {isLoading ? (
-          <span className={styles.loadingContent}>
-            <span className={styles.spinner}></span>
+          <span className="flex items-center gap-2">
+            <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
             Detecting location...
           </span>
         ) : (
           children || "Share My Location"
         )}
-      </button>
+      </Button>
 
       {error && (
-        <div className={styles.error} role="alert">
+        <div
+          className="text-red-600 text-sm bg-red-50 px-3 py-2 rounded border-l-4 border-red-400 max-w-sm md:text-xs md:max-w-72"
+          role="alert"
+        >
           {error}
         </div>
       )}

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Greeting.module.scss";
 
 interface GreetingProps {
   username?: string;
@@ -35,8 +34,8 @@ const Greeting: React.FC<GreetingProps> = ({ username, email }) => {
   const displayName = username || (email ? email.split("@")[0] : "User");
 
   return (
-    <div className={styles.greetingContainer}>
-      <h1 className={styles.greetingText}>
+    <div className="mb-6">
+      <h1 className="text-sm text-gray-800 relative border-none animate-fade-in">
         Good {timeOfDay}, {displayName}
       </h1>
     </div>

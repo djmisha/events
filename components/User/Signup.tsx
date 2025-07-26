@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, useContext } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
-import styles from "./Login.module.scss";
 import { AppContext } from "../../features/AppContext";
 
 export default function Signup() {
@@ -53,13 +52,18 @@ export default function Signup() {
   }
 
   return (
-    <div className={styles.centerContainer}>
-      <div className={styles.formContainer}>
-        <h1 className={styles.title}>Create an Account</h1>
+    <div className="flex justify-center items-center">
+      <div className="mb-16 w-full max-w-sm bg-white rounded-lg shadow-lg p-4 md:p-8">
+        <h1 className="text-2xl font-semibold text-center mb-6 text-gray-900">
+          Create an Account
+        </h1>
 
         <form>
-          <div className={styles.formGroup}>
-            <label htmlFor="signupEmail" className={styles.label}>
+          <div className="mb-5">
+            <label
+              htmlFor="signupEmail"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Email Address
             </label>
             <input
@@ -67,14 +71,17 @@ export default function Signup() {
               type="email"
               value={signupEmail}
               onChange={(e) => setSignupEmail(e.target.value)}
-              className={styles.input}
+              className="w-full px-4 py-3 border border-gray-300 rounded-md text-base transition-colors duration-150 focus:border-indigo-600 focus:outline-none focus:ring-4 focus:ring-indigo-100 disabled:bg-gray-100 disabled:cursor-not-allowed"
               placeholder="your@email.com"
               disabled={isSigningUp}
             />
           </div>
 
-          <div className={styles.formGroup}>
-            <label htmlFor="signupPassword" className={styles.label}>
+          <div className="mb-5">
+            <label
+              htmlFor="signupPassword"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Create a Password
             </label>
             <input
@@ -82,7 +89,7 @@ export default function Signup() {
               type="password"
               value={signupPassword}
               onChange={(e) => setSignupPassword(e.target.value)}
-              className={styles.input}
+              className="w-full px-4 py-3 border border-gray-300 rounded-md text-base transition-colors duration-150 focus:border-indigo-600 focus:outline-none focus:ring-4 focus:ring-indigo-100 disabled:bg-gray-100 disabled:cursor-not-allowed"
               placeholder="••••••••"
               disabled={isSigningUp}
             />
@@ -93,22 +100,26 @@ export default function Signup() {
             onVerify={(token) => setCaptchaToken(token)}
           />
 
-          <div className={styles.buttonGroup}>
+          <div className="flex gap-4 mt-6">
             <button
               type="button"
               onClick={signUp}
-              className={`${styles.button} ${styles.secondaryButton}`}
+              className="flex-1 py-3 px-4 border-none rounded-md text-sm font-medium cursor-pointer transition-all duration-150 bg-gray-50 text-gray-600 border border-gray-300 hover:bg-gray-100 disabled:opacity-70 disabled:cursor-not-allowed"
               disabled={isSigningUp || !captchaToken}
             >
               {isSigningUp ? "Signing up..." : "Sign up"}
             </button>
           </div>
           {signupErrorMessage && (
-            <div className={styles.errorMessage}>{signupErrorMessage}</div>
+            <div className="p-3 mt-4 bg-red-50 text-red-800 rounded-md text-sm text-center border border-red-200">
+              {signupErrorMessage}
+            </div>
           )}
 
           {signupSuccessMessage && (
-            <div className={styles.successMessage}>{signupSuccessMessage}</div>
+            <div className="p-3 mt-4 bg-green-50 text-green-800 rounded-md text-sm text-center border border-green-200">
+              {signupSuccessMessage}
+            </div>
           )}
         </form>
       </div>

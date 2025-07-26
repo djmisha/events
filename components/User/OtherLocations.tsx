@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
-import Link from "next/link";
-import styles from "./OtherLocations.module.scss";
 import locationsData from "../../utils/locations.json";
 import { AppContext } from "../../features/AppContext";
 
 interface OtherLocationsProps {
   currentLocationId?: number;
   userId?: string;
+  savedLocationIds?: number[];
+  onLocationAdded?: () => Promise<void> | void;
 }
 
 interface Location {
@@ -16,20 +16,14 @@ interface Location {
   stateCode: string;
 }
 
-interface SavedLocation {
-  id: number;
-  city: string;
-  state: string;
-  slug: string;
-}
-
 const OtherLocations: React.FC<OtherLocationsProps> = ({
   currentLocationId,
   userId,
+  savedLocationIds: propSavedLocationIds,
+  onLocationAdded,
 }) => {
   const { supabase } = useContext(AppContext);
   const [savedLocationIds, setSavedLocationIds] = useState<number[]>([]);
-  const [savedLocations, setSavedLocations] = useState<SavedLocation[]>([]);
   const [loading, setLoading] = useState(true);
   const [showAllLocations, setShowAllLocations] = useState(false);
 
@@ -41,71 +35,62 @@ const OtherLocations: React.FC<OtherLocationsProps> = ({
   // Get popular cities (first 10 from alphabetically sorted list)
   const popularCities = cityLocations.slice(0, 10);
 
-  // Format a location for display and linking
-  const formatLocation = (location: Location): SavedLocation => {
-    return {
-      id: location.id,
-      city: location.city || "",
-      state: location.state,
-      slug: `events/${location.city?.toLowerCase().replace(/\s+/g, "-")}`,
-    };
-  };
-
   useEffect(() => {
-    if (userId) {
-      fetchSavedLocations();
-    } else {
+    // If savedLocationIds are provided as props, use them directly
+    if (propSavedLocationIds) {
+      setSavedLocationIds(propSavedLocationIds);
       setLoading(false);
+      return;
     }
-  }, [userId]);
 
-  // Fetch user's saved locations from profile
-  const fetchSavedLocations = async () => {
-    try {
-      setLoading(true);
-
-      const { data, error } = await supabase
-        .from("profiles")
-        .select("other_locations")
-        .eq("id", userId)
-        .single();
-
-      if (error) {
-        throw error;
+    // Otherwise, fetch them from the database
+    const fetchSavedLocationIds = async () => {
+      if (!userId) {
+        setLoading(false);
+        return;
       }
 
-      if (data && data.other_locations) {
-        setSavedLocationIds(data.other_locations);
+      try {
+        setLoading(true);
 
-        // Map location IDs to full location data
-        const locationObjects = data.other_locations
-          .map((locId: number) => {
-            const location = locationsData.find((loc) => loc.id === locId);
-            return location ? formatLocation(location) : null;
-          })
-          .filter(Boolean); // Remove any null values
+        const { data, error } = await supabase
+          .from("profiles")
+          .select("other_locations")
+          .eq("id", userId)
+          .single();
 
-        setSavedLocations(locationObjects);
+        if (error) {
+          throw error;
+        }
+
+        if (data && data.other_locations) {
+          setSavedLocationIds(data.other_locations);
+        }
+      } catch (error) {
+        console.error("Error fetching saved location IDs:", error);
+      } finally {
+        setLoading(false);
       }
-    } catch (error) {
-      console.error("Error fetching saved locations:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+    };
+
+    fetchSavedLocationIds();
+  }, [userId, supabase, propSavedLocationIds]);
 
   // Add a location to saved locations
   const addLocation = async (locationId: number) => {
+    // Use the current savedLocationIds state which is now kept in sync
+    const currentSavedIds = savedLocationIds;
+
     if (
       !userId ||
-      savedLocationIds.includes(locationId) ||
+      currentSavedIds.includes(locationId) ||
       locationId === currentLocationId
     ) {
       return; // Don't add if already saved or is current location
     }
 
     try {
-      const newSavedLocations = [...savedLocationIds, locationId];
+      const newSavedLocations = [...currentSavedIds, locationId];
 
       const { error } = await supabase
         .from("profiles")
@@ -119,10 +104,9 @@ const OtherLocations: React.FC<OtherLocationsProps> = ({
       // Update local state
       setSavedLocationIds(newSavedLocations);
 
-      // Add the location object to our saved locations list
-      const location = locationsData.find((loc) => loc.id === locationId);
-      if (location) {
-        setSavedLocations([...savedLocations, formatLocation(location)]);
+      // Call the callback to refresh the parent component
+      if (onLocationAdded) {
+        await onLocationAdded();
       }
     } catch (error) {
       console.error("Error saving location:", error);
@@ -149,55 +133,26 @@ const OtherLocations: React.FC<OtherLocationsProps> = ({
 
       // Update local state
       setSavedLocationIds(newSavedLocations);
-      setSavedLocations(savedLocations.filter((loc) => loc.id !== locationId));
     } catch (error) {
       console.error("Error removing location:", error);
     }
   };
 
   return (
-    <div className={styles.otherLocationsContainer}>
-      <h3 className={styles.sectionTitle}>More Locations</h3>
-
-      {/* User's saved locations */}
-      {savedLocations.length > 0 && (
-        <div className={styles.savedLocationsSection}>
-          <h4 className={styles.subsectionTitle}>Your Saved Locations</h4>
-          <div className={styles.locationsList}>
-            {savedLocations.map((location) => (
-              <div key={location.id} className={styles.locationItem}>
-                <Link
-                  href={`/${location.slug}`}
-                  className={styles.locationLink}
-                >
-                  {location.city}
-                </Link>
-                <button
-                  onClick={() => removeLocation(location.id)}
-                  className={styles.removeButton}
-                  aria-label={`Remove ${location.city}`}
-                >
-                  ✕
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
+    <div className="mt-6 rounded-lg">
       {/* Add new locations section */}
-      <div className={styles.addLocationsSection}>
-        <h4 className={styles.subsectionTitle}>
+      <div className="mt-4">
+        <h4 className="text-base my-4 mb-2 font-medium text-gray-600 flex justify-between items-center">
           Add Locations
           <button
             onClick={() => setShowAllLocations(!showAllLocations)}
-            className={styles.toggleButton}
+            className="bg-transparent border-none text-blue-600 cursor-pointer text-[0.85rem] hover:underline"
           >
             {showAllLocations ? "Show Less" : "Show More"}
           </button>
         </h4>
 
-        <div className={styles.locationsList}>
+        <div className="flex flex-wrap gap-3 mt-2">
           {(showAllLocations ? cityLocations : popularCities).map(
             (location) => {
               // Skip if this is already the current location or in saved locations
@@ -210,11 +165,14 @@ const OtherLocations: React.FC<OtherLocationsProps> = ({
               }
 
               return (
-                <div key={location.id} className={styles.locationItem}>
-                  <span className={styles.locationName}>{location.city}</span>
+                <div
+                  key={location.id}
+                  className="bg-white py-2 px-3 rounded-md shadow-[0_1px_2px_rgba(0,0,0,0.1)] flex items-center justify-between gap-2"
+                >
+                  <span className="text-gray-800">{location.city}</span>
                   <button
                     onClick={() => addLocation(location.id)}
-                    className={styles.addButton}
+                    className="bg-transparent border-none cursor-pointer text-base flex items-center justify-center w-6 h-6 rounded-full text-blue-600 bg-blue-50 hover:bg-blue-200"
                     aria-label={`Add ${location.city}`}
                   >
                     +
@@ -226,7 +184,9 @@ const OtherLocations: React.FC<OtherLocationsProps> = ({
         </div>
       </div>
 
-      {loading && <p className={styles.loading}>Loading locations...</p>}
+      {loading && (
+        <p className="text-gray-500 italic mt-2">Loading locations...</p>
+      )}
     </div>
   );
 };

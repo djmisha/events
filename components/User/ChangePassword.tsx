@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import Button from "../Button/Button";
-import styles from "./ChangePassword.module.scss";
 
 // Initialize Supabase client directly
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
@@ -46,22 +45,29 @@ export default function ChangePassword({ user }) {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <h1>Change Password</h1>
+    <div className="max-w-lg mx-auto my-10 p-8 bg-white rounded-lg shadow-lg">
+      <div className="text-center mb-6">
+        <h1 className="text-3xl font-bold text-gray-800">Change Password</h1>
       </div>
 
       {success && (
-        <div className={styles.successMessage}>
+        <div className="bg-green-50 text-green-800 p-3 rounded-md mb-5 border-l-4 border-green-400">
           Password successfully updated!
         </div>
       )}
 
-      {error && <div className={styles.errorMessage}>{error}</div>}
+      {error && (
+        <div className="bg-red-50 text-red-800 p-3 rounded-md mb-5 border-l-4 border-red-400">
+          {error}
+        </div>
+      )}
 
       <form onSubmit={handleSubmit}>
-        <div className={styles.formGroup}>
-          <label htmlFor="newPassword" className={styles.label}>
+        <div className="mb-5">
+          <label
+            htmlFor="newPassword"
+            className="block mb-2 font-medium text-gray-700"
+          >
             New Password
           </label>
           <input
@@ -71,12 +77,15 @@ export default function ChangePassword({ user }) {
             onChange={(e) => setNewPassword(e.target.value)}
             required
             minLength={6}
-            className={styles.input}
+            className="w-full p-3 border border-gray-300 rounded-md text-base transition-colors focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200"
           />
         </div>
 
-        <div className={`${styles.formGroup} ${styles.lastField}`}>
-          <label htmlFor="confirmPassword" className={styles.label}>
+        <div className="mb-8">
+          <label
+            htmlFor="confirmPassword"
+            className="block mb-2 font-medium text-gray-700"
+          >
             Confirm Password
           </label>
           <input
@@ -86,18 +95,18 @@ export default function ChangePassword({ user }) {
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
             minLength={6}
-            className={styles.input}
+            className="w-full p-3 border border-gray-300 rounded-md text-base transition-colors focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200"
           />
         </div>
 
-        <div className={styles.buttonContainer}>
+        <div className="mt-3">
           <Button
             href="#"
             variant="primary"
             onClick={null}
             disabled={isLoading}
             type="submit"
-            className={styles.button}
+            className={null}
           >
             {isLoading ? "Updating..." : "Update Password"}
           </Button>

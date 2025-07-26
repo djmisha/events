@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../../features/AppContext";
-import styles from "./ArtistSearch.module.scss";
 import artistsData from "../../localArtistsDB.json";
 
 interface Artist {
@@ -117,37 +116,48 @@ const ArtistSearch = ({ userId, onArtistAdded }: ArtistSearchProps) => {
   };
 
   return (
-    <div className={styles.artistSearchContainer}>
+    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg">
       <h3>Find Artists to Follow</h3>
 
-      <div className={styles.searchInputWrapper}>
+      <div className="relative mb-4">
         <input
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search for artists..."
-          className={styles.searchInput}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
         />
       </div>
 
       {message && (
-        <div className={`${styles.message} ${styles[message.type]}`}>
+        <div
+          className={`my-4 px-3 py-2 rounded text-center ${
+            message.type === "success"
+              ? "bg-green-100 text-green-800"
+              : "bg-red-100 text-red-800"
+          }`}
+        >
           {message.text}
         </div>
       )}
 
-      <div className={styles.searchResults}>
+      <div className="mt-4">
         {searchResults.length > 0 ? (
-          <ul className={styles.artistsList}>
+          <ul className="list-none p-0">
             {searchResults.map(({ artist, index }) => (
-              <li key={index} className={styles.artistItem}>
-                <span className={styles.artistName}>{artist.name}</span>
+              <li
+                key={index}
+                className="flex justify-between items-center py-3 border-b border-gray-200"
+              >
+                <span className="font-medium">{artist.name}</span>
                 <button
                   onClick={() => toggleFavorite(index)}
                   disabled={loading}
-                  className={`${styles.favoriteButton} ${
-                    favoriteIds.includes(index) ? styles.favorited : ""
-                  }`}
+                  className={`px-4 py-2 rounded text-sm border transition-all duration-200 ${
+                    favoriteIds.includes(index)
+                      ? "bg-indigo-600 text-white border-indigo-700 hover:bg-indigo-700"
+                      : "bg-gray-100 text-gray-900 border-gray-300 hover:bg-gray-200"
+                  } disabled:opacity-50 disabled:cursor-not-allowed`}
                 >
                   {favoriteIds.includes(index)
                     ? "★ Favorited"
@@ -157,7 +167,7 @@ const ArtistSearch = ({ userId, onArtistAdded }: ArtistSearchProps) => {
             ))}
           </ul>
         ) : searchTerm.trim() !== "" ? (
-          <p className={styles.noResults}>
+          <p className="py-4 text-gray-500 text-center">
             No artists found matching your search.
           </p>
         ) : null}

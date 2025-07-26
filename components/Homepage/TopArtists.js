@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { shuffleArray, filterSurpriseGuest } from "../../utils/utilities";
 import TopArtistsCard from "../TopArtistsCard/TopArtistsCard";
-import styles from "./TopArtists.module.scss";
 import Button from "../Button/Button";
-import buttonStyles from "../Button/Button.module.scss";
+import ButtonWrapper from "../Button/ButtonWrapper";
 
 const TopArtists = () => {
   const [randomArtists, setRandomArtists] = useState([]);
@@ -45,26 +44,23 @@ const TopArtists = () => {
 
   return (
     <>
-      <h2>Top Touring Artists</h2>
-      <p>
+      <h2 className="px-4">Top Touring Artists</h2>
+      <p className="p-4">
         Discover our selection of top touring artists, ranked by their number of
         shows and city appearances. Click to learn more about each artist, read
         their bios, and explore upcoming events.
       </p>
-      <div className={styles.artistsList}>
-        {randomArtists?.map((artist) => (
-          <TopArtistsCard key={artist.id} artist={artist} />
-        ))}
+      <div className="p-0 pb-10 transition-all duration-200 ease-out sm:px-3 sm:grid sm:grid-cols-2 sm:gap-4 md:mb-5 xl:grid-cols-3">
+        {randomArtists?.map((artist, index) => {
+          if (index >= 9) return null;
+          return <TopArtistsCard key={artist.id} artist={artist} />;
+        })}
       </div>
-      <div className={buttonStyles.buttonWrapper}>
-        <Button
-          href="/artists"
-          variant="secondary"
-          className={styles.moreButton}
-        >
+      <ButtonWrapper>
+        <Button href="/artists" variant="primary">
           View More Top Touring Artists
         </Button>
-      </div>
+      </ButtonWrapper>
     </>
   );
 };

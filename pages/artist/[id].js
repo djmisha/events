@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { useState } from "react";
 import Layout from "../../components/layout";
 import {
   getArtistData,
@@ -12,8 +11,6 @@ import EventCard from "../../components/EventCard/EventCard";
 import GoogleAutoAds from "../../components/3rdParty/googleAds";
 import NavigationBar from "../../components/Navigation/NavigataionBar";
 import { useEventModalManager } from "../../hooks/useEventModal";
-import styles from "../../components/Artists/Artist.module.scss";
-import feedStyles from "../../components/Artists/ArtistFeed.module.scss";
 
 export default function Artist({ artistData, events, lastFMdata }) {
   const { name, id } = artistData;
@@ -29,7 +26,7 @@ export default function Artist({ artistData, events, lastFMdata }) {
         <GoogleAutoAds />
       </Head>
       <NavigationBar />
-      <div className={styles.artist}>
+      <div className="text-center [&_h1]:border-none [&_h1]:text-center pt-10">
         <div className="artist-header">
           <ArtistImage id={id} />
           <h1>{name}</h1>
@@ -37,8 +34,8 @@ export default function Artist({ artistData, events, lastFMdata }) {
         <ArtistBio name={name} lastFMdata={lastFMdata} />
         {events?.length != 0 && (
           <>
-            <h2>{name} Upcoming Events</h2>
-            <div className={feedStyles.artistFeed}>
+            <h2 className="text-xl mb-4">{name} Upcoming Events</h2>
+            <div className="p-0 pb-10 transition-all duration-300 ease-out sm:px-2.5 sm:grid sm:grid-cols-2 sm:gap-4 md:mb-5 xl:grid-cols-3">
               {events?.map((event) => (
                 <EventCard
                   event={event}

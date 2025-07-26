@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: "music.sandiegohousemusic.com",
         pathname: "/wp-content/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "djmisha.com",
+        pathname: "/wordpress/wp-content/**",
+      },
     ],
   },
   reactStrictMode: true,

@@ -2,7 +2,6 @@ import { useState } from "react";
 import MenuOverlay from "../ui/MenuOverlay";
 import MenuTrigger from "../ui/MenuTrigger";
 import MenuList from "./MenuList";
-import styles from "./NavItem.module.css";
 
 const NavItem = ({
   image,
@@ -20,7 +19,7 @@ const NavItem = ({
   };
 
   return (
-    <div className={styles.navItem}>
+    <div className="relative">
       <MenuTrigger
         icon={image}
         text={text}
@@ -28,8 +27,8 @@ const NavItem = ({
         iconAlt={text}
       />
       <MenuOverlay isOpen={isOpen} onClose={handleClose}>
-        <div className={styles.menuContent}>
-          <h2 className={styles.menuTitle}>{title}</h2>
+        <div className="px-4">
+          <h2 className="text-2xl mb-8 text-center pt-4">{title}</h2>
           <MenuList
             navItems={navItems}
             text={text}

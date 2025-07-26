@@ -44,7 +44,7 @@ export default function AuthConfirmPage() {
     if (router.isReady) {
       confirmAuth();
     }
-  }, [router.isReady, router.query]);
+  }, [router.isReady, router.query, router, supabase.auth]);
 
   return (
     <div

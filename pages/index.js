@@ -2,19 +2,16 @@ import Head from "next/head";
 import { useContext, useEffect } from "react";
 import Verify from "../components/Auth/Verify";
 import Footer from "../components/Footer/Footer";
-import CitiesStates from "../components/Homepage/CitiesStates";
 import Hero from "../components/Homepage/Hero";
 import SignupCTA from "../components/Homepage/SignupCTA";
 import TopArtists from "../components/Homepage/TopArtists";
 import WelcomeMessage from "../components/Homepage/WelcomeMessage";
 import Layout, { siteTitle } from "../components/layout";
-import Locator from "../components/Locator/Locator";
 import NavigationBar from "../components/Navigation/NavigataionBar";
-import QuickLocationFinder from "../components/QuickLocationFinder/QuickLocationFinder";
-import UserWelcome from "../components/User/UserWelcome";
 import { AppContext } from "../features/AppContext";
 import { getLocations } from "../utils/getLocations";
 import { createClient as createServerClient } from "../utils/supabase/server-props";
+import Locator from "../components/Locator/Locator";
 
 export async function getServerSideProps(context) {
   const locations = getLocations();
@@ -82,27 +79,10 @@ export default function Home({ locations, profile, defaultLocation }) {
       <NavigationBar />
       <Verify />
       <Hero />
-      {!isLoggedIn && <WelcomeMessage />}
-
-      {/* Quick Location Finder for all users */}
-      <QuickLocationFinder />
-
-      {
-        isLoggedIn && (
-          <>
-            <UserWelcome defaultLocation={defaultLocation} />
-          </>
-        )
-        // : (
-        //   <Locator locations={locations} />
-        // )
-      }
-      <section className="two">
-        <TopArtists />
-        {!isLoggedIn && <SignupCTA />}
-        <CitiesStates locations={locations} />
-      </section>
-
+      <WelcomeMessage />
+      <Locator />
+      <TopArtists />
+      {/* <SignupCTA /> */}
       <Footer />
     </Layout>
   );

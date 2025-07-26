@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../../features/AppContext";
-import styles from "./FavoriteArtists.module.scss";
 import artistsData from "../../localArtistsDB.json";
 import FavoriteArtistCard from "./FavoriteArtistCard";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
@@ -210,7 +209,7 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
   const getInstructions = () => {
     if (isEditing) {
       return (
-        <div className={styles.editInstructions}>
+        <div className="mb-3 p-2 bg-amber-50 border border-amber-300 rounded text-sm text-amber-800 text-center">
           {isMobile
             ? "Tap and hold to drag artists and reorder them"
             : "Drag artists to reorder them or tap the remove button to delete"}
@@ -222,25 +221,29 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
 
   if (loading) {
     return (
-      <div className={styles.loading}>Loading your favorite artists...</div>
+      <div className="p-8 text-center text-gray-500">
+        Loading your favorite artists...
+      </div>
     );
   }
 
   if (!favoriteArtists.length) {
     return (
-      <div className={styles.noFavorites}>
-        <h3>Your Favorite Artists</h3>
+      <div className="my-8 p-6 bg-gray-50 rounded-lg text-center text-gray-500">
+        <h3 className="mb-4 text-2xl font-semibold text-gray-900">
+          Your Favorite Artists
+        </h3>
         <p>You have not added any favorite artists yet.</p>
       </div>
     );
   }
 
   return (
-    <div className={styles.favoritesContainer}>
-      <div className={styles.headerRow}>
+    <div className="bg-gray-50 rounded-lg">
+      <div className="flex justify-between items-center mb-4">
         <h2>Your Favorite Artists</h2>
         <button
-          className={styles.editButton}
+          className="py-1.5 px-3 bg-gray-100 border border-gray-300 rounded text-sm font-medium text-gray-700 cursor-pointer transition-all duration-200 hover:bg-gray-200"
           onClick={() => setIsEditing(!isEditing)}
         >
           {isEditing ? "Done" : "Edit"}
@@ -249,13 +252,23 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
 
       {getInstructions()}
 
-      <div className={styles.artistsList}>
+      <div className="flex flex-col gap-3 w-full py-2">
         {favoriteArtists.map((artist, index) => (
           <div
             key={`artist-${artist.arrayIndex || index}`}
-            className={`${styles.artistCardWrapper} ${
-              isEditing ? styles.draggable : ""
-            } ${draggedItem === index ? styles.dragging : ""}`}
+            className={`items-center w-full relative p-1 rounded-md ${
+              isEditing
+                ? "cursor-grab transition-transform duration-200 select-none touch-none bg-gray-100 border border-dashed border-gray-300 rounded-lg hover:bg-gray-200"
+                : ""
+            } ${
+              draggedItem === index
+                ? "opacity-70 cursor-grabbing z-10 shadow-[0_5px_10px_rgba(0,0,0,0.15)] bg-gray-200 border-2 border-solid border-gray-400"
+                : ""
+            } ${
+              isEditing
+                ? "bg-gray-100 border border-dashed border-gray-300"
+                : ""
+            }`}
             draggable={isEditing}
             onDragStart={() => handleDragStart(index)}
             onDragOver={(e) => handleDragOver(e, index)}
@@ -269,9 +282,9 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
               disableLinks={isEditing}
             />
             {isEditing && isMobile && (
-              <div className={styles.mobileControls}>
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-[5]">
                 <button
-                  className={`${styles.mobileButton} ${styles.upButton}`}
+                  className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 bg-gray-50 text-gray-600 cursor-pointer transition-all duration-200 mb-1 hover:bg-gray-200 hover:text-gray-900 focus:bg-gray-200 focus:text-gray-900 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-gray-50 disabled:hover:text-gray-600"
                   onClick={() => moveArtistUp(index)}
                   disabled={index === 0}
                   aria-label="Move artist up"
@@ -279,7 +292,7 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
                   <FaArrowUp />
                 </button>
                 <button
-                  className={`${styles.mobileButton} ${styles.downButton}`}
+                  className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 bg-gray-50 text-gray-600 cursor-pointer transition-all duration-200 mt-1 hover:bg-gray-200 hover:text-gray-900 focus:bg-gray-200 focus:text-gray-900 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-gray-50 disabled:hover:text-gray-600"
                   onClick={() => moveArtistDown(index)}
                   disabled={index === favoriteArtists.length - 1}
                   aria-label="Move artist down"
@@ -289,7 +302,10 @@ const FavoriteArtists = ({ userId }: FavoriteArtistsProps) => {
               </div>
             )}
             {isEditing && !isMobile && (
-              <div className={styles.dragHandle} aria-hidden="true">
+              <div
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg cursor-grab flex flex-col items-center p-2"
+                aria-hidden="true"
+              >
                 <span>⋮⋮</span>
               </div>
             )}

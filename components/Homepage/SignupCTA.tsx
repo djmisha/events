@@ -1,10 +1,9 @@
 import Signup from "../User/Signup";
-import styles from "./SignupCTA.module.scss";
 
 export default function SignupCTA() {
   return (
-    <section className={styles.ctaSignup}>
-      <div className={styles.ctaLeft}>
+    <section className="flex justify-between p-8 bg-gray-50 rounded-lg shadow-md my-8 flex-col md:flex-row">
+      <div className="flex-1 mb-8 md:mr-8 md:mb-0">
         <h2>Create a Free Account Today!</h2>
         <ul>
           <li>Save your default location</li>
@@ -13,7 +12,7 @@ export default function SignupCTA() {
           <li>And much more...</li>
         </ul>
       </div>
-      <div className={styles.ctaRight}>
+      <div className="flex-1">
         <Signup />
       </div>
     </section>

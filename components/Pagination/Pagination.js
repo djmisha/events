@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Pagination.module.scss";
 
 const Pagination = ({
   currentPage,
@@ -65,18 +64,18 @@ const Pagination = ({
   };
 
   return (
-    <div className={styles.pagination}>
-      <div className={styles.paginationInfo}>
+    <div className="flex flex-col items-center gap-5 my-10 p-8 py-8 px-4 bg-gray-50 rounded-lg border border-gray-300 shadow-md">
+      <div className="text-base text-black text-center font-medium opacity-80">
         Showing {(currentPage - 1) * eventsPerPage + 1} -{" "}
         {Math.min(currentPage * eventsPerPage, totalEvents)} of {totalEvents}{" "}
         events
       </div>
 
-      <div className={styles.paginationControls}>
+      <div className="flex items-center gap-3 flex-wrap justify-center">
         {/* Previous button - only show if not on first page */}
         {currentPage > 1 && (
           <button
-            className={styles.pageButton}
+            className="py-3 px-4 md:py-4 md:px-5 border-2 border-gray-300 bg-white text-black rounded-lg text-base font-medium cursor-pointer transition-all duration-200 min-w-[52px] md:min-w-[60px] hover:bg-gray-50 hover:-translate-y-px hover:shadow-md active:translate-y-0 active:shadow-sm"
             onClick={() => handlePageClick(currentPage - 1)}
           >
             ‹ Previous
@@ -87,7 +86,10 @@ const Pagination = ({
         {getPageNumbers().map((page, index) => {
           if (page === "...") {
             return (
-              <span key={`ellipsis-${index}`} className={styles.ellipsis}>
+              <span
+                key={`ellipsis-${index}`}
+                className="py-3 px-4 md:py-4 md:px-5 min-w-[52px] md:min-w-[60px] flex items-center justify-center text-gray-400 text-base font-medium m-0"
+              >
                 ...
               </span>
             );
@@ -97,9 +99,11 @@ const Pagination = ({
           return (
             <button
               key={page}
-              className={`${styles.pageButton} ${
-                currentPage === page ? styles.active : ""
-              }`}
+              className={`py-3 px-4 md:py-4 md:px-5 border-2 ${
+                currentPage === page
+                  ? "bg-pink text-white border-pink font-semibold shadow-md hover:bg-pink-600 hover:border-pink-600 hover:-translate-y-px"
+                  : "border-gray-300 bg-white text-black hover:bg-gray-50 hover:-translate-y-px hover:shadow-md"
+              } rounded-lg text-base font-medium cursor-pointer transition-all duration-200 min-w-[52px] md:min-w-[60px] active:translate-y-0 active:shadow-sm`}
               onClick={() => handlePageClick(page)}
             >
               {page}
@@ -110,7 +114,7 @@ const Pagination = ({
         {/* Next button - only show if not on last page */}
         {currentPage < totalPages && (
           <button
-            className={styles.pageButton}
+            className="py-3 px-4 md:py-4 md:px-5 border-2 border-gray-300 bg-white text-black rounded-lg text-base font-medium cursor-pointer transition-all duration-200 min-w-[52px] md:min-w-[60px] hover:bg-gray-50 hover:-translate-y-px hover:shadow-md active:translate-y-0 active:shadow-sm"
             onClick={() => handlePageClick(currentPage + 1)}
           >
             Next ›

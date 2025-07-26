@@ -1,5 +1,4 @@
 import { Toaster } from "react-hot-toast";
-import styles from "./ToastProvider.module.scss";
 
 const ToastProvider = () => {
   return (
@@ -7,7 +6,7 @@ const ToastProvider = () => {
       position="bottom-center"
       toastOptions={{
         duration: Infinity, // Make toasts persistent
-        className: styles.toast,
+        className: "!bg-transparent !shadow-none !border-none !p-0",
       }}
     />
   );

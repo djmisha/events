@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import styles from "./Modal.module.scss";
 
 const Modal = ({ component: Component, onClose }) => {
   // Disable body scroll when modal is open
@@ -28,15 +27,21 @@ const Modal = ({ component: Component, onClose }) => {
     };
   }, []);
   return (
-    <div className={styles["modal-overlay"]} onClick={onClose}>
+    <div
+      className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-[10000]"
+      onClick={onClose}
+    >
       <div
-        className={styles["modal-content"]}
+        className="bg-white rounded-lg relative max-w-lg w-full max-h-[70vh] overflow-y-auto md:p-6 p-3"
         onClick={(e) => e.stopPropagation()}
       >
-        <button className={styles["modal-close"]} onClick={onClose}>
+        <button
+          className="absolute top-2.5 right-2.5 bg-transparent border-none text-2xl cursor-pointer w-12 h-12"
+          onClick={onClose}
+        >
           &times;
         </button>
-        <div className={styles["modal-body"]}>
+        <div className="mt-5 overflow-y-auto">
           <Component />
         </div>
       </div>

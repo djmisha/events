@@ -4,9 +4,15 @@ import UserDashboard from "../components/User/UserDashboard";
 import { createClient as createServerClient } from "../utils/supabase/server-props";
 import { getLocations } from "../utils/getLocations";
 
+interface UserProfile {
+  id: string;
+  default_location_id?: string | number;
+  [key: string]: any; // Allow other profile properties
+}
+
 interface DashboardProps {
   user: User;
-  profile: any;
+  profile: UserProfile | null;
   defaultLocation: any;
 }
 
@@ -42,8 +48,8 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   // Get user data if logged in
   const user = data.user;
-  let profile = null;
-  let defaultLocation = null;
+  let profile: UserProfile | null = null;
+  let defaultLocation: any = null;
 
   // If user is logged in, fetch their profile
   if (user) {
@@ -58,7 +64,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     // If profile has default location, fetch the location data
     if (profile?.default_location_id) {
       // Convert default_location_id to number to ensure correct comparison
-      const locationId = parseInt(profile.default_location_id, 10);
+      const locationId = parseInt(String(profile.default_location_id), 10);
 
       // Find the location in the locations array
       defaultLocation = locations.find((loc) => loc.id === locationId) || null;

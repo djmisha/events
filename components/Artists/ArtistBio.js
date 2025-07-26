@@ -1,5 +1,4 @@
 import { formatBio } from "./ArtistBio.helpers";
-import styles from "./ArtistBio.module.scss";
 
 const saveTags = async (tags) => {
   // Save tags to the database or API
@@ -32,7 +31,7 @@ const ArtistBio = ({ name, lastFMdata }) => {
   // if (hasTags) saveTags(tags);
 
   return (
-    <div className={styles.artistBio}>
+    <div className="px-2.5 max-w-3xl mx-auto [&_p]:text-md text-left">
       {bioContent && (
         <>
           <h2>About {name}</h2>
@@ -48,7 +47,7 @@ const ArtistBio = ({ name, lastFMdata }) => {
       {hasTags && (
         <>
           <h3>{name} Music Style</h3>
-          <div className={styles.artistTags}>
+          <div className="[&_span]:py-1 [&_span]:px-4 [&_span]:m-1 [&_span]:border [&_span]:border-blue [&_span]:rounded-2xl [&_span]:text-xs [&_span]:text-center [&_span]:inline-block [&_span]:bg-blue [&_span]:text-white">
             {tags.map((tag) => (
               <span key={tag.name} className="artist-tag">
                 {tag.name.toLowerCase().replace(/-/g, " ")}

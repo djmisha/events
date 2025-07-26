@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useState, useContext } from "react";
 import { AppContext } from "../../features/AppContext";
 import { toSlug } from "../../utils/getLocations";
-import styles from "./Hamburger.module.scss";
 import MenuOverlay from "../ui/MenuOverlay";
 import MenuTrigger from "../ui/MenuTrigger";
 
@@ -28,7 +27,7 @@ const Hamburger = () => {
 
   const menuContent = (
     <>
-      <div className={styles["nav-items"]}>
+      <div className="flex flex-col gap-4 p-4">
         <Link href="/" onClick={handleClose}>
           Home
         </Link>
@@ -47,9 +46,11 @@ const Hamburger = () => {
       </div>
 
       {locationCtx?.length > 0 && (
-        <div className={styles["recently-viewed"]}>
-          <span>Recently Viewed</span>
-          <ul>
+        <div className="p-4 border-t border-gray-200">
+          <span className="font-semibold text-gray-700 mb-2 block">
+            Recently Viewed
+          </span>
+          <ul className="space-y-2">
             {locationCtx?.map((location) => (
               <li key={`${location.city}-${location.state}`}>
                 <LocationLink
@@ -63,13 +64,13 @@ const Hamburger = () => {
         </div>
       )}
 
-      <div className={styles["bottom-items"]}>
+      <div className="p-4 border-t border-gray-200 flex justify-center">
         <Image
           width={200}
           height={67}
           src="/images/logo.jpeg"
           alt="sandiegohousemusic.com"
-          className={styles["logo"]}
+          className="max-w-full h-auto"
         />
       </div>
     </>
@@ -77,7 +78,7 @@ const Hamburger = () => {
 
   return (
     <>
-      <div className={styles.topNavBar}>
+      <div className="flex flex-nowrap items-center justify-around relative left-0 h-15 pb-0 bg-white md:m-0">
         <MenuTrigger
           icon="/images/icon-bars-solid.svg"
           text="Menu"

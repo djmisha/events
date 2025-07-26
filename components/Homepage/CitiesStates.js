@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../../features/AppContext";
 import Link from "next/link";
-import styles from "./CitiesStates.module.scss";
 
 const CitiesStates = ({
   locations,
@@ -30,11 +29,13 @@ const CitiesStates = ({
   };
 
   return (
-    <div className={styles.citiesStates}>
+    <div className="[&_ul]:list-none [&_ul]:m-0 [&_ul]:p-0 [&_ul]:pl-3 [&_ul]:flex [&_ul]:flex-wrap [&_li]:w-1/2 [&_li]:py-3 md:[&_li]:w-1/4 [&_a]:no-underline [&_a]:text-black">
       {!showStatesOnly && (
         <>
-          <h2>Popular Dance Music Cities in North America</h2>
-          <p>
+          <h2 className="text-lg mb-4 px-2">
+            Popular Dance Music Cities in North America
+          </h2>
+          <p className="mb-4 px-2">
             Explore electronic dance music events in major North American
             cities. From nightclub shows to festivals and DJ performances, find
             upcoming events in your city or plan your next music destination.
@@ -44,7 +45,8 @@ const CitiesStates = ({
       )}
       {!showCitiesOnly && (
         <>
-          <h2>Browse EDM Events by State</h2>
+          <h2 className="text-lg mb-4 px-2">Browse EDM Events by State</h2>
+
           <ul>{renderList(states, "state")}</ul>
         </>
       )}

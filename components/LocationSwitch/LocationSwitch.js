@@ -6,7 +6,6 @@ import {
   searchLocations,
   getSavedLocation,
 } from "../../utils/locationService";
-import styles from "./LocationSwitch.module.scss";
 
 const LocationSwitch = ({
   onLocationChanged,
@@ -140,17 +139,17 @@ const LocationSwitch = ({
   };
 
   return (
-    <div className={`${styles.locationSwitch} ${className}`}>
+    <div className={`flex flex-col gap-4 max-w-sm md:max-w-full ${className}`}>
       {/* {currentLocation && (
-        <div className={styles.currentLocation}>
-          <span className={styles.locationLabel}>Current Location:</span>
-          <span className={styles.locationName}>
+        <div className="flex flex-col gap-1 p-3 bg-gray-50 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600">
+          <span className="text-sm font-semibold text-gray-500 uppercase tracking-wide dark:text-gray-400">Current Location:</span>
+          <span className="text-lg font-medium text-gray-900 dark:text-gray-100">
             {formatLocationDisplay(currentLocation)}
           </span>
         </div>
       )} */}
 
-      <div className={styles.searchContainer}>
+      <div className="relative flex flex-col">
         <input
           ref={searchInputRef}
           type="text"
@@ -159,20 +158,20 @@ const LocationSwitch = ({
           onFocus={handleSearchFocus}
           onBlur={handleSearchBlur}
           placeholder={placeholder}
-          className={styles.searchInput}
+          className="w-full p-3 pr-10 text-base border-2 border-gray-300 rounded-lg outline-none transition-colors duration-200 placeholder-gray-500 text-md focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-100 dark:placeholder-gray-400 dark:focus:border-blue-400 dark:focus:ring-blue-900/50"
           aria-label="Search for location"
           aria-haspopup="listbox"
         />
 
         {isSearching && (
-          <div className={styles.searchSpinner}>
-            <span className={styles.spinner}></span>
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center">
+            <span className="inline-block w-4 h-4 border-2 border-blue-300 border-t-blue-500 rounded-full animate-spin"></span>
           </div>
         )}
 
         {showDropdown && searchResults.length > 0 && (
           <div
-            className={styles.dropdown}
+            className="bg-white border border-gray-300 rounded-lg shadow-lg max-h-48 overflow-y-auto md:max-h-36 dark:bg-gray-600 dark:border-gray-500"
             role="listbox"
             style={{
               position: "fixed",
@@ -185,19 +184,19 @@ const LocationSwitch = ({
             {searchResults.map((location) => (
               <div
                 key={location.id}
-                className={styles.dropdownItem}
+                className="p-3 cursor-pointer transition-colors duration-150 border-b border-gray-100 last:border-b-0 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none aria-selected:bg-blue-100 aria-selected:text-blue-800 dark:border-gray-500 dark:hover:bg-gray-500 dark:focus:bg-gray-500 dark:aria-selected:bg-blue-600 dark:aria-selected:text-white"
                 onClick={() => handleLocationSelect(location)}
                 onKeyDown={(e) => handleKeyDown(e, location)}
                 role="option"
                 tabIndex={0}
                 aria-selected={currentLocation?.id === location.id}
               >
-                <div className={styles.locationInfo}>
-                  <div className={styles.locationText}>
+                <div className="flex flex-col gap-1">
+                  <div className="text-base font-medium text-gray-900 dark:text-gray-100">
                     {formatLocationDisplay(location)}
                   </div>
                   {location.country && (
-                    <div className={styles.locationCountry}>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">
                       {location.country}
                     </div>
                   )}
@@ -212,7 +211,7 @@ const LocationSwitch = ({
           searchResults.length === 0 &&
           !isSearching && (
             <div
-              className={styles.dropdown}
+              className="bg-white border border-gray-300 rounded-lg shadow-lg dark:bg-gray-600 dark:border-gray-500"
               style={{
                 position: "fixed",
                 top: `${dropdownPosition.top}px`,
@@ -221,7 +220,7 @@ const LocationSwitch = ({
                 zIndex: 999999999,
               }}
             >
-              <div className={styles.noResults}>
+              <div className="p-3 text-center text-gray-500 italic dark:text-gray-400">
                 No locations found for &ldquo;{searchTerm}&rdquo;
               </div>
             </div>

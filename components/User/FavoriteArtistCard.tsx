@@ -2,7 +2,6 @@ import Link from "next/link";
 import { FaTicketAlt, FaMapMarkerAlt, FaTimes } from "react-icons/fa";
 import FavoriteArtistImage from "./FavoriteArtistImage";
 import { ToSlugArtist } from "../../utils/utilities";
-import styles from "./FavoriteArtistCard.module.scss";
 
 interface Artist {
   id: string;
@@ -29,21 +28,21 @@ const FavoriteArtistCard = ({
   const showCounts = !!(count && locations);
 
   const content = (
-    <div className={styles.favoriteArtistCard}>
-      <div className={styles.artistContent}>
-        <div className={styles.imageContainer}>
+    <div className="flex justify-between items-center bg-gray-100 rounded-lg p-2.5 mb-3 shadow-md relative h-20">
+      <div className="flex items-center w-full">
+        <div className="w-15 h-15 flex-shrink-0 mr-4 overflow-hidden rounded">
           <FavoriteArtistImage id={id} />
         </div>
-        <div className={styles.artistInfo}>
-          <div className={styles.artistName}>{name}</div>
+        <div className="flex-1">
+          <div className="font-bold text-base mb-1">{name}</div>
           {showCounts && (
-            <div className={styles.artistCounts}>
-              <div className={styles.countItem}>
-                <FaTicketAlt className={styles.icon} />
+            <div className="flex gap-4 text-xs text-gray-600">
+              <div className="flex items-center">
+                <FaTicketAlt className="mr-1.5 text-xs" />
                 <span>{count} shows</span>
               </div>
-              <div className={styles.countItem}>
-                <FaMapMarkerAlt className={styles.icon} />
+              <div className="flex items-center">
+                <FaMapMarkerAlt className="mr-1.5 text-xs" />
                 <span>{locations} cities</span>
               </div>
             </div>
@@ -59,7 +58,7 @@ const FavoriteArtistCard = ({
         {content}
         {isEditing && arrayIndex !== undefined && (
           <button
-            className={styles.removeButton}
+            className="bg-red-500 text-white border-0 rounded-full w-8 h-8 flex items-center justify-center cursor-pointer transition-colors duration-200 hover:bg-red-400"
             onClick={() => onRemove(arrayIndex)}
             aria-label="Remove artist"
           >
@@ -73,7 +72,10 @@ const FavoriteArtistCard = ({
   return disableLinks ? (
     content
   ) : (
-    <Link href={`/artist/${ToSlugArtist(name)}`} className={styles.artistLink}>
+    <Link
+      href={`/artist/${ToSlugArtist(name)}`}
+      className="flex-1 no-underline text-current"
+    >
       {content}
     </Link>
   );

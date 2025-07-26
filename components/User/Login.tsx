@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, useContext } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
-import styles from "./Login.module.scss";
 import { AppContext } from "../../features/AppContext";
 
 export default function Login() {
@@ -51,17 +50,24 @@ export default function Login() {
   }
 
   return (
-    <div className={styles.centerContainer}>
-      <div className={styles.formContainer}>
-        <h1 className={styles.title}>Login</h1>
+    <div className="flex justify-center items-center">
+      <div className="mb-16 w-full max-w-sm bg-white rounded-lg shadow-lg p-4 md:p-8">
+        <h1 className="text-2xl font-semibold text-center mb-6 text-gray-900">
+          Login
+        </h1>
 
         {errorMessage && (
-          <div className={styles.errorMessage}>{errorMessage}</div>
+          <div className="p-3 mb-4 bg-red-50 text-red-800 rounded-md text-sm text-center border border-red-200">
+            {errorMessage}
+          </div>
         )}
 
         <form>
-          <div className={styles.formGroup}>
-            <label htmlFor="email" className={styles.label}>
+          <div className="mb-5">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Email Address
             </label>
             <input
@@ -69,14 +75,17 @@ export default function Login() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className={styles.input}
+              className="w-full px-4 py-3 border border-gray-300 rounded-md text-base transition-colors duration-150 focus:border-indigo-600 focus:outline-none focus:ring-4 focus:ring-indigo-100 disabled:bg-gray-100 disabled:cursor-not-allowed"
               placeholder="your@email.com"
               disabled={isLoggingIn}
             />
           </div>
 
-          <div className={styles.formGroup}>
-            <label htmlFor="password" className={styles.label}>
+          <div className="mb-5">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Password
             </label>
             <input
@@ -84,7 +93,7 @@ export default function Login() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className={styles.input}
+              className="w-full px-4 py-3 border border-gray-300 rounded-md text-base transition-colors duration-150 focus:border-indigo-600 focus:outline-none focus:ring-4 focus:ring-indigo-100 disabled:bg-gray-100 disabled:cursor-not-allowed"
               placeholder="••••••••"
               disabled={isLoggingIn}
             />
@@ -95,11 +104,11 @@ export default function Login() {
             onVerify={(token) => setCaptchaToken(token)}
           />
 
-          <div className={styles.buttonGroup}>
+          <div className="flex gap-4 mt-6">
             <button
               type="button"
               onClick={logIn}
-              className={`${styles.button} ${styles.primaryButton}`}
+              className="flex-1 py-3 px-4 border-none rounded-md text-sm font-medium cursor-pointer transition-all duration-150 bg-indigo-600 text-white hover:bg-indigo-700 disabled:opacity-70 disabled:cursor-not-allowed"
               disabled={isLoggingIn || !captchaToken}
             >
               {isLoggingIn ? "Logging in..." : "Log in"}
@@ -108,7 +117,7 @@ export default function Login() {
         </form>
 
         <p
-          className={styles.forgotPassword}
+          className="text-center text-indigo-600 cursor-pointer mt-4"
           onClick={() => router.push("/passwordreset")}
         >
           Forgot your password?

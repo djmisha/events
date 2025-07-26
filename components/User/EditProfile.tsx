@@ -1,8 +1,7 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useCallback, useMemo } from "react";
 import type { User } from "@supabase/supabase-js";
 import { useRouter } from "next/router";
 import { AppContext } from "../../features/AppContext";
-import styles from "./EditProfile.module.scss";
 import locations from "../../utils/locations.json";
 
 interface Profile {
@@ -66,8 +65,8 @@ export default function EditProfile({ user }: ProfileFormProps) {
 
   const { supabase } = useContext(AppContext);
 
-  // Enhanced validation function
-  const validateForm = (profileData: Partial<Profile>) => {
+  // Memoize the validation function to prevent unnecessary recalculations
+  const validateForm = useCallback((profileData: Partial<Profile>) => {
     const errors = {
       username: !profileData.username || profileData.username.trim() === "",
       usernamePattern: profileData.username
@@ -90,17 +89,20 @@ export default function EditProfile({ user }: ProfileFormProps) {
     setFormValid(isValid);
 
     return isValid;
-  };
+  }, []);
 
   // Update input handler to sanitize input
-  const handleInputChange = (field: keyof Profile, value: string) => {
-    // If it's a URL field, don't sanitize as strictly
-    const sanitizedValue = ["avatar_url", "website"].includes(field)
-      ? value.trim()
-      : sanitizeInput(value.trim());
+  const handleInputChange = useCallback(
+    (field: keyof Profile, value: string) => {
+      // If it's a URL field, don't sanitize as strictly
+      const sanitizedValue = ["avatar_url", "website"].includes(field)
+        ? value.trim()
+        : sanitizeInput(value.trim());
 
-    setProfile((prev) => ({ ...prev, [field]: sanitizedValue }));
-  };
+      setProfile((prev) => ({ ...prev, [field]: sanitizedValue }));
+    },
+    []
+  );
 
   useEffect(() => {
     async function loadProfile() {
@@ -135,14 +137,14 @@ export default function EditProfile({ user }: ProfileFormProps) {
     }
 
     loadProfile();
-  }, [user.id, supabase]);
+  }, [user.id, supabase, validateForm]);
 
   // Validate whenever profile changes
   useEffect(() => {
     validateForm(profile);
-  }, [profile]);
+  }, [profile, validateForm]);
 
-  async function updateProfile() {
+  const updateProfile = useCallback(async () => {
     // Validate before submitting
     if (!validateForm(profile)) {
       setMessage({
@@ -189,9 +191,9 @@ export default function EditProfile({ user }: ProfileFormProps) {
     } finally {
       setIsLoadingProfile(false);
     }
-  }
+  }, [profile, validateForm, user.id, supabase]);
 
-  async function handleLogout() {
+  const handleLogout = useCallback(async () => {
     try {
       setIsLoadingLogout(true);
       const { error } = await supabase.auth.signOut();
@@ -207,10 +209,10 @@ export default function EditProfile({ user }: ProfileFormProps) {
     } finally {
       setIsLoadingLogout(false);
     }
-  }
+  }, [supabase, router]);
 
   // Helper function to get grouped locations for the dropdown
-  const getGroupedLocations = () => {
+  const groupedLocations = useMemo(() => {
     // Group locations by state
     const stateGroups: Record<string, typeof locations> = {};
 
@@ -223,30 +225,26 @@ export default function EditProfile({ user }: ProfileFormProps) {
     });
 
     return stateGroups;
-  };
-
-  const groupedLocations = getGroupedLocations();
-
-  console.log(user);
+  }, []);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.formContainer}>
+    <div className="flex justify-center items-center bg-gray-50">
+      <div className="w-full max-w-sm bg-white rounded-[10px]">
         <h2>Profile Settings</h2>
         {message && (
           <div
-            className={`${styles.message} ${
+            className={`p-3 mb-4 rounded-md text-sm text-center ${
               message.type === "success"
-                ? styles.successMessage
-                : styles.errorMessage
+                ? "bg-green-100 text-green-800"
+                : "bg-red-100 text-red-800"
             }`}
           >
             {message.text}
           </div>
         )}
         <form>
-          {/* <div className={styles.formGroup}>
-            <label htmlFor="email" className={styles.label}>
+          {/* <div className="mb-5">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
               Email
             </label>
             <input
@@ -254,43 +252,51 @@ export default function EditProfile({ user }: ProfileFormProps) {
               type="text"
               value={user.email || ""}
               disabled
-              className={styles.input}
+              className="w-[calc(100%-2rem)] py-3 px-4 border border-gray-300 rounded-md text-base transition-colors duration-150 ease-in-out focus:border-indigo-600 focus:outline-none focus:shadow-[0_0_0_3px_rgba(79,70,229,0.1)] disabled:bg-gray-100 disabled:cursor-not-allowed"
             />
-            <small className={styles.helperText}>
+            <small className="block text-gray-500 text-xs mt-1">
               Your email cannot be changed
             </small>
           </div> */}
 
-          <div className={styles.formGroup}>
-            <label htmlFor="username" className={styles.label}>
-              Username <span className={styles.required}>*</span>
+          <div className="mb-5">
+            <label
+              htmlFor="username"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Username <span className="text-red-500 ml-0.5">*</span>
             </label>
             <input
               id="username"
               type="text"
               value={profile.username}
               onChange={(e) => handleInputChange("username", e.target.value)}
-              className={`${styles.input} ${
+              className={`w-[calc(100%-2rem)] py-3 px-4 border border-gray-300 rounded-md text-base transition-colors duration-150 ease-in-out focus:border-indigo-600 focus:outline-none focus:shadow-[0_0_0_3px_rgba(79,70,229,0.1)] disabled:bg-gray-100 disabled:cursor-not-allowed ${
                 validationErrors.username || validationErrors.usernamePattern
-                  ? styles.inputError
+                  ? "border-red-500 bg-red-500/5"
                   : ""
               }`}
               maxLength={20}
               pattern="[a-zA-Z0-9_-]{3,20}"
             />
             {validationErrors.username && (
-              <small className={styles.errorText}>Username is required</small>
+              <small className="text-red-500 text-xs mt-1 block">
+                Username is required
+              </small>
             )}
             {validationErrors.usernamePattern && !validationErrors.username && (
-              <small className={styles.errorText}>
+              <small className="text-red-500 text-xs mt-1 block">
                 Username must be 3-20 characters and contain only letters,
                 numbers, underscores or hyphens
               </small>
             )}
           </div>
 
-          <div className={styles.formGroup}>
-            <label htmlFor="full_name" className={styles.label}>
+          <div className="mb-5">
+            <label
+              htmlFor="full_name"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Full Name
             </label>
             <input
@@ -298,20 +304,25 @@ export default function EditProfile({ user }: ProfileFormProps) {
               type="text"
               value={profile.full_name}
               onChange={(e) => handleInputChange("full_name", e.target.value)}
-              className={`${styles.input} ${
-                validationErrors.fullNamePattern ? styles.inputError : ""
+              className={`w-[calc(100%-2rem)] py-3 px-4 border border-gray-300 rounded-md text-base transition-colors duration-150 ease-in-out focus:border-indigo-600 focus:outline-none focus:shadow-[0_0_0_3px_rgba(79,70,229,0.1)] disabled:bg-gray-100 disabled:cursor-not-allowed ${
+                validationErrors.fullNamePattern
+                  ? "border-red-500 bg-red-500/5"
+                  : ""
               }`}
               maxLength={100}
             />
             {validationErrors.fullNamePattern && (
-              <small className={styles.errorText}>
+              <small className="text-red-500 text-xs mt-1 block">
                 Full name contains invalid characters
               </small>
             )}
           </div>
 
-          <div className={styles.formGroup}>
-            <label htmlFor="avatar_url" className={styles.label}>
+          <div className="mb-5">
+            <label
+              htmlFor="avatar_url"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Avatar URL (add a link to your profile image)
             </label>
             <input
@@ -319,20 +330,25 @@ export default function EditProfile({ user }: ProfileFormProps) {
               type="url"
               value={profile.avatar_url}
               onChange={(e) => handleInputChange("avatar_url", e.target.value)}
-              className={`${styles.input} ${
-                validationErrors.avatarUrlPattern ? styles.inputError : ""
+              className={`w-[calc(100%-2rem)] py-3 px-4 border border-gray-300 rounded-md text-base transition-colors duration-150 ease-in-out focus:border-indigo-600 focus:outline-none focus:shadow-[0_0_0_3px_rgba(79,70,229,0.1)] disabled:bg-gray-100 disabled:cursor-not-allowed ${
+                validationErrors.avatarUrlPattern
+                  ? "border-red-500 bg-red-500/5"
+                  : ""
               }`}
               placeholder="https://example.com/avatar.png"
             />
             {validationErrors.avatarUrlPattern && profile.avatar_url && (
-              <small className={styles.errorText}>
+              <small className="text-red-500 text-xs mt-1 block">
                 Please enter a valid URL
               </small>
             )}
           </div>
 
-          <div className={styles.formGroup}>
-            <label htmlFor="website" className={styles.label}>
+          <div className="mb-5">
+            <label
+              htmlFor="website"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Website
             </label>
             <input
@@ -340,26 +356,33 @@ export default function EditProfile({ user }: ProfileFormProps) {
               type="url"
               value={profile.website}
               onChange={(e) => handleInputChange("website", e.target.value)}
-              className={`${styles.input} ${
-                validationErrors.websitePattern ? styles.inputError : ""
+              className={`w-[calc(100%-2rem)] py-3 px-4 border border-gray-300 rounded-md text-base transition-colors duration-150 ease-in-out focus:border-indigo-600 focus:outline-none focus:shadow-[0_0_0_3px_rgba(79,70,229,0.1)] disabled:bg-gray-100 disabled:cursor-not-allowed ${
+                validationErrors.websitePattern
+                  ? "border-red-500 bg-red-500/5"
+                  : ""
               }`}
               placeholder="https://example.com"
             />
             {validationErrors.websitePattern && profile.website && (
-              <small className={styles.errorText}>
+              <small className="text-red-500 text-xs mt-1 block">
                 Please enter a valid URL
               </small>
             )}
           </div>
 
-          <div className={styles.formGroup}>
-            <label htmlFor="default_location" className={styles.label}>
-              Default Location <span className={styles.required}>*</span>
+          <div className="mb-5">
+            <label
+              htmlFor="default_location"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Default Location <span className="text-red-500 ml-0.5">*</span>
             </label>
             <select
               id="default_location"
-              className={`${styles.input} ${
-                validationErrors.default_location_id ? styles.inputError : ""
+              className={`w-[calc(100%-2rem)] py-3 px-4 border border-gray-300 rounded-md text-base transition-colors duration-150 ease-in-out focus:border-indigo-600 focus:outline-none focus:shadow-[0_0_0_3px_rgba(79,70,229,0.1)] disabled:bg-gray-100 disabled:cursor-not-allowed ${
+                validationErrors.default_location_id
+                  ? "border-red-500 bg-red-500/5"
+                  : ""
               }`}
               value={profile.default_location_id || ""}
               onChange={(e) =>
@@ -392,13 +415,13 @@ export default function EditProfile({ user }: ProfileFormProps) {
                 ))}
             </select>
             {validationErrors.default_location_id && (
-              <small className={styles.errorText}>
+              <small className="text-red-500 text-xs mt-1 block">
                 Default location is required
               </small>
             )}
           </div>
 
-          <div className={styles.buttonGroup}>
+          <div className="flex gap-4 mt-6">
             <button
               type="button"
               onClick={(e) => {
@@ -406,7 +429,7 @@ export default function EditProfile({ user }: ProfileFormProps) {
                 updateProfile();
               }}
               disabled={isLoadingProfile || !formValid}
-              className={styles.button}
+              className="flex-1 py-3 px-4 border-none rounded-md text-sm font-medium cursor-pointer transition-all duration-150 ease-in-out bg-indigo-600 text-white hover:bg-indigo-700 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {isLoadingProfile ? "Updating..." : "Update Profile"}
             </button>
