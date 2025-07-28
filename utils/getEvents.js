@@ -258,7 +258,7 @@ const calculateSimilarity = (str1, str2) => {
  * @param {Array} events - Array of events
  * @returns {Array} - Array with duplicates removed
  */
-const removeDuplicateEvents = (events) => {
+export const removeDuplicateEvents = (events) => {
   return events.reduce((acc, event) => {
     const duplicateIndex = acc.findIndex((e) => {
       // Must be the same date
@@ -294,7 +294,7 @@ const removeDuplicateEvents = (events) => {
  * @param {Array} events - Array of events
  * @returns {Array} - Array sorted by date
  */
-const sortEventsByDate = (events) => {
+export const sortEventsByDate = (events) => {
   return events.sort((a, b) => {
     // Handle cases where date might be null or undefined
     if (!a.date && !b.date) return 0;
@@ -307,6 +307,28 @@ const sortEventsByDate = (events) => {
 
     // Sort in ascending order (earliest first)
     return dateA - dateB;
+  });
+};
+
+/**
+ * Filter out events that are past today's date
+ * @param {Array} events - Array of events
+ * @returns {Array} - Array with past events removed
+ */
+export const filterPastEvents = (events) => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Set to start of today
+
+  return events.filter((event) => {
+    // Handle cases where date might be null or undefined
+    if (!event.date) return false;
+
+    // Convert event date to Date object
+    const eventDate = new Date(event.date);
+    eventDate.setHours(0, 0, 0, 0); // Set to start of event date
+
+    // Keep events that are today or in the future
+    return eventDate >= today;
   });
 };
 
