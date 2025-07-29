@@ -125,7 +125,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto pt-8 border-t border-gray-200 text-center ">
         <p className="my-2 text-gray-400 text-xs">
           &copy; 2010 - {new Date().getFullYear()} sandiegohousemusic.com. All
-          rights reserved.
+          rights reserved. <Link href="/privacy-policy">Privacy Policy</Link>.
         </p>
       </div>
     </footer>
