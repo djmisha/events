@@ -1,4 +1,5 @@
 import setDates from "./setDates";
+import localArtists from "../localArtistsDB.json";
 
 /**
  * Retrieves data from multiple event APIs
@@ -187,6 +188,44 @@ const formatTicketMasterEvents = (apiData) => {
 };
 
 /**
+ * Format TicketMaster API response into standardized event format
+ * @param {Object} apiData - Raw TicketMaster API response
+ * @returns {Array} - Formatted events array
+ */
+export const formatTicketMasterwithImagesArtists = (events) => {
+  return events.map((event) => {
+    // Check if artistList is not empty and event name exists
+    if (
+      event.eventSource === "ticketmaster" &&
+      event.artistList.length != 0 &&
+      event.name
+    ) {
+      const matchedArtist = localArtists.find((artist) => {
+        return (
+          event.artistList[0].name.toLowerCase() == artist.name.toLowerCase()
+        );
+      });
+
+      // If a match is found, use the local artist's name and ID for image to work
+      if (matchedArtist) {
+        return {
+          ...event,
+          artistList: [{ name: matchedArtist.name, id: matchedArtist.id }],
+        };
+      }
+
+      // puts the event name as the artist if no match found
+      return {
+        ...event,
+        artistList: [{ name: event.name }],
+      };
+    }
+
+    return event;
+  });
+};
+
+/**
  * Calculate similarity between two strings using Levenshtein distance
  * @param {string} str1 - First string
  * @param {string} str2 - Second string
@@ -276,11 +315,11 @@ export const removeDuplicateEvents = (events) => {
     });
 
     if (duplicateIndex !== -1) {
-      // Prefer TicketMaster data over other sources
-      if (event.eventSource === "Ticketmaster") {
+      // Prefer ticketmaster data over other sources
+      if (event.eventSource === "ticketmaster") {
         acc[duplicateIndex] = event;
       }
-      // Otherwise keep the first one (which could be TicketMaster or any other source)
+      // Otherwise keep the first one (which could be ticketmaster or any other source)
     } else {
       acc.push(event);
     }

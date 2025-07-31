@@ -7,6 +7,7 @@ import {
   sortEventsByDate,
   removeDuplicateEvents,
   filterPastEvents,
+  formatTicketMasterwithImagesArtists,
 } from "../../utils/getEvents";
 
 // !TODO: THIS IS TEMPORARY, REFACTOR TO USE SDHM API ACROSS THE WHOLE APP
@@ -69,9 +70,12 @@ export async function getServerSideProps({ params, query, req, res }) {
       // !TODO - this is temporary, refactor when SDHM API is fully integrated
       const sorted = sortEventsByDate(rawEvents);
       const deduped = removeDuplicateEvents(sorted);
+
       // Transform the new API data to match the legacy format
-      events = transformEventsArray(deduped);
-      events = filterPastEvents(events);
+      const transformedEvents = transformEventsArray(deduped);
+      const withArtistsEvents =
+        formatTicketMasterwithImagesArtists(transformedEvents);
+      events = filterPastEvents(withArtistsEvents);
     }
   } catch (error) {
     console.error("Error fetching events from SDHM API:", error);

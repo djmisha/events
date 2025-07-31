@@ -18,7 +18,7 @@ const getData = async () => {
 export default async function handler(req, res) {
   try {
     const data = await getData();
-    res.setHeader("Cache-Control", "s-maxage=432000"); // cache for five days to keep supabase from getting paused
+    res.setHeader("Cache-Control", "s-maxage=432000");
     res.status(200).json({ data });
   } catch (error) {
     console.error("Error in handler: ", error);
