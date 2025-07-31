@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { AppContext } from "../../features/AppContext.js";
-import { getEventsHome } from "../../utils/getEvents";
+import { getSDHMEvents } from "../../utils/getEvents";
 import { ToSlugArtist } from "../../utils/utilities";
 import EventCard from "../EventCard/EventCard";
 import Button from "../Button/Button";
@@ -9,13 +9,29 @@ import { useEventModalManager } from "../../hooks/useEventModal";
 const Locator = () => {
   const { currentUserLocation } = useContext(AppContext);
   const { openEventId, setOpenEventId } = useEventModalManager();
-  const [events, setEvents] = useState();
+  const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (currentUserLocation?.id) {
-      getEventsHome(currentUserLocation.id, setEvents, setLoading);
-    }
+    const fetchEvents = async () => {
+      if (currentUserLocation?.id && currentUserLocation?.city) {
+        setLoading(true);
+        try {
+          const eventsData = await getSDHMEvents(
+            currentUserLocation.id,
+            currentUserLocation.city
+          );
+          setEvents(eventsData);
+        } catch (error) {
+          console.error("Error fetching events:", error);
+          setEvents([]);
+        } finally {
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchEvents();
   }, [currentUserLocation]);
 
   if (!currentUserLocation?.id || loading) return null;

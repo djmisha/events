@@ -1,6 +1,81 @@
 import setDates from "./setDates";
 import localArtists from "../localArtistsDB.json";
+import { transformEventsArray } from "./eventTransformer";
 
+/**
+ * Orchestrated function to process events from SDHM API
+ * @param {Array} rawEvents - Raw events data from SDHM API
+ * @param {string} city - City name for venue normalization
+ * @returns {Array} - Processed and filtered events array
+ */
+export const processSDHMEvents = (rawEvents, city = "") => {
+  if (!Array.isArray(rawEvents) || rawEvents.length === 0) {
+    return [];
+  }
+
+  try {
+    // Step 1: Sort events by date
+    const sorted = sortEventsByDate(rawEvents);
+
+    // Step 2: Remove duplicate events
+    const deduped = removeDuplicateEvents(sorted, city);
+
+    // Step 3: Transform the new API data to match the legacy format
+    const transformedEvents = transformEventsArray(deduped);
+
+    // Step 4: Format with local artists data and add IDs
+    const withArtistsEvents =
+      formatTicketMasterwithImagesArtists(transformedEvents);
+
+    // Step 5: Filter out past events
+    const filteredEvents = filterPastEvents(withArtistsEvents);
+
+    return filteredEvents;
+  } catch (error) {
+    console.error("Error processing SDHM events:", error);
+    return [];
+  }
+};
+
+/**
+ * Fetch and process events from SDHM API for a specific location
+ * @param {number} locationId - Location ID
+ * @param {string} city - City name
+ * @returns {Promise<Array>} - Processed events array
+ */
+export const getSDHMEvents = async (locationId, city) => {
+  try {
+    const protocol =
+      typeof window !== "undefined"
+        ? window.location.protocol
+        : process.env.NODE_ENV === "production"
+        ? "https:"
+        : "http:";
+    const host =
+      typeof window !== "undefined"
+        ? window.location.host
+        : process.env.NEXT_PUBLIC_BASE_URL?.replace(/^https?:\/\//, "");
+
+    const apiUrl = `${protocol}//${host}/api/sdhm/${locationId}/${city}`;
+
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      console.error(`SDHM API error: ${response.status}`);
+      return [];
+    }
+
+    const data = await response.json();
+    const rawEvents = data.data || [];
+
+    // Process events using the orchestrated function
+    return processSDHMEvents(rawEvents, city);
+  } catch (error) {
+    console.error("Error fetching SDHM events:", error);
+    return [];
+  }
+};
+
+// !TODO - THIS CAN ALL BE REMOVED SOON
 /**
  * Retrieves data from multiple event APIs
  * @param {number} id - City or State ID
@@ -208,6 +283,9 @@ export const formatTicketMasterwithImagesArtists = (events) => {
 
       // If a match is found, use the local artist's name and ID for image to work
       if (matchedArtist) {
+        console.log(
+          `Matched artist: ${matchedArtist.name} for event: ${event.name}`
+        );
         return {
           ...event,
           artistList: [{ name: matchedArtist.name, id: matchedArtist.id }],
@@ -231,19 +309,22 @@ export const formatTicketMasterwithImagesArtists = (events) => {
  * @param {string} str2 - Second string
  * @returns {number} - Similarity score between 0 and 1
  */
-const calculateSimilarity = (str1, str2) => {
+const calculateSimilarity = (str1, str2, city = "") => {
   if (!str1 || !str2) return 0;
 
   // Normalize strings: lowercase, remove extra spaces, common words
   const normalize = (str) => {
+    const cityPattern = city ? `|${city.toLowerCase()}` : "";
+    const regex = new RegExp(
+      `\\b(nightclub|club|theater|theatre|venue${cityPattern})\\b`,
+      "g"
+    );
+
     return str
       .toLowerCase()
       .replace(/\s+/g, " ")
       .trim()
-      .replace(
-        /\b(nightclub|club|theater|theatre|venue|san diego|los angeles|new york|chicago|miami|atlanta|dallas|houston|phoenix|seattle|denver|boston|las vegas|philadelphia|detroit|san francisco|washington dc|portland|minneapolis|orlando)\b/g,
-        ""
-      )
+      .replace(regex, "")
       .replace(/\s+/g, " ")
       .trim();
   };
@@ -295,9 +376,10 @@ const calculateSimilarity = (str1, str2) => {
 /**
  * Remove duplicate events based on date and venue similarity
  * @param {Array} events - Array of events
+ * @param {string} city - City name for venue normalization
  * @returns {Array} - Array with duplicates removed
  */
-export const removeDuplicateEvents = (events) => {
+export const removeDuplicateEvents = (events, city = "") => {
   return events.reduce((acc, event) => {
     const duplicateIndex = acc.findIndex((e) => {
       // Must be the same date
@@ -308,7 +390,11 @@ export const removeDuplicateEvents = (events) => {
         return true;
 
       // Check for similar venue names (threshold: 0.8 similarity)
-      const similarity = calculateSimilarity(e.venue?.name, event.venue?.name);
+      const similarity = calculateSimilarity(
+        e.venue?.name,
+        event.venue?.name,
+        city
+      );
       if (similarity >= 0.8) return true;
 
       return false;
@@ -350,24 +436,35 @@ export const sortEventsByDate = (events) => {
 };
 
 /**
+ * Convert a date to YYYY-MM-DD string format, handling timezone issues
+ * @param {Date|string} date - Date object or date string
+ * @returns {string} - Date in YYYY-MM-DD format
+ */
+const toDateString = (date) => {
+  if (typeof date === "string") {
+    return date.split("T")[0]; // Extract date part from ISO string
+  }
+
+  // For Date objects, use local date to avoid timezone issues
+  const d = date instanceof Date ? date : new Date(date);
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+};
+
+/**
  * Filter out events that are past today's date
  * @param {Array} events - Array of events
  * @returns {Array} - Array with past events removed
  */
 export const filterPastEvents = (events) => {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0); // Set to start of today
+  const todayString = toDateString(new Date());
 
   return events.filter((event) => {
-    // Handle cases where date might be null or undefined
     if (!event.date) return false;
-
-    // Convert event date to Date object
-    const eventDate = new Date(event.date);
-    eventDate.setHours(0, 0, 0, 0); // Set to start of event date
-
-    // Keep events that are today or in the future
-    return eventDate >= today;
+    return toDateString(event.date) >= todayString;
   });
 };
 
@@ -390,20 +487,3 @@ export const parseData = (data) => {
 };
 
 export default getEvents;
-
-// Legacy function for backward compatibility
-export const getEventsHome = async (id, setEvents, setLoading) => {
-  const PATH = `${process.env.NEXT_PUBLIC_BASE_URL}/api/events/${id}`;
-
-  await fetch(PATH, { mode: "cors" })
-    .then(function (response) {
-      response.json().then((res) => {
-        parseData(res.data);
-        setEvents(res.data);
-        setLoading(false);
-      });
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
-};
