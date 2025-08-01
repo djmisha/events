@@ -3,7 +3,7 @@ import Layout from "../../components/layout";
 import { getLocationData } from "../../utils/getLocations";
 import { makePageTitle, makePageDescription } from "../../utils/utilities";
 import EventsModule from "../../components/EventsModule/EventsModule";
-import { processSDHMEvents } from "../../utils/getEvents";
+import { getSDHMEvents } from "../../utils/getEvents";
 
 export default function Location({
   locationData,
@@ -46,21 +46,10 @@ export async function getServerSideProps({ params, query, req, res }) {
     };
   }
 
-  // Call the new SDHM API route directly
-  const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
-  const host = req.headers.host;
-  const apiUrl = `${protocol}://${host}/api/sdhm/${locationData.id}/${locationData.city}`;
-
+  // Call the SDHM API and process events
   let events = [];
   try {
-    const response = await fetch(apiUrl);
-    if (response.ok) {
-      const data = await response.json();
-      const rawEvents = data.data;
-
-      // Process events using the orchestrated function
-      events = processSDHMEvents(rawEvents, locationData.city);
-    }
+    events = await getSDHMEvents(locationData.id, locationData.city);
   } catch (error) {
     console.error("Error fetching events from SDHM API:", error);
     events = [];
