@@ -33,10 +33,11 @@ export default function Location({
 }
 
 export async function getServerSideProps({ params, query, req, res }) {
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=21600, stale-while-revalidate=21600"
-  );
+  // !TODO: -uncomment once DB issue is resolved
+  // res.setHeader(
+  //   "Cache-Control",
+  //   "public, s-maxage=21600, stale-while-revalidate=21600"
+  // );
 
   const locationData = getLocationData(params.id);
 
