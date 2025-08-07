@@ -124,3 +124,53 @@ export const getLocationSlug = (location) => {
 export const hasValidLocationUrl = (location) => {
   return !!(location && (location.city || location.state));
 };
+
+// Check if a slug corresponds to a state (not a city)
+export const isStateLandingPage = (slug) => {
+  const stateEntry = allLocations.find(
+    (location) => !location.city && toSlug(location.state) === slug
+  );
+  return !!stateEntry;
+};
+
+// Get all cities within a specific state
+export const getCitiesInState = (stateSlug) => {
+  // First find the state name from the slug
+  const stateEntry = allLocations.find(
+    (location) => !location.city && toSlug(location.state) === stateSlug
+  );
+
+  if (!stateEntry) return [];
+
+  // Get all cities in that state
+  const cities = allLocations
+    .filter((location) => location.city && location.state === stateEntry.state)
+    .map((location) => ({
+      id: location.id,
+      name: location.city,
+      slug: toSlug(location.city),
+      state: location.state,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  return cities;
+};
+
+// Get state information from slug
+export const getStateInfo = (stateSlug) => {
+  const stateEntry = allLocations.find(
+    (location) => !location.city && toSlug(location.state) === stateSlug
+  );
+
+  if (!stateEntry) return null;
+
+  const cities = getCitiesInState(stateSlug);
+
+  return {
+    id: stateEntry.id,
+    name: stateEntry.state,
+    slug: stateSlug,
+    cities: cities,
+    hasCities: cities.length > 0,
+  };
+};
