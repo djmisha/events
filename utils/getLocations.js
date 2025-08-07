@@ -63,13 +63,21 @@ export const getLocations = () => {
 
 // Matches Slug with Location and returns data about location
 export const getLocationData = (slug) => {
-  let data;
-  allLocations.map((location) => {
-    if (location.city) {
-      if (toSlug(location.city) === slug) data = location;
+  let cityData = null;
+  let stateData = null;
+
+  // First pass: collect all matches
+  allLocations.forEach((location) => {
+    if (location.city && toSlug(location.city) === slug) {
+      cityData = location;
     }
-    if (toSlug(location.state) === slug) data = location;
+    if (!location.city && toSlug(location.state) === slug) {
+      stateData = location;
+    }
   });
+
+  // Prioritize city matches over state matches
+  const data = cityData || stateData;
 
   return {
     slug,

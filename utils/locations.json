@@ -242,8 +242,19 @@
       "link": "https://edmtrain.com/delaware?utm_source=90&utm_medium=api"
   },
   {
+      "id": 13,
+      "city": null,
+      "state": "District of Columbia",
+      "stateCode": "DC",
+      "country": "United States",
+      "countryCode": "US",
+      "latitude": 38.907,
+      "longitude": -77.037,
+      "link": "https://edmtrain.com/district-of-columbia?utm_source=90&utm_medium=api"
+  },
+  {
       "id": 75,
-      "city": "Washington",
+      "city": "Washington DC",
       "state": "District of Columbia",
       "stateCode": "DC",
       "country": "United States",

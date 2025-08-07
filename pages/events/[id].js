@@ -91,11 +91,10 @@ export default function Location({
 }
 
 export async function getServerSideProps({ params, query, req, res }) {
-  // !TODO: -uncomment once DB issue is resolved
-  // res.setHeader(
-  //   "Cache-Control",
-  //   "public, s-maxage=21600, stale-while-revalidate=21600"
-  // );
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=21600, stale-while-revalidate=21600"
+  );
 
   const slug = params.id;
 
@@ -122,20 +121,26 @@ export async function getServerSideProps({ params, query, req, res }) {
       };
     }
 
-    // If state has no cities, fetch events directly via API
+    // If state has no cities, fetch events directly via EDM TRAIN API
     let events = [];
     try {
-      const apiUrl = `${req ? `http://${req.headers.host}` : ""}/api/events/${
-        stateInfo.id
-      }`;
-      const response = await fetch(apiUrl);
+      // Only fetch if this is actually a state-only request (no city)
+      if (!stateInfo.city) {
+        const apiUrl = `${req ? `http://${req.headers.host}` : ""}/api/events/${
+          stateInfo.id
+        }`;
+        const response = await fetch(apiUrl);
 
-      if (response.ok) {
-        const data = await response.json();
-        events = data.data || [];
-        parseData(events); // Ensure events are parsed correctly
+        if (response.ok) {
+          const data = await response.json();
+          events = data.data || [];
+          parseData(events); // Ensure events are parsed correctly
+        } else {
+          console.error(`API response error: ${response.status}`);
+          events = [];
+        }
       } else {
-        console.error(`API response error: ${response.status}`);
+        console.warn("Skipping state API call - city present in location data");
         events = [];
       }
     } catch (error) {
