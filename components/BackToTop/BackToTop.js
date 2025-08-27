@@ -20,7 +20,7 @@ const BackToTop = () => {
 
   return (
     <div
-      className={`fixed flex justify-center items-center bottom-4 right-4 bg-black text-white rounded-full w-9 h-9 text-center font-bold z-10 transition-all duration-200 ease-in-out cursor-pointer ${
+      className={`fixed flex justify-center items-center bottom-16 right-4 bg-black text-white rounded-full w-9 h-9 text-center font-bold z-10 transition-all duration-200 ease-in-out cursor-pointer ${
         visible ? "opacity-100" : "opacity-0"
       }`}
       onClick={handleClick}
