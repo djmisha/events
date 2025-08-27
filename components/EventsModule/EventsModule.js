@@ -6,7 +6,7 @@ import { searchFilter } from "../../utils/searchFilter";
 import { makePageHeadline } from "../../utils/utilities";
 import Filter from "../../components/Filter/Filter";
 import EventsFiltered from "../../components/Filter/EventsFilter";
-import Pagination from "../../components/Pagination/Pagination";
+import EventsPagination from "../../components/EventsPagination/EventsPagination";
 import { useEventModalManager } from "../../hooks/useEventModal";
 
 const EventsModule = ({
@@ -149,7 +149,7 @@ const EventsModule = ({
 
           {/* Show pagination only when not filtering */}
           {!filterVisible && (
-            <Pagination
+            <EventsPagination
               currentPage={currentPage}
               totalEvents={getVisibleEventsCount()}
               eventsPerPage={eventsPerPage}
