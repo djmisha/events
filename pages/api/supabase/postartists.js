@@ -2,6 +2,7 @@
 // Can now be refactored.
 
 import supabase from "../../../features/Supabase";
+import { secureApiEndpoint } from "../../../utils/apiSecurity";
 import { getUniqueArtists } from "../../../utils/getArtists";
 import sampleEvents from "../../../localArtistsDB.json";
 
@@ -78,6 +79,21 @@ const writeArtistsToSupabase = async (eventsArray) => {
 };
 
 export default async function handler(req, res) {
+  // Apply security checks
+  const security = secureApiEndpoint(req, res);
+
+  // Handle preflight requests
+  if (security.isPreflight) {
+    return res.status(200).end();
+  }
+
+  // Check if request is allowed
+  if (!security.allowed) {
+    return res.status(401).json({
+      error: security.error || "Unauthorized access",
+    });
+  }
+
   res.status(200).json({ message: "Hello" });
 
   return;

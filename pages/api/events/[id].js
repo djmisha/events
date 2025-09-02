@@ -1,4 +1,5 @@
 // !TODO: Clean up these imports, they have been moved to the new API
+import { secureApiEndpoint } from "../../../utils/apiSecurity";
 import { updateDBEvents } from "../../../features/services/eventService";
 import {
   checkNeedsUpdate,
@@ -8,6 +9,21 @@ import {
 const CACHE_MAX_AGE = 21600; // 6 hours in seconds
 
 export default async function handler(req, res) {
+  // Apply security checks
+  const security = secureApiEndpoint(req, res);
+
+  // Handle preflight requests
+  if (security.isPreflight) {
+    return res.status(200).end();
+  }
+
+  // Check if request is allowed
+  if (!security.allowed) {
+    return res.status(401).json({
+      error: security.error || "Unauthorized access",
+    });
+  }
+
   const { id } = req.query;
   const KEY = process.env.NEXT_PUBLIC_API_KEY_EDMTRAIN;
   const EDMURL = process.env.NEXT_PUBLIC_API_URL_EDMTRAIN;

@@ -1,4 +1,5 @@
 import supabase from "../../../features/Supabase";
+import { secureApiEndpoint } from "../../../utils/apiSecurity";
 
 const setData = async (artists) => {
   try {
@@ -29,15 +30,19 @@ const setData = async (artists) => {
 };
 
 export default async function handler(req, res) {
-  // Set CORS headers
-  res.setHeader("Access-Control-Allow-Origin", "*"); // You can specify your frontend origin instead of '*'
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  // Apply security checks
+  const security = secureApiEndpoint(req, res);
 
-  // Handle preflight OPTIONS request
-  if (req.method === "OPTIONS") {
-    res.status(200).end();
-    return;
+  // Handle preflight requests
+  if (security.isPreflight) {
+    return res.status(200).end();
+  }
+
+  // Check if request is allowed
+  if (!security.allowed) {
+    return res.status(401).json({
+      error: security.error || "Unauthorized access",
+    });
   }
 
   try {
