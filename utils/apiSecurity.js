@@ -71,14 +71,14 @@ function isAllowedDomain(origin) {
     const url = new URL(origin);
     const hostname = url.hostname;
 
+    // Log for debugging in production
+    console.log('Origin check:', { origin, hostname, allowedDomains: ALLOWED_DOMAINS });
+
     return ALLOWED_DOMAINS.some(
       (domain) => hostname === domain || hostname.endsWith("." + domain)
     );
   } catch (error) {
-    console.error("Error parsing origin URL:", {
-      origin,
-      error: error.message,
-    });
+    console.error('Error parsing origin URL:', { origin, error: error.message });
     return false;
   }
 }
@@ -125,6 +125,18 @@ export function secureApiEndpoint(req, res) {
     detectedOrigin = `${protocol}://${host}`;
   }
 
+  // Log for debugging (only in production to see what's happening)
+  if (process.env.NODE_ENV === 'production') {
+    console.log('Security check:', {
+      origin,
+      detectedOrigin,
+      host,
+      referer: req.headers.referer,
+      hasAuth: !!authHeader,
+      method: req.method
+    });
+  }
+
   // Handle preflight OPTIONS requests
   if (req.method === "OPTIONS") {
     setCorsHeaders(res, detectedOrigin);
@@ -146,14 +158,18 @@ export function secureApiEndpoint(req, res) {
       // If no origin but we have a host header, check if host is allowed
       const hostOnly = host.split(":")[0]; // Remove port if present
       if (ALLOWED_DOMAINS.includes(hostOnly)) {
+        console.log('Same-origin request allowed for host:', hostOnly);
         return { allowed: true };
       }
     }
 
     // First check if the domain is allowed
     if (isAllowedDomain(detectedOrigin)) {
+      console.log('Domain allowed:', detectedOrigin);
       return { allowed: true };
     }
+
+    console.log('Domain not allowed, checking token:', detectedOrigin);
 
     // If domain is not allowed, check for valid bearer token
     if (!authHeader) {
@@ -171,6 +187,7 @@ export function secureApiEndpoint(req, res) {
     }
 
     // Token is valid
+    console.log('Valid token provided');
     return { allowed: true };
   }
 
