@@ -92,10 +92,10 @@ export default async function handler(req, res) {
     const data = await response.json();
 
     // Set cache headers for 12 hours (43200 seconds)
-    // res.setHeader(
-    //   "Cache-Control",
-    //   "public, s-maxage=43200, stale-while-revalidate=86400"
-    // );
+    res.setHeader(
+      "Cache-Control",
+      "public, s-maxage=43200, stale-while-revalidate=86400"
+    );
 
     // Return the data with additional metadata
     return res.status(200).json({
