@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { AppContext } from "../../features/AppContext.js";
-import { getSDHMEvents } from "../../utils/getEvents";
+import { getSDHMEventsClient } from "../../utils/getEvents";
 import { ToSlugArtist } from "../../utils/utilities";
 import EventCard from "../EventCard/EventCard";
 import Button from "../Button/Button";
@@ -17,7 +17,7 @@ const Locator = () => {
       if (currentUserLocation?.id && currentUserLocation?.city) {
         setLoading(true);
         try {
-          const eventsData = await getSDHMEvents(
+          const eventsData = await getSDHMEventsClient(
             currentUserLocation.id,
             currentUserLocation.city
           );

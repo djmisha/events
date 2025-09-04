@@ -1,5 +1,5 @@
 import supabase from "../../../features/Supabase";
-import { secureApiEndpoint } from "../../../utils/apiSecurity";
+import secureApiEndpoint from "../../../utils/apiSecurity";
 
 const fetchExistingArtists = async () => {
   let allArtists = [];

@@ -2,7 +2,7 @@
 // Can now be refactored.
 
 import supabase from "../../../features/Supabase";
-import { secureApiEndpoint } from "../../../utils/apiSecurity";
+import secureApiEndpoint from "../../../utils/apiSecurity";
 import { getUniqueArtists } from "../../../utils/getArtists";
 import sampleEvents from "../../../localArtistsDB.json";
 

@@ -1,4 +1,4 @@
-import { secureApiEndpoint } from "../../../utils/apiSecurity";
+import secureApiEndpoint from "../../../utils/apiSecurity";
 
 export default async function handler(req, res) {
   // Apply security checks

@@ -2,22 +2,27 @@
  * API Security Middleware for Next Events Application
  *
  * This utility provides security for API endpoints by:
- * 1. Checking CORS for production environment
- * 2. Validating bearer tokens for unauthorized domains
+ * 1. Validating bearer tokens for all requests (except frontend-only endpoints)
+ * 2. Supporting both development and production environments
  *
  * Usage: Import and call secureApiEndpoint at the beginning of your API handler
  */
 
-const ALLOWED_DOMAINS = [
-  "sandiegohouse.com",
-  "www.sandiegohousemusic.com",
-  "localhost", // Allow localhost for development
+// Endpoints that remain open for frontend calls (no token required)
+const FRONTEND_OPEN_ENDPOINTS = [
+  "/api/supabase/gettopartists",
+  "/api/saveTags",
+  "/api/frontend/events",
 ];
 
-const PRODUCTION_ORIGINS = [
-  "https://sandiegohouse.com",
-  "https://www.sandiegohousemusic.com",
-];
+/**
+ * Check if endpoint should remain open for frontend calls
+ * @param {string} path - Request path
+ * @returns {boolean} - True if endpoint should be open
+ */
+function isFrontendOpenEndpoint(path) {
+  return FRONTEND_OPEN_ENDPOINTS.some((endpoint) => path.startsWith(endpoint));
+}
 
 /**
  * Get allowed tokens from environment variables
@@ -60,117 +65,49 @@ function validateBearerToken(token) {
 }
 
 /**
- * Checks if the origin domain is in the allowed list
- * @param {string} origin - The request origin
- * @returns {boolean} - True if domain is allowed
- */
-function isAllowedDomain(origin) {
-  if (!origin) return false;
-
-  try {
-    const url = new URL(origin);
-    const hostname = url.hostname;
-
-    return ALLOWED_DOMAINS.some(
-      (domain) => hostname === domain || hostname.endsWith("." + domain)
-    );
-  } catch (error) {
-    console.error('Error parsing origin URL:', { origin, error: error.message });
-    return false;
-  }
-}
-
-/**
- * Sets CORS headers for the response
- * @param {object} res - Next.js response object
- * @param {string} origin - Request origin
- */
-function setCorsHeaders(res, origin) {
-  if (process.env.NODE_ENV === "production") {
-    if (PRODUCTION_ORIGINS.includes(origin)) {
-      res.setHeader("Access-Control-Allow-Origin", origin);
-    }
-  } else {
-    // In development, be more permissive
-    res.setHeader("Access-Control-Allow-Origin", origin || "*");
-  }
-
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, OPTIONS"
-  );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-}
-
-/**
  * Main security function to be called at the beginning of each API endpoint
  * @param {object} req - Next.js request object
  * @param {object} res - Next.js response object
  * @returns {object} - { allowed: boolean, error?: string }
  */
-export function secureApiEndpoint(req, res) {
-  const origin = req.headers.origin || req.headers.referer;
-  const host = req.headers.host;
+function secureApiEndpoint(req, res) {
   const authHeader = req.headers.authorization;
-
-  // Enhanced origin detection for production
-  let detectedOrigin = origin;
-  if (!detectedOrigin && host) {
-    // Construct origin from host header if origin is missing
-    const protocol = req.headers["x-forwarded-proto"] || "https";
-    detectedOrigin = `${protocol}://${host}`;
-  }
+  const requestPath = req.url || "";
 
   // Handle preflight OPTIONS requests
   if (req.method === "OPTIONS") {
-    setCorsHeaders(res, detectedOrigin);
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PUT, DELETE, OPTIONS"
+    );
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Content-Type, Authorization"
+    );
     return { allowed: true, isPreflight: true };
   }
 
-  // Set CORS headers for all requests
-  setCorsHeaders(res, detectedOrigin);
-
-  // In development, allow all requests
-  if (process.env.NODE_ENV !== "production") {
+  // Check if this endpoint should remain open for frontend calls
+  if (isFrontendOpenEndpoint(requestPath)) {
     return { allowed: true };
   }
 
-  // Production security checks
-  if (process.env.NODE_ENV === "production") {
-    // Check for same-origin requests (when origin might be missing)
-    if (!detectedOrigin && host) {
-      // If no origin but we have a host header, check if host is allowed
-      const hostOnly = host.split(":")[0]; // Remove port if present
-      if (ALLOWED_DOMAINS.includes(hostOnly)) {
-        return { allowed: true };
-      }
-    }
-
-    // First check if the domain is allowed
-    if (isAllowedDomain(detectedOrigin)) {
-      return { allowed: true };
-    }
-
-    // If domain is not allowed, check for valid bearer token
-    if (!authHeader) {
-      return {
-        allowed: false,
-        error: "Unauthorized: Missing authentication token",
-      };
-    }
-
-    if (!validateBearerToken(authHeader)) {
-      return {
-        allowed: false,
-        error: "Unauthorized: Invalid authentication token",
-      };
-    }
-
-    // Token is valid
-    return { allowed: true };
+  // All other endpoints require bearer token
+  if (!authHeader) {
+    return {
+      allowed: false,
+      error: "Unauthorized: Missing authentication token",
+    };
   }
 
+  if (!validateBearerToken(authHeader)) {
+    return {
+      allowed: false,
+      error: "Unauthorized: Invalid authentication token",
+    };
+  }
+
+  // Token is valid
   return { allowed: true };
 }
 
@@ -200,4 +137,5 @@ export function withApiSecurity(handler) {
   };
 }
 
+// Export both named and default
 export default secureApiEndpoint;

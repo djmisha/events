@@ -1,6 +1,7 @@
 import setDates from "./setDates";
 import localArtists from "../localArtistsDB.json";
 import { transformEventsArray } from "./eventTransformer";
+import { authenticatedFetch } from "./authenticatedFetch";
 
 /**
  * Orchestrated function to process events from SDHM API
@@ -45,22 +46,64 @@ export const processSDHMEvents = (rawEvents, city = "") => {
  */
 export const getSDHMEvents = async (locationId, city) => {
   try {
-    const protocol =
-      typeof window !== "undefined"
-        ? window.location.protocol
-        : process.env.NODE_ENV === "production"
-        ? "https:"
-        : "http:";
-    const host =
-      typeof window !== "undefined"
-        ? window.location.host
-        : process.env.NEXT_PUBLIC_BASE_URL?.replace(/^https?:\/\//, "");
+    // Check if we're running on the server-side (Node.js environment)
+    const isServerSide = typeof window === "undefined";
 
-    const apiUrl = `${protocol}//${host}/api/sdhm/${locationId}/${city}`;
+    if (isServerSide) {
+      // Server-side: Use authenticated fetch with internal token
+      const apiUrl = `/api/sdhm/${locationId}/${city}`;
+      const data = await authenticatedFetch(apiUrl);
+      const rawEvents = data.data || [];
+
+      // Process events using the orchestrated function
+      return processSDHMEvents(rawEvents, city);
+    } else {
+      // Client-side: This shouldn't happen in normal usage, but handle gracefully
+      console.warn(
+        "getSDHMEvents called from client-side - this may not work due to authentication requirements"
+      );
+
+      const protocol = window.location.protocol;
+      const host = window.location.host;
+      const apiUrl = `${protocol}//${host}/api/sdhm/${locationId}/${city}`;
+
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        console.error(`SDHM API error: ${response.status}`);
+        return [];
+      }
+
+      const data = await response.json();
+      const rawEvents = data.data || [];
+
+      // Process events using the orchestrated function
+      return processSDHMEvents(rawEvents, city);
+    }
+  } catch (error) {
+    console.error("Error fetching SDHM events:", error);
+    return [];
+  }
+};
+
+/**
+ * Frontend-safe version of getSDHMEvents that uses the proxy endpoint
+ * @param {number} locationId - Location ID
+ * @param {string} city - City name
+ * @returns {Promise<Array>} - Processed events array
+ */
+export const getSDHMEventsClient = async (locationId, city) => {
+  try {
+    const protocol =
+      typeof window !== "undefined" ? window.location.protocol : "http:";
+    const host =
+      typeof window !== "undefined" ? window.location.host : "localhost:3000";
+    const apiUrl = `${protocol}//${host}/api/frontend/events/${locationId}/${encodeURIComponent(
+      city
+    )}`;
 
     const response = await fetch(apiUrl);
     if (!response.ok) {
-      console.error(`SDHM API error: ${response.status}`);
+      console.error(`Frontend events API error: ${response.status}`);
       return [];
     }
 
@@ -70,7 +113,7 @@ export const getSDHMEvents = async (locationId, city) => {
     // Process events using the orchestrated function
     return processSDHMEvents(rawEvents, city);
   } catch (error) {
-    console.error("Error fetching SDHM events:", error);
+    console.error("Error fetching SDHM events from frontend:", error);
     return [];
   }
 };
@@ -124,18 +167,28 @@ const getEvents = async (id, city) => {
  * @returns {Promise<Array>} - Formatted events array
  */
 const fetchEDMTrainData = async (id) => {
-  const EDMTrainApiUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/events/${id}`;
-
   try {
-    const response = await fetch(EDMTrainApiUrl);
+    // Check if we're running on the server-side
+    const isServerSide = typeof window === "undefined";
 
-    if (!response.ok) {
-      console.error(`EDMTrain API error: ${response.status}`);
-      return [];
+    if (isServerSide) {
+      // Server-side: Use authenticated fetch
+      const apiUrl = `/api/events/${id}`;
+      const data = await authenticatedFetch(apiUrl);
+      return formatEDMTrainEvents(data);
+    } else {
+      // Client-side: Use regular fetch with base URL
+      const EDMTrainApiUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/events/${id}`;
+
+      const response = await fetch(EDMTrainApiUrl);
+      if (!response.ok) {
+        console.error(`EDMTrain API error: ${response.status}`);
+        return [];
+      }
+
+      const data = await response.json();
+      return formatEDMTrainEvents(data);
     }
-
-    const data = await response.json();
-    return formatEDMTrainEvents(data);
   } catch (error) {
     console.error("Error fetching EDMTrain data:", error);
     return [];
@@ -148,20 +201,30 @@ const fetchEDMTrainData = async (id) => {
  * @returns {Promise<Array>} - Formatted events array
  */
 const fetchTicketMasterData = async (city) => {
-  const ticketMasterApiUrl = `${
-    process.env.NEXT_PUBLIC_BASE_URL
-  }/api/ticketmaster/events/${encodeURIComponent(city)}`;
-
   try {
-    const response = await fetch(ticketMasterApiUrl);
+    // Check if we're running on the server-side
+    const isServerSide = typeof window === "undefined";
 
-    if (!response.ok) {
-      console.error(`TicketMaster API error: ${response.status}`);
-      return [];
+    if (isServerSide) {
+      // Server-side: Use authenticated fetch
+      const apiUrl = `/api/ticketmaster/events/${encodeURIComponent(city)}`;
+      const data = await authenticatedFetch(apiUrl);
+      return formatTicketMasterEvents(data);
+    } else {
+      // Client-side: Use regular fetch with base URL
+      const ticketMasterApiUrl = `${
+        process.env.NEXT_PUBLIC_BASE_URL
+      }/api/ticketmaster/events/${encodeURIComponent(city)}`;
+
+      const response = await fetch(ticketMasterApiUrl);
+      if (!response.ok) {
+        console.error(`TicketMaster API error: ${response.status}`);
+        return [];
+      }
+
+      const data = await response.json();
+      return formatTicketMasterEvents(data);
     }
-
-    const data = await response.json();
-    return formatTicketMasterEvents(data);
   } catch (error) {
     console.error("Error fetching TicketMaster data:", error);
     return [];

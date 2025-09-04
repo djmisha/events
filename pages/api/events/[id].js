@@ -1,5 +1,5 @@
 // !TODO: Clean up these imports, they have been moved to the new API
-import { secureApiEndpoint } from "../../../utils/apiSecurity";
+import secureApiEndpoint from "../../../utils/apiSecurity";
 import { updateDBEvents } from "../../../features/services/eventService";
 import {
   checkNeedsUpdate,

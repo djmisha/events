@@ -4,7 +4,7 @@
  * @param {*} req
  * @param {*} res - event data object
  */
-import { secureApiEndpoint } from "../../utils/apiSecurity";
+import secureApiEndpoint from "../../utils/apiSecurity";
 
 export default async function handler(req, res) {
   // Apply security checks

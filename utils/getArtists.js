@@ -2,6 +2,7 @@ import sampleEvents from "./allevents.sample.json";
 import artistDB from "./../localArtistsDB.json";
 import { removeDuplicates, ToSlugArtist } from "./utilities";
 import { parseData } from "./getEvents";
+import { authenticatedFetch } from "./authenticatedFetch";
 
 /**
  * on Dev we return a sample array vs Prod we make a fetch call
@@ -194,31 +195,58 @@ const setURL = (id) => {
 
 // get events for each artist
 export const getArtistEvents = async (id, setEvents) => {
-  const url = setURL(id);
+  try {
+    // Check if we're running on the server-side
+    const isServerSide = typeof window === "undefined";
 
-  const response = await fetch(url, { mode: "no-cors" });
-  if (response.ok) {
-    const json = await response.json();
-    const data = parseData(json.data);
-    return data;
-  } else {
-    throw new Error(response.statusText);
+    if (isServerSide) {
+      // Server-side: Use authenticated fetch
+      const apiUrl = `/api/artists/${id}`;
+      const json = await authenticatedFetch(apiUrl);
+      const data = parseData(json.data);
+      return data;
+    } else {
+      // Client-side: Use regular fetch with full URL
+      const url = setURL(id);
+      const response = await fetch(url, { mode: "no-cors" });
+      if (response.ok) {
+        const json = await response.json();
+        const data = parseData(json.data);
+        return data;
+      } else {
+        throw new Error(response.statusText);
+      }
+    }
+  } catch (error) {
+    console.error("Error fetching artist events:", error);
+    return [];
   }
 };
 
 // get LastFM data for artist
 export const getArtistLastFM = async (name) => {
   try {
-    const url =
-      process.env.NODE_ENV === "development"
-        ? `http://localhost:3000/api/lastfm/artistgetinfo/${name}`
-        : `https://www.sandiegohousemusic.com/api/lastfm/artistgetinfo/${name}`;
+    // Check if we're running on the server-side
+    const isServerSide = typeof window === "undefined";
 
-    const response = await fetch(url, { mode: "no-cors" });
-    if (!response.ok) return null;
+    if (isServerSide) {
+      // Server-side: Use authenticated fetch
+      const apiUrl = `/api/lastfm/artistgetinfo/${name}`;
+      const data = await authenticatedFetch(apiUrl);
+      return data;
+    } else {
+      // Client-side: Use regular fetch with full URL
+      const url =
+        process.env.NODE_ENV === "development"
+          ? `http://localhost:3000/api/lastfm/artistgetinfo/${name}`
+          : `https://www.sandiegohousemusic.com/api/lastfm/artistgetinfo/${name}`;
 
-    const data = await response.json();
-    return data;
+      const response = await fetch(url, { mode: "no-cors" });
+      if (!response.ok) return null;
+
+      const data = await response.json();
+      return data;
+    }
   } catch (error) {
     console.error("Error fetching LastFM data:", error);
     return null;
