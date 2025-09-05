@@ -4,38 +4,23 @@ import { transformEventsArray } from "./eventTransformer";
 import { authenticatedFetch } from "./authenticatedFetch";
 
 /**
- * Orchestrated function to process events from SDHM API
- * @param {Array} rawEvents - Raw events data from SDHM API
- * @param {string} city - City name for venue normalization
- * @returns {Array} - Processed and filtered events array
+ * Simple wrapper for SDHM events data (processing now done on API side)
+ * @param {Array} processedEvents - Already processed events data from API
+ * @param {string} city - City name (kept for compatibility)
+ * @returns {Array} - Events array
+ * 
+ * NOTE: As of the latest update, all event processing (sorting, deduplication,
+ * transformation, artist matching, and filtering) is now done on the API side
+ * in /api/sdhm/[...params].js for better caching and performance.
  */
-export const processSDHMEvents = (rawEvents, city = "") => {
-  if (!Array.isArray(rawEvents) || rawEvents.length === 0) {
+export const processSDHMEvents = (processedEvents, city = "") => {
+  if (!Array.isArray(processedEvents) || processedEvents.length === 0) {
     return [];
   }
 
-  try {
-    // Step 1: Sort events by date
-    const sorted = sortEventsByDate(rawEvents);
-
-    // Step 2: Remove duplicate events
-    const deduped = removeDuplicateEvents(sorted, city);
-
-    // Step 3: Transform the new API data to match the legacy format
-    const transformedEvents = transformEventsArray(deduped);
-
-    // Step 4: Format with local artists data and add IDs
-    const withArtistsEvents =
-      formatTicketMasterwithImagesArtists(transformedEvents);
-
-    // Step 5: Filter out past events
-    const filteredEvents = filterPastEvents(withArtistsEvents);
-
-    return filteredEvents;
-  } catch (error) {
-    console.error("Error processing SDHM events:", error);
-    return [];
-  }
+  // Events are already processed on the API side, just return them
+  // This function is kept for backward compatibility
+  return processedEvents;
 };
 
 /**
@@ -53,10 +38,12 @@ export const getSDHMEvents = async (locationId, city) => {
       // Server-side: Use authenticated fetch with internal token
       const apiUrl = `/api/sdhm/${locationId}/${city}`;
       const data = await authenticatedFetch(apiUrl);
-      const rawEvents = data.data || [];
-
-      // Process events using the orchestrated function
-      return processSDHMEvents(rawEvents, city);
+      
+      // Events are already processed on the API side
+      const processedEvents = data.data || [];
+      
+      // Use the wrapper function for consistency (events already processed)
+      return processSDHMEvents(processedEvents, city);
     } else {
       // Client-side: This shouldn't happen in normal usage, but handle gracefully
       console.warn(
@@ -74,10 +61,12 @@ export const getSDHMEvents = async (locationId, city) => {
       }
 
       const data = await response.json();
-      const rawEvents = data.data || [];
-
-      // Process events using the orchestrated function
-      return processSDHMEvents(rawEvents, city);
+      
+      // Events are already processed on the API side
+      const processedEvents = data.data || [];
+      
+      // Use the wrapper function for consistency (events already processed)
+      return processSDHMEvents(processedEvents, city);
     }
   } catch (error) {
     console.error("Error fetching SDHM events:", error);
@@ -108,10 +97,12 @@ export const getSDHMEventsClient = async (locationId, city) => {
     }
 
     const data = await response.json();
-    const rawEvents = data.data || [];
-
-    // Process events using the orchestrated function
-    return processSDHMEvents(rawEvents, city);
+    
+    // Events are already processed on the API side
+    const processedEvents = data.data || [];
+    
+    // Use the wrapper function for consistency (events already processed)
+    return processSDHMEvents(processedEvents, city);
   } catch (error) {
     console.error("Error fetching SDHM events from frontend:", error);
     return [];
