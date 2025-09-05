@@ -8,7 +8,7 @@ import { authenticatedFetch } from "./authenticatedFetch";
  * @param {Array} processedEvents - Already processed events data from API
  * @param {string} city - City name (kept for compatibility)
  * @returns {Array} - Events array
- * 
+ *
  * NOTE: As of the latest update, all event processing (sorting, deduplication,
  * transformation, artist matching, and filtering) is now done on the API side
  * in /api/sdhm/[...params].js for better caching and performance.
@@ -38,10 +38,10 @@ export const getSDHMEvents = async (locationId, city) => {
       // Server-side: Use authenticated fetch with internal token
       const apiUrl = `/api/sdhm/${locationId}/${city}`;
       const data = await authenticatedFetch(apiUrl);
-      
+
       // Events are already processed on the API side
       const processedEvents = data.data || [];
-      
+
       // Use the wrapper function for consistency (events already processed)
       return processSDHMEvents(processedEvents, city);
     } else {
@@ -61,10 +61,10 @@ export const getSDHMEvents = async (locationId, city) => {
       }
 
       const data = await response.json();
-      
+
       // Events are already processed on the API side
       const processedEvents = data.data || [];
-      
+
       // Use the wrapper function for consistency (events already processed)
       return processSDHMEvents(processedEvents, city);
     }
@@ -97,10 +97,10 @@ export const getSDHMEventsClient = async (locationId, city) => {
     }
 
     const data = await response.json();
-    
+
     // Events are already processed on the API side
     const processedEvents = data.data || [];
-    
+
     // Use the wrapper function for consistency (events already processed)
     return processSDHMEvents(processedEvents, city);
   } catch (error) {
@@ -337,9 +337,6 @@ export const formatTicketMasterwithImagesArtists = (events) => {
 
       // If a match is found, use the local artist's name and ID for image to work
       if (matchedArtist) {
-        console.log(
-          `Matched artist: ${matchedArtist.name} for event: ${event.name}`
-        );
         return {
           ...event,
           artistList: [{ name: matchedArtist.name, id: matchedArtist.id }],

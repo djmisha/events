@@ -156,9 +156,6 @@ const formatTicketMasterwithImagesArtists = (events) => {
 
       // If a match is found, use the local artist's name and ID for image to work
       if (matchedArtist) {
-        console.log(
-          `Matched artist: ${matchedArtist.name} for event: ${event.name}`
-        );
         return {
           ...event,
           artistList: [{ name: matchedArtist.name, id: matchedArtist.id }],
