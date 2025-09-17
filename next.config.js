@@ -15,6 +15,15 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/(.*)',
+        destination: 'https://grooverooster.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
   exportPathMap: async function (defaultPathMap) {
     const paths = { ...defaultPathMap };
     delete paths["/auth/confirm"];
