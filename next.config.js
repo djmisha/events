@@ -18,8 +18,13 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/(.*)',
-        destination: 'https://grooverooster.com/:path*',
+        source: "/",
+        destination: "https://grooverooster.com/",
+        permanent: true,
+      },
+      {
+        source: "/(.*)",
+        destination: "https://grooverooster.com/$1",
         permanent: true,
       },
     ];
