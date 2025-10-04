@@ -19,12 +19,12 @@ const nextConfig = {
     return [
       {
         source: "/",
-        destination: "https://grooverooster.com/",
+        destination: "https://www.grooverooster.com/",
         permanent: true,
       },
       {
         source: "/(.*)",
-        destination: "https://grooverooster.com/$1",
+        destination: "https://www.grooverooster.com/$1",
         permanent: true,
       },
     ];
